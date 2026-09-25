@@ -1,0 +1,31 @@
+1:"$Sreact.fragment"
+2:I[97367,["/_next/static/chunks/3fntmmi971322.js"],"OutletBoundary"]
+3:"$Sreact.suspense"
+7:I[97367,["/_next/static/chunks/3fntmmi971322.js"],"ViewportBoundary"]
+8:I[97367,["/_next/static/chunks/3fntmmi971322.js"],"MetadataBoundary"]
+6:X
+16:X
+16:C
+0:{"buildId":"DlvGj3_QF_b8EOWNPtWzG","data":[{"rsc":["$","$1","c",{"children":[["$","div",null,{"className":"mx-auto max-w-3xl px-4 py-12 leading-8 sm:px-6","children":[["$","h1",null,{"className":"text-3xl font-extrabold","children":"شروط الاستخدام"}],["$","p",null,{"className":"mt-6 text-slate-700","children":"الخدمة إرشادية وتنظيمية. إنستغرام وميتا يقرران قبول المراجعة أو رفضها. لا نضمن فتح الحساب ولا مدة محددة لكل الحالات."}],["$","p",null,{"className":"mt-4 text-slate-700","children":"يُسمح بطلب المساعدة لحساب تملكه أو تملك تفويضًا قانونيًا عنه فقط. يُحظر استخدام الموقع للوصول إلى حسابات الغير أو لانتحال صفة الدعم الرسمي."}],["$","p",null,{"className":"mt-4 text-slate-700","children":"الموقع غير تابع لميتا بلاتفورمز. العلامات التجارية المذكورة تخص أصحابها وتُذكر لوصف الخدمة فقط."}],["$","p",null,{"className":"mt-4 text-slate-700","children":"بالتواصل معنا عبر واتساب أو البريد فإنك تؤكد أنك المالك أو المفوّض، وأنك لن ترسل كلمة مرور أو رمز تحقق لطرف غير المنصة الرسمية."}]]}],null,["$","$L2",null,{"children":["$","$3",null,{"name":"Next.MetadataOutlet","children":"$@4"}]}]]}],"isPartial":"$@5","staleTime":"$6","varyParams":null},{"rsc":["$","$1","h",{"children":[null,["$","$L7",null,{"children":[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1, maximum-scale=5, viewport-fit=cover"}],["$","meta","2",{"name":"theme-color","content":"#1d4ed8"}]]}],["$","div",null,{"hidden":true,"children":["$","$L8",null,{"children":["$","$3",null,{"name":"Next.Metadata","children":[["$","title","0",{"children":"شروط الاستخدام | استرجاع انستا"}],["$","meta","1",{"name":"description","content":"شروط استخدام موقع استرجاع انستا لخدمات المساعدة في استرجاع حسابات إنستغرام."}],["$","meta","2",{"name":"application-name","content":"استرجاع انستا"}],["$","meta","3",{"name":"author","content":"استرجاع انستا"}],["$","link","4",{"rel":"manifest","href":"/manifest.webmanifest"}],["$","meta","5",{"name":"keywords","content":"استرجاع حساب انستقرام معطل,استرجاع حساب انستغرام,فك باند انستقرام,حساب انستقرام مخترق,استرجاع حساب انستقرام محذوف,استئناف انستقرام,استرجاع انستقرام من الجوال"}],["$","meta","6",{"name":"creator","content":"استرجاع انستا"}],["$","meta","7",{"name":"publisher","content":"استرجاع انستا"}],["$","meta","8",{"name":"robots","content":"index, follow"}],["$","meta","9",{"name":"googlebot","content":"index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1"}],["$","meta","10",{"name":"category","content":"internet services"}],["$","link","11",{"rel":"canonical","href":"https://instagram-recover.com/terms"}],["$","meta","12",{"name":"format-detection","content":"telephone=no, address=no, email=no"}],["$","meta","13",{"name":"mobile-web-app-capable","content":"yes"}],["$","meta","14",{"name":"apple-mobile-web-app-title","content":"استرجاع انستا"}],["$","meta","15",{"name":"apple-mobile-web-app-status-bar-style","content":"default"}],["$","meta","16",{"property":"og:title","content":"استرجاع حساب إنستغرام المعطّل | استرجاع انستا"}],["$","meta","17",{"property":"og:description","content":"خدمة عربية مستقلة تساعد مالك الحساب على استرجاع حساب إنستغرام المعطّل أو المخترق أو المحذوف. نفحص الحالة مجانًا، ونوجّهك لاستخدام نماذج ميتا وإنستغرام الرسمية، ونتابع معك من الجوال على أندرويد وآيفون. لا نطلب كلمة المرور ولسنا تابعين لميتا."}],["$","meta","18",{"property":"og:site_name","content":"استرجاع انستا"}],["$","meta","19",{"property":"og:locale","content":"ar_SA"}],["$","meta","20",{"property":"og:image","content":"https://instagram-recover.com/opengraph-image?b819cda3e17319e3"}],["$","meta","21",{"property":"og:image:type","content":"image/png"}],["$","meta","22",{"property":"og:image:width","content":"1200"}],["$","meta","23",{"property":"og:image:height","content":"630"}],["$","meta","24",{"property":"og:image:alt","content":"استرجاع انستا — استرجاع حساب إنستغرام"}],["$","meta","25",{"property":"og:type","content":"website"}],["$","meta","26",{"name":"twitter:card","content":"summary_large_image"}],["$","meta","27",{"name":"twitter:title","content":"استرجاع حساب إنستغرام المعطّل | استرجاع انستا"}],["$","meta","28",{"name":"twitter:description","content":"خدمة عربية مستقلة تساعد مالك الحساب على استرجاع حساب إنستغرام المعطّل أو المخترق أو المحذوف. نفحص الحالة مجانًا، ونوجّهك لاستخدام نماذج ميتا وإنستغرام الرسمية، ونتابع معك من الجوال على أندرويد وآيفون. لا نطلب كلمة المرور ولسنا تابعين لميتا."}],"$L9","$La","$Lb","$Lc","$Ld","$Le","$Lf","$L10","$L11"]}]}]}],"$L12"]}],"isPartial":"$@13","staleTime":"$6","varyParams":null},{"rsc":"$L14","isPartial":"$@15","staleTime":"$6","varyParams":"$16"}],"isUpgradeableISRFallback":false,"a":"$@17","rootVaryParams":null,"needsRuntimeRequest":"$@18"}
+19:I[27201,["/_next/static/chunks/3fntmmi971322.js"],"IconMark"]
+1a:I[39756,["/_next/static/chunks/3fntmmi971322.js"],"default"]
+1b:I[37457,["/_next/static/chunks/3fntmmi971322.js"],"default"]
+4:null
+9:["$","meta","29",{"name":"twitter:image","content":"https://instagram-recover.com/opengraph-image?b819cda3e17319e3"}]
+a:["$","meta","30",{"name":"twitter:image:alt","content":"استرجاع انستا — استرجاع حساب إنستغرام"}]
+b:["$","meta","31",{"name":"twitter:image:type","content":"image/png"}]
+c:["$","meta","32",{"name":"twitter:image:width","content":"1200"}]
+d:["$","meta","33",{"name":"twitter:image:height","content":"630"}]
+e:["$","link","34",{"rel":"icon","href":"/favicon.ico?favicon.2vob68tjqpejf.ico","sizes":"256x256","type":"image/x-icon"}]
+f:["$","link","35",{"rel":"icon","href":"/icon.svg","type":"image/svg+xml"}]
+10:["$","link","36",{"rel":"apple-touch-icon","href":"/icon.svg"}]
+11:["$","$L19","37",{}]
+12:["$","meta",null,{"name":"next-size-adjust","content":""}]
+14:["$","$1","c",{"children":[null,["$","$L1a",null,{"parallelRouterKey":"children","template":["$","$L1b",null,{}]}]]}]
+18:true
+6:300
+6:C
+17:0
+13:"$undefined"
+15:"$undefined"
+5:"$undefined"

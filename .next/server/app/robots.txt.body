@@ -1,0 +1,19 @@
+User-Agent: *
+Allow: /
+Allow: /_next/static/
+Disallow: /api/
+
+User-Agent: GPTBot
+Allow: /
+
+User-Agent: ClaudeBot
+Allow: /
+
+User-Agent: PerplexityBot
+Allow: /
+
+User-Agent: Google-Extended
+Allow: /
+
+Host: instagram-recover.com
+Sitemap: https://instagram-recover.com/sitemap.xml

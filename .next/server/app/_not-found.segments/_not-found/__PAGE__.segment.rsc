@@ -1,0 +1,32 @@
+1:"$Sreact.fragment"
+2:I[22016,["/_next/static/chunks/22i43cg4l4-dq.js"],""]
+3:I[97367,["/_next/static/chunks/3fntmmi971322.js"],"OutletBoundary"]
+4:"$Sreact.suspense"
+8:I[97367,["/_next/static/chunks/3fntmmi971322.js"],"ViewportBoundary"]
+9:I[97367,["/_next/static/chunks/3fntmmi971322.js"],"MetadataBoundary"]
+7:X
+17:X
+17:C
+0:{"buildId":"DlvGj3_QF_b8EOWNPtWzG","data":[{"rsc":["$","$1","c",{"children":[["$","div",null,{"className":"mx-auto max-w-lg px-4 py-20 text-center","children":[["$","h1",null,{"className":"text-3xl font-extrabold","children":"الصفحة غير موجودة"}],["$","p",null,{"className":"mt-4 text-slate-600","children":"تحقق من الرابط أو عد إلى الأدلّة."}],["$","div",null,{"className":"mt-6 flex flex-col items-center gap-3","children":[["$","$L2",null,{"href":"/","className":"font-bold text-[#1d4ed8]","children":"الرئيسية"}],["$","$L2",null,{"href":"/articles","className":"text-sm font-semibold text-slate-600","children":"أدلّة الاسترجاع"}],["$","a",null,{"href":"https://wa.me/962795827790","target":"_blank","rel":"noopener noreferrer","className":"inline-flex h-12 items-center justify-center gap-2 rounded-2xl bg-[#25D366] px-6 text-sm font-bold text-white shadow-[0_8px_20px_rgba(37,211,102,0.3)] transition hover:bg-[#1ebe57] ","children":[null,"تواصل عبر واتساب"]}]]}]]}],null,["$","$L3",null,{"children":["$","$4",null,{"name":"Next.MetadataOutlet","children":"$@5"}]}]]}],"isPartial":"$@6","staleTime":"$7","varyParams":null},{"rsc":["$","$1","h",{"children":[["$","meta",null,{"name":"robots","content":"noindex"}],["$","$L8",null,{"children":[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1, maximum-scale=5, viewport-fit=cover"}],["$","meta","2",{"name":"theme-color","content":"#1d4ed8"}]]}],["$","div",null,{"hidden":true,"children":["$","$L9",null,{"children":["$","$4",null,{"name":"Next.Metadata","children":[["$","title","0",{"children":"الصفحة غير موجودة | استرجاع انستا"}],["$","meta","1",{"name":"description","content":"خدمة عربية مستقلة تساعد مالك الحساب على استرجاع حساب إنستغرام المعطّل أو المخترق أو المحذوف. نفحص الحالة مجانًا، ونوجّهك لاستخدام نماذج ميتا وإنستغرام الرسمية، ونتابع معك من الجوال على أندرويد وآيفون. لا نطلب كلمة المرور ولسنا تابعين لميتا."}],["$","meta","2",{"name":"application-name","content":"استرجاع انستا"}],["$","meta","3",{"name":"author","content":"استرجاع انستا"}],["$","link","4",{"rel":"manifest","href":"/manifest.webmanifest"}],["$","meta","5",{"name":"keywords","content":"استرجاع حساب انستقرام معطل,استرجاع حساب انستغرام,فك باند انستقرام,حساب انستقرام مخترق,استرجاع حساب انستقرام محذوف,استئناف انستقرام,استرجاع انستقرام من الجوال"}],["$","meta","6",{"name":"creator","content":"استرجاع انستا"}],["$","meta","7",{"name":"publisher","content":"استرجاع انستا"}],["$","meta","8",{"name":"robots","content":"noindex, follow"}],["$","meta","9",{"name":"category","content":"internet services"}],["$","meta","10",{"name":"format-detection","content":"telephone=no, address=no, email=no"}],["$","meta","11",{"name":"mobile-web-app-capable","content":"yes"}],["$","meta","12",{"name":"apple-mobile-web-app-title","content":"استرجاع انستا"}],["$","meta","13",{"name":"apple-mobile-web-app-status-bar-style","content":"default"}],["$","meta","14",{"property":"og:title","content":"استرجاع حساب إنستغرام المعطّل | استرجاع انستا"}],["$","meta","15",{"property":"og:description","content":"خدمة عربية مستقلة تساعد مالك الحساب على استرجاع حساب إنستغرام المعطّل أو المخترق أو المحذوف. نفحص الحالة مجانًا، ونوجّهك لاستخدام نماذج ميتا وإنستغرام الرسمية، ونتابع معك من الجوال على أندرويد وآيفون. لا نطلب كلمة المرور ولسنا تابعين لميتا."}],["$","meta","16",{"property":"og:site_name","content":"استرجاع انستا"}],["$","meta","17",{"property":"og:locale","content":"ar_SA"}],["$","meta","18",{"property":"og:image","content":"https://instagram-recover.com/opengraph-image?b819cda3e17319e3"}],["$","meta","19",{"property":"og:image:type","content":"image/png"}],["$","meta","20",{"property":"og:image:width","content":"1200"}],["$","meta","21",{"property":"og:image:height","content":"630"}],["$","meta","22",{"property":"og:image:alt","content":"استرجاع انستا — استرجاع حساب إنستغرام"}],["$","meta","23",{"property":"og:type","content":"website"}],["$","meta","24",{"name":"twitter:card","content":"summary_large_image"}],["$","meta","25",{"name":"twitter:title","content":"استرجاع حساب إنستغرام المعطّل | استرجاع انستا"}],["$","meta","26",{"name":"twitter:description","content":"خدمة عربية مستقلة تساعد مالك الحساب على استرجاع حساب إنستغرام المعطّل أو المخترق أو المحذوف. نفحص الحالة مجانًا، ونوجّهك لاستخدام نماذج ميتا وإنستغرام الرسمية، ونتابع معك من الجوال على أندرويد وآيفون. لا نطلب كلمة المرور ولسنا تابعين لميتا."}],"$La","$Lb","$Lc","$Ld","$Le","$Lf","$L10","$L11","$L12"]}]}]}],"$L13"]}],"isPartial":"$@14","staleTime":"$7","varyParams":null},{"rsc":"$L15","isPartial":"$@16","staleTime":"$7","varyParams":"$17"}],"isUpgradeableISRFallback":false,"a":"$@18","rootVaryParams":null,"needsRuntimeRequest":"$@19"}
+1a:I[27201,["/_next/static/chunks/3fntmmi971322.js"],"IconMark"]
+1b:I[39756,["/_next/static/chunks/3fntmmi971322.js"],"default"]
+1c:I[37457,["/_next/static/chunks/3fntmmi971322.js"],"default"]
+5:null
+a:["$","meta","27",{"name":"twitter:image","content":"https://instagram-recover.com/opengraph-image?b819cda3e17319e3"}]
+b:["$","meta","28",{"name":"twitter:image:alt","content":"استرجاع انستا — استرجاع حساب إنستغرام"}]
+c:["$","meta","29",{"name":"twitter:image:type","content":"image/png"}]
+d:["$","meta","30",{"name":"twitter:image:width","content":"1200"}]
+e:["$","meta","31",{"name":"twitter:image:height","content":"630"}]
+f:["$","link","32",{"rel":"icon","href":"/favicon.ico?favicon.2vob68tjqpejf.ico","sizes":"256x256","type":"image/x-icon"}]
+10:["$","link","33",{"rel":"icon","href":"/icon.svg","type":"image/svg+xml"}]
+11:["$","link","34",{"rel":"apple-touch-icon","href":"/icon.svg"}]
+12:["$","$L1a","35",{}]
+13:["$","meta",null,{"name":"next-size-adjust","content":""}]
+15:["$","$1","c",{"children":[null,["$","$L1b",null,{"parallelRouterKey":"children","template":["$","$L1c",null,{}]}]]}]
+19:true
+7:300
+7:C
+18:0
+14:"$undefined"
+16:"$undefined"
+6:"$undefined"
