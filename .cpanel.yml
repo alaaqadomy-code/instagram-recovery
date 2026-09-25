@@ -1,4 +1,4 @@
 ---
 deployment:
   tasks:
-    - bash -lc 'cd /home/instagra/instagram-recovery && export NEXT_PUBLIC_SITE_URL=https://instagram-recover.com NEXT_PUBLIC_EMAIL=hello@instarja.com NEXT_PUBLIC_WHATSAPP=962795827790 && for b in /opt/cpanel/ea-nodejs22/bin /opt/cpanel/ea-nodejs20/bin /opt/alt/alt-nodejs22/root/usr/bin /opt/alt/alt-nodejs20/root/usr/bin /usr/local/bin; do [ -x "$b/npm" ] && export PATH="$b:$PATH" && break; done && npm run build && mkdir -p tmp && touch tmp/restart.txt'
+    - /bin/bash -lc "cd /home/instagra/instagram-recovery && export NEXT_PUBLIC_SITE_URL=https://instagram-recover.com NEXT_PUBLIC_EMAIL=hello@instarja.com NEXT_PUBLIC_WHATSAPP=962795827790 && export PATH=/opt/cpanel/ea-nodejs22/bin:/opt/cpanel/ea-nodejs20/bin:/opt/alt/alt-nodejs22/root/usr/bin:/usr/local/bin:$PATH && npm run build && mkdir -p tmp && touch tmp/restart.txt"
