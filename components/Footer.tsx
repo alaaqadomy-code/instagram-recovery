@@ -76,6 +76,9 @@ export function Footer() {
       <div className="border-t border-white/10 px-4 py-4 pb-24 text-center text-xs text-slate-500 sm:pb-4">
         <p>© 2026 {site.name}. غير تابع لإنستغرام أو ميتا.</p>
         <p className="mt-2 flex justify-center gap-4">
+          <Link href="/glossary" className="hover:text-white">
+            المصطلحات
+          </Link>
           <Link href="/privacy-policy" className="hover:text-white">
             سياسة الخصوصية
           </Link>

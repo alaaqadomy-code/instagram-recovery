@@ -4,5 +4,6 @@ export const navLinks = [
   { href: "/articles", label: "أدلّة الاسترجاع" },
   { href: "/about", label: "من نحن" },
   { href: "/faq", label: "الأسئلة الشائعة" },
+  { href: "/glossary", label: "المصطلحات" },
   { href: "/contact", label: "تواصل معنا" },
 ] as const;
