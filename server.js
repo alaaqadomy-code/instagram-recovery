@@ -7,8 +7,7 @@ if (typeof PhusionPassenger !== "undefined") {
 }
 
 const port = parseInt(process.env.PORT || "3000", 10);
-const hostname = "127.0.0.1";
-const app = next({ dev: false, hostname, port });
+const app = next({ dev: false });
 const handle = app.getRequestHandler();
 
 app.prepare().then(() => {
@@ -18,6 +17,6 @@ app.prepare().then(() => {
   if (typeof PhusionPassenger !== "undefined") {
     server.listen("passenger");
   } else {
-    server.listen(port, hostname);
+    server.listen(port);
   }
 });
