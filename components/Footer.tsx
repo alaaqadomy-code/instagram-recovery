@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { WhatsAppCta } from "@/components/Cta";
+import { Logo } from "@/components/Logo";
 import { navLinks } from "@/lib/nav";
 import { site, whatsappUrl } from "@/lib/site";
 
@@ -8,14 +9,7 @@ export function Footer() {
     <footer className="mt-auto bg-[#0b1220] text-slate-300">
       <div className="mx-auto grid max-w-6xl gap-10 px-4 py-14 sm:grid-cols-2 sm:px-6 lg:grid-cols-4">
         <div>
-          <div className="brightness-110">
-            <span className="flex items-center gap-2.5">
-              <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-br from-[#2563eb] to-[#1e40af] text-[22px] font-extrabold text-white">
-                {site.logoLetters}
-              </span>
-              <span className="text-[17px] font-extrabold text-white">{site.name}</span>
-            </span>
-          </div>
+          <Logo tone="light" />
           <p className="mt-4 text-sm leading-7 text-slate-400">{site.tagline}</p>
           <WhatsAppCta className="mt-5">تواصل عبر واتساب</WhatsAppCta>
         </div>
