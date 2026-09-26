@@ -31,7 +31,7 @@ export function ArticlesExplorer({ articles }: { articles: Article[] }) {
         className="mt-6 flex flex-col gap-3 sm:flex-row"
       >
         <label htmlFor="q" className="sr-only">
-          ابحث في الأدلّة
+          ابحث في المدونة
         </label>
         <input
           id="q"
@@ -53,7 +53,7 @@ export function ArticlesExplorer({ articles }: { articles: Article[] }) {
         </section>
       ))}
       {filtered.length === 0 ? (
-        <p className="mt-10 text-slate-600">لا يوجد دليل لهذه الكلمة بعد. راسلنا عبر واتساب لنكتبه.</p>
+        <p className="mt-10 text-slate-600">لا توجد مقالة لهذه الكلمة بعد. راسلنا عبر واتساب لنكتبها.</p>
       ) : null}
     </>
   );

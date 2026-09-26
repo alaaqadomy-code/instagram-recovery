@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { ArticleText } from "@/components/ArticleText";
 import { WhatsAppCta } from "@/components/Cta";
 import { articles, getArticle } from "@/lib/articles";
 import { absoluteUrl } from "@/lib/seo";
@@ -22,7 +23,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     return { title: "الدليل غير موجود", robots: { index: false, follow: true } };
   }
 
-  const ogImage = absoluteUrl("/opengraph-image");
+  const ogImage = article.image ? absoluteUrl(article.image) : absoluteUrl("/opengraph-image");
+  const ogWidth = article.image ? 1200 : 1200;
+  const ogHeight = article.image ? 675 : 630;
 
   return {
     title: article.title,
@@ -40,9 +43,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       images: [
         {
           url: ogImage,
-          width: 1200,
-          height: 630,
-          alt: `${site.name} — ${article.title}`,
+          width: ogWidth,
+          height: ogHeight,
+          alt: article.imageAlt ?? `${site.name} — ${article.title}`,
         },
       ],
     },
@@ -81,7 +84,7 @@ export default async function ArticlePage({ params }: Props) {
         },
         mainEntityOfPage: pageUrl,
         keywords: article.keywords.join(", "),
-        image: absoluteUrl("/opengraph-image"),
+        image: article.image ? absoluteUrl(article.image) : absoluteUrl("/opengraph-image"),
         speakable: {
           "@type": "SpeakableSpecification",
           cssSelector: ["h1", "h2"],
@@ -99,7 +102,7 @@ export default async function ArticlePage({ params }: Props) {
         "@type": "BreadcrumbList",
         itemListElement: [
           { "@type": "ListItem", position: 1, name: "الرئيسية", item: absoluteUrl("/") },
-          { "@type": "ListItem", position: 2, name: "الأدلّة", item: absoluteUrl("/articles") },
+          { "@type": "ListItem", position: 2, name: "المدونة", item: absoluteUrl("/articles") },
           { "@type": "ListItem", position: 3, name: article.title, item: pageUrl },
         ],
       },
@@ -110,12 +113,21 @@ export default async function ArticlePage({ params }: Props) {
     <article className="mx-auto max-w-3xl px-4 py-12 sm:px-6">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <p className="text-sm font-bold text-[#1d4ed8]">
-        <Link href="/articles">أدلّة الاسترجاع</Link> · {article.category}
+        <Link href="/articles">المدونة</Link> · {article.category}
       </p>
       <h1 className="mt-3 text-3xl font-extrabold leading-[1.4] sm:text-4xl">{article.title}</h1>
       <p className="mt-4 text-sm text-slate-500">
         نُشر {article.date} · تحديث {article.updated} · {article.readMinutes} دقائق
       </p>
+      {article.image ? (
+        <img
+          src={article.image}
+          alt={article.imageAlt ?? article.title}
+          width={1200}
+          height={675}
+          className="mt-6 h-auto w-full rounded-2xl"
+        />
+      ) : null}
       <div className="mt-8 space-y-8">
         {article.sections.map((section, sectionIndex) => (
           <section key={section.heading || section.paragraphs[0]}>
@@ -129,7 +141,7 @@ export default async function ArticlePage({ params }: Props) {
                     : "mt-3 leading-8 text-slate-700"
                 }
               >
-                {paragraph}
+                <ArticleText text={paragraph} />
               </p>
             ))}
           </section>
@@ -153,7 +165,7 @@ export default async function ArticlePage({ params }: Props) {
       </div>
       {related.length ? (
         <div className="mt-12">
-          <h2 className="text-xl font-extrabold">أدلّة قريبة</h2>
+          <h2 className="text-xl font-extrabold">من المدونة</h2>
           <ul className="mt-4 space-y-2 text-sm font-semibold text-[#1d4ed8]">
             {related.map((item) => (
               <li key={item.slug}>

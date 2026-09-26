@@ -53,9 +53,16 @@ export const metadata: Metadata = {
     statusBarStyle: "default",
   },
   formatDetection: { telephone: false, email: false, address: false },
-  ...(process.env.NEXT_PUBLIC_GSC
-    ? { verification: { google: process.env.NEXT_PUBLIC_GSC } }
-    : {}),
+  verification: {
+    ...(process.env.NEXT_PUBLIC_GSC
+      ? { google: process.env.NEXT_PUBLIC_GSC }
+      : {}),
+    other: {
+      "msvalidate.01":
+        process.env.NEXT_PUBLIC_BING_WEBMASTER ??
+        "D909DC0D7874D0FDE4C80DDE330570BD",
+    },
+  },
 };
 
 export const viewport = {

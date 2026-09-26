@@ -16,7 +16,7 @@ export function BlogSearch({ initialQuery }: { initialQuery: string }) {
   return (
     <form onSubmit={onSubmit} className="flex flex-col gap-3 sm:flex-row">
       <label htmlFor="q" className="sr-only">
-        ابحث في الأدلّة
+        ابحث في المدونة
       </label>
       <input
         id="q"

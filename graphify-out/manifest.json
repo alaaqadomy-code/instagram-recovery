@@ -12,16 +12,16 @@
     "semantic_hash": "71008934b27c733c304ff6bb534f7005"
   },
   "app/articles/[slug]/page.tsx": {
-    "mtime": 1790280749.7440555,
-    "seen": 1790338432.4160256,
-    "ast_hash": "89dc93a12215a78a5f030634416db807",
-    "semantic_hash": "89dc93a12215a78a5f030634416db807"
+    "mtime": 1790440859.314403,
+    "seen": 1790442251.83037,
+    "ast_hash": "6bd3824c0b1706e3177f966127a282da",
+    "semantic_hash": ""
   },
   "app/articles/page.tsx": {
-    "mtime": 1790279393.7456684,
-    "seen": 1790338432.4160268,
-    "ast_hash": "6d52e7d85a2d3c2a65b211d3176d9538",
-    "semantic_hash": "6d52e7d85a2d3c2a65b211d3176d9538"
+    "mtime": 1790440859.257913,
+    "seen": 1790442251.830372,
+    "ast_hash": "6f55469f443d30223523ad44aae03804",
+    "semantic_hash": ""
   },
   "app/contact/page.tsx": {
     "mtime": 1790279076.4094043,
@@ -36,10 +36,10 @@
     "semantic_hash": "e16af10d527c74c8b24d589cba427fa3"
   },
   "app/layout.tsx": {
-    "mtime": 1790334530.8700097,
-    "seen": 1790338432.41603,
-    "ast_hash": "f3fea0e53b7b4afeffdffd53d1b138a9",
-    "semantic_hash": "f3fea0e53b7b4afeffdffd53d1b138a9"
+    "mtime": 1790440859.3230767,
+    "seen": 1790442251.8303819,
+    "ast_hash": "63dc037f7587cf6bd2f7d7dc71b793ce",
+    "semantic_hash": ""
   },
   "app/manifest.ts": {
     "mtime": 1790279019.374293,
@@ -48,10 +48,10 @@
     "semantic_hash": "dc50913f222e3ba9760e367e56e38ce7"
   },
   "app/not-found.tsx": {
-    "mtime": 1790279409.929272,
-    "seen": 1790338432.4160318,
-    "ast_hash": "385125107322535a313704f59375dc8f",
-    "semantic_hash": "385125107322535a313704f59375dc8f"
+    "mtime": 1790440859.3240817,
+    "seen": 1790442251.830387,
+    "ast_hash": "54852ec045c42de78c468050e2637a63",
+    "semantic_hash": ""
   },
   "app/opengraph-image.tsx": {
     "mtime": 1790279478.6307108,
@@ -60,10 +60,10 @@
     "semantic_hash": "8c77fb8a9a40dc8cb99a6265e28aaf65"
   },
   "app/page.tsx": {
-    "mtime": 1790334539.6836371,
-    "seen": 1790338432.4160335,
-    "ast_hash": "675c2695b617206007a9eb7b61d1a53c",
-    "semantic_hash": "675c2695b617206007a9eb7b61d1a53c"
+    "mtime": 1790444500.239847,
+    "seen": 1790444766.7316775,
+    "ast_hash": "612392f9d0585da806453ab729641277",
+    "semantic_hash": ""
   },
   "app/privacy-policy/page.tsx": {
     "mtime": 1790279083.1814668,
@@ -72,10 +72,10 @@
     "semantic_hash": "1212615b7a18728d09d661a96a248278"
   },
   "app/robots.ts": {
-    "mtime": 1790334530.866197,
-    "seen": 1790338432.4160357,
-    "ast_hash": "3322dc8f7b61a6ac69692a5ec9bc5953",
-    "semantic_hash": "3322dc8f7b61a6ac69692a5ec9bc5953"
+    "mtime": 1790343036.9183314,
+    "seen": 1790353696.969802,
+    "ast_hash": "921f0ce632ce3ce07689aa89df201f61",
+    "semantic_hash": ""
   },
   "app/services/page.tsx": {
     "mtime": 1790279053.9084842,
@@ -84,10 +84,10 @@
     "semantic_hash": "4e464294e9dc827ba28cb08b0e6fa277"
   },
   "app/sitemap.ts": {
-    "mtime": 1790279404.3931935,
-    "seen": 1790338432.4160373,
-    "ast_hash": "d076886e23954a2c44ec42d1ecae0174",
-    "semantic_hash": "d076886e23954a2c44ec42d1ecae0174"
+    "mtime": 1790343038.046516,
+    "seen": 1790353696.9698048,
+    "ast_hash": "3c3d4dd882b800724846ffa4b580d109",
+    "semantic_hash": ""
   },
   "app/terms/page.tsx": {
     "mtime": 1790279086.124863,
@@ -96,28 +96,28 @@
     "semantic_hash": "30be8a1f47978fac99c28da544189b6f"
   },
   "components/ArticleCard.tsx": {
-    "mtime": 1790279010.5277798,
-    "seen": 1790338432.4160395,
-    "ast_hash": "f9cc572a3023e1b16e7b4fdde5b912da",
-    "semantic_hash": "f9cc572a3023e1b16e7b4fdde5b912da"
+    "mtime": 1790440859.3217833,
+    "seen": 1790442251.8303988,
+    "ast_hash": "3f7e5eb0a2505003f3ea784e0e3c380e",
+    "semantic_hash": ""
   },
   "components/ArticlesExplorer.tsx": {
-    "mtime": 1790279368.183493,
-    "seen": 1790338432.4160402,
-    "ast_hash": "853050a2d6a69515b54f839a0973cba9",
-    "semantic_hash": "853050a2d6a69515b54f839a0973cba9"
+    "mtime": 1790440859.3260767,
+    "seen": 1790442251.8304012,
+    "ast_hash": "9b5d3473277ea08ba658cc029ed86dc9",
+    "semantic_hash": ""
   },
   "components/BlogSearch.tsx": {
-    "mtime": 1790279011.861875,
-    "seen": 1790338432.4160411,
-    "ast_hash": "bbb7679f45e40150a75cc8b20655a6d1",
-    "semantic_hash": "bbb7679f45e40150a75cc8b20655a6d1"
+    "mtime": 1790440859.3270736,
+    "seen": 1790442251.8304026,
+    "ast_hash": "dac0ccc8554bcf340c8e46c7c50dac72",
+    "semantic_hash": ""
   },
   "components/Cta.tsx": {
-    "mtime": 1790279728.7999537,
-    "seen": 1790338432.416042,
-    "ast_hash": "8161f5c484bdfb5f2679a5ba6865894b",
-    "semantic_hash": "8161f5c484bdfb5f2679a5ba6865894b"
+    "mtime": 1790424010.5061772,
+    "seen": 1790437330.7978547,
+    "ast_hash": "3f4ca2f1a947fb1e1304e228f1812e5a",
+    "semantic_hash": ""
   },
   "components/FaqJsonLd.tsx": {
     "mtime": 1790279364.6161964,
@@ -126,22 +126,22 @@
     "semantic_hash": "17ec12ac67b4432fc5d8d2177ac7dfb2"
   },
   "components/Footer.tsx": {
-    "mtime": 1790279440.0488977,
-    "seen": 1790338432.4160438,
-    "ast_hash": "438f61bf3fe2761518ec67580a72f759",
-    "semantic_hash": "438f61bf3fe2761518ec67580a72f759"
+    "mtime": 1790440859.3240817,
+    "seen": 1790442251.830407,
+    "ast_hash": "5ee20795d4d233bdf324e8c1cf0186c0",
+    "semantic_hash": ""
   },
   "components/Header.tsx": {
-    "mtime": 1790279728.3256116,
-    "seen": 1790338432.4160454,
-    "ast_hash": "a08394bb4d1b22fe2122660aa5e22a66",
-    "semantic_hash": "a08394bb4d1b22fe2122660aa5e22a66"
+    "mtime": 1790424015.6092618,
+    "seen": 1790437330.7978582,
+    "ast_hash": "16a72fa6b186732e3e10c5bd643c0804",
+    "semantic_hash": ""
   },
   "components/JsonLd.tsx": {
-    "mtime": 1790279359.9556324,
-    "seen": 1790338432.4160461,
-    "ast_hash": "d1a77e9fb5b0308ec6b515ed3f634a4a",
-    "semantic_hash": "d1a77e9fb5b0308ec6b515ed3f634a4a"
+    "mtime": 1790355100.333437,
+    "seen": 1790437330.7978594,
+    "ast_hash": "096ee84596682de87c8a288039510af6",
+    "semantic_hash": ""
   },
   "components/Logo.tsx": {
     "mtime": 1790279420.8845634,
@@ -156,10 +156,10 @@
     "semantic_hash": "759e2f40e0858b6f035f3ca2ceda0afa"
   },
   "components/WhatsAppFloat.tsx": {
-    "mtime": 1790279420.885762,
-    "seen": 1790338432.416049,
-    "ast_hash": "2f66941e08fdb05e228c43c595d545cb",
-    "semantic_hash": "2f66941e08fdb05e228c43c595d545cb"
+    "mtime": 1790424012.8145425,
+    "seen": 1790437330.7978635,
+    "ast_hash": "a8a408bcf4568d10346b17a6a1ff99a5",
+    "semantic_hash": ""
   },
   "components/WhatsAppIcon.tsx": {
     "mtime": 1790278994.788815,
@@ -174,10 +174,10 @@
     "semantic_hash": "dfa1f5f6a7037bf39dc510f30b180002"
   },
   "lib/articles.ts": {
-    "mtime": 1790280746.286243,
-    "seen": 1790338432.4160516,
-    "ast_hash": "158a0b8e3385acbff5f76f942ee11fd9",
-    "semantic_hash": "158a0b8e3385acbff5f76f942ee11fd9"
+    "mtime": 1790441757.653688,
+    "seen": 1790442251.8304186,
+    "ast_hash": "32a05a8ff8224ac6ef3ea1f031b4ac4d",
+    "semantic_hash": ""
   },
   "lib/articles/appeal.ts": {
     "mtime": 1790280739.497744,
@@ -204,10 +204,10 @@
     "semantic_hash": "5ab48abd2ac6e902e2899ab3e951aa91"
   },
   "lib/articles/types.ts": {
-    "mtime": 1790280396.0275733,
-    "seen": 1790338432.4160562,
-    "ast_hash": "527db250ad22f4ea7097a55b201ac3bb",
-    "semantic_hash": "527db250ad22f4ea7097a55b201ac3bb"
+    "mtime": 1790440859.3240817,
+    "seen": 1790442251.8304403,
+    "ast_hash": "7c955108ea1b7fc06f9b4019b7afb20c",
+    "semantic_hash": ""
   },
   "lib/content.ts": {
     "mtime": 1790280762.0777068,
@@ -216,10 +216,10 @@
     "semantic_hash": "4501236028e6da7e4d58b974df6cb146"
   },
   "lib/nav.ts": {
-    "mtime": 1790278916.5677683,
-    "seen": 1790338432.4160578,
-    "ast_hash": "826d5d165d42321711e546229b68a995",
-    "semantic_hash": "826d5d165d42321711e546229b68a995"
+    "mtime": 1790440859.3260767,
+    "seen": 1790442251.830444,
+    "ast_hash": "e23de8eccd35808ed097e1a16d75e39b",
+    "semantic_hash": ""
   },
   "lib/seo.ts": {
     "mtime": 1790279358.5612695,
@@ -228,16 +228,16 @@
     "semantic_hash": "61673d089b7413d143ff7ab905099c1c"
   },
   "lib/site.ts": {
-    "mtime": 1790334530.866197,
-    "seen": 1790338432.4160595,
-    "ast_hash": "f7cb8693eabdc6117c3473e0a7d587c9",
-    "semantic_hash": "f7cb8693eabdc6117c3473e0a7d587c9"
+    "mtime": 1790355098.9810154,
+    "seen": 1790437330.7978857,
+    "ast_hash": "4f2910f6781fae7f96c2a764108fcb78",
+    "semantic_hash": ""
   },
   "next.config.ts": {
-    "mtime": 1790280761.8037665,
-    "seen": 1790338432.4160604,
-    "ast_hash": "949b831331008938718edcbc0347efb6",
-    "semantic_hash": "949b831331008938718edcbc0347efb6"
+    "mtime": 1790440859.2863169,
+    "seen": 1790442251.8304482,
+    "ast_hash": "58097b01047cd6ddfe03bc39af6f5a70",
+    "semantic_hash": ""
   },
   "package.json": {
     "mtime": 1790278190.9055717,
@@ -256,5 +256,1193 @@
     "seen": 1790338432.416063,
     "ast_hash": "02fc19ad21338c2ab820a70136310db4",
     "semantic_hash": "02fc19ad21338c2ab820a70136310db4"
+  },
+  ".aeo-baseline.json": {
+    "mtime": 1790342813.0582728,
+    "seen": 1790353696.9697688,
+    "ast_hash": "411b4dddc62b01b838606ba20a66d4eb",
+    "semantic_hash": ""
+  },
+  "app/glossary/page.tsx": {
+    "mtime": 1790440859.3678305,
+    "seen": 1790442251.8303804,
+    "ast_hash": "51032bf53f1cd8d1f9fd149f79ad1623",
+    "semantic_hash": ""
+  },
+  "app/llms-full.txt/route.ts": {
+    "mtime": 1790440859.2559187,
+    "seen": 1790442251.830383,
+    "ast_hash": "b8c42b1290b38afc3ec56141e49ec708",
+    "semantic_hash": ""
+  },
+  "app/llms.txt/route.ts": {
+    "mtime": 1790441777.4076877,
+    "seen": 1790442251.830384,
+    "ast_hash": "efe2b042b3b3d2dc28adfcfe19c116a7",
+    "semantic_hash": ""
+  },
+  "lib/glossary.ts": {
+    "mtime": 1790343056.758862,
+    "seen": 1790353696.9698343,
+    "ast_hash": "ee62d6a910da5f034d59183926a7ac24",
+    "semantic_hash": ""
+  },
+  "server.js": {
+    "mtime": 1790444743.1175957,
+    "seen": 1790444766.7318144,
+    "ast_hash": "622c832987285a7c91380166b621c837",
+    "semantic_hash": ""
+  },
+  ".aeo-report.md": {
+    "mtime": 1790342830.7798777,
+    "seen": 1790353696.9698462,
+    "ast_hash": "9745b2bbb2a78edac1b50515730c06d1",
+    "semantic_hash": ""
+  },
+  ".aeo-work-log.md": {
+    "mtime": 1790440859.3270736,
+    "seen": 1790442251.8305273,
+    "ast_hash": "59d1fa80fc4079cddde599b359b3f6b9",
+    "semantic_hash": ""
+  },
+  "AGENTS.md": {
+    "mtime": 1790277905.3449807,
+    "seen": 1790353696.9698484,
+    "ast_hash": "01e8142356e15c3404e0d84c48187cd0",
+    "semantic_hash": ""
+  },
+  "CLAUDE.md": {
+    "mtime": 1790277905.3459792,
+    "seen": 1790353696.9698493,
+    "ast_hash": "5c27369b226fcf2be8a6cfe52224e767",
+    "semantic_hash": ""
+  },
+  "README.md": {
+    "mtime": 1790425489.523122,
+    "seen": 1790437330.79795,
+    "ast_hash": "15ff32b6c0c84fab91c0e617b1db0a43",
+    "semantic_hash": ""
+  },
+  "public/file.svg": {
+    "mtime": 1790277822.6264632,
+    "seen": 1790353696.9698515,
+    "ast_hash": "d09f95206c3fa0bb9bd9fefabfd0ea71",
+    "semantic_hash": ""
+  },
+  "public/globe.svg": {
+    "mtime": 1790277822.6387,
+    "seen": 1790353696.9698522,
+    "ast_hash": "2aaafa6a49b6563925fe440891e32717",
+    "semantic_hash": ""
+  },
+  "public/icon.svg": {
+    "mtime": 1790279012.229762,
+    "seen": 1790353696.9698532,
+    "ast_hash": "b5185eef3068f0a7c1dd339c8210f532",
+    "semantic_hash": ""
+  },
+  "public/next.svg": {
+    "mtime": 1790277822.6510847,
+    "seen": 1790353696.969854,
+    "ast_hash": "8e061864f388b47f33a1c3780831193e",
+    "semantic_hash": ""
+  },
+  "public/vercel.svg": {
+    "mtime": 1790277822.6634564,
+    "seen": 1790353696.9698553,
+    "ast_hash": "c0af2f507b369b085b35ef4bbe3bcf1e",
+    "semantic_hash": ""
+  },
+  "public/window.svg": {
+    "mtime": 1790277822.674251,
+    "seen": 1790353696.9698565,
+    "ast_hash": "a2760511c65806022ad20adf74370ff3",
+    "semantic_hash": ""
+  },
+  "components/ArticleText.tsx": {
+    "mtime": 1790440859.3240817,
+    "seen": 1790442251.8304,
+    "ast_hash": "b8af59b8a981a39a31bccbb23f9dbdea",
+    "semantic_hash": ""
+  },
+  "data/seo/build_kw_xlsx.py": {
+    "mtime": 1790440859.3240817,
+    "seen": 1790442251.8304164,
+    "ast_hash": "484bfc45f67e67fd83b53b9def398311",
+    "semantic_hash": ""
+  },
+  "lib/articles/guides-more.ts": {
+    "mtime": 1790440859.3270736,
+    "seen": 1790442251.8304286,
+    "ast_hash": "cb012665664b396397a2d2de87ec8909",
+    "semantic_hash": ""
+  },
+  "lib/articles/guides.ts": {
+    "mtime": 1790440859.2524583,
+    "seen": 1790442251.83043,
+    "ast_hash": "64d7a6b01c1ba996dc33377f29a18af1",
+    "semantic_hash": ""
+  },
+  "lib/articles/keywords-a.ts": {
+    "mtime": 1790440859.3240817,
+    "seen": 1790442251.830431,
+    "ast_hash": "2ab8e016e0306cbac37a5cba0ced42e9",
+    "semantic_hash": ""
+  },
+  "lib/articles/keywords-b.ts": {
+    "mtime": 1790440859.3270736,
+    "seen": 1790442251.830432,
+    "ast_hash": "968cfc7153812b40f3e76e730df2fa63",
+    "semantic_hash": ""
+  },
+  "scripts/count-guide-words.mjs": {
+    "mtime": 1790440859.2863169,
+    "seen": 1790442251.8304589,
+    "ast_hash": "3c92757445bff9a5f4aade7e9a843e2e",
+    "semantic_hash": ""
+  },
+  "scripts/cpanel-check-after-swap.ps1": {
+    "mtime": 1790440859.3270736,
+    "seen": 1790442251.83046,
+    "ast_hash": "c1432efdbaf045e3d93301680c492954",
+    "semantic_hash": ""
+  },
+  "scripts/cpanel-check-git.ps1": {
+    "mtime": 1790440859.2544525,
+    "seen": 1790442251.8304613,
+    "ast_hash": "e553182dc604b6d30d1e469f90483737",
+    "semantic_hash": ""
+  },
+  "scripts/cpanel-check-homemode.ps1": {
+    "mtime": 1790440859.3240817,
+    "seen": 1790442251.8304625,
+    "ast_hash": "07337e1b10b56230f80470951c255604",
+    "semantic_hash": ""
+  },
+  "scripts/cpanel-check-index.ps1": {
+    "mtime": 1790440859.3240817,
+    "seen": 1790442251.8304634,
+    "ast_hash": "b1bfc68d5725cb187c6d16ba5e198708",
+    "semantic_hash": ""
+  },
+  "scripts/cpanel-check-node-cron.ps1": {
+    "mtime": 1790440859.3240817,
+    "seen": 1790442251.8304648,
+    "ast_hash": "891169bdcdf8124ce03909621ea23a90",
+    "semantic_hash": ""
+  },
+  "scripts/cpanel-chmod755-test.ps1": {
+    "mtime": 1790440859.2524583,
+    "seen": 1790442251.8304658,
+    "ast_hash": "486969507e22791e48ef8f9eb2250135",
+    "semantic_hash": ""
+  },
+  "scripts/cpanel-curl-probe.ps1": {
+    "mtime": 1790440859.314403,
+    "seen": 1790442251.830467,
+    "ast_hash": "6d77486c75b7f3c41b27b01cf490af54",
+    "semantic_hash": ""
+  },
+  "scripts/cpanel-debug-headers.ps1": {
+    "mtime": 1790440859.3230767,
+    "seen": 1790442251.8304682,
+    "ast_hash": "2f8888553b34dde85fba64e554ed1ce6",
+    "semantic_hash": ""
+  },
+  "scripts/cpanel-debug-server.ps1": {
+    "mtime": 1790440859.2524583,
+    "seen": 1790442251.8304691,
+    "ast_hash": "3bbf73ada9efbbad6e5c979e2654ba04",
+    "semantic_hash": ""
+  },
+  "scripts/cpanel-deploy-cookie-fix.ps1": {
+    "mtime": 1790440859.3240817,
+    "seen": 1790442251.83047,
+    "ast_hash": "bd63a5ae904ee7eb8ee3d34605c7387b",
+    "semantic_hash": ""
+  },
+  "scripts/cpanel-deploy-final.ps1": {
+    "mtime": 1790440859.3240817,
+    "seen": 1790442251.8304715,
+    "ast_hash": "0f2b6dddac2f59c8ee1ad6c55f639713",
+    "semantic_hash": ""
+  },
+  "scripts/cpanel-deploy-server-fix.ps1": {
+    "mtime": 1790440859.3250773,
+    "seen": 1790442251.8304725,
+    "ast_hash": "bb18de9948758424c7a059dac66c46b2",
+    "semantic_hash": ""
+  },
+  "scripts/cpanel-diag-build.ps1": {
+    "mtime": 1790440859.2450585,
+    "seen": 1790442251.8304734,
+    "ast_hash": "eb1ae4a1f113d31862d773e7940b7712",
+    "semantic_hash": ""
+  },
+  "scripts/cpanel-diag-build2.ps1": {
+    "mtime": 1790440859.250463,
+    "seen": 1790442251.8304746,
+    "ast_hash": "3e2ba4556420da190b28f4b3ae72f4d0",
+    "semantic_hash": ""
+  },
+  "scripts/cpanel-docroot.ps1": {
+    "mtime": 1790440859.3240817,
+    "seen": 1790442251.8304758,
+    "ast_hash": "8a45009d203fb03c6f6a52ec3b4cba73",
+    "semantic_hash": ""
+  },
+  "scripts/cpanel-ensure-deps-npm.ps1": {
+    "mtime": 1790440859.2559187,
+    "seen": 1790442251.830477,
+    "ast_hash": "6e3f893460dbdd3e7b6d0ccf40e121ff",
+    "semantic_hash": ""
+  },
+  "scripts/cpanel-ensure-deps.ps1": {
+    "mtime": 1790440859.3270736,
+    "seen": 1790442251.8304784,
+    "ast_hash": "66ab1ae8f0094bf9ab837df373ca7033",
+    "semantic_hash": ""
+  },
+  "scripts/cpanel-fix-403-htaccess.ps1": {
+    "mtime": 1790440859.2450585,
+    "seen": 1790442251.8304794,
+    "ast_hash": "0247c7f5cb975a3be46dfd7d62ad69c5",
+    "semantic_hash": ""
+  },
+  "scripts/cpanel-fix-404.ps1": {
+    "mtime": 1790440859.3240817,
+    "seen": 1790442251.8304803,
+    "ast_hash": "ee3aeccf995ee8ae973122409cc2c22f",
+    "semantic_hash": ""
+  },
+  "scripts/cpanel-fix-and-ensure-deps.ps1": {
+    "mtime": 1790440859.3240817,
+    "seen": 1790442251.830482,
+    "ast_hash": "6b870df5d8a182c66c29d6587813ab5b",
+    "semantic_hash": ""
+  },
+  "scripts/cpanel-fix-perms.ps1": {
+    "mtime": 1790440859.25146,
+    "seen": 1790442251.8304832,
+    "ast_hash": "04c02427a9e529db731cc5dc26dde8ee",
+    "semantic_hash": ""
+  },
+  "scripts/cpanel-fix-static.ps1": {
+    "mtime": 1790440859.2840068,
+    "seen": 1790442251.8304842,
+    "ast_hash": "c59b305133d19f98a86b8bbe45adcbb2",
+    "semantic_hash": ""
+  },
+  "scripts/cpanel-git-deploy.ps1": {
+    "mtime": 1790440859.257913,
+    "seen": 1790442251.8304856,
+    "ast_hash": "38acc274b9806d36b309b467b276f941",
+    "semantic_hash": ""
+  },
+  "scripts/cpanel-index-probe.ps1": {
+    "mtime": 1790440859.314403,
+    "seen": 1790442251.8304868,
+    "ast_hash": "b10a7c55b95298020e9fe66f53210364",
+    "semantic_hash": ""
+  },
+  "scripts/cpanel-logs-and-cookie.ps1": {
+    "mtime": 1790440859.3240817,
+    "seen": 1790442251.8304882,
+    "ast_hash": "3795cc30d3272f3794380aca9f6944d5",
+    "semantic_hash": ""
+  },
+  "scripts/cpanel-passenger-config.ps1": {
+    "mtime": 1790440859.3678305,
+    "seen": 1790442251.8304894,
+    "ast_hash": "028440ad69ff492b0f51a4f413132713",
+    "semantic_hash": ""
+  },
+  "scripts/cpanel-php-probe.ps1": {
+    "mtime": 1790440859.3250773,
+    "seen": 1790442251.8304904,
+    "ast_hash": "bc599fc34b62a20c17325c1f498e57d3",
+    "semantic_hash": ""
+  },
+  "scripts/cpanel-probe-apis.ps1": {
+    "mtime": 1790440859.257913,
+    "seen": 1790442251.8304915,
+    "ast_hash": "cfa81b8cf88da8c1daf95ce7ea12655c",
+    "semantic_hash": ""
+  },
+  "scripts/cpanel-pull-build.ps1": {
+    "mtime": 1790440859.3260767,
+    "seen": 1790442251.8304927,
+    "ast_hash": "a279d24e3633ec2b5ef94a9b60022ac0",
+    "semantic_hash": ""
+  },
+  "scripts/cpanel-raw-probe.ps1": {
+    "mtime": 1790440859.2524583,
+    "seen": 1790442251.830494,
+    "ast_hash": "9666cf1c8abe79df1c0a20279c504b4f",
+    "semantic_hash": ""
+  },
+  "scripts/cpanel-rebuild.ps1": {
+    "mtime": 1790440859.3250773,
+    "seen": 1790442251.8304949,
+    "ast_hash": "4a071d43bd04021e94dd33e1574d274f",
+    "semantic_hash": ""
+  },
+  "scripts/cpanel-recreate-passenger.ps1": {
+    "mtime": 1790440859.25146,
+    "seen": 1790442251.830496,
+    "ast_hash": "950ef327e958e7757c20b935d48c3e8e",
+    "semantic_hash": ""
+  },
+  "scripts/cpanel-reenable.ps1": {
+    "mtime": 1790440859.3260767,
+    "seen": 1790442251.830497,
+    "ast_hash": "e6123d8d6545bc44087ba6c0ade7fc65",
+    "semantic_hash": ""
+  },
+  "scripts/cpanel-rename-pub.ps1": {
+    "mtime": 1790440859.3766923,
+    "seen": 1790442251.8304982,
+    "ast_hash": "4d0f6cad8a1f9b63e465723a4fd89bc8",
+    "semantic_hash": ""
+  },
+  "scripts/cpanel-reregister-passenger.ps1": {
+    "mtime": 1790440859.257913,
+    "seen": 1790442251.8304994,
+    "ast_hash": "d3d9ffe2e2fe228fc89b4fb10d437db5",
+    "semantic_hash": ""
+  },
+  "scripts/cpanel-restart-debug.ps1": {
+    "mtime": 1790440859.3260767,
+    "seen": 1790442251.8305004,
+    "ast_hash": "3cbe9253b25b040ad9955d328c5b7c7e",
+    "semantic_hash": ""
+  },
+  "scripts/cpanel-restore-pub.ps1": {
+    "mtime": 1790440859.3240817,
+    "seen": 1790442251.8305013,
+    "ast_hash": "10d6cd88ad37ebe4b2cf06ae155562ef",
+    "semantic_hash": ""
+  },
+  "scripts/cpanel-restore-server.ps1": {
+    "mtime": 1790440859.3260767,
+    "seen": 1790442251.8305027,
+    "ast_hash": "335801ecdd8ce6a7d84d3bd9db7eae05",
+    "semantic_hash": ""
+  },
+  "scripts/cpanel-set-docroot.ps1": {
+    "mtime": 1790440859.3240817,
+    "seen": 1790442251.830506,
+    "ast_hash": "7cb8b7715b8e963f4907e8ca46298b8c",
+    "semantic_hash": ""
+  },
+  "scripts/cpanel-swap-docroot.ps1": {
+    "mtime": 1790440859.3217833,
+    "seen": 1790442251.830507,
+    "ast_hash": "f43329056c3a46792bc7486a33402e98",
+    "semantic_hash": ""
+  },
+  "scripts/cpanel-symlink-docroot.ps1": {
+    "mtime": 1790440859.2544525,
+    "seen": 1790442251.8305082,
+    "ast_hash": "2711b9f2089acd2bd745e87805c648ff",
+    "semantic_hash": ""
+  },
+  "scripts/cpanel-symlink-pub.ps1": {
+    "mtime": 1790440859.3250773,
+    "seen": 1790442251.8305094,
+    "ast_hash": "d819e0243f20c7b559a905c12bfa86a9",
+    "semantic_hash": ""
+  },
+  "scripts/cpanel-upload-and-build.ps1": {
+    "mtime": 1790440859.3240817,
+    "seen": 1790442251.8305106,
+    "ast_hash": "0004397b330f892c799eb0bab54c8eac",
+    "semantic_hash": ""
+  },
+  "scripts/cpanel-upload-next-tgz.ps1": {
+    "mtime": 1790440859.3270736,
+    "seen": 1790442251.8305116,
+    "ast_hash": "c2113315d0f3888e3f24d31feaa76056",
+    "semantic_hash": ""
+  },
+  "scripts/cpanel-upload-server.ps1": {
+    "mtime": 1790440859.3240817,
+    "seen": 1790442251.830513,
+    "ast_hash": "5c6139e4f1aa99568b6a45eafa65ec5b",
+    "semantic_hash": ""
+  },
+  "scripts/server.debug.js": {
+    "mtime": 1790440859.3678305,
+    "seen": 1790442251.8305163,
+    "ast_hash": "72a1b2d54e9d5f5ec554a5da5ffd2ee7",
+    "semantic_hash": ""
+  },
+  "scripts/server.deploy-build.js": {
+    "mtime": 1790440859.3240817,
+    "seen": 1790442251.8305173,
+    "ast_hash": "9e60874a26e45d5723f9fec9e010c5f6",
+    "semantic_hash": ""
+  },
+  "scripts/server.extract-deploy.js": {
+    "mtime": 1790440859.2863169,
+    "seen": 1790442251.8305187,
+    "ast_hash": "eefee28044180a87576cc00bea26369c",
+    "semantic_hash": ""
+  },
+  ".cpanel.yml": {
+    "mtime": 1790425489.523122,
+    "seen": 1790437330.7979457,
+    "ast_hash": "ab2d318001ac5e8a9e8823032beced5b",
+    "semantic_hash": ""
+  },
+  "graphify-out/converted/instagram-recovery-keywords-keyword-planner_32ec0665.md": {
+    "mtime": 1790437328.1711483,
+    "seen": 1790437330.797951,
+    "ast_hash": "dbb42c66cc0efebe1d1ae4219b785dee",
+    "semantic_hash": ""
+  },
+  "public/images/articles/baramij-istirja-instagram.png": {
+    "mtime": 1790436218.914311,
+    "seen": 1790437330.797956,
+    "ast_hash": "f39a967156a73327bb7525cd0862deb9",
+    "semantic_hash": ""
+  },
+  "public/images/articles/hadd-muhawalat-instagram.png": {
+    "mtime": 1790430622.7702527,
+    "seen": 1790437330.7979572,
+    "ast_hash": "ef67ad902d79e1225007868877c1dd75",
+    "semantic_hash": ""
+  },
+  "public/images/articles/hadhf-manshurat-instagram.png": {
+    "mtime": 1790430590.2859526,
+    "seen": 1790437330.7979581,
+    "ast_hash": "ad91c37110f0dc0b09b52136e14c9d06",
+    "semantic_hash": ""
+  },
+  "public/images/articles/hisab-ihtirafi-muattal.png": {
+    "mtime": 1790436267.567897,
+    "seen": 1790437330.797959,
+    "ast_hash": "3d3d0503166ae7aea4bd6889d45032f5",
+    "semantic_hash": ""
+  },
+  "public/images/articles/hisab-instagram-qadim.png": {
+    "mtime": 1790436175.4302354,
+    "seen": 1790437330.7979603,
+    "ast_hash": "10ddd423e0b2af6c90a1c7778a168043",
+    "semantic_hash": ""
+  },
+  "public/images/articles/hisab-yudakhilhu-shakhs.png": {
+    "mtime": 1790436257.613986,
+    "seen": 1790437330.797961,
+    "ast_hash": "5904001bc6429d1b31f19520c51b53fb",
+    "semantic_hash": ""
+  },
+  "public/images/articles/ihtial-istirja-instagram.png": {
+    "mtime": 1790430582.2500339,
+    "seen": 1790437330.797962,
+    "ast_hash": "00619abee44285aaefb896c179af5514",
+    "semantic_hash": ""
+  },
+  "public/images/articles/inha-jalasat-instagram.png": {
+    "mtime": 1790430610.6693928,
+    "seen": 1790437330.797963,
+    "ast_hash": "975ee56343893a636e02767334f55469",
+    "semantic_hash": ""
+  },
+  "public/images/articles/ism-mustakhdam-baad-taattil.png": {
+    "mtime": 1790430622.0836203,
+    "seen": 1790437330.7979639,
+    "ast_hash": "2e714307b42a55454f98bfcf7e13ea85",
+    "semantic_hash": ""
+  },
+  "public/images/articles/istirja-baad-30-yawm.png": {
+    "mtime": 1790436252.3538406,
+    "seen": 1790437330.7979648,
+    "ast_hash": "48476d1476325f2b5938e4ab6725e3a7",
+    "semantic_hash": ""
+  },
+  "public/images/articles/istirja-bi-ism-almustakhdam.png": {
+    "mtime": 1790436162.2707827,
+    "seen": 1790437330.7979658,
+    "ast_hash": "ea649cccd9a88e10cc0544b6bdf1bb4a",
+    "semantic_hash": ""
+  },
+  "public/images/articles/istirja-bil-barid.png": {
+    "mtime": 1790436208.7953343,
+    "seen": 1790437330.7979665,
+    "ast_hash": "f9e80012a7e2b8a37219adf1c9b36af4",
+    "semantic_hash": ""
+  },
+  "public/images/articles/istirja-majjanan.png": {
+    "mtime": 1790436197.3030324,
+    "seen": 1790437330.797968,
+    "ast_hash": "c8756ba39399545d58254f19e57ddf11",
+    "semantic_hash": ""
+  },
+  "public/images/articles/istirja-min-android.png": {
+    "mtime": 1790436169.523325,
+    "seen": 1790437330.7979689,
+    "ast_hash": "80854c2769be43535e9cad43bfabe73c",
+    "semantic_hash": ""
+  },
+  "public/images/articles/istirja-min-iphone.png": {
+    "mtime": 1790436164.855587,
+    "seen": 1790437330.7979698,
+    "ast_hash": "d2dc0f50118fcb8446c5f2bb1fa216ff",
+    "semantic_hash": ""
+  },
+  "public/images/articles/istirja-min-mutasaffih.png": {
+    "mtime": 1790436223.324393,
+    "seen": 1790437330.7979708,
+    "ast_hash": "9f4e3e3804e5b48c8fc1817eae5d05cb",
+    "semantic_hash": ""
+  },
+  "public/images/articles/la-yazhar-zar-istinaf.png": {
+    "mtime": 1790436207.2426298,
+    "seen": 1790437330.7979717,
+    "ast_hash": "8c2b4549ab8ba675d548771866746dbf",
+    "semantic_hash": ""
+  },
+  "public/images/articles/namuthaj-murajaa-rasmi.png": {
+    "mtime": 1790436263.2702374,
+    "seen": 1790437330.7979727,
+    "ast_hash": "0c17c64fcf44a322334e880367d9ab29",
+    "semantic_hash": ""
+  },
+  "public/images/articles/nseet-ism-almustakhdam.png": {
+    "mtime": 1790436196.4793892,
+    "seen": 1790437330.7979739,
+    "ast_hash": "590a8c448773888a1bddc32f3e510c46",
+    "semantic_hash": ""
+  },
+  "public/images/articles/qufl-baad-safar.png": {
+    "mtime": 1790430592.1209872,
+    "seen": 1790437330.7979746,
+    "ast_hash": "7b61207eeb6d075adb15557e18170be6",
+    "semantic_hash": ""
+  },
+  "public/images/articles/rabit-istirja-rasmi.png": {
+    "mtime": 1790436176.3795452,
+    "seen": 1790437330.7979755,
+    "ast_hash": "567ff7a32a13e794e96aaf9110b5f7d6",
+    "semantic_hash": ""
+  },
+  "public/images/articles/rabt-threads-instagram.png": {
+    "mtime": 1790430608.7770875,
+    "seen": 1790437330.7979765,
+    "ast_hash": "d7ccf069f63f0ab107c4602f4e5feed9",
+    "semantic_hash": ""
+  },
+  "public/images/articles/risalat-security-instagram.png": {
+    "mtime": 1790436219.046409,
+    "seen": 1790437330.7979777,
+    "ast_hash": "d2208642f9cc2d593329273a214ef65d",
+    "semantic_hash": ""
+  },
+  "public/images/articles/taattil-huquq-nashr.png": {
+    "mtime": 1790430577.8046932,
+    "seen": 1790437330.7979786,
+    "ast_hash": "485abe86eea01a1ac6bd4cfb8f00bb4f",
+    "semantic_hash": ""
+  },
+  "public/images/articles/taattil-i3lanat-instagram.png": {
+    "mtime": 1790430611.596534,
+    "seen": 1790437330.7979794,
+    "ast_hash": "c4621a6eec7ba4947e178da3b549777a",
+    "semantic_hash": ""
+  },
+  "public/images/articles/taattil-rasail-instagram.png": {
+    "mtime": 1790436252.0833657,
+    "seen": 1790437330.7979803,
+    "ast_hash": "96acd7ec32730a981123d41a6674aca2",
+    "semantic_hash": ""
+  },
+  "public/images/articles/taghyir-ism-wa-sura.png": {
+    "mtime": 1790436212.328795,
+    "seen": 1790437330.7979815,
+    "ast_hash": "164ad4ed08364d5e2283e148ebff4131",
+    "semantic_hash": ""
+  },
+  "public/images/articles/taghyir-raqam-jawwal.png": {
+    "mtime": 1790430579.9837742,
+    "seen": 1790437330.7979822,
+    "ast_hash": "d6686e542c900c4cdb5c60c3dec5f23d",
+    "semantic_hash": ""
+  },
+  "public/images/articles/taklifat-istirja-instagram.png": {
+    "mtime": 1790436195.6905315,
+    "seen": 1790437330.7979836,
+    "ast_hash": "13e9a8073043a635ee3dc44a6666ff19",
+    "semantic_hash": ""
+  },
+  "public/images/articles/tarikh-almilad-instagram.png": {
+    "mtime": 1790436231.9461992,
+    "seen": 1790437330.7979853,
+    "ast_hash": "9439a2cf09549e93103002b530817c0c",
+    "semantic_hash": ""
+  },
+  "public/images/instagram-account-recovery-hero.png": {
+    "mtime": 1790429774.892114,
+    "seen": 1790437330.797987,
+    "ast_hash": "de7e6a42f9dba0528520fd879ad54567",
+    "semantic_hash": ""
+  },
+  "lib/articles/_balance_planner_d.py": {
+    "mtime": 1790442029.3587935,
+    "seen": 1790442251.8304203,
+    "ast_hash": "a8bcaf09cc6f3b2c7a7952aad249b1cb",
+    "semantic_hash": ""
+  },
+  "lib/articles/_expand_planner_d.py": {
+    "mtime": 1790441982.9380884,
+    "seen": 1790442251.8304214,
+    "ast_hash": "922263f694d2b3a334361d5fd8426426",
+    "semantic_hash": ""
+  },
+  "lib/articles/_expand_planner_d_b.py": {
+    "mtime": 1790441950.5685992,
+    "seen": 1790442251.8304229,
+    "ast_hash": "f76ed1fc92272f821927fdbe2bda9f5a",
+    "semantic_hash": ""
+  },
+  "lib/articles/_gen_planner_d.py": {
+    "mtime": 1790441575.2811446,
+    "seen": 1790442251.8304236,
+    "ast_hash": "77f4b8b51e4e300f8e2d2b75dee716cc",
+    "semantic_hash": ""
+  },
+  "lib/articles/_gen_planner_d_data.py": {
+    "mtime": 1790441539.5802207,
+    "seen": 1790442251.8304245,
+    "ast_hash": "b6d17b823ebdc0b22162888148b66378",
+    "semantic_hash": ""
+  },
+  "lib/articles/planner-a.ts": {
+    "mtime": 1790441562.2582576,
+    "seen": 1790442251.8304348,
+    "ast_hash": "1a8cea058492d99146055943b1d3b86e",
+    "semantic_hash": ""
+  },
+  "lib/articles/planner-b.ts": {
+    "mtime": 1790441565.910299,
+    "seen": 1790442251.8304358,
+    "ast_hash": "1854d2f3f3855f65281ea275ffd34d33",
+    "semantic_hash": ""
+  },
+  "lib/articles/planner-c.ts": {
+    "mtime": 1790441707.7718723,
+    "seen": 1790442251.830437,
+    "ast_hash": "e3d0b32cc700f3eddaa39e3b7a23dd6b",
+    "semantic_hash": ""
+  },
+  "lib/articles/planner-d.ts": {
+    "mtime": 1790442037.1461604,
+    "seen": 1790442251.8304377,
+    "ast_hash": "4ce02719c97efb27a192803b008a6c54",
+    "semantic_hash": ""
+  },
+  "scripts/_check_dup_slugs.py": {
+    "mtime": 1790441764.8267393,
+    "seen": 1790442251.830452,
+    "ast_hash": "c3f226d3c8b39c8c5ad5747a1098d803",
+    "semantic_hash": ""
+  },
+  "scripts/_count_planner.py": {
+    "mtime": 1790441646.6556532,
+    "seen": 1790442251.830453,
+    "ast_hash": "d782ece3787785158d6f2baa5692e313",
+    "semantic_hash": ""
+  },
+  "scripts/_gap_map_keywords.py": {
+    "mtime": 1790440859.3217833,
+    "seen": 1790442251.830454,
+    "ast_hash": "d77a0fb89e5bd75b0bd86922744fc7a3",
+    "semantic_hash": ""
+  },
+  "scripts/_list_articles_vs_keywords.py": {
+    "mtime": 1790440859.314403,
+    "seen": 1790442251.830455,
+    "ast_hash": "bb272bb88d94fdfd9b62868598e4ecfc",
+    "semantic_hash": ""
+  },
+  "scripts/_planner69_map.py": {
+    "mtime": 1790440859.3217833,
+    "seen": 1790442251.830456,
+    "ast_hash": "e6c0af9a63a70e3d52e17b3bf345b8cf",
+    "semantic_hash": ""
+  },
+  "scripts/generate-planner-covers.py": {
+    "mtime": 1790440985.9224052,
+    "seen": 1790442251.830514,
+    "ast_hash": "a2e5373749d37020e29dc3199e2be0bc",
+    "semantic_hash": ""
+  },
+  "scripts/generate-planner69-images.py": {
+    "mtime": 1790439721.6979647,
+    "seen": 1790442251.830515,
+    "ast_hash": "0289b5158b3d8205a98a2904ddd76dd3",
+    "semantic_hash": ""
+  },
+  "tmp_count_words.py": {
+    "mtime": 1790440859.3260767,
+    "seen": 1790442251.8305233,
+    "ast_hash": "895e50cdd9728396fa42f34920edff5e",
+    "semantic_hash": ""
+  },
+  "docs/keywords/_compare.txt": {
+    "mtime": 1790439436.747641,
+    "seen": 1790442251.8305337,
+    "ast_hash": "338a19b11d9379ad308990ee330ba327",
+    "semantic_hash": ""
+  },
+  "docs/keywords/_gap-map.md": {
+    "mtime": 1790439473.8626635,
+    "seen": 1790442251.8305347,
+    "ast_hash": "9fc471ba0e7c31d217020fa27d62f5b0",
+    "semantic_hash": ""
+  },
+  "docs/keywords/instagram-recovery-keyword-planner.md": {
+    "mtime": 1790439417.6387165,
+    "seen": 1790442251.830538,
+    "ast_hash": "f3546df1ee26630dbba1dd23981b3dfd",
+    "semantic_hash": ""
+  },
+  "docs/keywords/planner-69-slug-map.md": {
+    "mtime": 1790439651.864294,
+    "seen": 1790442251.830539,
+    "ast_hash": "cdb8c6280fadecbdf5868d28e3d51426",
+    "semantic_hash": ""
+  },
+  "public/images/articles/albahth-an-hisabi-instagram.png": {
+    "mtime": 1790442837.8407538,
+    "seen": 1790444766.7318385,
+    "ast_hash": "6c68081990728089be6e5789325be2e0",
+    "semantic_hash": ""
+  },
+  "public/images/articles/atal-alinstagram.png": {
+    "mtime": 1790442840.5227458,
+    "seen": 1790444766.7318394,
+    "ast_hash": "2cd82498a864fe54bb7021e321cdc3a1",
+    "semantic_hash": ""
+  },
+  "public/images/articles/dukhul-ila-hisab-instagram.png": {
+    "mtime": 1790442839.2221797,
+    "seen": 1790444766.7318418,
+    "ast_hash": "8fe7d853401094be0d97da6b726f3555",
+    "semantic_hash": ""
+  },
+  "public/images/articles/fath-hisabi-instagram.png": {
+    "mtime": 1790442830.1130486,
+    "seen": 1790444766.7318428,
+    "ast_hash": "e504f4b8b3ab1c18e0974352e1b037fd",
+    "semantic_hash": ""
+  },
+  "public/images/articles/ghalq-hisab-insta.png": {
+    "mtime": 1790442840.777382,
+    "seen": 1790444766.731844,
+    "ast_hash": "18e057f765a3a47230af824811fa9111",
+    "semantic_hash": ""
+  },
+  "public/images/articles/hisab-alinstagram-muattal.png": {
+    "mtime": 1790442838.4138365,
+    "seen": 1790444766.7318475,
+    "ast_hash": "744f32bb97ba63fcd5690d94c6cc32d6",
+    "semantic_hash": ""
+  },
+  "public/images/articles/hisab-insta-mubannad.png": {
+    "mtime": 1790442838.6131353,
+    "seen": 1790444766.73185,
+    "ast_hash": "dc4e39cb9e872b0f195e878ac4dd3781",
+    "semantic_hash": ""
+  },
+  "public/images/articles/hisabi-ala-instajram.png": {
+    "mtime": 1790442838.8151493,
+    "seen": 1790444766.7318537,
+    "ast_hash": "669dd2cbebd8b36035951ce67e2c533e",
+    "semantic_hash": ""
+  },
+  "public/images/articles/hisabi-alinsta-muattal.png": {
+    "mtime": 1790442839.008303,
+    "seen": 1790444766.731855,
+    "ast_hash": "6565fcf8f728f48470e4d9730da31aab",
+    "semantic_hash": ""
+  },
+  "public/images/articles/hisabi-alinsta.png": {
+    "mtime": 1790442831.784033,
+    "seen": 1790444766.731856,
+    "ast_hash": "e79b3fe312b4ece04079303774f77cc0",
+    "semantic_hash": ""
+  },
+  "public/images/articles/iadat-tansheet-hisab-insta.png": {
+    "mtime": 1790442837.3375175,
+    "seen": 1790444766.731857,
+    "ast_hash": "a4ac86a6e890d4af7034b144ca821b5f",
+    "semantic_hash": ""
+  },
+  "public/images/articles/iadat-tayin-kalimat-murur.png": {
+    "mtime": 1790442837.1048036,
+    "seen": 1790444766.7318583,
+    "ast_hash": "50a8078113bb7627f785d0e19b43bfd8",
+    "semantic_hash": ""
+  },
+  "public/images/articles/iadat-tayin-kalimat-sirr.png": {
+    "mtime": 1790442836.9101508,
+    "seen": 1790444766.7318592,
+    "ast_hash": "e974b9613ebeec96d6508aac9e9b0a3c",
+    "semantic_hash": ""
+  },
+  "public/images/articles/ighlaq-hisab-instagram-muaqqatan.png": {
+    "mtime": 1790442837.5885959,
+    "seen": 1790444766.7318602,
+    "ast_hash": "3733ba89684233d11a455c6a7e839a1f",
+    "semantic_hash": ""
+  },
+  "public/images/articles/ikhtiraq-hisab-alinstagram.png": {
+    "mtime": 1790442830.3791616,
+    "seen": 1790444766.7318628,
+    "ast_hash": "96da83deffabeeed53d729a16eaf2c04",
+    "semantic_hash": ""
+  },
+  "public/images/articles/ilgha-tansheet-hisab-instagram.png": {
+    "mtime": 1790442838.0411944,
+    "seen": 1790444766.7318637,
+    "ast_hash": "f18725d982c5ed5a1189e7bb08d2198a",
+    "semantic_hash": ""
+  },
+  "public/images/articles/irja-hisab-insta.png": {
+    "mtime": 1790442832.3710027,
+    "seen": 1790444766.7318661,
+    "ast_hash": "a55402ddedb38b8d55d11d05858bdc78",
+    "semantic_hash": ""
+  },
+  "public/images/articles/istiada-hisab-alinstagram-almuattal.png": {
+    "mtime": 1790442836.0144167,
+    "seen": 1790444766.731869,
+    "ast_hash": "739762edf9da6b4d595665cf66f936d4",
+    "semantic_hash": ""
+  },
+  "public/images/articles/istiada-hisab-alinstagram.png": {
+    "mtime": 1790442831.3961265,
+    "seen": 1790444766.73187,
+    "ast_hash": "57a505e920317d6649be6f43f71e8df6",
+    "semantic_hash": ""
+  },
+  "public/images/articles/istiada-hisab-insta.png": {
+    "mtime": 1790442836.4989274,
+    "seen": 1790444766.731871,
+    "ast_hash": "b7b25d4a6fb7e51bcbb5c85f7aefc626",
+    "semantic_hash": ""
+  },
+  "public/images/articles/istiada-hisabi.png": {
+    "mtime": 1790442836.705695,
+    "seen": 1790444766.731872,
+    "ast_hash": "7ff1d23bc33fca23f5bfeea5ec98b425",
+    "semantic_hash": ""
+  },
+  "public/images/articles/istiada-kalimat-murur-bi-jawwal.png": {
+    "mtime": 1790442836.2153232,
+    "seen": 1790444766.731873,
+    "ast_hash": "826cff5e2324ed8b9184b3fb9cdd2915",
+    "semantic_hash": ""
+  },
+  "public/images/articles/istirdad-hisab-alinsta.png": {
+    "mtime": 1790442831.147678,
+    "seen": 1790444766.731874,
+    "ast_hash": "f41ac9bc6a8c68bf3d10c16da67a1263",
+    "semantic_hash": ""
+  },
+  "public/images/articles/istirdad-hisab-instagram-muattal.png": {
+    "mtime": 1790442835.7482207,
+    "seen": 1790444766.7318752,
+    "ast_hash": "e82dd96a8feaf320e5f20f0bc77e7f3f",
+    "semantic_hash": ""
+  },
+  "public/images/articles/istirdad-hisabi-insta.png": {
+    "mtime": 1790442831.2752512,
+    "seen": 1790444766.7318761,
+    "ast_hash": "78bb0467b14dfd839512fe45e33494ad",
+    "semantic_hash": ""
+  },
+  "public/images/articles/istirja-alinsta-almuattal.png": {
+    "mtime": 1790442832.6409206,
+    "seen": 1790444766.731877,
+    "ast_hash": "0ecd5ad7baaa46f21ab57bdc9c447b85",
+    "semantic_hash": ""
+  },
+  "public/images/articles/istirja-alinstagram-almahdhuf.png": {
+    "mtime": 1790442832.807383,
+    "seen": 1790444766.7318785,
+    "ast_hash": "91c462345f219495a69dc7b611a8b89e",
+    "semantic_hash": ""
+  },
+  "public/images/articles/istirja-bi-alemail.png": {
+    "mtime": 1790442833.8861864,
+    "seen": 1790444766.7318807,
+    "ast_hash": "479280eeafe7e60c7cb1706ea2b308eb",
+    "semantic_hash": ""
+  },
+  "public/images/articles/istirja-bi-ism-almustakhdam-kw.png": {
+    "mtime": 1790442830.6346993,
+    "seen": 1790444766.7318816,
+    "ast_hash": "7fd98b323866d76e5455b7091d15f2ba",
+    "semantic_hash": ""
+  },
+  "public/images/articles/istirja-bi-raqm-alhatif.png": {
+    "mtime": 1790442832.9803684,
+    "seen": 1790444766.731898,
+    "ast_hash": "6cc74e3caa5c2f99340214410187f669",
+    "semantic_hash": ""
+  },
+  "public/images/articles/istirja-bidun-email-raqm-sirr.png": {
+    "mtime": 1790442834.088419,
+    "seen": 1790444766.7318995,
+    "ast_hash": "c1ec1b9c615c5194e9b86bd4eae10c3b",
+    "semantic_hash": ""
+  },
+  "public/images/articles/istirja-hisab-alinsta.png": {
+    "mtime": 1790442829.9904447,
+    "seen": 1790444766.7319016,
+    "ast_hash": "78292ea6a54ac0a4509504a1b90eeb48",
+    "semantic_hash": ""
+  },
+  "public/images/articles/istirja-hisab-alinstagram-almuattal.png": {
+    "mtime": 1790442830.5063558,
+    "seen": 1790444766.731903,
+    "ast_hash": "29f573d7a59b034417f29bf1d58e478b",
+    "semantic_hash": ""
+  },
+  "public/images/articles/istirja-hisab-instagram.png": {
+    "mtime": 1790442829.8656192,
+    "seen": 1790444766.7319043,
+    "ast_hash": "1194485f7eed9d067bf52b3970c7d32d",
+    "semantic_hash": ""
+  },
+  "public/images/articles/istirja-hisab-muattal-instagram.png": {
+    "mtime": 1790442834.8421552,
+    "seen": 1790444766.7319055,
+    "ast_hash": "5399d59955986cee5f8d70d0d9cf1664",
+    "semantic_hash": ""
+  },
+  "public/images/articles/istirja-hisabi-alinsta.png": {
+    "mtime": 1790442834.974723,
+    "seen": 1790444766.7319067,
+    "ast_hash": "d2b6e8cb61e23306f08a8b38a1d82731",
+    "semantic_hash": ""
+  },
+  "public/images/articles/istirja-hisabi-insta.png": {
+    "mtime": 1790442835.174558,
+    "seen": 1790444766.7319076,
+    "ast_hash": "8d9b79381c9de8dc120d7e8e22f81915",
+    "semantic_hash": ""
+  },
+  "public/images/articles/istirja-hisabi.png": {
+    "mtime": 1790442831.0155227,
+    "seen": 1790444766.7319088,
+    "ast_hash": "f303a8549826688fc8c5c9e0204574bd",
+    "semantic_hash": ""
+  },
+  "public/images/articles/istirja-insta-mahdhuf.png": {
+    "mtime": 1790442833.6781445,
+    "seen": 1790444766.7319102,
+    "ast_hash": "d8f5fb617112ea776abb402bd58ad8e2",
+    "semantic_hash": ""
+  },
+  "public/images/articles/istirja-insta-mubannad.png": {
+    "mtime": 1790442833.495629,
+    "seen": 1790444766.7319114,
+    "ast_hash": "368dc90c0035f1ba6bdf94b2d0d7cbca",
+    "semantic_hash": ""
+  },
+  "public/images/articles/istirja-kalimat-sirr-instagram.png": {
+    "mtime": 1790442835.4922523,
+    "seen": 1790444766.7319124,
+    "ast_hash": "832872155baa75d339933c5e91ee6cf5",
+    "semantic_hash": ""
+  },
+  "public/images/articles/istirja-mahdhuf-nihai.png": {
+    "mtime": 1790442834.2858007,
+    "seen": 1790444766.7319138,
+    "ast_hash": "9239c4697956f9e3fef3c33492934039",
+    "semantic_hash": ""
+  },
+  "public/images/articles/istirja-min-google-kw.png": {
+    "mtime": 1790442830.8933218,
+    "seen": 1790444766.7319179,
+    "ast_hash": "833beb047b2bba6b184f907681c0e2bf",
+    "semantic_hash": ""
+  },
+  "public/images/articles/istirja-muattal-nihaiyan.png": {
+    "mtime": 1790442834.675217,
+    "seen": 1790444766.7319214,
+    "ast_hash": "20dacdfe0b546787cdfb17700ac4c39a",
+    "semantic_hash": ""
+  },
+  "public/images/articles/istirja-mukhtaraq-kw.png": {
+    "mtime": 1790442834.473261,
+    "seen": 1790444766.7319224,
+    "ast_hash": "3646d21db52a3238d857049b5f96ee26",
+    "semantic_hash": ""
+  },
+  "public/images/articles/istirja-via-daam-fanni.png": {
+    "mtime": 1790442830.7643716,
+    "seen": 1790444766.7319233,
+    "ast_hash": "0defbeefc35ebf5af44cb6f4d0537007",
+    "semantic_hash": ""
+  },
+  "public/images/articles/istirjaa-instagram.png": {
+    "mtime": 1790442832.5176246,
+    "seen": 1790444766.7319248,
+    "ast_hash": "b51a68ea974dd800622050efb0ee3b4d",
+    "semantic_hash": ""
+  },
+  "public/images/articles/kayfiyat-fath-hisab-instagram.png": {
+    "mtime": 1790442842.4331503,
+    "seen": 1790444766.7319257,
+    "ast_hash": "1ec858023d27a802df3d70db4c835076",
+    "semantic_hash": ""
+  },
+  "public/images/articles/kayfiyat-ighlaq-hisab-instagram.png": {
+    "mtime": 1790442842.130781,
+    "seen": 1790444766.7319267,
+    "ast_hash": "8637672c5ebc7ea4ad096ac53360a1e0",
+    "semantic_hash": ""
+  },
+  "public/images/articles/kayfiyat-istiada-hisab-alinstagram.png": {
+    "mtime": 1790442841.940049,
+    "seen": 1790444766.7319279,
+    "ast_hash": "2eb035702769bf6df6a7dc2a710e90a1",
+    "semantic_hash": ""
+  },
+  "public/images/articles/kayfiyat-istirja-alinstagram.png": {
+    "mtime": 1790442841.012414,
+    "seen": 1790444766.7319288,
+    "ast_hash": "f614ed1002863a9907a7ee3fc5ca6925",
+    "semantic_hash": ""
+  },
+  "public/images/articles/kayfiyat-istirja-hisab-alinstagram.png": {
+    "mtime": 1790442841.233854,
+    "seen": 1790444766.73193,
+    "ast_hash": "1194485f7eed9d067bf52b3970c7d32d",
+    "semantic_hash": ""
+  },
+  "public/images/articles/kayfiyat-istirja-kalimat-sirr.png": {
+    "mtime": 1790442841.7232175,
+    "seen": 1790444766.7319314,
+    "ast_hash": "e504f4b8b3ab1c18e0974352e1b037fd",
+    "semantic_hash": ""
+  },
+  "public/images/articles/kayfiyat-istirja-mahdhuf.png": {
+    "mtime": 1790442841.4415677,
+    "seen": 1790444766.7319324,
+    "ast_hash": "2699d3af51c829f76c1aed3a51c13ad9",
+    "semantic_hash": ""
+  },
+  "public/images/articles/markaz-almusaada-tam-taattil.png": {
+    "mtime": 1790442842.639724,
+    "seen": 1790444766.7319539,
+    "ast_hash": "3391b955c46741712e9619022f34d18d",
+    "semantic_hash": ""
+  },
+  "public/images/articles/naseet-kalimat-sirr-lilinstagram.png": {
+    "mtime": 1790442832.205302,
+    "seen": 1790444766.7319565,
+    "ast_hash": "a02d2f66be1a3591fdf9872b68edb23c",
+    "semantic_hash": ""
+  },
+  "public/images/articles/naseet-sirr-wa-email.png": {
+    "mtime": 1790442842.8890934,
+    "seen": 1790444766.7319577,
+    "ast_hash": "05d342ebf0cf6fbdbb0ab6992fcc2caf",
+    "semantic_hash": ""
+  },
+  "public/images/articles/nashr-hisabi-instagram.png": {
+    "mtime": 1790442843.1940174,
+    "seen": 1790444766.731959,
+    "ast_hash": "22abb681166c7b30f602d159d4c4d9e2",
+    "semantic_hash": ""
+  },
+  "public/images/articles/rabit-istirja-hisab-instagram.png": {
+    "mtime": 1790442830.2387843,
+    "seen": 1790444766.7319808,
+    "ast_hash": "609a26fcee98dfe671650d34150ffa0a",
+    "semantic_hash": ""
+  },
+  "public/images/articles/rabit-istirja-mahdhuf.png": {
+    "mtime": 1790442839.6380625,
+    "seen": 1790444766.7319818,
+    "ast_hash": "92d70207e63e43085d9b7eebcc967a58",
+    "semantic_hash": ""
+  },
+  "public/images/articles/rabit-istirja-muattal.png": {
+    "mtime": 1790442831.9116912,
+    "seen": 1790444766.7319832,
+    "ast_hash": "da3b6ade63268982b128da41342a6cbe",
+    "semantic_hash": ""
+  },
+  "public/images/articles/rabit-istirja-mubannad.png": {
+    "mtime": 1790442839.4312558,
+    "seen": 1790444766.7319841,
+    "ast_hash": "c507306a2e06daddd91a2965a1344a26",
+    "semantic_hash": ""
+  },
+  "public/images/articles/rabit-taattil-muaqqat.png": {
+    "mtime": 1790442839.8538833,
+    "seen": 1790444766.7319868,
+    "ast_hash": "c4c3b87b9c7bc8e4bad0f860322dec77",
+    "semantic_hash": ""
+  },
+  "public/images/articles/surat-hisab-mubannad.png": {
+    "mtime": 1790442832.0478685,
+    "seen": 1790444766.7319906,
+    "ast_hash": "b1549ca4afeab9177f051d1f19fe7940",
+    "semantic_hash": ""
+  },
+  "public/images/articles/tam-ikhtiraq-hisabi-instagram.png": {
+    "mtime": 1790442831.5294697,
+    "seen": 1790444766.7319992,
+    "ast_hash": "0901736738bc7c4e9092b518ea20b65c",
+    "semantic_hash": ""
+  },
+  "public/images/articles/tam-ilgha-tansheet-hisabi.png": {
+    "mtime": 1790442831.6560159,
+    "seen": 1790444766.7320006,
+    "ast_hash": "c060340b4ae609182399717062ebdf01",
+    "semantic_hash": ""
+  },
+  "public/images/articles/tariqat-istirja-hisab-alinstagram.png": {
+    "mtime": 1790442840.0722158,
+    "seen": 1790444766.7320032,
+    "ast_hash": "eac3a4d3f18066dc9c71987b8d1184b9",
+    "semantic_hash": ""
+  },
+  "public/images/articles/tariqat-taattil-hisab-insta.png": {
+    "mtime": 1790442840.294431,
+    "seen": 1790444766.7320044,
+    "ast_hash": "e963e4c4a02dced80fbce7b0956ec1e5",
+    "semantic_hash": ""
+  },
+  "public/images/articles/tarji-hisab-insta.png": {
+    "mtime": 1790442838.2348077,
+    "seen": 1790444766.7320054,
+    "ast_hash": "51272d22430ead7b2fcf6af883aded2f",
+    "semantic_hash": ""
+  },
+  "components/LatestTicker.tsx": {
+    "mtime": 1790444712.6928074,
+    "seen": 1790444766.7316973,
+    "ast_hash": "4da1471d77905b8bbc8cf2cee7669dc4",
+    "semantic_hash": ""
+  },
+  "scripts/cpanel-seo-apply-fix.ps1": {
+    "mtime": 1790444736.5416212,
+    "seen": 1790444766.7317967,
+    "ast_hash": "4892d14e1c133d68068a0933e75fdff5",
+    "semantic_hash": ""
+  },
+  "scripts/cpanel-seo-modsec.ps1": {
+    "mtime": 1790444401.4304998,
+    "seen": 1790444766.731798,
+    "ast_hash": "539b4afe2824b3bd0de53f1f912ee7a1",
+    "semantic_hash": ""
   }
 }

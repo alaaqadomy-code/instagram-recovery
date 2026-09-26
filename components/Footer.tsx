@@ -32,7 +32,7 @@ export function Footer() {
           </ul>
         </div>
         <div>
-          <p className="font-bold text-white">أدلّة سريعة</p>
+          <p className="font-bold text-white">من المدونة</p>
           <ul className="mt-4 space-y-2.5 text-sm">
             <li>
               <Link href="/articles/istirja-hisab-instagram-muattal" className="hover:text-white">

@@ -6,7 +6,7 @@ export const dynamic = "force-static";
 
 export function GET() {
   const parts = [
-    `# ${site.name} — النص الكامل للأدلّة`,
+    `# ${site.name} — النص الكامل للمدونة`,
     `Source: ${absoluteUrl("/")}`,
     `Pages: ${articles.length}`,
     "",

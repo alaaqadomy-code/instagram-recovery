@@ -1,0 +1,12 @@
+# DO NOT REMOVE. CLOUDLINUX PASSENGER CONFIGURATION BEGIN
+PassengerEnabled On
+PassengerAppRoot "/home/instagra/public_html"
+PassengerBaseURI "/"
+PassengerAppType node
+PassengerStartupFile server.js
+PassengerNodejs "/usr/bin/node"
+# DO NOT REMOVE. CLOUDLINUX PASSENGER CONFIGURATION END
+
+# Keep the visitor URL across Apache's internal redirect to /403.shtml.
+RewriteEngine On
+RewriteRule ^ - [E=SEO_ORIG:%{REQUEST_URI}]

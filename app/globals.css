@@ -70,3 +70,41 @@ details.mobile-nav > summary::-webkit-details-marker {
 .hero-grid {
   background: linear-gradient(165deg, #eff6ff, #ffffff 60%);
 }
+
+.latest-ticker {
+  overflow: hidden;
+}
+
+.latest-ticker-track {
+  display: flex;
+  width: max-content;
+  animation: latest-ticker-ltr 38s linear infinite;
+}
+
+.latest-ticker-group {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+}
+
+.latest-ticker:hover .latest-ticker-track,
+.latest-ticker:focus-within .latest-ticker-track {
+  animation-play-state: paused;
+}
+
+@keyframes latest-ticker-ltr {
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .latest-ticker-track {
+    animation: none;
+    width: auto;
+    flex-wrap: wrap;
+  }
+}

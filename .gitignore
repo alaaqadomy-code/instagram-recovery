@@ -46,3 +46,7 @@ next-env.d.ts
 
 # graphify local cost only; the graph itself can be committed
 graphify-out/cost.json
+
+# one-shot deploy archives (never commit)
+next-deploy.tgz
+*.deploy.tgz

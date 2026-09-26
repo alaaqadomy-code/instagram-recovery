@@ -62,7 +62,7 @@ const nextConfig: NextConfig = {
       { source: "/privacy", destination: "/privacy-policy", permanent: true },
       { source: "/how-it-works", destination: "/about", permanent: true },
       { source: "/articles/istirja-instagram-android-iphone", destination: "/articles/istirja-min-computer", permanent: true },
-      { source: "/articles/hisab-muattal-huquq-nashr", destination: "/articles/asbab-taattil-instagram", permanent: true },
+      { source: "/articles/hisab-muattal-huquq-nashr", destination: "/articles/taattil-huquq-nashr", permanent: true },
       { source: "/articles/baad-al-hasr-madha-tafal", destination: "/articles/istirja-hisab-instagram-muattal", permanent: true },
     ];
   },

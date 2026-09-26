@@ -28,7 +28,7 @@ export default function GlossaryPage() {
     <article className="mx-auto max-w-3xl px-4 py-12 sm:px-6">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <p className="text-sm font-bold text-[#1d4ed8]">
-        <Link href="/articles">أدلّة الاسترجاع</Link> · مصطلحات
+        <Link href="/articles">المدونة</Link> · مصطلحات
       </p>
       <h1 className="mt-2 text-3xl font-extrabold leading-[1.4] sm:text-4xl">ماذا تعني رسائل إنستغرام؟</h1>
       <p className="mt-4 leading-8 text-slate-600">

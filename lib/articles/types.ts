@@ -17,6 +17,8 @@ export type Article = {
   updated: string;
   readMinutes: number;
   category: string;
+  image?: string;
+  imageAlt?: string;
   sections: ArticleSection[];
   faqs: ArticleFaq[];
 };
