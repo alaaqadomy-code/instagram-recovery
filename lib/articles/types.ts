@@ -28,9 +28,9 @@ export function make(
   const text = article.sections.flatMap((section) => section.paragraphs).join(" ");
   const words = text.split(/\s+/).filter(Boolean).length;
   return {
-    date: "2026-08-06",
+    date: "2026-09-24",
     updated: "2026-09-24",
-    readMinutes: Math.max(11, Math.min(16, Math.round(words / 160))),
+    readMinutes: Math.max(1, Math.min(16, Math.round(words / 160) || 1)),
     ...article,
   };
 }

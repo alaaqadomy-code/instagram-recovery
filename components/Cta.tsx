@@ -13,7 +13,7 @@ export function WhatsAppCta({ children, className = "", icon = false }: Props & 
       href={whatsappUrl}
       target="_blank"
       rel="noopener noreferrer"
-      className={`inline-flex h-12 items-center justify-center gap-2 rounded-2xl bg-[#25D366] px-6 text-sm font-bold text-white shadow-[0_8px_20px_rgba(37,211,102,0.3)] transition hover:bg-[#1ebe57] ${className}`}
+      className={`inline-flex h-12 items-center justify-center gap-2 rounded-2xl bg-[#075E54] px-6 text-sm font-bold text-white shadow-[0_8px_20px_rgba(7,94,84,0.3)] transition hover:bg-[#054c44] ${className}`}
     >
       {icon ? <WhatsAppIcon className="h-5 w-5" /> : null}
       {children}

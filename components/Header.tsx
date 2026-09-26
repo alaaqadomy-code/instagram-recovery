@@ -24,7 +24,7 @@ export function Header() {
             href={whatsappUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="ms-2 inline-flex items-center rounded-2xl bg-[#25D366] px-5 py-2.5 text-[15px] font-bold text-white shadow-[0_8px_20px_rgba(37,211,102,0.3)] hover:bg-[#1ebe57]"
+            className="ms-2 inline-flex items-center rounded-2xl bg-[#075E54] px-5 py-2.5 text-[15px] font-bold text-white shadow-[0_8px_20px_rgba(7,94,84,0.3)] hover:bg-[#054c44]"
           >
             افحص حالة حسابك
           </a>
@@ -53,7 +53,7 @@ export function Header() {
                   href={whatsappUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mt-1 inline-flex items-center justify-center gap-2 rounded-xl bg-[#25D366] px-3 py-3 text-white"
+                  className="mt-1 inline-flex items-center justify-center gap-2 rounded-xl bg-[#075E54] px-3 py-3 text-white"
                 >
                   <WhatsAppIcon className="h-4 w-4" />
                   افحص حالة حسابك

@@ -31,14 +31,6 @@ export function JsonLd() {
         url: absoluteUrl("/"),
         inLanguage: "ar",
         publisher: { "@id": `${absoluteUrl("/")}#organization` },
-        potentialAction: {
-          "@type": "SearchAction",
-          target: {
-            "@type": "EntryPoint",
-            urlTemplate: `${absoluteUrl("/articles")}?q={search_term_string}`,
-          },
-          "query-input": "required name=search_term_string",
-        },
       },
       {
         "@type": "Service",

@@ -22,6 +22,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     return { title: "الدليل غير موجود", robots: { index: false, follow: true } };
   }
 
+  const ogImage = absoluteUrl("/opengraph-image");
+
   return {
     title: article.title,
     description: article.description,
@@ -35,6 +37,20 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       publishedTime: article.date,
       modifiedTime: article.updated,
       url: `${site.url}/articles/${article.slug}`,
+      images: [
+        {
+          url: ogImage,
+          width: 1200,
+          height: 630,
+          alt: `${site.name} — ${article.title}`,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: article.title,
+      description: article.description,
+      images: [ogImage],
     },
   };
 }
@@ -100,15 +116,19 @@ export default async function ArticlePage({ params }: Props) {
       <p className="mt-4 text-sm text-slate-500">
         نُشر {article.date} · تحديث {article.updated} · {article.readMinutes} دقائق
       </p>
-      <p className="mt-6 rounded-2xl bg-blue-50 p-4 text-sm leading-7 text-slate-700">
-        كلمات يبحث عنها الزوار: {article.keywords.join(" · ")}
-      </p>
       <div className="mt-8 space-y-8">
-        {article.sections.map((section) => (
+        {article.sections.map((section, sectionIndex) => (
           <section key={section.heading || section.paragraphs[0]}>
             {section.heading ? <h2 className="text-2xl font-bold">{section.heading}</h2> : null}
-            {section.paragraphs.map((paragraph) => (
-              <p key={paragraph.slice(0, 32)} className="mt-3 leading-8 text-slate-700">
+            {section.paragraphs.map((paragraph, paragraphIndex) => (
+              <p
+                key={paragraph.slice(0, 32)}
+                className={
+                  sectionIndex === 0 && paragraphIndex === 0 && !section.heading
+                    ? "mt-3 rounded-2xl bg-blue-50 p-4 text-base leading-8 text-slate-800"
+                    : "mt-3 leading-8 text-slate-700"
+                }
+              >
                 {paragraph}
               </p>
             ))}
