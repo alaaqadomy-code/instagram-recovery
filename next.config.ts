@@ -1,4 +1,5 @@
 import type { NextConfig } from "next";
+import { articleRedirects } from "./lib/article-redirects";
 
 const securityHeaders = [
   { key: "X-Content-Type-Options", value: "nosniff" },
@@ -15,6 +16,7 @@ const nextConfig: NextConfig = {
   compress: true,
   poweredByHeader: false,
   trailingSlash: false,
+  skipTrailingSlashRedirect: true,
   reactStrictMode: true,
   compiler: {
     removeConsole: process.env.NODE_ENV === "production",
@@ -58,7 +60,48 @@ const nextConfig: NextConfig = {
     ];
   },
   async redirects() {
+    const hosts = ["www.unlockaccounts.com", "instagram-recover.com", "www.instagram-recover.com"] as const;
+    const direct = articleRedirects.flatMap((item) => {
+      const blog = item.source.replace("/articles/", "/blog/");
+      const paths = [item.source, `${item.source}/`, blog, `${blog}/`];
+      return [
+        ...hosts.flatMap((host) =>
+          paths.map((source) => ({
+            source,
+            has: [{ type: "host" as const, value: host }],
+            destination: `https://unlockaccounts.com${item.destination}`,
+            statusCode: 301 as const,
+          })),
+        ),
+        ...paths.map((source) => ({ source, destination: item.destination, statusCode: 301 as const })),
+      ];
+    });
+
+    const legacy = [
+      ["/articles/istirja-instagram-android-iphone", "/articles/istirja-min-mutasaffih"],
+      ["/blog/istirja-instagram-android-iphone", "/articles/istirja-min-mutasaffih"],
+      ["/articles/hisab-muattal-huquq-nashr", "/articles/taattil-huquq-nashr"],
+      ["/blog/hisab-muattal-huquq-nashr", "/articles/taattil-huquq-nashr"],
+      ["/articles/baad-al-hasr-madha-tafal", "/articles/istirja-hisab-instagram-muattal"],
+      ["/blog/baad-al-hasr-madha-tafal", "/articles/istirja-hisab-instagram-muattal"],
+    ].flatMap(([source, destination]) => {
+      const paths = [source, `${source}/`];
+      return [
+        ...hosts.flatMap((host) =>
+          paths.map((path) => ({
+            source: path,
+            has: [{ type: "host" as const, value: host }],
+            destination: `https://unlockaccounts.com${destination}`,
+            statusCode: 301 as const,
+          })),
+        ),
+        ...paths.map((path) => ({ source: path, destination, statusCode: 301 as const })),
+      ];
+    });
+
     return [
+      ...legacy,
+      ...direct,
       {
         source: "/:path*",
         has: [{ type: "host", value: "www.unlockaccounts.com" }],
@@ -81,9 +124,7 @@ const nextConfig: NextConfig = {
       { source: "/blog/:slug", destination: "/articles/:slug", permanent: true },
       { source: "/privacy", destination: "/privacy-policy", permanent: true },
       { source: "/how-it-works", destination: "/about", permanent: true },
-      { source: "/articles/istirja-instagram-android-iphone", destination: "/articles/istirja-min-computer", permanent: true },
-      { source: "/articles/hisab-muattal-huquq-nashr", destination: "/articles/taattil-huquq-nashr", permanent: true },
-      { source: "/articles/baad-al-hasr-madha-tafal", destination: "/articles/istirja-hisab-instagram-muattal", permanent: true },
+      { source: "/:path+/", destination: "/:path+", statusCode: 301 },
     ];
   },
 };

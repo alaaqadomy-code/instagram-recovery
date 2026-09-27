@@ -7,16 +7,23 @@ export const metadata: Metadata = {
   description:
     "حزمة مساعدة تغطّي تعطيل الحساب، الباند، الاختراق، الحذف، مشاكل الدخول، والحسابات التجارية عبر المسارات الرسمية فقط.",
   alternates: { canonical: "/services" },
+  openGraph: {
+    title: "خدمات استرجاع حسابات إنستغرام",
+    description:
+      "حزمة مساعدة تغطّي تعطيل الحساب، الباند، الاختراق، الحذف، مشاكل الدخول، والحسابات التجارية عبر المسارات الرسمية فقط.",
+    url: "/services",
+    type: "website",
+  },
 };
 
 export default function ServicesPage() {
   return (
     <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6">
       <p className="text-sm font-bold text-[#1d4ed8]">خدمات الاسترجاع</p>
-      <h1 className="mt-2 text-3xl font-extrabold leading-[1.4] sm:text-4xl">خدمات استرجاع واسترداد حسابات إنستغرام</h1>
+      <h1 className="mt-2 text-3xl font-extrabold leading-[1.4] sm:text-4xl">خدمة مساعدة على ملفات حسابات إنستغرام</h1>
       <p className="mt-4 max-w-3xl leading-8 text-slate-600">
-        نغطّي حالات فقدان الحساب من التعطيل إلى الاختراق وحسابات الأعمال. العمل عبر نماذج ميتا وإنستغرام فقط. لا اختراق
-        ولا طلب لكلمة المرور.
+        نقرأ لقطة الشاشة، نختار نموذج ميتا المناسب، ونصوغ الطلب ونتابعه. شرح كل حالة في المدونة. هنا تطلب التنفيذ، لا
+        دليلاً تعليمياً. لا اختراق ولا طلب لكلمة المرور.
       </p>
       <div className="mt-10 grid gap-4 md:grid-cols-2">
         {services.map((service) => (

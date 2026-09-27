@@ -35,7 +35,7 @@ export function JsonLd() {
       {
         "@type": "Service",
         "@id": `${absoluteUrl("/services")}#service`,
-        name: "استرجاع حساب إنستغرام",
+        name: "خدمة مساعدة ملفات حسابات إنستغرام",
         url: absoluteUrl("/services"),
         provider: { "@id": `${absoluteUrl("/")}#organization` },
         areaServed: "Worldwide",

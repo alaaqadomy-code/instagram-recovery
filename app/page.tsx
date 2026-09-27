@@ -8,12 +8,12 @@ import { cases } from "@/lib/content";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: { absolute: "استرجاع حساب إنستغرام المعطّل | Unlock Accounts" },
+  title: { absolute: "تشخيص حساب إنستغرام من رسالة الشاشة | Unlock Accounts" },
   description:
     "مكتب عربي مستقل يقرأ رسالة إنستغرام، يطابقها بنموذج ميتا، ويساعدك على كتابة طلب المراجعة. أرسل لقطة الشاشة عبر واتساب. لا نطلب كلمة المرور.",
   alternates: { canonical: "/" },
   openGraph: {
-    title: "استرجاع حساب إنستغرام المعطّل | Unlock Accounts",
+    title: "تشخيص حساب إنستغرام من رسالة الشاشة | Unlock Accounts",
     description:
       "مكتب عربي مستقل يقرأ رسالة إنستغرام، يطابقها بنموذج ميتا، ويساعدك على كتابة طلب المراجعة.",
     url: "/",
@@ -132,7 +132,7 @@ const deskFaqs = [
 
 const readingSlugs = [
   "istirja-hisab-instagram-muattal",
-  "istirja-hisab-mukhtaraq",
+  "ikhtiraq-hisab-alinstagram",
   "istirja-hisab-mahdhuf",
   "hisab-tijari-muattal",
   "istinaf-hisab-instagram",
@@ -155,7 +155,7 @@ export default function HomePage() {
           <div className="px-5 py-12 sm:px-8 lg:col-span-7 lg:py-20">
             <p className="text-xs font-bold tracking-widest text-[#9a3412]">مكتب ملفات · مستقل عن ميتا</p>
             <h1 className="mt-4 max-w-xl text-[2rem] font-extrabold leading-[1.35] sm:text-5xl">
-              استرجاع حساب إنستغرام يبدأ من الجملة المكتوبة على الشاشة
+              تشخيص حساب إنستغرام يبدأ من الجملة المكتوبة على الشاشة
             </h1>
             <p className="mt-6 max-w-xl text-lg leading-8 text-[#44403c]">
               أرسل لقطة الرسالة واسم المستخدم. نطابق النص بنموذج المساعدة لدى إنستغرام، ونكتب طلب المراجعة بهدوء، ونتابع حتى يصل رد واضح.

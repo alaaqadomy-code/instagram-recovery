@@ -11,10 +11,11 @@ import { plannerArticlesC } from "./articles/planner-c";
 import { plannerArticlesD } from "./articles/planner-d";
 import { securityArticles } from "./articles/security";
 import type { Article } from "./articles/types";
+import { publishArticles } from "./publish-articles";
 
 export type { Article, ArticleFaq, ArticleSection } from "./articles/types";
 
-export const articles: Article[] = [
+const rawArticles: Article[] = [
   ...plannerArticlesA,
   ...plannerArticlesB,
   ...plannerArticlesC,
@@ -29,6 +30,8 @@ export const articles: Article[] = [
   ...appealArticles,
   ...businessArticles,
 ];
+
+export const articles: Article[] = publishArticles(rawArticles);
 
 export function getArticle(slug: string) {
   return articles.find((article) => article.slug === slug);

@@ -5,7 +5,7 @@
       "routeType": "page",
       "response": "complete",
       "compute": "static",
-      "htmlSize": 138376,
+      "htmlSize": 120926,
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -62,7 +62,7 @@
       "routeType": "page",
       "response": "complete",
       "compute": "static",
-      "htmlSize": 44214,
+      "htmlSize": 55784,
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -90,7 +90,7 @@
       "routeType": "page",
       "response": "complete",
       "compute": "static",
-      "htmlSize": 50188,
+      "htmlSize": 62219,
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -118,7 +118,7 @@
       "routeType": "page",
       "response": "complete",
       "compute": "static",
-      "htmlSize": 187551,
+      "htmlSize": 619116,
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -146,7 +146,7 @@
       "routeType": "page",
       "response": "complete",
       "compute": "static",
-      "htmlSize": 62879,
+      "htmlSize": 78087,
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -170,11 +170,67 @@
         "x-next-revalidate-tag-token"
       ]
     },
+    "/articles/atal-alinstagram": {
+      "routeType": "page",
+      "response": "complete",
+      "compute": "static",
+      "htmlSize": 99427,
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "next-action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/articles/[slug]",
+      "dataRoute": "/articles/atal-alinstagram.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/articles/baramij-istirja-instagram": {
+      "routeType": "page",
+      "response": "complete",
+      "compute": "static",
+      "htmlSize": 79958,
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "next-action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/articles/[slug]",
+      "dataRoute": "/articles/baramij-istirja-instagram.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
     "/articles/bidun-email-w-raqm": {
       "routeType": "page",
       "response": "complete",
       "compute": "static",
-      "htmlSize": 58203,
+      "htmlSize": 104241,
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -202,7 +258,7 @@
       "routeType": "page",
       "response": "complete",
       "compute": "static",
-      "htmlSize": 55400,
+      "htmlSize": 71756,
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -230,7 +286,7 @@
       "routeType": "page",
       "response": "complete",
       "compute": "static",
-      "htmlSize": 58288,
+      "htmlSize": 71729,
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -254,39 +310,11 @@
         "x-next-revalidate-tag-token"
       ]
     },
-    "/articles/email-murtabit-lam-yaud": {
-      "routeType": "page",
-      "response": "complete",
-      "compute": "static",
-      "htmlSize": 56703,
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "next-action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": false,
-      "srcRoute": "/articles/[slug]",
-      "dataRoute": "/articles/email-murtabit-lam-yaud.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
     "/articles/fak-band-instagram": {
       "routeType": "page",
       "response": "complete",
       "compute": "static",
-      "htmlSize": 60832,
+      "htmlSize": 104494,
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -314,7 +342,7 @@
       "routeType": "page",
       "response": "complete",
       "compute": "static",
-      "htmlSize": 56573,
+      "htmlSize": 98261,
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -342,7 +370,7 @@
       "routeType": "page",
       "response": "complete",
       "compute": "static",
-      "htmlSize": 57125,
+      "htmlSize": 72492,
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -370,7 +398,7 @@
       "routeType": "page",
       "response": "complete",
       "compute": "static",
-      "htmlSize": 60819,
+      "htmlSize": 73860,
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -394,11 +422,67 @@
         "x-next-revalidate-tag-token"
       ]
     },
+    "/articles/hadd-muhawalat-instagram": {
+      "routeType": "page",
+      "response": "complete",
+      "compute": "static",
+      "htmlSize": 83279,
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "next-action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/articles/[slug]",
+      "dataRoute": "/articles/hadd-muhawalat-instagram.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/articles/hadhf-manshurat-instagram": {
+      "routeType": "page",
+      "response": "complete",
+      "compute": "static",
+      "htmlSize": 82740,
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "next-action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/articles/[slug]",
+      "dataRoute": "/articles/hadhf-manshurat-instagram.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
     "/articles/himayat-al-hisab-baad-alikhtiraq": {
       "routeType": "page",
       "response": "complete",
       "compute": "static",
-      "htmlSize": 58336,
+      "htmlSize": 73709,
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -422,11 +506,39 @@
         "x-next-revalidate-tag-token"
       ]
     },
+    "/articles/hisab-instagram-qadim": {
+      "routeType": "page",
+      "response": "complete",
+      "compute": "static",
+      "htmlSize": 78994,
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "next-action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/articles/[slug]",
+      "dataRoute": "/articles/hisab-instagram-qadim.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
     "/articles/hisab-muqayyad": {
       "routeType": "page",
       "response": "complete",
       "compute": "static",
-      "htmlSize": 55668,
+      "htmlSize": 71077,
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -454,7 +566,7 @@
       "routeType": "page",
       "response": "complete",
       "compute": "static",
-      "htmlSize": 56733,
+      "htmlSize": 78970,
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -478,11 +590,11 @@
         "x-next-revalidate-tag-token"
       ]
     },
-    "/articles/iadat-tansheet-muattal-muaqqat": {
+    "/articles/hisab-yudakhilhu-shakhs": {
       "routeType": "page",
       "response": "complete",
       "compute": "static",
-      "htmlSize": 59833,
+      "htmlSize": 79080,
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -496,7 +608,147 @@
       ],
       "initialRevalidateSeconds": false,
       "srcRoute": "/articles/[slug]",
-      "dataRoute": "/articles/iadat-tansheet-muattal-muaqqat.rsc",
+      "dataRoute": "/articles/hisab-yudakhilhu-shakhs.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/articles/iadat-tansheet-hisab-insta": {
+      "routeType": "page",
+      "response": "complete",
+      "compute": "static",
+      "htmlSize": 99708,
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "next-action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/articles/[slug]",
+      "dataRoute": "/articles/iadat-tansheet-hisab-insta.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/articles/ihtial-istirja-instagram": {
+      "routeType": "page",
+      "response": "complete",
+      "compute": "static",
+      "htmlSize": 85876,
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "next-action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/articles/[slug]",
+      "dataRoute": "/articles/ihtial-istirja-instagram.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/articles/ikhtiraq-hisab-alinstagram": {
+      "routeType": "page",
+      "response": "complete",
+      "compute": "static",
+      "htmlSize": 99513,
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "next-action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/articles/[slug]",
+      "dataRoute": "/articles/ikhtiraq-hisab-alinstagram.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/articles/ilgha-tansheet-hisab-instagram": {
+      "routeType": "page",
+      "response": "complete",
+      "compute": "static",
+      "htmlSize": 110698,
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "next-action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/articles/[slug]",
+      "dataRoute": "/articles/ilgha-tansheet-hisab-instagram.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/articles/inha-jalasat-instagram": {
+      "routeType": "page",
+      "response": "complete",
+      "compute": "static",
+      "htmlSize": 84132,
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "next-action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/articles/[slug]",
+      "dataRoute": "/articles/inha-jalasat-instagram.rsc",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -510,7 +762,7 @@
       "routeType": "page",
       "response": "complete",
       "compute": "static",
-      "htmlSize": 59241,
+      "htmlSize": 73109,
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -534,11 +786,39 @@
         "x-next-revalidate-tag-token"
       ]
     },
+    "/articles/ism-mustakhdam-baad-taattil": {
+      "routeType": "page",
+      "response": "complete",
+      "compute": "static",
+      "htmlSize": 83963,
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "next-action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/articles/[slug]",
+      "dataRoute": "/articles/ism-mustakhdam-baad-taattil.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
     "/articles/istinaf-hisab-instagram": {
       "routeType": "page",
       "response": "complete",
       "compute": "static",
-      "htmlSize": 56452,
+      "htmlSize": 78978,
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -566,7 +846,7 @@
       "routeType": "page",
       "response": "complete",
       "compute": "static",
-      "htmlSize": 56329,
+      "htmlSize": 70937,
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -590,11 +870,67 @@
         "x-next-revalidate-tag-token"
       ]
     },
+    "/articles/istirja-baad-30-yawm": {
+      "routeType": "page",
+      "response": "complete",
+      "compute": "static",
+      "htmlSize": 77972,
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "next-action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/articles/[slug]",
+      "dataRoute": "/articles/istirja-baad-30-yawm.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/articles/istirja-hisab-instagram": {
+      "routeType": "page",
+      "response": "complete",
+      "compute": "static",
+      "htmlSize": 120663,
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "next-action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/articles/[slug]",
+      "dataRoute": "/articles/istirja-hisab-instagram.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
     "/articles/istirja-hisab-instagram-muattal": {
       "routeType": "page",
       "response": "complete",
       "compute": "static",
-      "htmlSize": 68643,
+      "htmlSize": 129409,
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -622,7 +958,7 @@
       "routeType": "page",
       "response": "complete",
       "compute": "static",
-      "htmlSize": 61529,
+      "htmlSize": 112662,
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -646,39 +982,11 @@
         "x-next-revalidate-tag-token"
       ]
     },
-    "/articles/istirja-hisab-mahkor": {
-      "routeType": "page",
-      "response": "complete",
-      "compute": "static",
-      "htmlSize": 57783,
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "next-action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": false,
-      "srcRoute": "/articles/[slug]",
-      "dataRoute": "/articles/istirja-hisab-mahkor.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
     "/articles/istirja-hisab-muallaq": {
       "routeType": "page",
       "response": "complete",
       "compute": "static",
-      "htmlSize": 60868,
+      "htmlSize": 73618,
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -706,7 +1014,7 @@
       "routeType": "page",
       "response": "complete",
       "compute": "static",
-      "htmlSize": 60304,
+      "htmlSize": 102339,
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -730,39 +1038,11 @@
         "x-next-revalidate-tag-token"
       ]
     },
-    "/articles/istirja-hisab-mukhtaraq": {
-      "routeType": "page",
-      "response": "complete",
-      "compute": "static",
-      "htmlSize": 61705,
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "next-action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": false,
-      "srcRoute": "/articles/[slug]",
-      "dataRoute": "/articles/istirja-hisab-mukhtaraq.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
     "/articles/istirja-hisab-muwathaq": {
       "routeType": "page",
       "response": "complete",
       "compute": "static",
-      "htmlSize": 55397,
+      "htmlSize": 70528,
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -786,11 +1066,11 @@
         "x-next-revalidate-tag-token"
       ]
     },
-    "/articles/istirja-instagram-2026": {
+    "/articles/istirja-mahdhuf-nihai": {
       "routeType": "page",
       "response": "complete",
       "compute": "static",
-      "htmlSize": 56253,
+      "htmlSize": 102693,
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -804,7 +1084,7 @@
       ],
       "initialRevalidateSeconds": false,
       "srcRoute": "/articles/[slug]",
-      "dataRoute": "/articles/istirja-instagram-2026.rsc",
+      "dataRoute": "/articles/istirja-mahdhuf-nihai.rsc",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -814,11 +1094,11 @@
         "x-next-revalidate-tag-token"
       ]
     },
-    "/articles/istirja-min-computer": {
+    "/articles/istirja-majjanan": {
       "routeType": "page",
       "response": "complete",
       "compute": "static",
-      "htmlSize": 56859,
+      "htmlSize": 82034,
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -832,7 +1112,7 @@
       ],
       "initialRevalidateSeconds": false,
       "srcRoute": "/articles/[slug]",
-      "dataRoute": "/articles/istirja-min-computer.rsc",
+      "dataRoute": "/articles/istirja-majjanan.rsc",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -842,11 +1122,11 @@
         "x-next-revalidate-tag-token"
       ]
     },
-    "/articles/istirja-min-google": {
+    "/articles/istirja-min-android": {
       "routeType": "page",
       "response": "complete",
       "compute": "static",
-      "htmlSize": 56479,
+      "htmlSize": 78858,
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -860,7 +1140,91 @@
       ],
       "initialRevalidateSeconds": false,
       "srcRoute": "/articles/[slug]",
-      "dataRoute": "/articles/istirja-min-google.rsc",
+      "dataRoute": "/articles/istirja-min-android.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/articles/istirja-min-iphone": {
+      "routeType": "page",
+      "response": "complete",
+      "compute": "static",
+      "htmlSize": 79033,
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "next-action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/articles/[slug]",
+      "dataRoute": "/articles/istirja-min-iphone.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/articles/istirja-min-mutasaffih": {
+      "routeType": "page",
+      "response": "complete",
+      "compute": "static",
+      "htmlSize": 80820,
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "next-action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/articles/[slug]",
+      "dataRoute": "/articles/istirja-min-mutasaffih.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/articles/istirja-muattal-nihaiyan": {
+      "routeType": "page",
+      "response": "complete",
+      "compute": "static",
+      "htmlSize": 101683,
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "next-action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/articles/[slug]",
+      "dataRoute": "/articles/istirja-muattal-nihaiyan.rsc",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -874,7 +1238,7 @@
       "routeType": "page",
       "response": "complete",
       "compute": "static",
-      "htmlSize": 58102,
+      "htmlSize": 73215,
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -898,11 +1262,39 @@
         "x-next-revalidate-tag-token"
       ]
     },
+    "/articles/istirja-via-daam-fanni": {
+      "routeType": "page",
+      "response": "complete",
+      "compute": "static",
+      "htmlSize": 98586,
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "next-action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/articles/[slug]",
+      "dataRoute": "/articles/istirja-via-daam-fanni.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
     "/articles/istirja-via-facebook": {
       "routeType": "page",
       "response": "complete",
       "compute": "static",
-      "htmlSize": 55999,
+      "htmlSize": 70872,
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -930,7 +1322,7 @@
       "routeType": "page",
       "response": "complete",
       "compute": "static",
-      "htmlSize": 56097,
+      "htmlSize": 74388,
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -958,7 +1350,7 @@
       "routeType": "page",
       "response": "complete",
       "compute": "static",
-      "htmlSize": 56953,
+      "htmlSize": 71929,
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -986,7 +1378,7 @@
       "routeType": "page",
       "response": "complete",
       "compute": "static",
-      "htmlSize": 56034,
+      "htmlSize": 71011,
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -1014,7 +1406,7 @@
       "routeType": "page",
       "response": "complete",
       "compute": "static",
-      "htmlSize": 55709,
+      "htmlSize": 73598,
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -1042,7 +1434,7 @@
       "routeType": "page",
       "response": "complete",
       "compute": "static",
-      "htmlSize": 57441,
+      "htmlSize": 72760,
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -1066,11 +1458,39 @@
         "x-next-revalidate-tag-token"
       ]
     },
+    "/articles/la-yazhar-zar-istinaf": {
+      "routeType": "page",
+      "response": "complete",
+      "compute": "static",
+      "htmlSize": 78352,
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "next-action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/articles/[slug]",
+      "dataRoute": "/articles/la-yazhar-zar-istinaf.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
     "/articles/mushkilat-al-mudaaqa-thunaiya": {
       "routeType": "page",
       "response": "complete",
       "compute": "static",
-      "htmlSize": 58414,
+      "htmlSize": 72245,
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -1098,7 +1518,7 @@
       "routeType": "page",
       "response": "complete",
       "compute": "static",
-      "htmlSize": 58788,
+      "htmlSize": 107476,
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -1122,11 +1542,11 @@
         "x-next-revalidate-tag-token"
       ]
     },
-    "/articles/nseet-kalimat-sirr": {
+    "/articles/naseet-kalimat-sirr-lilinstagram": {
       "routeType": "page",
       "response": "complete",
       "compute": "static",
-      "htmlSize": 58356,
+      "htmlSize": 99739,
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -1140,7 +1560,7 @@
       ],
       "initialRevalidateSeconds": false,
       "srcRoute": "/articles/[slug]",
-      "dataRoute": "/articles/nseet-kalimat-sirr.rsc",
+      "dataRoute": "/articles/naseet-kalimat-sirr-lilinstagram.rsc",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -1150,11 +1570,11 @@
         "x-next-revalidate-tag-token"
       ]
     },
-    "/articles/nseet-kulla-shay": {
+    "/articles/nseet-ism-almustakhdam": {
       "routeType": "page",
       "response": "complete",
       "compute": "static",
-      "htmlSize": 55856,
+      "htmlSize": 95325,
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -1168,7 +1588,63 @@
       ],
       "initialRevalidateSeconds": false,
       "srcRoute": "/articles/[slug]",
-      "dataRoute": "/articles/nseet-kulla-shay.rsc",
+      "dataRoute": "/articles/nseet-ism-almustakhdam.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/articles/qufl-baad-safar": {
+      "routeType": "page",
+      "response": "complete",
+      "compute": "static",
+      "htmlSize": 83694,
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "next-action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/articles/[slug]",
+      "dataRoute": "/articles/qufl-baad-safar.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/articles/rabit-istirja-hisab-instagram": {
+      "routeType": "page",
+      "response": "complete",
+      "compute": "static",
+      "htmlSize": 95754,
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "next-action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/articles/[slug]",
+      "dataRoute": "/articles/rabit-istirja-hisab-instagram.rsc",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -1182,7 +1658,7 @@
       "routeType": "page",
       "response": "complete",
       "compute": "static",
-      "htmlSize": 57231,
+      "htmlSize": 75890,
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -1206,11 +1682,39 @@
         "x-next-revalidate-tag-token"
       ]
     },
+    "/articles/rabt-threads-instagram": {
+      "routeType": "page",
+      "response": "complete",
+      "compute": "static",
+      "htmlSize": 83169,
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "next-action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/articles/[slug]",
+      "dataRoute": "/articles/rabt-threads-instagram.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
     "/articles/rafd-istinaf-instagram": {
       "routeType": "page",
       "response": "complete",
       "compute": "static",
-      "htmlSize": 56885,
+      "htmlSize": 71697,
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -1234,11 +1738,95 @@
         "x-next-revalidate-tag-token"
       ]
     },
+    "/articles/taattil-huquq-nashr": {
+      "routeType": "page",
+      "response": "complete",
+      "compute": "static",
+      "htmlSize": 82995,
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "next-action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/articles/[slug]",
+      "dataRoute": "/articles/taattil-huquq-nashr.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/articles/taattil-i3lanat-instagram": {
+      "routeType": "page",
+      "response": "complete",
+      "compute": "static",
+      "htmlSize": 83497,
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "next-action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/articles/[slug]",
+      "dataRoute": "/articles/taattil-i3lanat-instagram.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/articles/taattil-rasail-instagram": {
+      "routeType": "page",
+      "response": "complete",
+      "compute": "static",
+      "htmlSize": 77977,
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "next-action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/articles/[slug]",
+      "dataRoute": "/articles/taattil-rasail-instagram.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
     "/articles/taghyir-email-instagram": {
       "routeType": "page",
       "response": "complete",
       "compute": "static",
-      "htmlSize": 58889,
+      "htmlSize": 79236,
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -1262,11 +1850,11 @@
         "x-next-revalidate-tag-token"
       ]
     },
-    "/articles/tawassul-daam-instagram": {
+    "/articles/taghyir-ism-wa-sura": {
       "routeType": "page",
       "response": "complete",
       "compute": "static",
-      "htmlSize": 56664,
+      "htmlSize": 79079,
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -1280,7 +1868,119 @@
       ],
       "initialRevalidateSeconds": false,
       "srcRoute": "/articles/[slug]",
-      "dataRoute": "/articles/tawassul-daam-instagram.rsc",
+      "dataRoute": "/articles/taghyir-ism-wa-sura.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/articles/taghyir-raqam-jawwal": {
+      "routeType": "page",
+      "response": "complete",
+      "compute": "static",
+      "htmlSize": 83805,
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "next-action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/articles/[slug]",
+      "dataRoute": "/articles/taghyir-raqam-jawwal.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/articles/taklifat-istirja-instagram": {
+      "routeType": "page",
+      "response": "complete",
+      "compute": "static",
+      "htmlSize": 79201,
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "next-action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/articles/[slug]",
+      "dataRoute": "/articles/taklifat-istirja-instagram.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/articles/tam-ilgha-tansheet-hisabi": {
+      "routeType": "page",
+      "response": "complete",
+      "compute": "static",
+      "htmlSize": 99279,
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "next-action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/articles/[slug]",
+      "dataRoute": "/articles/tam-ilgha-tansheet-hisabi.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/articles/tarikh-almilad-instagram": {
+      "routeType": "page",
+      "response": "complete",
+      "compute": "static",
+      "htmlSize": 78613,
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "next-action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/articles/[slug]",
+      "dataRoute": "/articles/tarikh-almilad-instagram.rsc",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -1294,7 +1994,7 @@
       "routeType": "page",
       "response": "complete",
       "compute": "static",
-      "htmlSize": 57412,
+      "htmlSize": 73711,
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -1322,7 +2022,7 @@
       "routeType": "page",
       "response": "complete",
       "compute": "static",
-      "htmlSize": 48681,
+      "htmlSize": 62700,
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -1350,7 +2050,7 @@
       "routeType": "page",
       "response": "complete",
       "compute": "static",
-      "htmlSize": 67097,
+      "htmlSize": 79136,
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -1410,7 +2110,7 @@
       "routeType": "page",
       "response": "complete",
       "compute": "static",
-      "htmlSize": 70720,
+      "htmlSize": 80830,
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -1566,7 +2266,7 @@
       "routeType": "page",
       "response": "complete",
       "compute": "static",
-      "htmlSize": 47716,
+      "htmlSize": 57834,
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -1626,7 +2326,7 @@
       "routeType": "page",
       "response": "complete",
       "compute": "static",
-      "htmlSize": 62332,
+      "htmlSize": 72687,
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -1686,7 +2386,7 @@
       "routeType": "page",
       "response": "complete",
       "compute": "static",
-      "htmlSize": 45131,
+      "htmlSize": 55214,
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -1743,8 +2443,8 @@
   },
   "notFoundRoutes": [],
   "preview": {
-    "previewModeId": "d5a7c8e5efd5f2298fa3818756a6bf19",
-    "previewModeSigningKey": "bc0f6d1453f46d3a166ab3bbfaec34fbc039fad17b2df769634f7afbf3241bd7",
-    "previewModeEncryptionKey": "820fcade7eda9cc83103d23a57bebf6490e1279f348cf7db63c7cfbd35965d27"
+    "previewModeId": "15bd6c55126276bc9b57dbf78116c530",
+    "previewModeSigningKey": "1186bf3f0d8b09640d451853b3bc4adad4332e8114bbd197b61403a24f479c09",
+    "previewModeEncryptionKey": "464b942094899153c6913375fd29756d8aa79ecccd27d8d98433818c02c84d6d"
   }
 }

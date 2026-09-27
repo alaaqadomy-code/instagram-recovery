@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArticleText } from "@/components/ArticleText";
 import { WhatsAppCta } from "@/components/Cta";
+import { clusterLinks } from "@/lib/article-clusters";
 import { articles, getArticle } from "@/lib/articles";
 import { absoluteUrl } from "@/lib/seo";
 import { site } from "@/lib/site";
@@ -63,7 +64,9 @@ export default async function ArticlePage({ params }: Props) {
   const article = getArticle(slug);
   if (!article) notFound();
 
-  const related = articles.filter((item) => item.category === article.category && item.slug !== article.slug).slice(0, 3);
+  const related = clusterLinks(article.slug)
+    .map((slug) => getArticle(slug))
+    .filter((item): item is NonNullable<typeof item> => Boolean(item));
 
   const pageUrl = absoluteUrl(`/articles/${article.slug}`);
   const jsonLd = {
@@ -113,7 +116,11 @@ export default async function ArticlePage({ params }: Props) {
     <article className="mx-auto max-w-3xl px-4 py-12 sm:px-6">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <p className="text-sm font-bold text-[#1d4ed8]">
-        <Link href="/articles">المدونة</Link> · {article.category}
+        <Link href="/">الرئيسية</Link>
+        {" · "}
+        <Link href="/articles">المدونة</Link>
+        {" · "}
+        {article.category}
       </p>
       <h1 className="mt-3 text-3xl font-extrabold leading-[1.4] sm:text-4xl">{article.title}</h1>
       <p className="mt-4 text-sm text-slate-500">
@@ -130,7 +137,7 @@ export default async function ArticlePage({ params }: Props) {
       ) : null}
       <div className="mt-8 space-y-8">
         {article.sections.map((section, sectionIndex) => (
-          <section key={section.heading || section.paragraphs[0]}>
+          <section key={`${section.heading ?? "open"}-${sectionIndex}`}>
             {section.heading ? <h2 className="text-2xl font-bold">{section.heading}</h2> : null}
             {section.paragraphs.map((paragraph, paragraphIndex) => (
               <p

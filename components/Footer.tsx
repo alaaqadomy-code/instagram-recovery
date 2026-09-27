@@ -34,7 +34,7 @@ export function Footer() {
               </Link>
             </li>
             <li>
-              <Link href="/articles/istirja-hisab-mukhtaraq" className="hover:text-white">
+              <Link href="/articles/ikhtiraq-hisab-alinstagram" className="hover:text-white">
                 حساب مخترق
               </Link>
             </li>
