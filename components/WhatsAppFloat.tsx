@@ -1,10 +1,10 @@
-import { whatsappUrl } from "@/lib/site";
+import { whatsappChatUrl } from "@/lib/site";
 import { WhatsAppIcon } from "@/components/WhatsAppIcon";
 
 export function WhatsAppFloat() {
   return (
     <a
-      href={whatsappUrl}
+      href={whatsappChatUrl}
       target="_blank"
       rel="noopener noreferrer"
       aria-label="تواصل معنا عبر واتساب"

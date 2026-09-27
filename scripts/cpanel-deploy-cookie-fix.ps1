@@ -1,10 +1,10 @@
-$ErrorActionPreference = "Stop"
+﻿$ErrorActionPreference = "Stop"
 $envFile = Join-Path $PSScriptRoot "..\.env.hosting"
 $vars = @{}
 Get-Content $envFile | ForEach-Object {
   if ($_ -match '^\s*([^#=]+)=(.*)$') { $vars[$Matches[1].Trim()] = $Matches[2].Trim().Trim('"') }
 }
-$base = "http://www.instagram-recover.com:2082"
+$base = "http://46.105.32.154:2082"
 $cookieJar = Join-Path $env:TEMP "cpanel-cookies.txt"
 Remove-Item $cookieJar -ErrorAction SilentlyContinue
 $login = curl.exe -s -c $cookieJar -b $cookieJar -X POST `
@@ -32,25 +32,25 @@ $cj = Join-Path $env:TEMP "site-cookies.txt"
 Remove-Item $cj -ErrorAction SilentlyContinue
 
 Write-Output "=== first about (expect bootstrap) ==="
-$r1 = curl.exe -s -c $cj -b $cj -w "`nHTTP=%{http_code} SIZE=%{size_download}" "https://instagram-recover.com/about"
+$r1 = curl.exe -s -c $cj -b $cj -w "`nHTTP=%{http_code} SIZE=%{size_download}" "https://unlockaccounts.com/about"
 Write-Output $r1.Substring(0, [Math]::Min(250, $r1.Length))
 
 Write-Output "=== cookies after first ==="
 Get-Content $cj -ErrorAction SilentlyContinue
 
 Write-Output "=== second about with cookie ==="
-$r2 = curl.exe -s -c $cj -b $cj -w "`nHTTP=%{http_code} SIZE=%{size_download}" "https://instagram-recover.com/about"
+$r2 = curl.exe -s -c $cj -b $cj -w "`nHTTP=%{http_code} SIZE=%{size_download}" "https://unlockaccounts.com/about"
 Write-Output ("CANON=" + [regex]::Match($r2, 'rel="canonical" href="[^"]+"').Value)
 Write-Output ("HTTP_LINE=" + ($r2 -split "`n" | Select-Object -Last 1))
 
 Write-Output "=== robots second ==="
 Remove-Item $cj -ErrorAction SilentlyContinue
-curl.exe -s -c $cj -b $cj "https://instagram-recover.com/robots.txt" | Out-Null
-$robots = curl.exe -s -c $cj -b $cj "https://instagram-recover.com/robots.txt"
+curl.exe -s -c $cj -b $cj "https://unlockaccounts.com/robots.txt" | Out-Null
+$robots = curl.exe -s -c $cj -b $cj "https://unlockaccounts.com/robots.txt"
 Write-Output $robots.Substring(0, [Math]::Min(120, $robots.Length))
 
 Write-Output "=== css second ==="
 Remove-Item $cj -ErrorAction SilentlyContinue
-curl.exe -s -c $cj -b $cj "https://instagram-recover.com/_next/static/chunks/1uo6c5a4x1rlr.css" | Out-Null
-$cssCode = curl.exe -s -c $cj -b $cj -o (Join-Path $env:TEMP "t.css") -w "%{http_code} %{content_type} %{size_download}" "https://instagram-recover.com/_next/static/chunks/1uo6c5a4x1rlr.css"
+curl.exe -s -c $cj -b $cj "https://unlockaccounts.com/_next/static/chunks/1uo6c5a4x1rlr.css" | Out-Null
+$cssCode = curl.exe -s -c $cj -b $cj -o (Join-Path $env:TEMP "t.css") -w "%{http_code} %{content_type} %{size_download}" "https://unlockaccounts.com/_next/static/chunks/1uo6c5a4x1rlr.css"
 Write-Output $cssCode

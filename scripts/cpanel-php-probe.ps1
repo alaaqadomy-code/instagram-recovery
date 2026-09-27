@@ -1,10 +1,10 @@
-$ErrorActionPreference = "Stop"
+﻿$ErrorActionPreference = "Stop"
 $envFile = Join-Path $PSScriptRoot "..\.env.hosting"
 $vars = @{}
 Get-Content $envFile | ForEach-Object {
   if ($_ -match '^\s*([^#=]+)=(.*)$') { $vars[$Matches[1].Trim()] = $Matches[2].Trim().Trim('"') }
 }
-$base = "http://www.instagram-recover.com:2082"
+$base = "http://46.105.32.154:2082"
 $cookieJar = Join-Path $env:TEMP "cpanel-cookies.txt"
 Remove-Item $cookieJar -ErrorAction SilentlyContinue
 $login = curl.exe -s -c $cookieJar -b $cookieJar -X POST `
@@ -26,9 +26,9 @@ Save-File $app "phpinfo-probe.php" "<?php echo 'PHP_OK '.PHP_VERSION;' ?>" | Out
 curl.exe -s -c $cookieJar -b $cookieJar "$base$tok/execute/PassengerApps/disable_application?name=instagram-recovery" | Out-Null
 Start-Sleep 3
 Write-Output "=== PHP with passenger off ==="
-Write-Output ("php_code=" + (curl.exe -s -o NUL -w "%{http_code}" "https://instagram-recover.com/phpinfo-probe.php"))
-Write-Output ("php_body=" + (curl.exe -s "https://instagram-recover.com/phpinfo-probe.php").Substring(0,[Math]::Min(100,500)))
-Write-Output ("index_code=" + (curl.exe -s -o NUL -w "%{http_code}" "https://instagram-recover.com/index.html"))
+Write-Output ("php_code=" + (curl.exe -s -o NUL -w "%{http_code}" "https://unlockaccounts.com/phpinfo-probe.php"))
+Write-Output ("php_body=" + (curl.exe -s "https://unlockaccounts.com/phpinfo-probe.php").Substring(0,[Math]::Min(100,500)))
+Write-Output ("index_code=" + (curl.exe -s -o NUL -w "%{http_code}" "https://unlockaccounts.com/index.html"))
 
 # Check home dir mode via API2
 $ls = curl.exe -s -c $cookieJar -b $cookieJar -X POST `

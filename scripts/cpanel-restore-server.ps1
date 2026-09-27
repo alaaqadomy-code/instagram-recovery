@@ -1,11 +1,11 @@
-$ErrorActionPreference = "Stop"
+﻿$ErrorActionPreference = "Stop"
 $root = Resolve-Path (Join-Path $PSScriptRoot "..")
 $envFile = Join-Path $root ".env.hosting"
 $vars = @{}
 Get-Content $envFile | ForEach-Object {
   if ($_ -match '^\s*([^#=]+)=(.*)$') { $vars[$Matches[1].Trim()] = $Matches[2].Trim().Trim('"') }
 }
-$base = "http://www.instagram-recover.com:2082"
+$base = "http://46.105.32.154:2082"
 $cookieJar = Join-Path $env:TEMP "cpanel-restore-ck.txt"
 Remove-Item $cookieJar -ErrorAction SilentlyContinue
 $login = curl.exe -s -c $cookieJar -b $cookieJar -X POST `
@@ -25,5 +25,5 @@ curl.exe -s -c $cookieJar -b $cookieJar "$base$tok/execute/PassengerApps/disable
 Start-Sleep 2
 curl.exe -s -c $cookieJar -b $cookieJar "$base$tok/execute/PassengerApps/enable_application?name=instagram-recovery" | Out-Null
 Start-Sleep 8
-$code = curl.exe -s -o NUL -w "%{http_code}" --max-time 40 -H "Cookie: ir_orig_path=/" "https://instagram-recover.com/"
+$code = curl.exe -s -o NUL -w "%{http_code}" --max-time 40 -H "Cookie: ir_orig_path=/" "https://unlockaccounts.com/"
 Write-Output "HOME=$code"

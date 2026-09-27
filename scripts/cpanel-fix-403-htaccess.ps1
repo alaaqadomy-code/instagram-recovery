@@ -1,10 +1,10 @@
-$ErrorActionPreference = "Stop"
+﻿$ErrorActionPreference = "Stop"
 $envFile = Join-Path $PSScriptRoot "..\.env.hosting"
 $vars = @{}
 Get-Content $envFile | ForEach-Object {
   if ($_ -match '^\s*([^#=]+)=(.*)$') { $vars[$Matches[1].Trim()] = $Matches[2].Trim().Trim('"') }
 }
-$base = "http://www.instagram-recover.com:2082"
+$base = "http://46.105.32.154:2082"
 $cookieJar = Join-Path $env:TEMP "cpanel-cookies.txt"
 Remove-Item $cookieJar -ErrorAction SilentlyContinue
 $login = curl.exe -s -c $cookieJar -b $cookieJar -X POST `
@@ -139,11 +139,11 @@ Start-Sleep 8
 Write-Output "=== live checks ==="
 foreach ($p in "/","/about","/robots.txt","/sitemap.xml","/services","/_next/static/chunks/1uo6c5a4x1rlr.css") {
   $tmp = Join-Path $env:TEMP "ir-check.bin"
-  $code = curl.exe -s -o $tmp -w "%{http_code}" "https://instagram-recover.com$p"
+  $code = curl.exe -s -o $tmp -w "%{http_code}" "https://unlockaccounts.com$p"
   $len = (Get-Item $tmp).Length
   Write-Output "$p -> $code $len"
 }
-$about = curl.exe -s "https://instagram-recover.com/about"
-Write-Output ("about_has_title=" + ($about -match "من نحن|عن"))
-$robots = curl.exe -s "https://instagram-recover.com/robots.txt"
+$about = curl.exe -s "https://unlockaccounts.com/about"
+Write-Output ("about_has_title=" + ($about -match "ظ…ظ† ظ†ط­ظ†|ط¹ظ†"))
+$robots = curl.exe -s "https://unlockaccounts.com/robots.txt"
 Write-Output ("robots_head=" + ($robots.Substring(0, [Math]::Min(80, $robots.Length))))

@@ -1,11 +1,11 @@
-$ErrorActionPreference = "Stop"
+﻿$ErrorActionPreference = "Stop"
 $root = Resolve-Path (Join-Path $PSScriptRoot "..")
 $envFile = Join-Path $root ".env.hosting"
 $vars = @{}
 Get-Content $envFile | ForEach-Object {
   if ($_ -match '^\s*([^#=]+)=(.*)$') { $vars[$Matches[1].Trim()] = $Matches[2].Trim().Trim('"') }
 }
-$base = "http://www.instagram-recover.com:2082"
+$base = "http://46.105.32.154:2082"
 $cookieJar = Join-Path $env:TEMP "cpanel-paths-ck.txt"
 Remove-Item $cookieJar -ErrorAction SilentlyContinue
 $login = curl.exe -s -c $cookieJar -b $cookieJar -X POST `
@@ -39,7 +39,7 @@ Write-Output "=== Passenger ensure_dependencies API help? ==="
 curl.exe -s -c $cookieJar -b $cookieJar "$base$tok/execute/PassengerApps/ensure_dependencies?name=instagram-recovery" | ForEach-Object { $_.Substring(0, [Math]::Min(1500, $_.Length)) }
 Write-Output ""
 Write-Output "=== live status ==="
-curl.exe -s -o NUL -w "HOME=%{http_code}`n" --max-time 15 "https://instagram-recover.com/"
+curl.exe -s -o NUL -w "HOME=%{http_code}`n" --max-time 15 "https://unlockaccounts.com/"
 Write-Output "=== BUILD_ID now ==="
 curl.exe -s -c $cookieJar -b $cookieJar "$base$tok/execute/Fileman/get_file_content?dir=/home/$user/public_html/.next&file=BUILD_ID"
 Write-Output ""

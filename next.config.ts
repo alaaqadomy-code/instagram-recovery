@@ -32,6 +32,14 @@ const nextConfig: NextConfig = {
         ],
       },
       {
+        source: "/admin",
+        headers: [{ key: "Cache-Control", value: "private, no-store" }],
+      },
+      {
+        source: "/admin/:path*",
+        headers: [{ key: "Cache-Control", value: "private, no-store" }],
+      },
+      {
         source: "/sitemap.xml",
         headers: [{ key: "Cache-Control", value: "public, max-age=3600, s-maxage=3600" }],
       },
@@ -53,8 +61,20 @@ const nextConfig: NextConfig = {
     return [
       {
         source: "/:path*",
+        has: [{ type: "host", value: "www.unlockaccounts.com" }],
+        destination: "https://unlockaccounts.com/:path*",
+        permanent: true,
+      },
+      {
+        source: "/:path*",
+        has: [{ type: "host", value: "instagram-recover.com" }],
+        destination: "https://unlockaccounts.com/:path*",
+        permanent: true,
+      },
+      {
+        source: "/:path*",
         has: [{ type: "host", value: "www.instagram-recover.com" }],
-        destination: "https://instagram-recover.com/:path*",
+        destination: "https://unlockaccounts.com/:path*",
         permanent: true,
       },
       { source: "/blog", destination: "/articles", permanent: true },

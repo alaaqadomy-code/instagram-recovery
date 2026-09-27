@@ -8,12 +8,12 @@ import { cases } from "@/lib/content";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: { absolute: "استرجاع حساب إنستغرام المعطّل | استرجاع انستا" },
+  title: { absolute: "استرجاع حساب إنستغرام المعطّل | Unlock Accounts" },
   description:
     "مكتب عربي مستقل يقرأ رسالة إنستغرام، يطابقها بنموذج ميتا، ويساعدك على كتابة طلب المراجعة. أرسل لقطة الشاشة عبر واتساب. لا نطلب كلمة المرور.",
   alternates: { canonical: "/" },
   openGraph: {
-    title: "استرجاع حساب إنستغرام المعطّل | استرجاع انستا",
+    title: "استرجاع حساب إنستغرام المعطّل | Unlock Accounts",
     description:
       "مكتب عربي مستقل يقرأ رسالة إنستغرام، يطابقها بنموذج ميتا، ويساعدك على كتابة طلب المراجعة.",
     url: "/",

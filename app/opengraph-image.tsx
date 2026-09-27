@@ -1,6 +1,6 @@
 import { ImageResponse } from "next/og";
 
-export const alt = "استرجاع انستا — استرجاع حساب إنستغرام";
+export const alt = "Unlock Accounts — استرجاع حساب إنستغرام";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -33,9 +33,9 @@ export default function OpenGraphImage() {
             fontWeight: 800,
           }}
         >
-          RI
+          UA
         </div>
-        <div style={{ marginTop: 36, fontSize: 56, fontWeight: 800, lineHeight: 1.2 }}>Instarja</div>
+        <div style={{ marginTop: 36, fontSize: 56, fontWeight: 800, lineHeight: 1.2 }}>Unlock Accounts</div>
         <div style={{ marginTop: 18, fontSize: 28, opacity: 0.92, maxWidth: 900 }}>
           Instagram account recovery — disabled, hacked, or deleted
         </div>

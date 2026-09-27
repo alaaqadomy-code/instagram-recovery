@@ -34,8 +34,10 @@ yarn-error.log*
 .env*
 !.env.example
 
-# incoming recovery requests
+# incoming recovery requests and first-party analytics
 /data/requests.json
+/data/*.sqlite
+/data/*.sqlite-*
 
 # vercel
 .vercel

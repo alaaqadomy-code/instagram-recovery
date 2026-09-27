@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { whatsappUrl } from "@/lib/site";
+import { whatsappChatUrl } from "@/lib/site";
 import { WhatsAppIcon } from "@/components/WhatsAppIcon";
 
 type Props = {
@@ -10,7 +10,7 @@ type Props = {
 export function WhatsAppCta({ children, className = "", icon = false }: Props & { icon?: boolean }) {
   return (
     <a
-      href={whatsappUrl}
+      href={whatsappChatUrl}
       target="_blank"
       rel="noopener noreferrer"
       className={`inline-flex h-12 items-center justify-center gap-2 rounded-2xl bg-[#075E54] px-6 text-sm font-bold text-white shadow-[0_8px_20px_rgba(7,94,84,0.3)] transition hover:bg-[#054c44] ${className}`}

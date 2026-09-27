@@ -11,8 +11,8 @@ function resolveSiteUrl() {
 }
 
 export const site = {
-  name: "استرجاع انستا",
-  nameEn: "Instarja",
+  name: "Unlock Accounts",
+  nameEn: "Unlock Accounts",
   tagline: "استرجاع حسابات إنستغرام المعطّلة والمسروقة والمحذوفة عبر المسارات الرسمية",
   description:
     "استرجاع حساب إنستغرام المعطّل أو المخترق أو المحذوف عبر المسارات الرسمية. فحص مجاني للحالة، بلا كلمة مرور، وغير تابعين لميتا.",
@@ -33,3 +33,13 @@ export const site = {
 } as const;
 
 export const whatsappUrl = `https://wa.me/${site.whatsapp}` as const;
+
+export const whatsappMessage = `السلام عليكم،
+أتواصل معكم من موقع Unlock Accounts بخصوص استرجاع حساب إنستغرام.
+نوع الحالة: معطّل أو مخترق أو محذوف.
+اسم المستخدم:
+عدد المتابعين:
+متى بدأت المشكلة:
+سأرسل لقطة شاشة عن التعطيل.`;
+
+export const whatsappChatUrl = `${whatsappUrl}?text=${encodeURIComponent(whatsappMessage)}`;

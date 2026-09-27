@@ -1,10 +1,10 @@
-$ErrorActionPreference = "Stop"
+﻿$ErrorActionPreference = "Stop"
 $envFile = Join-Path $PSScriptRoot "..\.env.hosting"
 $vars = @{}
 Get-Content $envFile | ForEach-Object {
   if ($_ -match '^\s*([^#=]+)=(.*)$') { $vars[$Matches[1].Trim()] = $Matches[2].Trim().Trim('"') }
 }
-$base = "http://www.instagram-recover.com:2082"
+$base = "http://46.105.32.154:2082"
 $cookieJar = Join-Path $env:TEMP "cpanel-cookies.txt"
 Remove-Item $cookieJar -ErrorAction SilentlyContinue
 $login = curl.exe -s -c $cookieJar -b $cookieJar -X POST `
@@ -37,7 +37,7 @@ Write-Output "3) update Passenger path"
 $edit = curl.exe -s -c $cookieJar -b $cookieJar -X POST `
   --data-urlencode "name=instagram-recovery" `
   --data-urlencode "path=$userHome/public_html" `
-  --data-urlencode "domain=instagram-recover.com" `
+  --data-urlencode "domain=unlockaccounts.com" `
   --data-urlencode "base_uri=/" `
   --data-urlencode "enabled=1" `
   --data-urlencode "deployment_mode=production" `
@@ -79,18 +79,18 @@ $o = curl.exe -s -c $cookieJar -b $cookieJar "$base$tok/execute/Fileman/list_fil
 @($o.data) | Where-Object { $_.file -match 'public|instagram' } | ForEach-Object { Write-Output ("{0} {1}" -f $_.type, $_.file) }
 
 Write-Output "=== domain docroot ==="
-$d = curl.exe -s -c $cookieJar -b $cookieJar "$base$tok/execute/DomainInfo/single_domain_data?domain=instagram-recover.com"
+$d = curl.exe -s -c $cookieJar -b $cookieJar "$base$tok/execute/DomainInfo/single_domain_data?domain=unlockaccounts.com"
 Write-Output $d.Substring(0, [Math]::Min(400, $d.Length))
 
 Write-Output "=== live ==="
 foreach ($p in "/","/about","/robots.txt","/sitemap.xml","/services","/_next/static/chunks/1uo6c5a4x1rlr.css","/faq") {
   $tmp = Join-Path $env:TEMP "chk.bin"
-  $code = curl.exe -s -o $tmp -w "%{http_code}" "https://instagram-recover.com$p"
+  $code = curl.exe -s -o $tmp -w "%{http_code}" "https://unlockaccounts.com$p"
   $len = (Get-Item $tmp).Length
-  $ct = curl.exe -s -o NUL -w "%{content_type}" "https://instagram-recover.com$p"
+  $ct = curl.exe -s -o NUL -w "%{content_type}" "https://unlockaccounts.com$p"
   Write-Output "$p -> $code $len $ct"
 }
-$about = curl.exe -s "https://instagram-recover.com/about"
-$robots = curl.exe -s "https://instagram-recover.com/robots.txt"
-Write-Output ("about_ok=" + ($about -match "من نحن"))
+$about = curl.exe -s "https://unlockaccounts.com/about"
+$robots = curl.exe -s "https://unlockaccounts.com/robots.txt"
+Write-Output ("about_ok=" + ($about -match "ظ…ظ† ظ†ط­ظ†"))
 Write-Output ("robots_ok=" + ($robots -match "Sitemap:"))

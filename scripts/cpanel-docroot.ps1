@@ -1,10 +1,10 @@
-$ErrorActionPreference = "Stop"
+﻿$ErrorActionPreference = "Stop"
 $envFile = Join-Path $PSScriptRoot "..\.env.hosting"
 $vars = @{}
 Get-Content $envFile | ForEach-Object {
   if ($_ -match '^\s*([^#=]+)=(.*)$') { $vars[$Matches[1].Trim()] = $Matches[2].Trim().Trim('"') }
 }
-$base = "http://www.instagram-recover.com:2082"
+$base = "http://46.105.32.154:2082"
 $cookieJar = Join-Path $env:TEMP "cpanel-cookies.txt"
 Remove-Item $cookieJar -ErrorAction SilentlyContinue
 $login = curl.exe -s -c $cookieJar -b $cookieJar -X POST `
@@ -21,7 +21,7 @@ Write-Output "=== docroots / domains ==="
 foreach ($p in @(
   "/execute/DomainInfo/domains_data?format=hash",
   "/execute/DomainInfo/list_domains",
-  "/execute/DomainInfo/single_domain_data?domain=instagram-recover.com"
+  "/execute/DomainInfo/single_domain_data?domain=unlockaccounts.com"
 )) {
   Write-Output "---- $p"
   $o = U $p

@@ -54,7 +54,7 @@ if ($action -eq "diagnose") {
 }
 
 $cmd = @"
-cd $appHome && export NEXT_PUBLIC_SITE_URL=https://instagram-recover.com NEXT_PUBLIC_EMAIL=hello@instagram-recover.com NEXT_PUBLIC_WHATSAPP=962795827790 && export PATH=/opt/cpanel/ea-nodejs22/bin:/opt/cpanel/ea-nodejs20/bin:/opt/alt/alt-nodejs22/root/usr/bin:/usr/local/bin:`$PATH && npm run build && mkdir -p tmp && touch tmp/restart.txt && echo BUILD_OK && cat .next/BUILD_ID && ls .next/static | head
+cd $appHome && export NEXT_PUBLIC_SITE_URL=https://unlockaccounts.com NEXT_PUBLIC_EMAIL=hello@unlockaccounts.com NEXT_PUBLIC_WHATSAPP=962795827790 && export PATH=/opt/cpanel/ea-nodejs22/bin:/opt/cpanel/ea-nodejs20/bin:/opt/alt/alt-nodejs22/root/usr/bin:/usr/local/bin:`$PATH && npm run build && mkdir -p tmp && touch tmp/restart.txt && echo BUILD_OK && cat .next/BUILD_ID && ls .next/static | head
 "@
 
 Write-Output "REBUILD_START"

@@ -2,7 +2,7 @@ import Link from "next/link";
 import { WhatsAppCta } from "@/components/Cta";
 import { Logo } from "@/components/Logo";
 import { navLinks } from "@/lib/nav";
-import { site, whatsappUrl } from "@/lib/site";
+import { site, whatsappChatUrl } from "@/lib/site";
 
 export function Footer() {
   return (
@@ -61,7 +61,7 @@ export function Footer() {
             </a>
           </p>
           <p className="mt-2 text-sm">
-            <a className="hover:text-white" href={whatsappUrl} dir="ltr">
+            <a className="hover:text-white" href={whatsappChatUrl} dir="ltr">
               {site.whatsappDisplay}
             </a>
           </p>

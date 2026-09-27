@@ -20,7 +20,7 @@ const cairo = Cairo({
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: "استرجاع حساب إنستغرام المعطّل | استرجاع انستا",
+    default: "استرجاع حساب إنستغرام المعطّل | Unlock Accounts",
     template: `%s | ${site.name}`,
   },
   description: site.description,
@@ -38,12 +38,12 @@ export const metadata: Metadata = {
     type: "website",
     locale: site.locale,
     siteName: site.name,
-    title: "استرجاع حساب إنستغرام المعطّل | استرجاع انستا",
+    title: "استرجاع حساب إنستغرام المعطّل | Unlock Accounts",
     description: site.description,
   },
   twitter: {
     card: "summary_large_image",
-    title: "استرجاع حساب إنستغرام المعطّل | استرجاع انستا",
+    title: "استرجاع حساب إنستغرام المعطّل | Unlock Accounts",
     description: site.description,
   },
   robots: defaultRobots,

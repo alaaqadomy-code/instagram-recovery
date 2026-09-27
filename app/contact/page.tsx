@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 import { WhatsAppCta } from "@/components/Cta";
 import { needItems } from "@/lib/content";
-import { site, whatsappUrl } from "@/lib/site";
+import { site, whatsappChatUrl } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "تواصل معنا",
-  description: "تواصل مع استرجاع انستا عبر واتساب لفحص حالة حساب إنستغرام مجانًا. لا نطلب كلمة المرور.",
+  description: "تواصل مع Unlock Accounts عبر واتساب لفحص حالة حساب إنستغرام مجانًا. لا نطلب كلمة المرور.",
   alternates: { canonical: "/contact" },
 };
 
@@ -30,7 +30,7 @@ export default function ContactPage() {
         </p>
         <p className="mt-2 text-sm text-slate-600">
           الهاتف:{" "}
-          <a className="font-semibold text-[#1d4ed8]" href={whatsappUrl} dir="ltr">
+          <a className="font-semibold text-[#1d4ed8]" href={whatsappChatUrl} dir="ltr">
             {site.whatsappDisplay}
           </a>
         </p>

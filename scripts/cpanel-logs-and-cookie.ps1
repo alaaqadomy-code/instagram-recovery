@@ -1,10 +1,10 @@
-$ErrorActionPreference = "Stop"
+﻿$ErrorActionPreference = "Stop"
 $envFile = Join-Path $PSScriptRoot "..\.env.hosting"
 $vars = @{}
 Get-Content $envFile | ForEach-Object {
   if ($_ -match '^\s*([^#=]+)=(.*)$') { $vars[$Matches[1].Trim()] = $Matches[2].Trim().Trim('"') }
 }
-$base = "http://www.instagram-recover.com:2082"
+$base = "http://46.105.32.154:2082"
 $cookieJar = Join-Path $env:TEMP "cpanel-cookies.txt"
 Remove-Item $cookieJar -ErrorAction SilentlyContinue
 $login = curl.exe -s -c $cookieJar -b $cookieJar -X POST `
@@ -23,7 +23,7 @@ $logs = curl.exe -s -c $cookieJar -b $cookieJar "$base$tok/execute/Fileman/list_
 @($logs.data) | ForEach-Object { Write-Output ("{0} {1} {2}" -f $_.type, $_.size, $_.file) }
 
 # Try latest error via get_file_content on non-gz
-foreach ($f in @("instagram-recover.com-ssl_log","instagram-recover.com","error_log","stderr.log")) {
+foreach ($f in @("unlockaccounts.com-ssl_log","unlockaccounts.com","error_log","stderr.log")) {
   $o = curl.exe -s -c $cookieJar -b $cookieJar "$base$tok/execute/Fileman/get_file_content?dir=/home/$user/logs&file=$f"
   if ($o -match '"status":1') {
     Write-Output "==== $f"
@@ -47,11 +47,11 @@ Start-Sleep 6
 
 # Manual cookie simulation (as browser JS would)
 $cj = Join-Path $env:TEMP "br.txt"; Remove-Item $cj -EA SilentlyContinue
-curl.exe -s -c $cj -b $cj "https://instagram-recover.com/about" | Out-Null
+curl.exe -s -c $cj -b $cj "https://unlockaccounts.com/about" | Out-Null
 # Inject cookie like the bootstrap JS would
-curl.exe -s -c $cj -b "ir_orig_path=/about" -w "about2=%{http_code}:%{size_download}:%{content_type}`n" -o (Join-Path $env:TEMP "about2.html") "https://instagram-recover.com/about"
+curl.exe -s -c $cj -b "ir_orig_path=/about" -w "about2=%{http_code}:%{size_download}:%{content_type}`n" -o (Join-Path $env:TEMP "about2.html") "https://unlockaccounts.com/about"
 $about = Get-Content -Raw (Join-Path $env:TEMP "about2.html")
 Write-Output ("about_canon=" + [regex]::Match($about, 'rel="canonical" href="[^"]+"').Value)
 
-curl.exe -s -c $cj -b "ir_orig_path=/robots.txt" -o (Join-Path $env:TEMP "robots2.txt") -w "robots=%{http_code}:%{content_type}:%{size_download}`n" "https://instagram-recover.com/robots.txt"
+curl.exe -s -c $cj -b "ir_orig_path=/robots.txt" -o (Join-Path $env:TEMP "robots2.txt") -w "robots=%{http_code}:%{content_type}:%{size_download}`n" "https://unlockaccounts.com/robots.txt"
 Write-Output ((Get-Content -Raw (Join-Path $env:TEMP "robots2.txt")).Substring(0, [Math]::Min(100, 500)))

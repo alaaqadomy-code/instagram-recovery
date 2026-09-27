@@ -1,11 +1,11 @@
-$ErrorActionPreference = "Stop"
+﻿$ErrorActionPreference = "Stop"
 $root = Resolve-Path (Join-Path $PSScriptRoot "..")
 $envFile = Join-Path $root ".env.hosting"
 $vars = @{}
 Get-Content $envFile | ForEach-Object {
   if ($_ -match '^\s*([^#=]+)=(.*)$') { $vars[$Matches[1].Trim()] = $Matches[2].Trim().Trim('"') }
 }
-$base = "http://www.instagram-recover.com:2082"
+$base = "http://46.105.32.154:2082"
 $cookieJar = Join-Path $env:TEMP "cpanel-diag-ck.txt"
 Remove-Item $cookieJar -ErrorAction SilentlyContinue
 $login = curl.exe -s -c $cookieJar -b $cookieJar -X POST `
@@ -47,6 +47,6 @@ $pkg = curl.exe -s -c $cookieJar -b $cookieJar "$base$tok/execute/Fileman/get_fi
 Write-Output $pkg.Substring(0, [Math]::Min(800, $pkg.Length))
 Write-Output ""
 Write-Output "=== live home without cookie ==="
-$code = curl.exe -s -o (Join-Path $env:TEMP "home500.html") -w "%{http_code}" --max-time 30 "https://instagram-recover.com/"
+$code = curl.exe -s -o (Join-Path $env:TEMP "home500.html") -w "%{http_code}" --max-time 30 "https://unlockaccounts.com/"
 Write-Output "HOME=$code size=$((Get-Item (Join-Path $env:TEMP 'home500.html')).Length)"
 Get-Content (Join-Path $env:TEMP "home500.html") -TotalCount 40

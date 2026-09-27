@@ -1,11 +1,11 @@
-$ErrorActionPreference = "Stop"
+﻿$ErrorActionPreference = "Stop"
 $root = Resolve-Path (Join-Path $PSScriptRoot "..")
 $envFile = Join-Path $root ".env.hosting"
 $vars = @{}
 Get-Content $envFile | ForEach-Object {
   if ($_ -match '^\s*([^#=]+)=(.*)$') { $vars[$Matches[1].Trim()] = $Matches[2].Trim().Trim('"') }
 }
-$base = "http://www.instagram-recover.com:2082"
+$base = "http://46.105.32.154:2082"
 $cookieJar = Join-Path $env:TEMP "cpanel-npm-build-ck.txt"
 Remove-Item $cookieJar -ErrorAction SilentlyContinue
 $login = curl.exe -s -c $cookieJar -b $cookieJar -X POST `
@@ -23,7 +23,7 @@ curl.exe -s -c $cookieJar -b $cookieJar -X POST -H "Content-Type: application/x-
 
 Write-Output "=== 500 body snippet ==="
 $errPage = Join-Path $env:TEMP "err500.html"
-curl.exe -s --max-time 30 -o $errPage "https://instagram-recover.com/"
+curl.exe -s --max-time 30 -o $errPage "https://unlockaccounts.com/"
 Get-Content $errPage -TotalCount 60
 
 Write-Output ""
@@ -53,9 +53,9 @@ Start-Sleep 10
 
 Write-Output ""
 Write-Output "=== live ==="
-$code = curl.exe -s -o (Join-Path $env:TEMP "live2.html") -w "%{http_code}" --max-time 45 -H "Cookie: ir_orig_path=/" "https://instagram-recover.com/"
+$code = curl.exe -s -o (Join-Path $env:TEMP "live2.html") -w "%{http_code}" --max-time 45 -H "Cookie: ir_orig_path=/" "https://unlockaccounts.com/"
 Write-Output "HOME=$code size=$((Get-Item (Join-Path $env:TEMP 'live2.html')).Length)"
-$article = curl.exe -s --max-time 45 -H "Cookie: ir_orig_path=/articles/istirja-hisab-instagram-muattal" "https://instagram-recover.com/articles/istirja-hisab-instagram-muattal"
+$article = curl.exe -s --max-time 45 -H "Cookie: ir_orig_path=/articles/istirja-hisab-instagram-muattal" "https://unlockaccounts.com/articles/istirja-hisab-instagram-muattal"
 Write-Output ("article_len=" + $article.Length)
 Write-Output ("og=" + [regex]::Match($article, 'og:image" content="([^"]+)"').Groups[1].Value)
 Write-Output ("wa=" + ($article -match '#075E54'))

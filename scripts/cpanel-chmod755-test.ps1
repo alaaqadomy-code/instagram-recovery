@@ -1,10 +1,10 @@
-$ErrorActionPreference = "Stop"
+﻿$ErrorActionPreference = "Stop"
 $envFile = Join-Path $PSScriptRoot "..\.env.hosting"
 $vars = @{}
 Get-Content $envFile | ForEach-Object {
   if ($_ -match '^\s*([^#=]+)=(.*)$') { $vars[$Matches[1].Trim()] = $Matches[2].Trim().Trim('"') }
 }
-$base = "http://www.instagram-recover.com:2082"
+$base = "http://46.105.32.154:2082"
 $cookieJar = Join-Path $env:TEMP "cpanel-cookies.txt"
 Remove-Item $cookieJar -ErrorAction SilentlyContinue
 $login = curl.exe -s -c $cookieJar -b $cookieJar -X POST `
@@ -55,8 +55,8 @@ Allow: /
 User-Agent: Google-Extended
 Allow: /
 
-Host: instagram-recover.com
-Sitemap: https://instagram-recover.com/sitemap.xml
+Host: unlockaccounts.com
+Sitemap: https://unlockaccounts.com/sitemap.xml
 "@
 
 function Save-File($dir,$file,$content) {
@@ -70,15 +70,15 @@ Save-File $app "index.html" "<!doctype html><title>DOCROOT_OK</title><h1>DOCROOT
 
 curl.exe -s -c $cookieJar -b $cookieJar "$base$tok/execute/PassengerApps/disable_application?name=instagram-recovery" | Out-Null
 Start-Sleep 3
-Write-Output ("disabled_index=" + (curl.exe -s -o NUL -w "%{http_code}" "https://instagram-recover.com/index.html"))
-Write-Output ("disabled_robots=" + (curl.exe -s -o NUL -w "%{http_code}" "https://instagram-recover.com/robots.txt"))
-$idx = curl.exe -s "https://instagram-recover.com/index.html"
+Write-Output ("disabled_index=" + (curl.exe -s -o NUL -w "%{http_code}" "https://unlockaccounts.com/index.html"))
+Write-Output ("disabled_robots=" + (curl.exe -s -o NUL -w "%{http_code}" "https://unlockaccounts.com/robots.txt"))
+$idx = curl.exe -s "https://unlockaccounts.com/index.html"
 Write-Output ("index_body=" + $idx.Substring(0,[Math]::Min(120,[Math]::Max(0,$idx.Length))))
 
 curl.exe -s -c $cookieJar -b $cookieJar "$base$tok/execute/PassengerApps/enable_application?name=instagram-recovery" | Out-Null
 Start-Sleep 5
-Write-Output ("enabled_home=" + (curl.exe -s -o NUL -w "%{http_code}" "https://instagram-recover.com/"))
+Write-Output ("enabled_home=" + (curl.exe -s -o NUL -w "%{http_code}" "https://unlockaccounts.com/"))
 
 # Bot-like request with cookie for about
-curl.exe -s -H "Cookie: ir_orig_path=/about" -o (Join-Path $env:TEMP "a.html") -w "bot_about=%{http_code}:%{size_download}`n" "https://instagram-recover.com/about"
+curl.exe -s -H "Cookie: ir_orig_path=/about" -o (Join-Path $env:TEMP "a.html") -w "bot_about=%{http_code}:%{size_download}`n" "https://unlockaccounts.com/about"
 Write-Output ("canon=" + [regex]::Match((Get-Content -Raw (Join-Path $env:TEMP "a.html")), 'rel="canonical" href="[^"]+"').Value)

@@ -1,10 +1,10 @@
-$ErrorActionPreference = "Stop"
+﻿$ErrorActionPreference = "Stop"
 $envFile = Join-Path $PSScriptRoot "..\.env.hosting"
 $vars = @{}
 Get-Content $envFile | ForEach-Object {
   if ($_ -match '^\s*([^#=]+)=(.*)$') { $vars[$Matches[1].Trim()] = $Matches[2].Trim().Trim('"') }
 }
-$base = "http://www.instagram-recover.com:2082"
+$base = "http://46.105.32.154:2082"
 $cookieJar = Join-Path $env:TEMP "cpanel-cookies.txt"
 Remove-Item $cookieJar -ErrorAction SilentlyContinue
 $login = curl.exe -s -c $cookieJar -b $cookieJar -X POST `
@@ -24,16 +24,16 @@ curl.exe -s -c $cookieJar -b $cookieJar -X POST -H "Content-Type: application/x-
 curl.exe -s -c $cookieJar -b $cookieJar "$base$tok/execute/PassengerApps/disable_application?name=instagram-recovery" | Out-Null
 Start-Sleep 3
 Write-Output "=== passenger DISABLED ==="
-$c1 = curl.exe -s "https://instagram-recover.com/"
-Write-Output ("disabled_home_code check: " + (curl.exe -s -o NUL -w "%{http_code}" "https://instagram-recover.com/"))
+$c1 = curl.exe -s "https://unlockaccounts.com/"
+Write-Output ("disabled_home_code check: " + (curl.exe -s -o NUL -w "%{http_code}" "https://unlockaccounts.com/"))
 Write-Output ("has_DOCROOT_TEST=" + ($c1 -match "DOCROOT_INDEX_TEST"))
-Write-Output ("has_403shtml_or_next=" + ($c1 -match "403|استرجاع|not-found|غير موجودة"))
+Write-Output ("has_403shtml_or_next=" + ($c1 -match "403|ط§ط³طھط±ط¬ط§ط¹|not-found|ط؛ظٹط± ظ…ظˆط¬ظˆط¯ط©"))
 Write-Output $c1.Substring(0, [Math]::Min(300, $c1.Length))
 
 curl.exe -s -c $cookieJar -b $cookieJar "$base$tok/execute/PassengerApps/enable_application?name=instagram-recovery" | Out-Null
 Start-Sleep 5
 Write-Output "=== passenger ENABLED ==="
-$c2 = curl.exe -s "https://instagram-recover.com/"
-Write-Output ("enabled_code=" + (curl.exe -s -o NUL -w "%{http_code}" "https://instagram-recover.com/"))
+$c2 = curl.exe -s "https://unlockaccounts.com/"
+Write-Output ("enabled_code=" + (curl.exe -s -o NUL -w "%{http_code}" "https://unlockaccounts.com/"))
 Write-Output ("has_DOCROOT_TEST=" + ($c2 -match "DOCROOT_INDEX_TEST"))
-Write-Output ("has_next=" + ($c2 -match "استرجاع انستا"))
+Write-Output ("has_next=" + ($c2 -match "ط§ط³طھط±ط¬ط§ط¹ ط§ظ†ط³طھط§"))

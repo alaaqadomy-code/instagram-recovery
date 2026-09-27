@@ -1,10 +1,10 @@
-$ErrorActionPreference = "Stop"
+﻿$ErrorActionPreference = "Stop"
 $envFile = Join-Path $PSScriptRoot "..\.env.hosting"
 $vars = @{}
 Get-Content $envFile | ForEach-Object {
   if ($_ -match '^\s*([^#=]+)=(.*)$') { $vars[$Matches[1].Trim()] = $Matches[2].Trim().Trim('"') }
 }
-$base = "http://www.instagram-recover.com:2082"
+$base = "http://46.105.32.154:2082"
 $cookieJar = Join-Path $env:TEMP "cpanel-cookies.txt"
 Remove-Item $cookieJar -ErrorAction SilentlyContinue
 $login = curl.exe -s -c $cookieJar -b $cookieJar -X POST `
@@ -30,7 +30,7 @@ Write-Output "=== register ==="
 $r = UP "/execute/PassengerApps/register_application" @{
   name = "instagram-recovery"
   path = $app
-  domain = "instagram-recover.com"
+  domain = "unlockaccounts.com"
   base_uri = "/"
   deployment_mode = "production"
   nodejs = "/usr/bin/node"
@@ -48,13 +48,13 @@ Write-Output (curl.exe -s -c $cookieJar -b $cookieJar "$base$tok/execute/Passeng
 Write-Output "=== live ==="
 foreach ($p in "/","/about","/robots.txt","/sitemap.xml","/_next/static/chunks/1uo6c5a4x1rlr.css") {
   $tmp = Join-Path $env:TEMP "t.bin"
-  $code = curl.exe -s -o $tmp -w "%{http_code}" "https://instagram-recover.com$p"
+  $code = curl.exe -s -o $tmp -w "%{http_code}" "https://unlockaccounts.com$p"
   $len = (Get-Item $tmp).Length
   Write-Output "$p -> $code bytes=$len"
 }
-$robots = curl.exe -s "https://instagram-recover.com/robots.txt"
+$robots = curl.exe -s "https://unlockaccounts.com/robots.txt"
 Write-Output "ROBOTS_START=$($robots.Substring(0,[Math]::Min(60,$robots.Length)))"
-$about = curl.exe -s "https://instagram-recover.com/about"
+$about = curl.exe -s "https://unlockaccounts.com/about"
 Write-Output ("ABOUT_CANON=" + [regex]::Match($about, 'rel="canonical" href="[^"]+"').Value)
-$HOME_CANON = [regex]::Match((curl.exe -s "https://instagram-recover.com/"), 'rel="canonical" href="[^"]+"').Value
+$HOME_CANON = [regex]::Match((curl.exe -s "https://unlockaccounts.com/"), 'rel="canonical" href="[^"]+"').Value
 Write-Output "HOME_CANON=$HOME_CANON"

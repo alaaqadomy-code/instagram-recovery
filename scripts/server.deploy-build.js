@@ -16,8 +16,8 @@ if (fs.existsSync(buildFlag)) {
     stdio: "inherit",
     env: {
       ...process.env,
-      NEXT_PUBLIC_SITE_URL: "https://instagram-recover.com",
-      NEXT_PUBLIC_EMAIL: "hello@instagram-recover.com",
+      NEXT_PUBLIC_SITE_URL: "https://unlockaccounts.com",
+      NEXT_PUBLIC_EMAIL: "hello@unlockaccounts.com",
       NEXT_PUBLIC_WHATSAPP: "962795827790",
     },
     timeout: 600000,

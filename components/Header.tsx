@@ -2,7 +2,7 @@ import Link from "next/link";
 import { Logo } from "@/components/Logo";
 import { WhatsAppIcon } from "@/components/WhatsAppIcon";
 import { navLinks } from "@/lib/nav";
-import { whatsappUrl } from "@/lib/site";
+import { whatsappChatUrl } from "@/lib/site";
 
 export function Header() {
   return (
@@ -21,7 +21,7 @@ export function Header() {
             </Link>
           ))}
           <a
-            href={whatsappUrl}
+            href={whatsappChatUrl}
             target="_blank"
             rel="noopener noreferrer"
             className="ms-2 inline-flex items-center rounded-2xl bg-[#075E54] px-5 py-2.5 text-[15px] font-bold text-white shadow-[0_8px_20px_rgba(7,94,84,0.3)] hover:bg-[#054c44]"
@@ -50,7 +50,7 @@ export function Header() {
                   </Link>
                 ))}
                 <a
-                  href={whatsappUrl}
+                  href={whatsappChatUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="mt-1 inline-flex items-center justify-center gap-2 rounded-xl bg-[#075E54] px-3 py-3 text-white"

@@ -1,10 +1,10 @@
-$ErrorActionPreference = "Stop"
+﻿$ErrorActionPreference = "Stop"
 $envFile = Join-Path $PSScriptRoot "..\.env.hosting"
 $vars = @{}
 Get-Content $envFile | ForEach-Object {
   if ($_ -match '^\s*([^#=]+)=(.*)$') { $vars[$Matches[1].Trim()] = $Matches[2].Trim().Trim('"') }
 }
-$base = "http://www.instagram-recover.com:2082"
+$base = "http://46.105.32.154:2082"
 $cookieJar = Join-Path $env:TEMP "cpanel-cookies.txt"
 Remove-Item $cookieJar -ErrorAction SilentlyContinue
 $login = curl.exe -s -c $cookieJar -b $cookieJar -X POST `
@@ -42,9 +42,9 @@ Start-Sleep 2
 curl.exe -s -c $cookieJar -b $cookieJar "$base$tok/execute/PassengerApps/enable_application?name=instagram-recovery" | Out-Null
 Start-Sleep 8
 
-curl.exe -s -o NUL -w "HOME=%{http_code} %{size_download}`n" "https://instagram-recover.com/"
-curl.exe -s -o NUL -w "ABOUT=%{http_code} %{size_download}`n" "https://instagram-recover.com/about"
-curl.exe -s -D - -o NUL "https://instagram-recover.com/" | Select-String -Pattern "HTTP|x-next|Status|Content-Length"
+curl.exe -s -o NUL -w "HOME=%{http_code} %{size_download}`n" "https://unlockaccounts.com/"
+curl.exe -s -o NUL -w "ABOUT=%{http_code} %{size_download}`n" "https://unlockaccounts.com/about"
+curl.exe -s -D - -o NUL "https://unlockaccounts.com/" | Select-String -Pattern "HTTP|x-next|Status|Content-Length"
 Start-Sleep 2
 $log = curl.exe -s -c $cookieJar -b $cookieJar "$base$tok/execute/Fileman/get_file_content?dir=$app/tmp&file=req-debug.log" | ConvertFrom-Json
 Write-Output "===LOG==="

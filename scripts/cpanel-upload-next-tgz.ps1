@@ -1,11 +1,11 @@
-$ErrorActionPreference = "Stop"
+﻿$ErrorActionPreference = "Stop"
 $root = Resolve-Path (Join-Path $PSScriptRoot "..")
 $envFile = Join-Path $root ".env.hosting"
 $vars = @{}
 Get-Content $envFile | ForEach-Object {
   if ($_ -match '^\s*([^#=]+)=(.*)$') { $vars[$Matches[1].Trim()] = $Matches[2].Trim().Trim('"') }
 }
-$base = "http://www.instagram-recover.com:2082"
+$base = "http://46.105.32.154:2082"
 $cookieJar = Join-Path $env:TEMP "cpanel-upload-tgz-ck.txt"
 Remove-Item $cookieJar -ErrorAction SilentlyContinue
 $login = curl.exe -s -c $cookieJar -b $cookieJar -X POST `
@@ -60,7 +60,7 @@ curl.exe -s -c $cookieJar -b $cookieJar "$base$tok/execute/PassengerApps/disable
 Start-Sleep 3
 curl.exe -s -c $cookieJar -b $cookieJar "$base$tok/execute/PassengerApps/enable_application?name=instagram-recovery" | Out-Null
 Write-Output "Passenger recycled; waiting for extract..."
-Start-Process -FilePath curl.exe -ArgumentList @("-s","-o",(Join-Path $env:TEMP "after-extract.html"),"-w","%{http_code}","--max-time","180","https://instagram-recover.com/") -WindowStyle Hidden
+Start-Process -FilePath curl.exe -ArgumentList @("-s","-o",(Join-Path $env:TEMP "after-extract.html"),"-w","%{http_code}","--max-time","180","https://unlockaccounts.com/") -WindowStyle Hidden
 $gone = $false
 for ($i = 1; $i -le 18; $i++) {
   Start-Sleep 10
@@ -94,20 +94,20 @@ if ($gone) {
 }
 
 Write-Output "=== live verify ==="
-$code2 = curl.exe -s -o (Join-Path $env:TEMP "live-final.html") -w "%{http_code}" --max-time 45 -H "Cookie: ir_orig_path=/" "https://instagram-recover.com/"
+$code2 = curl.exe -s -o (Join-Path $env:TEMP "live-final.html") -w "%{http_code}" --max-time 45 -H "Cookie: ir_orig_path=/" "https://unlockaccounts.com/"
 Write-Output "HOME=$code2 size=$((Get-Item (Join-Path $env:TEMP 'live-final.html') -ErrorAction SilentlyContinue).Length)"
 $html = Get-Content (Join-Path $env:TEMP "live-final.html") -Raw -ErrorAction SilentlyContinue
 if ($html) {
   Write-Output ("title=" + [regex]::Match($html, '<title>([^<]+)</title>').Groups[1].Value)
 }
-$article = curl.exe -s --max-time 45 -H "Cookie: ir_orig_path=/articles/istirja-hisab-instagram-muattal" "https://instagram-recover.com/articles/istirja-hisab-instagram-muattal"
+$article = curl.exe -s --max-time 45 -H "Cookie: ir_orig_path=/articles/istirja-hisab-instagram-muattal" "https://unlockaccounts.com/articles/istirja-hisab-instagram-muattal"
 Write-Output ("article_len=" + $article.Length)
 Write-Output ("og=" + [regex]::Match($article, 'og:image" content="([^"]+)"').Groups[1].Value)
 Write-Output ("twitter_img=" + ($article -match 'name="twitter:image"'))
 Write-Output ("wa_075E54=" + ($article -match '#075E54'))
-$hdr = curl.exe -s -D - -o NUL --max-time 30 -H "Cookie: ir_orig_path=/" "https://instagram-recover.com/"
+$hdr = curl.exe -s -D - -o NUL --max-time 30 -H "Cookie: ir_orig_path=/" "https://unlockaccounts.com/"
 ($hdr -split "`n" | Select-String -Pattern "HTTP/|strict-transport|Strict-Transport|x-powered" | ForEach-Object { $_.Line.Trim() })
-$img = curl.exe -s -o NUL -w "%{http_code}" --max-time 30 "https://instagram-recover.com/images/articles/taattil-huquq-nashr.png"
+$img = curl.exe -s -o NUL -w "%{http_code}" --max-time 30 "https://unlockaccounts.com/images/articles/taattil-huquq-nashr.png"
 Write-Output "IMG=$img"
-$about = curl.exe -s --max-time 30 -H "Cookie: ir_orig_path=/about" "https://instagram-recover.com/about"
+$about = curl.exe -s --max-time 30 -H "Cookie: ir_orig_path=/about" "https://unlockaccounts.com/about"
 Write-Output ("about_canon=" + [regex]::Match($about, 'rel="canonical" href="([^"]+)"').Groups[1].Value)

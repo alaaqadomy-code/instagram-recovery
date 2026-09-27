@@ -1,10 +1,10 @@
-$ErrorActionPreference = "Stop"
+﻿$ErrorActionPreference = "Stop"
 $envFile = Join-Path $PSScriptRoot "..\.env.hosting"
 $vars = @{}
 Get-Content $envFile | ForEach-Object {
   if ($_ -match '^\s*([^#=]+)=(.*)$') { $vars[$Matches[1].Trim()] = $Matches[2].Trim().Trim('"') }
 }
-$base = "http://www.instagram-recover.com:2082"
+$base = "http://46.105.32.154:2082"
 $cookieJar = Join-Path $env:TEMP "cpanel-cookies.txt"
 Remove-Item $cookieJar -ErrorAction SilentlyContinue
 $login = curl.exe -s -c $cookieJar -b $cookieJar -X POST `
@@ -81,9 +81,9 @@ $o2 = U "/execute/Fileman/list_files?dir=$userHome&include_mime=0&show_hidden=1"
 # Test with passenger disabled
 curl.exe -s -c $cookieJar -b $cookieJar "$base$tok/execute/PassengerApps/disable_application?name=instagram-recovery" | Out-Null
 Start-Sleep 3
-Write-Output ("disabled_home=" + (curl.exe -s -o NUL -w "%{http_code}" "https://instagram-recover.com/"))
-Write-Output ("disabled_index=" + (curl.exe -s -o NUL -w "%{http_code}" "https://instagram-recover.com/index.html"))
-$body = curl.exe -s "https://instagram-recover.com/index.html"
+Write-Output ("disabled_home=" + (curl.exe -s -o NUL -w "%{http_code}" "https://unlockaccounts.com/"))
+Write-Output ("disabled_index=" + (curl.exe -s -o NUL -w "%{http_code}" "https://unlockaccounts.com/index.html"))
+$body = curl.exe -s "https://unlockaccounts.com/index.html"
 Write-Output ("index_body_has_TEST=" + ($body -match "DOCROOT_INDEX_TEST"))
 
 curl.exe -s -c $cookieJar -b $cookieJar "$base$tok/execute/PassengerApps/enable_application?name=instagram-recovery" | Out-Null
@@ -91,13 +91,13 @@ Start-Sleep 5
 Write-Output "=== after enable ==="
 foreach ($p in "/","/about","/robots.txt","/sitemap.xml","/_next/static/chunks/1uo6c5a4x1rlr.css") {
   $tmp = Join-Path $env:TEMP "t.bin"
-  $code = curl.exe -s -o $tmp -w "%{http_code}" "https://instagram-recover.com$p"
+  $code = curl.exe -s -o $tmp -w "%{http_code}" "https://unlockaccounts.com$p"
   $len = (Get-Item $tmp).Length
   Write-Output "$p -> $code $len"
 }
-$robots = curl.exe -s "https://instagram-recover.com/robots.txt"
+$robots = curl.exe -s "https://unlockaccounts.com/robots.txt"
 Write-Output ("robots_ok=" + ($robots.StartsWith("User-Agent") -or $robots.StartsWith("User-agent")))
-$about = curl.exe -s "https://instagram-recover.com/about"
+$about = curl.exe -s "https://unlockaccounts.com/about"
 # check without arabic encoding issues - look for /about canonical or unique string
 Write-Output ("about_canonical=" + ($about -match "canonical.*about"))
-Write-Output ("about_size_diff_from_home=" + ($about.Length -ne (curl.exe -s "https://instagram-recover.com/").Length))
+Write-Output ("about_size_diff_from_home=" + ($about.Length -ne (curl.exe -s "https://unlockaccounts.com/").Length))

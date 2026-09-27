@@ -6,7 +6,17 @@ PassengerAppType node
 PassengerStartupFile server.js
 PassengerNodejs "/usr/bin/node"
 # DO NOT REMOVE. CLOUDLINUX PASSENGER CONFIGURATION END
-
-# Keep the visitor URL across Apache's internal redirect to /403.shtml.
+# DO NOT REMOVE. CLOUDLINUX PASSENGER CONFIGURATION BEGIN
+PassengerAppRoot "/home/instagra/irapp"
+PassengerBaseURI "/"
+PassengerNodejs "/home/instagra/nodevenv/irapp/22/bin/node"
+PassengerAppType node
+PassengerStartupFile server.js
+# DO NOT REMOVE. CLOUDLINUX PASSENGER CONFIGURATION END
+# DO NOT REMOVE OR MODIFY. CLOUDLINUX ENV VARS CONFIGURATION BEGIN
+<IfModule Litespeed>
+</IfModule>
+# DO NOT REMOVE OR MODIFY. CLOUDLINUX ENV VARS CONFIGURATION END
 RewriteEngine On
-RewriteRule ^ - [E=SEO_ORIG:%{REQUEST_URI}]
+RewriteCond %{THE_REQUEST} \s(/[^\s?]*)
+RewriteRule ^ - [E=SEO_ORIG:%1]

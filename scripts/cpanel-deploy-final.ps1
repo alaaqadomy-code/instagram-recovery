@@ -1,10 +1,10 @@
-$ErrorActionPreference = "Stop"
+﻿$ErrorActionPreference = "Stop"
 $envFile = Join-Path $PSScriptRoot "..\.env.hosting"
 $vars = @{}
 Get-Content $envFile | ForEach-Object {
   if ($_ -match '^\s*([^#=]+)=(.*)$') { $vars[$Matches[1].Trim()] = $Matches[2].Trim().Trim('"') }
 }
-$base = "http://www.instagram-recover.com:2082"
+$base = "http://46.105.32.154:2082"
 $cookieJar = Join-Path $env:TEMP "cpanel-cookies.txt"
 Remove-Item $cookieJar -ErrorAction SilentlyContinue
 $login = curl.exe -s -c $cookieJar -b $cookieJar -X POST `
@@ -46,10 +46,10 @@ curl.exe -s -c $cookieJar -b $cookieJar "$base$tok/execute/PassengerApps/enable_
 Start-Sleep 8
 
 Write-Output "=== verification ==="
-curl.exe -s -H "Cookie: ir_orig_path=/about" -o (Join-Path $env:TEMP "v-about.html") -w "about=%{http_code}:%{size_download}`n" "https://instagram-recover.com/about"
-curl.exe -s -H "Cookie: ir_orig_path=/robots.txt" -o (Join-Path $env:TEMP "v-robots.txt") -w "robots=%{http_code}:%{content_type}:%{size_download}`n" "https://instagram-recover.com/robots.txt"
-curl.exe -s -H "Cookie: ir_orig_path=/sitemap.xml" -o (Join-Path $env:TEMP "v-sitemap.xml") -w "sitemap=%{http_code}:%{content_type}:%{size_download}`n" "https://instagram-recover.com/sitemap.xml"
-curl.exe -s -H "Cookie: ir_orig_path=/_next/static/chunks/1uo6c5a4x1rlr.css" -o (Join-Path $env:TEMP "v.css") -w "css=%{http_code}:%{content_type}:%{size_download}`n" "https://instagram-recover.com/_next/static/chunks/1uo6c5a4x1rlr.css"
+curl.exe -s -H "Cookie: ir_orig_path=/about" -o (Join-Path $env:TEMP "v-about.html") -w "about=%{http_code}:%{size_download}`n" "https://unlockaccounts.com/about"
+curl.exe -s -H "Cookie: ir_orig_path=/robots.txt" -o (Join-Path $env:TEMP "v-robots.txt") -w "robots=%{http_code}:%{content_type}:%{size_download}`n" "https://unlockaccounts.com/robots.txt"
+curl.exe -s -H "Cookie: ir_orig_path=/sitemap.xml" -o (Join-Path $env:TEMP "v-sitemap.xml") -w "sitemap=%{http_code}:%{content_type}:%{size_download}`n" "https://unlockaccounts.com/sitemap.xml"
+curl.exe -s -H "Cookie: ir_orig_path=/_next/static/chunks/1uo6c5a4x1rlr.css" -o (Join-Path $env:TEMP "v.css") -w "css=%{http_code}:%{content_type}:%{size_download}`n" "https://unlockaccounts.com/_next/static/chunks/1uo6c5a4x1rlr.css"
 Write-Output ("about_canon=" + [regex]::Match((Get-Content -Raw (Join-Path $env:TEMP "v-about.html")), 'rel="canonical" href="[^"]+"').Value)
 Write-Output ("robots_head=" + (Get-Content -Raw (Join-Path $env:TEMP "v-robots.txt")).Substring(0,80))
 Write-Output ("sitemap_head=" + (Get-Content -Raw (Join-Path $env:TEMP "v-sitemap.xml")).Substring(0,80))

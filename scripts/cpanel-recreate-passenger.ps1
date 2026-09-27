@@ -1,10 +1,10 @@
-$ErrorActionPreference = "Stop"
+﻿$ErrorActionPreference = "Stop"
 $envFile = Join-Path $PSScriptRoot "..\.env.hosting"
 $vars = @{}
 Get-Content $envFile | ForEach-Object {
   if ($_ -match '^\s*([^#=]+)=(.*)$') { $vars[$Matches[1].Trim()] = $Matches[2].Trim().Trim('"') }
 }
-$base = "http://www.instagram-recover.com:2082"
+$base = "http://46.105.32.154:2082"
 $cookieJar = Join-Path $env:TEMP "cpanel-cookies.txt"
 Remove-Item $cookieJar -ErrorAction SilentlyContinue
 $login = curl.exe -s -c $cookieJar -b $cookieJar -X POST `
@@ -35,9 +35,9 @@ foreach ($fn in @(
 
 Write-Output "=== try create/register ==="
 foreach ($attempt in @(
-  @{ path="/execute/PassengerApps/register_application"; f=@{ name="instagram-recovery"; path=$app; domain="instagram-recover.com"; base_uri="/"; deployment_mode="production"; nodejs="/usr/bin/node" } },
-  @{ path="/execute/PassengerApps/create_application"; f=@{ name="instagram-recovery2"; path=$app; domain="instagram-recover.com"; base_uri="/"; deployment_mode="production"; nodejs="/usr/bin/node" } },
-  @{ path="/execute/PassengerApps/add_application"; f=@{ name="instagram-recovery2"; path=$app; domain="instagram-recover.com"; base_uri="/"; deployment_mode="production"; nodejs="/usr/bin/node" } }
+  @{ path="/execute/PassengerApps/register_application"; f=@{ name="instagram-recovery"; path=$app; domain="unlockaccounts.com"; base_uri="/"; deployment_mode="production"; nodejs="/usr/bin/node" } },
+  @{ path="/execute/PassengerApps/create_application"; f=@{ name="instagram-recovery2"; path=$app; domain="unlockaccounts.com"; base_uri="/"; deployment_mode="production"; nodejs="/usr/bin/node" } },
+  @{ path="/execute/PassengerApps/add_application"; f=@{ name="instagram-recovery2"; path=$app; domain="unlockaccounts.com"; base_uri="/"; deployment_mode="production"; nodejs="/usr/bin/node" } }
 )) {
   Write-Output "---- $($attempt.path)"
   Write-Output (UP $attempt.path $attempt.f).Substring(0, [Math]::Min(400, 9999))

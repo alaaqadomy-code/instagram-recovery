@@ -20,7 +20,7 @@ export default function ArticlesPage() {
         المدونة: خطوة بخطوة لكل حالة استرجاع
       </h1>
       <p className="mt-4 max-w-3xl leading-8 text-slate-600">
-        شروحات عملية من فريق استرجاع انستا لكل حالة على حدة، بلغة واضحة وخطوات يمكن تطبيقها من أندرويد أو آيفون.
+        شروحات عملية من فريق Unlock Accounts لكل حالة على حدة، بلغة واضحة وخطوات يمكن تطبيقها من أندرويد أو آيفون.
       </p>
       <ArticlesExplorer articles={articles} />
     </div>

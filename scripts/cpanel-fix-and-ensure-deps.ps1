@@ -1,11 +1,11 @@
-$ErrorActionPreference = "Stop"
+﻿$ErrorActionPreference = "Stop"
 $root = Resolve-Path (Join-Path $PSScriptRoot "..")
 $envFile = Join-Path $root ".env.hosting"
 $vars = @{}
 Get-Content $envFile | ForEach-Object {
   if ($_ -match '^\s*([^#=]+)=(.*)$') { $vars[$Matches[1].Trim()] = $Matches[2].Trim().Trim('"') }
 }
-$base = "http://www.instagram-recover.com:2082"
+$base = "http://46.105.32.154:2082"
 $cookieJar = Join-Path $env:TEMP "cpanel-fix-deploy-ck.txt"
 Remove-Item $cookieJar -ErrorAction SilentlyContinue
 $login = curl.exe -s -c $cookieJar -b $cookieJar -X POST `
@@ -86,11 +86,11 @@ curl.exe -s -c $cookieJar -b $cookieJar "$base$tok/execute/PassengerApps/enable_
 Start-Sleep 8
 
 Write-Output "=== live verify ==="
-$code = curl.exe -s -o (Join-Path $env:TEMP "live-home.html") -w "%{http_code}" --max-time 45 -H "Cookie: ir_orig_path=/" "https://instagram-recover.com/"
+$code = curl.exe -s -o (Join-Path $env:TEMP "live-home.html") -w "%{http_code}" --max-time 45 -H "Cookie: ir_orig_path=/" "https://unlockaccounts.com/"
 Write-Output "HOME=$code size=$((Get-Item (Join-Path $env:TEMP 'live-home.html')).Length)"
-$article = curl.exe -s --max-time 45 -H "Cookie: ir_orig_path=/articles/istirja-hisab-instagram-muattal" "https://instagram-recover.com/articles/istirja-hisab-instagram-muattal"
+$article = curl.exe -s --max-time 45 -H "Cookie: ir_orig_path=/articles/istirja-hisab-instagram-muattal" "https://unlockaccounts.com/articles/istirja-hisab-instagram-muattal"
 Write-Output ("article_len=" + $article.Length)
 Write-Output ("article_og=" + [regex]::Match($article, 'og:image" content="([^"]+)"').Groups[1].Value)
 Write-Output ("wa_075E54=" + ($article -match '#075E54'))
-$hdr = curl.exe -s -D - -o NUL --max-time 30 -H "Cookie: ir_orig_path=/" "https://instagram-recover.com/"
+$hdr = curl.exe -s -D - -o NUL --max-time 30 -H "Cookie: ir_orig_path=/" "https://unlockaccounts.com/"
 ($hdr -split "`n" | Select-String -Pattern "HTTP/|strict-transport|Strict-Transport|x-powered" | ForEach-Object { $_.Line.Trim() })

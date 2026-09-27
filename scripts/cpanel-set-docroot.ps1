@@ -1,10 +1,10 @@
-$ErrorActionPreference = "Stop"
+﻿$ErrorActionPreference = "Stop"
 $envFile = Join-Path $PSScriptRoot "..\.env.hosting"
 $vars = @{}
 Get-Content $envFile | ForEach-Object {
   if ($_ -match '^\s*([^#=]+)=(.*)$') { $vars[$Matches[1].Trim()] = $Matches[2].Trim().Trim('"') }
 }
-$base = "http://www.instagram-recover.com:2082"
+$base = "http://46.105.32.154:2082"
 $cookieJar = Join-Path $env:TEMP "cpanel-cookies.txt"
 Remove-Item $cookieJar -ErrorAction SilentlyContinue
 $login = curl.exe -s -c $cookieJar -b $cookieJar -X POST `
@@ -25,9 +25,9 @@ function UP([string]$path, [hashtable]$fields) {
 
 Write-Output "=== probe docroot APIs ==="
 foreach ($p in @(
-  "/execute/DomainInfo/set_docroot?domain=instagram-recover.com&docroot=$app",
+  "/execute/DomainInfo/set_docroot?domain=unlockaccounts.com&docroot=$app",
   "/execute/DomainInfo/set_main_domain_docroot?dir=$app",
-  "/execute/DocRoot/setdocroot?domain=instagram-recover.com&docroot=$app",
+  "/execute/DocRoot/setdocroot?domain=unlockaccounts.com&docroot=$app",
   "/execute/Variables/set_user_meta_data?name=test"
 )) {
   Write-Output "---- GET $p"
@@ -36,10 +36,10 @@ foreach ($p in @(
 
 Write-Output "=== POST set docroot variants ==="
 foreach ($attempt in @(
-  @{ path = "/execute/DomainInfo/set_docroot"; fields = @{ domain = "instagram-recover.com"; docroot = $app } },
+  @{ path = "/execute/DomainInfo/set_docroot"; fields = @{ domain = "unlockaccounts.com"; docroot = $app } },
   @{ path = "/execute/DomainInfo/set_main_domain_docroot"; fields = @{ dir = $app } },
-  @{ path = "/execute/DomainInfo/change_docroot"; fields = @{ domain = "instagram-recover.com"; documentroot = $app } },
-  @{ path = "/execute/PassengerApps/edit_application"; fields = @{ name = "instagram-recovery"; path = $app; domain = "instagram-recover.com"; base_uri = "/"; enabled = "1"; deployment_mode = "production"; nodejs = "/usr/bin/node" } }
+  @{ path = "/execute/DomainInfo/change_docroot"; fields = @{ domain = "unlockaccounts.com"; documentroot = $app } },
+  @{ path = "/execute/PassengerApps/edit_application"; fields = @{ name = "instagram-recovery"; path = $app; domain = "unlockaccounts.com"; base_uri = "/"; enabled = "1"; deployment_mode = "production"; nodejs = "/usr/bin/node" } }
 )) {
   Write-Output "---- POST $($attempt.path)"
   $r = UP $attempt.path $attempt.fields
@@ -47,4 +47,4 @@ foreach ($attempt in @(
 }
 
 Write-Output "=== verify docroot ==="
-Write-Output (U "/execute/DomainInfo/single_domain_data?domain=instagram-recover.com")
+Write-Output (U "/execute/DomainInfo/single_domain_data?domain=unlockaccounts.com")

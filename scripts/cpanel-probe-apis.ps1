@@ -1,11 +1,11 @@
-$ErrorActionPreference = "Stop"
+﻿$ErrorActionPreference = "Stop"
 $root = Resolve-Path (Join-Path $PSScriptRoot "..")
 $envFile = Join-Path $root ".env.hosting"
 $vars = @{}
 Get-Content $envFile | ForEach-Object {
   if ($_ -match '^\s*([^#=]+)=(.*)$') { $vars[$Matches[1].Trim()] = $Matches[2].Trim().Trim('"') }
 }
-$base = "http://www.instagram-recover.com:2082"
+$base = "http://46.105.32.154:2082"
 $cookieJar = Join-Path $env:TEMP "cpanel-api-ck.txt"
 Remove-Item $cookieJar -ErrorAction SilentlyContinue
 $login = curl.exe -s -c $cookieJar -b $cookieJar -X POST `
@@ -34,7 +34,7 @@ foreach ($fn in @("extract_files","extract","upload_files","upload","mkdir","tra
 }
 
 Write-Output "=== live curl verbose codes ==="
-foreach ($url in @("https://instagram-recover.com/","http://instagram-recover.com/","https://www.instagram-recover.com/")) {
+foreach ($url in @("https://unlockaccounts.com/","http://unlockaccounts.com/","https://www.unlockaccounts.com/")) {
   $out = Join-Path $env:TEMP ("probe-" + [Guid]::NewGuid().ToString("n").Substring(0,6) + ".bin")
   $code = curl.exe -s -L --max-time 20 -o $out -w "%{http_code} size=%{size_download} err=%{errormsg}" $url
   Write-Output "$url -> $code"
