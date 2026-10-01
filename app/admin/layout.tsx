@@ -12,9 +12,9 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
         body > header,
         body > footer,
         a[aria-label="تواصل معنا عبر واتساب"] { display: none !important; }
-        body { background: #f8fafc; }
+        body { background: #f1f5f9; }
       `}</style>
-      <div dir="ltr" className="min-h-screen bg-slate-50 text-slate-900">
+      <div dir="rtl" className="min-h-screen bg-slate-100 text-slate-900">
         {children}
       </div>
     </>

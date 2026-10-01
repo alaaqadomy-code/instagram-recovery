@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { articlePath } from "@/lib/articles";
 import { glossaryTerms } from "@/lib/glossary";
 import { absoluteUrl } from "@/lib/seo";
 
@@ -45,7 +46,7 @@ export default function GlossaryPage() {
       </dl>
       <p className="mt-12 text-sm leading-7 text-slate-600">
         ابدأ من{" "}
-        <Link className="font-bold text-[#1d4ed8]" href="/articles/farq-muattal-mahdhuf">
+        <Link className="font-bold text-[#1d4ed8]" href={articlePath("farq-muattal-mahdhuf")}>
           الفرق بين الحساب المعطّل والمحذوف
         </Link>{" "}
         أو من{" "}

@@ -3,7 +3,7 @@ import Link from "next/link";
 import { WhatsAppCta } from "@/components/Cta";
 import { CompletedClientsCounter } from "@/components/CompletedClientsCounter";
 import { LatestTicker } from "@/components/LatestTicker";
-import { articles, getArticle } from "@/lib/articles";
+import { articlePublicSlug, articles, getArticle } from "@/lib/articles";
 import { cases } from "@/lib/content";
 import { site } from "@/lib/site";
 
@@ -303,7 +303,7 @@ export default function HomePage() {
             <article>
               <p className="text-xs font-bold text-[#9a3412]">{featured.category}</p>
               <h3 className="mt-2 text-2xl font-extrabold leading-10">
-                <Link href={`/articles/${featured.slug}`} className="hover:text-[#9a3412]">
+                <Link href={`/articles/${articlePublicSlug(featured)}`} className="hover:text-[#9a3412]">
                   {featured.title}
                 </Link>
               </h3>
@@ -313,7 +313,7 @@ export default function HomePage() {
               {rest.map((article) => (
                 <li key={article.slug} className="py-3">
                   <p className="text-xs font-bold text-[#a8a29e]">{article.category}</p>
-                  <Link href={`/articles/${article.slug}`} className="mt-1 block font-bold leading-7 hover:text-[#9a3412]">
+                  <Link href={`/articles/${articlePublicSlug(article)}`} className="mt-1 block font-bold leading-7 hover:text-[#9a3412]">
                     {article.title}
                   </Link>
                 </li>

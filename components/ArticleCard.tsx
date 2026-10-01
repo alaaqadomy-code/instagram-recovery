@@ -1,5 +1,5 @@
 import Link from "next/link";
-import type { Article } from "@/lib/articles";
+import { articlePublicSlug, type Article } from "@/lib/articles";
 
 export function ArticleCard({ article }: { article: Article }) {
   return (
@@ -10,7 +10,7 @@ export function ArticleCard({ article }: { article: Article }) {
       <div className="flex flex-1 flex-col p-5">
         <p className="text-xs font-bold text-[#1d4ed8]">{article.category}</p>
         <h2 className="mt-2 text-lg font-bold leading-8 text-slate-900">
-          <Link href={`/articles/${article.slug}`} className="hover:text-[#1d4ed8]">
+          <Link href={`/articles/${articlePublicSlug(article)}`} className="hover:text-[#1d4ed8]">
             {article.title}
           </Link>
         </h2>

@@ -1,3 +1,5 @@
+import { articlePath } from "./articles";
+
 export const services = [
   {
     title: "الحسابات المعطّلة والمحظورة",
@@ -32,24 +34,24 @@ export const services = [
 ] as const;
 
 export const cases = [
-  { href: "/articles/istirja-hisab-instagram-muattal", title: "حساب معطّل", text: "ظهرت رسالة تعطيل أو اختفى الحساب فجأة." },
-  { href: "/articles/fak-band-instagram", title: "حساب مبنّد أو محظور", text: "منع دخول بعد بلاغات أو مخالفة مزعومة." },
-  { href: "/articles/istirja-hisab-muallaq", title: "حساب معلّق", text: "إشعار تعليق مع مهلة اعتراض أو إيقاف وصول." },
-  { href: "/articles/istirja-hisab-mughlaq", title: "حساب مغلق أو مقفل", text: "الحساب قائم لكن الدخول مقفل احترازيًا." },
-  { href: "/articles/ikhtiraq-hisab-alinstagram", title: "حساب مخترق أو مسروق", text: "تغيّر البريد ورقم الهاتف وكلمة السر." },
-  { href: "/articles/taghyir-email-instagram", title: "تغيّر البريد المرتبط", text: "وصلك إشعار تغيير إيميل ولم تعد تصل إليه." },
-  { href: "/articles/istirja-hisab-mahdhuf", title: "حساب محذوف", text: "حذف بالخطأ أو ندم بعد طلب الحذف." },
-  { href: "/articles/iadat-tansheet-hisab-insta", title: "تعطيل مؤقت لم يُفتح", text: "أخفيت الحساب ثم تعذّر تفعيله." },
-  { href: "/articles/naseet-kalimat-sirr-lilinstagram", title: "نسيت كلمة السر", text: "الحساب سليم لكن وسيلة الدخول ضاعت." },
-  { href: "/articles/bidun-email-w-raqm", title: "بدون إيميل ولا رقم", text: "فقدت وسيلتي التحقق معًا." },
-  { href: "/articles/mushkilat-al-mudaaqa-thunaiya", title: "المصادقة الثنائية", text: "فقدت تطبيق المصادقة أو الأكواد الاحتياطية." },
-  { href: "/articles/kod-tahqeeq-la-yasil", title: "كود التحقق لا يصل", text: "الرمز يذهب إلى رقم أو بريد لم يعد بحوزتك." },
-  { href: "/articles/video-selfie-instagram", title: "إثبات الهوية بالسيلفي", text: "يطلبون فيديو أو مستندًا وتخشى الرفض." },
-  { href: "/articles/istinaf-hisab-instagram", title: "الاستئناف والمراجعة", text: "تريد طلب مراجعة يُقرأ ويُفهم." },
-  { href: "/articles/istirja-180-yawm", title: "مضى 180 يومًا", text: "قيل إن الحساب أُغلق وانتهت المهلة." },
-  { href: "/articles/hisab-tijari-muattal", title: "حساب تجاري أو متجر", text: "حساب مربوط بإعلانات أو مدير أعمال." },
-  { href: "/articles/istirja-hisab-muwathaq", title: "حساب موثّق", text: "شارة زرقاء أو اشتراك Meta Verified." },
-  { href: "/articles/intihal-shakhsiya-instagram", title: "انتحال الشخصية", text: "حساب يزوّر اسمك أو صورك أو متجرك." },
+  { href: articlePath("istirja-hisab-instagram-muattal"), title: "حساب معطّل", text: "ظهرت رسالة تعطيل أو اختفى الحساب فجأة." },
+  { href: articlePath("fak-band-instagram"), title: "حساب مبنّد أو محظور", text: "منع دخول بعد بلاغات أو مخالفة مزعومة." },
+  { href: articlePath("istirja-hisab-muallaq"), title: "حساب معلّق", text: "إشعار تعليق مع مهلة اعتراض أو إيقاف وصول." },
+  { href: articlePath("istirja-hisab-mughlaq"), title: "حساب مغلق أو مقفل", text: "الحساب قائم لكن الدخول مقفل احترازيًا." },
+  { href: articlePath("ikhtiraq-hisab-alinstagram"), title: "حساب مخترق أو مسروق", text: "تغيّر البريد ورقم الهاتف وكلمة السر." },
+  { href: articlePath("taghyir-email-instagram"), title: "تغيّر البريد المرتبط", text: "وصلك إشعار تغيير إيميل ولم تعد تصل إليه." },
+  { href: articlePath("istirja-hisab-mahdhuf"), title: "حساب محذوف", text: "حذف بالخطأ أو ندم بعد طلب الحذف." },
+  { href: articlePath("iadat-tansheet-hisab-insta"), title: "تعطيل مؤقت لم يُفتح", text: "أخفيت الحساب ثم تعذّر تفعيله." },
+  { href: articlePath("naseet-kalimat-sirr-lilinstagram"), title: "نسيت كلمة السر", text: "الحساب سليم لكن وسيلة الدخول ضاعت." },
+  { href: articlePath("bidun-email-w-raqm"), title: "بدون إيميل ولا رقم", text: "فقدت وسيلتي التحقق معًا." },
+  { href: articlePath("mushkilat-al-mudaaqa-thunaiya"), title: "المصادقة الثنائية", text: "فقدت تطبيق المصادقة أو الأكواد الاحتياطية." },
+  { href: articlePath("kod-tahqeeq-la-yasil"), title: "كود التحقق لا يصل", text: "الرمز يذهب إلى رقم أو بريد لم يعد بحوزتك." },
+  { href: articlePath("video-selfie-instagram"), title: "إثبات الهوية بالسيلفي", text: "يطلبون فيديو أو مستندًا وتخشى الرفض." },
+  { href: articlePath("istinaf-hisab-instagram"), title: "الاستئناف والمراجعة", text: "تريد طلب مراجعة يُقرأ ويُفهم." },
+  { href: articlePath("istirja-180-yawm"), title: "مضى 180 يومًا", text: "قيل إن الحساب أُغلق وانتهت المهلة." },
+  { href: articlePath("hisab-tijari-muattal"), title: "حساب تجاري أو متجر", text: "حساب مربوط بإعلانات أو مدير أعمال." },
+  { href: articlePath("istirja-hisab-muwathaq"), title: "حساب موثّق", text: "شارة زرقاء أو اشتراك Meta Verified." },
+  { href: articlePath("intihal-shakhsiya-instagram"), title: "انتحال الشخصية", text: "حساب يزوّر اسمك أو صورك أو متجرك." },
 ] as const;
 
 export const steps = [

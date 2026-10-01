@@ -1,5 +1,7 @@
 import type { NextConfig } from "next";
+import { titleToPublicSlug } from "./lib/arabic-slug";
 import { articleRedirects } from "./lib/article-redirects";
+import { articles } from "./lib/articles";
 
 const securityHeaders = [
   { key: "X-Content-Type-Options", value: "nosniff" },
@@ -61,6 +63,13 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     const hosts = ["www.unlockaccounts.com", "instagram-recover.com", "www.instagram-recover.com"] as const;
+    const toPublicDestination = (destination: string) => {
+      if (!destination.startsWith("/articles/")) return destination;
+      const slug = destination.slice("/articles/".length);
+      const article = articles.find((item) => item.slug === slug);
+      if (!article) return destination;
+      return `/articles/${titleToPublicSlug(article.title)}`;
+    };
     const direct = articleRedirects.flatMap((item) => {
       const blog = item.source.replace("/articles/", "/blog/");
       const paths = [item.source, `${item.source}/`, blog, `${blog}/`];
@@ -69,11 +78,15 @@ const nextConfig: NextConfig = {
           paths.map((source) => ({
             source,
             has: [{ type: "host" as const, value: host }],
-            destination: `https://unlockaccounts.com${item.destination}`,
+            destination: `https://unlockaccounts.com${toPublicDestination(item.destination)}`,
             statusCode: 301 as const,
           })),
         ),
-        ...paths.map((source) => ({ source, destination: item.destination, statusCode: 301 as const })),
+        ...paths.map((source) => ({
+          source,
+          destination: toPublicDestination(item.destination),
+          statusCode: 301 as const,
+        })),
       ];
     });
 
@@ -91,6 +104,28 @@ const nextConfig: NextConfig = {
           paths.map((path) => ({
             source: path,
             has: [{ type: "host" as const, value: host }],
+            destination: `https://unlockaccounts.com${toPublicDestination(destination)}`,
+            statusCode: 301 as const,
+          })),
+        ),
+        ...paths.map((path) => ({
+          source: path,
+          destination: toPublicDestination(destination),
+          statusCode: 301 as const,
+        })),
+      ];
+    });
+
+    const currentLatin = articles.flatMap((article) => {
+      const source = `/articles/${article.slug}`;
+      const blog = source.replace("/articles/", "/blog/");
+      const destination = `/articles/${titleToPublicSlug(article.title)}`;
+      const paths = [source, `${source}/`, blog, `${blog}/`];
+      return [
+        ...hosts.flatMap((host) =>
+          paths.map((path) => ({
+            source: path,
+            has: [{ type: "host" as const, value: host }],
             destination: `https://unlockaccounts.com${destination}`,
             statusCode: 301 as const,
           })),
@@ -102,6 +137,7 @@ const nextConfig: NextConfig = {
     return [
       ...legacy,
       ...direct,
+      ...currentLatin,
       {
         source: "/:path*",
         has: [{ type: "host", value: "www.unlockaccounts.com" }],

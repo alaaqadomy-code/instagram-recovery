@@ -1,4 +1,5 @@
 import type { Article, ArticleSection } from "./articles/types";
+import { titleToPublicSlug } from "./arabic-slug";
 import { mergedSlugToFinal } from "./article-redirects";
 import { rewriteAdditions } from "./articles/rewrite-additions";
 import { rewriteSlugs } from "./rewrite-slugs";
@@ -8,6 +9,14 @@ const pairs = [...mergedSlugToFinal.entries()].sort((a, b) => b[0].length - a[0]
 export function remapArticleLinks(text: string) {
   let out = text;
   for (const [from, to] of pairs) {
+    out = out.replace(new RegExp(`/articles/${from}(?![a-z0-9-])`, "g"), `/articles/${to}`);
+  }
+  return out;
+}
+
+function remapPublicLinks(text: string, publicPairs: readonly (readonly [string, string])[]) {
+  let out = remapArticleLinks(text);
+  for (const [from, to] of publicPairs) {
     out = out.replace(new RegExp(`/articles/${from}(?![a-z0-9-])`, "g"), `/articles/${to}`);
   }
   return out;
@@ -132,10 +141,13 @@ function fence(slug: string): ArticleSection | null {
 }
 
 export function publishArticles(raw: Article[]): Article[] {
-  if (raw.length !== 141) throw new Error(`Expected 141 articles before unpublishing merges, got ${raw.length}`);
+  if (raw.length !== 171) throw new Error(`Expected 171 articles before unpublishing merges, got ${raw.length}`);
   const boilerplate = boilerplateSet(raw);
   const absorbed = absorb(raw, boilerplate);
   const published = raw.filter((article) => !mergedSlugToFinal.has(article.slug));
+  const publicPairs = published
+    .map((article) => [article.slug, titleToPublicSlug(article.title)] as const)
+    .sort((a, b) => b[0].length - a[0].length);
 
   return published.map((article) => {
     const rewrite = rewriteSlugs.has(article.slug);
@@ -160,12 +172,16 @@ export function publishArticles(raw: Article[]): Article[] {
         ? article.keywords.filter((keyword) => !/معطل|معطّل/.test(keyword))
         : article.keywords;
 
-    const count = wordCount(nextSections);
+    const sectionsWithPublicLinks = nextSections.map((section) => ({
+      ...section,
+      paragraphs: section.paragraphs.map((paragraph) => remapPublicLinks(paragraph, publicPairs)),
+    }));
+    const count = wordCount(sectionsWithPublicLinks);
     return {
       ...article,
       keywords,
-      sections: nextSections,
-      updated: rewrite ? "2026-09-27" : article.updated,
+      sections: sectionsWithPublicLinks,
+      updated: rewrite ? (article.updated > "2026-09-27" ? article.updated : "2026-09-27") : article.updated,
       readMinutes: Math.max(1, Math.min(16, Math.round(count / 160) || 1)),
     };
   });

@@ -1,5 +1,5 @@
 import { clusterSupport } from "@/lib/article-clusters";
-import { articles } from "@/lib/articles";
+import { articlePublicSlug, articles } from "@/lib/articles";
 import { absoluteUrl } from "@/lib/seo";
 import { site } from "@/lib/site";
 
@@ -10,7 +10,7 @@ const featured = Object.keys(clusterSupport);
 function link(slug: string) {
   const article = articles.find((item) => item.slug === slug);
   if (!article) return "";
-  return `- [${article.title}](${absoluteUrl(`/articles/${article.slug}`)}): ${article.description}`;
+  return `- [${article.title}](${absoluteUrl(`/articles/${articlePublicSlug(article)}`)}): ${article.description}`;
 }
 
 export function GET() {

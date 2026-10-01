@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { WhatsAppCta } from "@/components/Cta";
 import { Logo } from "@/components/Logo";
+import { articlePath } from "@/lib/articles";
 import { navLinks } from "@/lib/nav";
 import { site, whatsappChatUrl } from "@/lib/site";
 
@@ -29,22 +30,22 @@ export function Footer() {
           <p className="font-bold text-white">من المدونة</p>
           <ul className="mt-4 space-y-2.5 text-sm">
             <li>
-              <Link href="/articles/istirja-hisab-instagram-muattal" className="hover:text-white">
+              <Link href={articlePath("istirja-hisab-instagram-muattal")} className="hover:text-white">
                 حساب معطّل
               </Link>
             </li>
             <li>
-              <Link href="/articles/ikhtiraq-hisab-alinstagram" className="hover:text-white">
+              <Link href={articlePath("ikhtiraq-hisab-alinstagram")} className="hover:text-white">
                 حساب مخترق
               </Link>
             </li>
             <li>
-              <Link href="/articles/istirja-hisab-mahdhuf" className="hover:text-white">
+              <Link href={articlePath("istirja-hisab-mahdhuf")} className="hover:text-white">
                 حساب محذوف
               </Link>
             </li>
             <li>
-              <Link href="/articles/hisab-tijari-muattal" className="hover:text-white">
+              <Link href={articlePath("hisab-tijari-muattal")} className="hover:text-white">
                 حساب تجاري
               </Link>
             </li>

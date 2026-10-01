@@ -1,4 +1,4 @@
-import { articles } from "@/lib/articles";
+import { articlePublicSlug, articles } from "@/lib/articles";
 import { absoluteUrl } from "@/lib/seo";
 import { site } from "@/lib/site";
 
@@ -15,7 +15,7 @@ export function GET() {
   for (const article of articles) {
     parts.push("---");
     parts.push(`# ${article.title}`);
-    parts.push(`URL: ${absoluteUrl(`/articles/${article.slug}`)}`);
+    parts.push(`URL: ${absoluteUrl(`/articles/${articlePublicSlug(article)}`)}`);
     parts.push("");
     parts.push(article.description);
     parts.push("");

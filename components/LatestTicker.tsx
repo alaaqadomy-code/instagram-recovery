@@ -1,5 +1,5 @@
 import Link from "next/link";
-import type { Article } from "@/lib/articles";
+import { articlePublicSlug, type Article } from "@/lib/articles";
 
 const limit = 10;
 
@@ -23,7 +23,7 @@ function TickerGroup({ articles, hidden }: { articles: Article[]; hidden?: boole
       {articles.map((article) => (
         <li key={hidden ? `dup-${article.slug}` : article.slug} className="flex items-center">
           <Link
-            href={`/articles/${article.slug}`}
+            href={`/articles/${articlePublicSlug(article)}`}
             className="whitespace-nowrap px-5 text-sm font-bold text-[#f6f1e8] hover:text-[#fdba74]"
             tabIndex={hidden ? -1 : undefined}
           >

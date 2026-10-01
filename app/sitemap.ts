@@ -1,4 +1,4 @@
-import { articles } from "@/lib/articles";
+import { articlePublicSlug, articles } from "@/lib/articles";
 import { absoluteUrl } from "@/lib/seo";
 import type { MetadataRoute } from "next";
 
@@ -24,7 +24,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: route.priority,
     })),
     ...articles.map((article) => ({
-      url: absoluteUrl(`/articles/${article.slug}`),
+      url: absoluteUrl(`/articles/${articlePublicSlug(article)}`),
       lastModified: new Date(article.updated),
       changeFrequency: "monthly" as const,
       priority: 0.85,

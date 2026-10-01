@@ -19,7 +19,7 @@ export default async function LoginPage({
     <div className="mx-auto flex min-h-screen max-w-md items-center px-5">
       <form action="/admin/session" method="post" className="w-full rounded-3xl border border-slate-200 bg-white p-8 shadow-sm">
         <p className="text-sm font-semibold text-slate-500">Unlock Accounts</p>
-        <h1 className="mt-2 text-2xl font-extrabold">Dashboard</h1>
+        <h1 className="mt-2 text-2xl font-extrabold text-[#1e3a8a]">لوحة التحليلات</h1>
         <label className="mt-6 block text-sm font-semibold" htmlFor="password">
           Admin password
         </label>

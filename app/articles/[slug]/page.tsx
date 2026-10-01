@@ -4,7 +4,7 @@ import { notFound } from "next/navigation";
 import { ArticleText } from "@/components/ArticleText";
 import { WhatsAppCta } from "@/components/Cta";
 import { clusterLinks } from "@/lib/article-clusters";
-import { articles, getArticle } from "@/lib/articles";
+import { articlePublicSlug, articles, getArticle, getArticleByPublicSlug } from "@/lib/articles";
 import { absoluteUrl } from "@/lib/seo";
 import { site } from "@/lib/site";
 
@@ -14,12 +14,12 @@ export const dynamic = "force-static";
 export const dynamicParams = false;
 
 export function generateStaticParams() {
-  return articles.map((article) => ({ slug: article.slug }));
+  return articles.map((article) => ({ slug: articlePublicSlug(article) }));
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
-  const article = getArticle(slug);
+  const article = getArticleByPublicSlug(slug);
   if (!article) {
     return { title: "الدليل غير موجود", robots: { index: false, follow: true } };
   }
@@ -32,7 +32,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: article.title,
     description: article.description,
     keywords: article.keywords,
-    alternates: { canonical: `/articles/${article.slug}` },
+    alternates: { canonical: `/articles/${articlePublicSlug(article)}` },
     openGraph: {
       type: "article",
       locale: site.locale,
@@ -40,7 +40,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       description: article.description,
       publishedTime: article.date,
       modifiedTime: article.updated,
-      url: `${site.url}/articles/${article.slug}`,
+      url: `${site.url}/articles/${articlePublicSlug(article)}`,
       images: [
         {
           url: ogImage,
@@ -61,14 +61,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function ArticlePage({ params }: Props) {
   const { slug } = await params;
-  const article = getArticle(slug);
+  const article = getArticleByPublicSlug(slug);
   if (!article) notFound();
 
   const related = clusterLinks(article.slug)
     .map((slug) => getArticle(slug))
     .filter((item): item is NonNullable<typeof item> => Boolean(item));
 
-  const pageUrl = absoluteUrl(`/articles/${article.slug}`);
+  const pageUrl = absoluteUrl(`/articles/${articlePublicSlug(article)}`);
   const jsonLd = {
     "@context": "https://schema.org",
     "@graph": [
@@ -176,7 +176,7 @@ export default async function ArticlePage({ params }: Props) {
           <ul className="mt-4 space-y-2 text-sm font-semibold text-[#1d4ed8]">
             {related.map((item) => (
               <li key={item.slug}>
-                <Link href={`/articles/${item.slug}`}>{item.title}</Link>
+                <Link href={`/articles/${articlePublicSlug(item)}`}>{item.title}</Link>
               </li>
             ))}
           </ul>
