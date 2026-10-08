@@ -87,7 +87,8 @@ export const clusterSupport = {
   "ithbat-alhuiya-instagram": [
     "tarikh-almilad-instagram",
     "video-selfie-instagram",
-    "ithbat-milkiya-instagram"
+    "ithbat-milkiya-instagram",
+    "rafd-selfie-wal-huiya-instagram"
   ],
   "kam-yastaghriq-istirja": [
     "istirja-baad-30-yawm",

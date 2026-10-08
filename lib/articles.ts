@@ -1,6 +1,7 @@
 import { appealArticles, businessArticles } from "./articles/appeal";
 import { gapArticles } from "./articles/gaps-2026";
 import { disabledIntentArticles } from "./articles/disabled-intents-2026";
+import { gapArticles202610 } from "./articles/gaps-2026-10";
 import { keywordGapArticles } from "./articles/keyword-gaps";
 import { caseArticles } from "./articles/cases";
 import { guideArticles } from "./articles/guides";
@@ -36,6 +37,7 @@ const rawArticles: Article[] = [
   ...gapArticles,
   ...keywordGapArticles,
   ...disabledIntentArticles,
+  ...gapArticles202610,
 ];
 
 export const articles: Article[] = publishArticles(rawArticles);
