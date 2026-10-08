@@ -140,8 +140,22 @@ function fence(slug: string): ArticleSection | null {
   return { heading: "حد هذه الصفحة", paragraphs: [text] };
 }
 
+/** Raw articles before merged slugs are unpublished.
+ *  Dropping or double-spreading a source file changes the live site without a type error,
+ *  so the build pins this count. Bump it only when an article is added or removed on purpose.
+ *  The slug set check stops a duplicate from hiding a missing article at the same count.
+ */
+const EXPECTED_RAW_ARTICLES = 172;
+
 export function publishArticles(raw: Article[]): Article[] {
-  if (raw.length !== 171) throw new Error(`Expected 171 articles before unpublishing merges, got ${raw.length}`);
+  if (raw.length !== EXPECTED_RAW_ARTICLES) {
+    throw new Error(`Expected ${EXPECTED_RAW_ARTICLES} articles before unpublishing merges, got ${raw.length}`);
+  }
+  const seenSlugs = new Set<string>();
+  for (const article of raw) {
+    if (seenSlugs.has(article.slug)) throw new Error(`Duplicate raw article slug: ${article.slug}`);
+    seenSlugs.add(article.slug);
+  }
   const boilerplate = boilerplateSet(raw);
   const absorbed = absorb(raw, boilerplate);
   const published = raw.filter((article) => !mergedSlugToFinal.has(article.slug));
