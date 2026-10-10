@@ -145,7 +145,7 @@ function fence(slug: string): ArticleSection | null {
  *  so the build pins this count. Bump it only when an article is added or removed on purpose.
  *  The slug set check stops a duplicate from hiding a missing article at the same count.
  */
-const EXPECTED_RAW_ARTICLES = 172;
+const EXPECTED_RAW_ARTICLES = 282;
 
 export function publishArticles(raw: Article[]): Article[] {
   if (raw.length !== EXPECTED_RAW_ARTICLES) {

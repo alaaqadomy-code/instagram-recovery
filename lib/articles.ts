@@ -14,13 +14,34 @@ import { plannerArticlesB } from "./articles/planner-b";
 import { plannerArticlesC } from "./articles/planner-c";
 import { plannerArticlesD } from "./articles/planner-d";
 import { securityArticles } from "./articles/security";
+import { draftArticles20261010 } from "./articles/drafts-2026-10-10";
 import { titleToPublicSlug } from "./arabic-slug";
 import type { Article } from "./articles/types";
 import { publishArticles } from "./publish-articles";
 
 export type { Article, ArticleFaq, ArticleSection } from "./articles/types";
 
-const rawArticles: Article[] = [
+const heldDraftTitles = new Set([
+  "استرجاع حساب انستقرام معطل",
+  "استرجاع حساب انستقرام بدون ايميل",
+  "تنشيط حساب انستقرام معطل",
+  "حساب معطل انستقرام",
+  "الانستقرام معطل",
+  "إلغاء تنشيط حساب انستقرام مؤقتًا",
+  "تعطيل حساب الانستقرام مؤقت",
+  "كيفية اغلاق حساب انستقرام مؤقتا",
+  "رابط استرجاع حساب انستقرام معطل 2021",
+  "رابط استرجاع حساب انستقرام معطل 2022",
+  "رابط استرجاع حساب انستقرام معطل مؤقتا",
+  "طريقة استعادة حساب سناب شات",
+  "حل مشكلة تعطيل حساب فيس بوك",
+]);
+
+export const batchArticles20261010 = draftArticles20261010.filter(
+  (article) => !heldDraftTitles.has(article.title),
+);
+
+export const rawArticles: Article[] = [
   ...plannerArticlesA,
   ...plannerArticlesB,
   ...plannerArticlesC,
@@ -38,6 +59,7 @@ const rawArticles: Article[] = [
   ...keywordGapArticles,
   ...disabledIntentArticles,
   ...gapArticles202610,
+  ...batchArticles20261010,
 ];
 
 export const articles: Article[] = publishArticles(rawArticles);
