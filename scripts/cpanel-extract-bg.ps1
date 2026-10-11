@@ -102,7 +102,6 @@ $code = curl.exe -s -o $htmlPath -w "%{http_code}" --max-time 60 --resolve "unlo
 Write-Output "HOME=$code size=$((Get-Item $htmlPath).Length)"
 $html = [IO.File]::ReadAllText($htmlPath)
 Write-Output ("canon=" + ($html -match 'https://unlockaccounts.com'))
-Write-Output ("old_canon=" + ($html -match 'https://instagram-recover.com'))
 Write-Output ("brand=" + ($html -match 'Unlock Accounts'))
 Write-Output ("email=" + ($html -match 'hello@unlockaccounts.com'))
 Write-Output ("bytes=" + $html.Length)

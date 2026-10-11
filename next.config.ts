@@ -62,7 +62,7 @@ const nextConfig: NextConfig = {
     ];
   },
   async redirects() {
-    const hosts = ["www.unlockaccounts.com", "instagram-recover.com", "www.instagram-recover.com"] as const;
+    const hosts = ["www.unlockaccounts.com"] as const;
     const toPublicDestination = (destination: string) => {
       if (!destination.startsWith("/articles/")) return destination;
       const slug = destination.slice("/articles/".length);
@@ -141,18 +141,6 @@ const nextConfig: NextConfig = {
       {
         source: "/:path*",
         has: [{ type: "host", value: "www.unlockaccounts.com" }],
-        destination: "https://unlockaccounts.com/:path*",
-        permanent: true,
-      },
-      {
-        source: "/:path*",
-        has: [{ type: "host", value: "instagram-recover.com" }],
-        destination: "https://unlockaccounts.com/:path*",
-        permanent: true,
-      },
-      {
-        source: "/:path*",
-        has: [{ type: "host", value: "www.instagram-recover.com" }],
         destination: "https://unlockaccounts.com/:path*",
         permanent: true,
       },
