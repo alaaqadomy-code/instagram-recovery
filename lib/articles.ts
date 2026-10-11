@@ -21,25 +21,7 @@ import { publishArticles } from "./publish-articles";
 
 export type { Article, ArticleFaq, ArticleSection } from "./articles/types";
 
-const heldDraftTitles = new Set([
-  "استرجاع حساب انستقرام معطل",
-  "استرجاع حساب انستقرام بدون ايميل",
-  "تنشيط حساب انستقرام معطل",
-  "حساب معطل انستقرام",
-  "الانستقرام معطل",
-  "إلغاء تنشيط حساب انستقرام مؤقتًا",
-  "تعطيل حساب الانستقرام مؤقت",
-  "كيفية اغلاق حساب انستقرام مؤقتا",
-  "رابط استرجاع حساب انستقرام معطل 2021",
-  "رابط استرجاع حساب انستقرام معطل 2022",
-  "رابط استرجاع حساب انستقرام معطل مؤقتا",
-  "طريقة استعادة حساب سناب شات",
-  "حل مشكلة تعطيل حساب فيس بوك",
-]);
-
-export const batchArticles20261010 = draftArticles20261010.filter(
-  (article) => !heldDraftTitles.has(article.title),
-);
+export const batchArticles20261010 = draftArticles20261010;
 
 export const rawArticles: Article[] = [
   ...plannerArticlesA,
