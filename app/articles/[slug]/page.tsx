@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArticleText } from "@/components/ArticleText";
@@ -24,9 +25,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     return { title: "الدليل غير موجود", robots: { index: false, follow: true } };
   }
 
-  const ogImage = article.image ? absoluteUrl(article.image) : absoluteUrl("/opengraph-image");
-  const ogWidth = article.image ? 1200 : 1200;
-  const ogHeight = article.image ? 675 : 630;
+  const articleImages = article.image
+    ? [{ url: absoluteUrl(article.image), width: 1200, height: 675, alt: article.imageAlt ?? `${site.name} — ${article.title}` }]
+    : undefined;
 
   return {
     title: article.title,
@@ -41,20 +42,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       publishedTime: article.date,
       modifiedTime: article.updated,
       url: `${site.url}/articles/${articlePublicSlug(article)}`,
-      images: [
-        {
-          url: ogImage,
-          width: ogWidth,
-          height: ogHeight,
-          alt: article.imageAlt ?? `${site.name} — ${article.title}`,
-        },
-      ],
+      ...(articleImages ? { images: articleImages } : {}),
     },
     twitter: {
       card: "summary_large_image",
       title: article.title,
       description: article.description,
-      images: [ogImage],
+      ...(articleImages ? { images: [articleImages[0].url] } : {}),
     },
   };
 }
@@ -127,12 +121,14 @@ export default async function ArticlePage({ params }: Props) {
         نُشر {article.date} · تحديث {article.updated} · {article.readMinutes} دقائق
       </p>
       {article.image ? (
-        <img
+        <Image
           src={article.image}
           alt={article.imageAlt ?? article.title}
           width={1200}
           height={675}
           className="mt-6 h-auto w-full rounded-2xl"
+          sizes="(max-width: 768px) 100vw, 48rem"
+          priority
         />
       ) : null}
       <div className="mt-8 space-y-8">

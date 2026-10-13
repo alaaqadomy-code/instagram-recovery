@@ -3,15 +3,16 @@ import { absoluteUrl } from "@/lib/seo";
 import type { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const staticRoutes: { path: string; changeFrequency: MetadataRoute.Sitemap[0]["changeFrequency"]; priority: number }[] =
+  const buildDate = new Date();
+  const staticRoutes: { path: string; changeFrequency: MetadataRoute.Sitemap[0]["changeFrequency"]; priority: number; lastModified?: Date }[] =
     [
-      { path: "/", changeFrequency: "weekly", priority: 1 },
-      { path: "/services", changeFrequency: "weekly", priority: 0.9 },
-      { path: "/articles", changeFrequency: "weekly", priority: 0.9 },
-      { path: "/about", changeFrequency: "monthly", priority: 0.6 },
-      { path: "/faq", changeFrequency: "monthly", priority: 0.7 },
-      { path: "/glossary", changeFrequency: "monthly", priority: 0.6 },
-      { path: "/contact", changeFrequency: "monthly", priority: 0.8 },
+      { path: "/", changeFrequency: "weekly", priority: 1, lastModified: buildDate },
+      { path: "/services", changeFrequency: "weekly", priority: 0.9, lastModified: buildDate },
+      { path: "/articles", changeFrequency: "weekly", priority: 0.9, lastModified: buildDate },
+      { path: "/about", changeFrequency: "monthly", priority: 0.6, lastModified: buildDate },
+      { path: "/faq", changeFrequency: "monthly", priority: 0.7, lastModified: buildDate },
+      { path: "/glossary", changeFrequency: "monthly", priority: 0.6, lastModified: buildDate },
+      { path: "/contact", changeFrequency: "monthly", priority: 0.8, lastModified: buildDate },
       { path: "/privacy-policy", changeFrequency: "yearly", priority: 0.3 },
       { path: "/terms", changeFrequency: "yearly", priority: 0.3 },
     ];
@@ -19,7 +20,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     ...staticRoutes.map((route) => ({
       url: absoluteUrl(route.path),
-      lastModified: new Date("2026-09-24"),
+      ...(route.lastModified ? { lastModified: route.lastModified } : {}),
       changeFrequency: route.changeFrequency,
       priority: route.priority,
     })),

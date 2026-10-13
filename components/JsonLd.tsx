@@ -12,7 +12,7 @@ export function JsonLd() {
         url: absoluteUrl("/"),
         logo: absoluteUrl("/icon.svg"),
         description: site.description,
-        email: site.email,
+        ...(site.email ? { email: site.email } : {}),
         telephone: `+${site.whatsapp}`,
         areaServed: ["SA", "AE", "JO", "EG", "KW", "QA", "BH", "OM", "IQ", "MA"],
         inLanguage: "ar",

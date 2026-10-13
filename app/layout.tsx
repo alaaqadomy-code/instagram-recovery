@@ -3,6 +3,8 @@ import { Cairo } from "next/font/google";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { JsonLd } from "@/components/JsonLd";
+import { GaTag } from "@/components/ga-tag";
+import { WhatsAppClick } from "@/components/whatsapp-click";
 import { WhatsAppFloat } from "@/components/WhatsAppFloat";
 import { defaultRobots } from "@/lib/seo";
 import { site } from "@/lib/site";
@@ -76,6 +78,10 @@ export const viewport = {
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="ar" dir="rtl" data-scroll-behavior="smooth" className={`${cairo.variable} h-full antialiased`}>
+      <head>
+        <link rel="preconnect" href="https://www.googletagmanager.com" />
+        <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+      </head>
       <body className="flex min-h-full flex-col bg-white font-sans text-slate-900">
         <a
           href="#main"
@@ -90,6 +96,8 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         </main>
         <Footer />
         <WhatsAppFloat />
+        <GaTag />
+        <WhatsAppClick />
       </body>
     </html>
   );
