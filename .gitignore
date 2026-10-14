@@ -46,9 +46,18 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-# graphify local cost only; the graph itself can be committed
+# graphify local cost and AST cache; the graph itself can be committed
 graphify-out/cost.json
+graphify-out/cache/
+
+# local python caches
+__pycache__/
+*.py[cod]
 
 # one-shot deploy archives (never commit)
 next-deploy.tgz
 *.deploy.tgz
+
+# site-deploy artifacts (keep .claude/site.json tracked)
+.claude/deploy/
+.claude/last-deploy.json

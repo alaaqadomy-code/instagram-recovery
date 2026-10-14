@@ -1,0 +1,17 @@
+{
+  "cfAccount": "b951ecc9e456eca48c58d760c46a8659",
+  "name": "unlockaccounts",
+  "domain": "unlockaccounts.com",
+  "hosting": "cpanel-tgz",
+  "appName": "instagram-recovery",
+  "appPath": "/home/instagra/public_html",
+  "build": "npm run build",
+  "repo": "alaaqadomy-code/instagram-recovery",
+  "articles": {
+    "format": "next-ts",
+    "dir": "lib/articles",
+    "note": "المقالات مصفوفات TS، الرابط العام يُشتق من العنوان بالعربية (lib/arabic-slug)؛ أضف المقال في مصفوفة articles"
+  },
+  "gscProperty": "https://unlockaccounts.com/",
+  "expectFolder": "instagram-recovery"
+}
