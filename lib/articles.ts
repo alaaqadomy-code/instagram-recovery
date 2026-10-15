@@ -15,6 +15,7 @@ import { plannerArticlesC } from "./articles/planner-c";
 import { plannerArticlesD } from "./articles/planner-d";
 import { securityArticles } from "./articles/security";
 import { draftArticles20261010 } from "./articles/drafts-2026-10-10";
+import { tawthiqGapArticles } from "./articles/tawthiq-gaps";
 import { titleToPublicSlug } from "./arabic-slug";
 import type { Article } from "./articles/types";
 import { publishArticles } from "./publish-articles";
@@ -42,6 +43,7 @@ export const rawArticles: Article[] = [
   ...disabledIntentArticles,
   ...gapArticles202610,
   ...batchArticles20261010,
+  ...tawthiqGapArticles,
 ];
 
 export const articles: Article[] = publishArticles(rawArticles);

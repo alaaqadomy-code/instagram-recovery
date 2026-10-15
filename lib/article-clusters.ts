@@ -1,7 +1,11 @@
-/** Topic clusters. Pillar slug maps to supporting slugs. */
+/**
+ * Topic clusters. Pillar slug maps to supporting slugs.
+ * A slug may also stay as its own key with [] so /llms.txt keeps listing it.
+ * clusterLinks follows the parent group when the slug appears in a support list.
+ */
 export const clusterSupport = {
   "atal-alinstagram": [],
-  "taattil-huquq-nashr": ["balagh-alama-tijariya"],
+  "taattil-huquq-nashr": ["balagh-alama-tijariya", "hadhf-manshurat-instagram"],
   "taghyir-email-instagram": [
     "taghyir-raqam-jawwal",
     "barid-altaakid-laysa-bariidi"
@@ -11,7 +15,9 @@ export const clusterSupport = {
     "hadd-muhawalat-instagram",
     "challenge-required-instagram",
     "takid-annaka-insan",
-    "hisab-bi-ishraf-aili"
+    "hisab-bi-ishraf-aili",
+    "atal-alinstagram",
+    "istirja-hisab-mughlaq"
   ],
   "hadhf-manshurat-instagram": [],
   "ikhtiraq-hisab-alinstagram": [
@@ -21,7 +27,9 @@ export const clusterSupport = {
     "himayat-al-hisab-baad-alikhtiraq",
     "dukhul-yakhrujuni-fawran",
     "risalat-dukhul-ghair-maraf",
-    "tatbiq-khariji-qabl-altaattil"
+    "tatbiq-khariji-qabl-altaattil",
+    "tasayyud-hisab-instagram",
+    "intihal-shakhsiya-instagram"
   ],
   "rabt-facebook-accounts-center": [
     "rabt-threads-instagram",
@@ -50,7 +58,9 @@ export const clusterSupport = {
     "istirja-min-mutasaffih",
     "istirja-abr-google",
     "istirdad-hisab-alinsta-kamil",
-    "istirdad-hisabi-alinsta"
+    "istirdad-hisabi-alinsta",
+    "rabit-istirja-hisab-instagram",
+    "istirja-via-daam-fanni"
   ],
   "rabit-istirja-hisab-instagram": [],
   "istirja-via-daam-fanni": [],
@@ -72,7 +82,9 @@ export const clusterSupport = {
     "rabit-istirja-muattal-rasmi",
     "istirja-muattal-intihak",
     "istirja-muattal-muaqqatan",
-    "istirja-muattal-bisabab-alumr"
+    "istirja-muattal-bisabab-alumr",
+    "taattil-maayir-almujtama",
+    "istirja-hisab-muallaq"
   ],
   "khidma-mawthuqa": [
     "istirja-majjanan",
@@ -88,7 +100,8 @@ export const clusterSupport = {
     "tarikh-almilad-instagram",
     "video-selfie-instagram",
     "ithbat-milkiya-instagram",
-    "rafd-selfie-wal-huiya-instagram"
+    "rafd-selfie-wal-huiya-instagram",
+    "download-instagram-data"
   ],
   "kam-yastaghriq-istirja": [
     "istirja-baad-30-yawm",
@@ -106,8 +119,12 @@ export const clusterSupport = {
   "download-instagram-data": [],
   "bidun-email-w-raqm": [],
   "mushkilat-al-mudaaqa-thunaiya": [],
-  "kod-tahqeeq-la-yasil": ["raqm-hatif-la-arafuhu"],
-  "istirja-hisab-muwathaq": ["ishtirak-muwathaq-wal-hisab-muattal"]
+  "kod-tahqeeq-la-yasil": [
+    "raqm-hatif-la-arafuhu",
+    "bidun-email-w-raqm",
+    "mushkilat-al-mudaaqa-thunaiya"
+  ],
+  "istirja-hisab-muwathaq": ["ishtirak-muwathaq-wal-hisab-muattal", "tawthiq-hisab-instagram"]
 } as Record<string, readonly string[]>;
 
 const supportToPillar = new Map<string, string>();

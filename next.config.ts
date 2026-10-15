@@ -1,7 +1,7 @@
 import type { NextConfig } from "next";
 import { titleToPublicSlug } from "./lib/arabic-slug";
-import { articleRedirects } from "./lib/article-redirects";
-import { articles } from "./lib/articles";
+import { articleRedirects, mergedSlugToFinal } from "./lib/article-redirects";
+import { articles, rawArticles } from "./lib/articles";
 
 const securityHeaders = [
   { key: "X-Content-Type-Options", value: "nosniff" },
@@ -15,6 +15,7 @@ const securityHeaders = [
 ];
 
 const nextConfig: NextConfig = {
+  generateBuildId: async () => "5k8XfUZ6RfD8cslvt5p84",
   compress: true,
   poweredByHeader: false,
   trailingSlash: false,
@@ -116,6 +117,40 @@ const nextConfig: NextConfig = {
       ];
     });
 
+    const bySlug = new Map(rawArticles.map((article) => [article.slug, article]));
+    const livePaths = new Set(articles.map((article) => `/articles/${titleToPublicSlug(article.title)}`));
+    const seenArabic = new Set<string>();
+    const arabicMerged = [...mergedSlugToFinal].flatMap(([fromSlug, toSlug]) => {
+      const source = bySlug.get(fromSlug);
+      const dest = bySlug.get(toSlug);
+      if (!source || !dest) return [];
+      const sourcePath = `/articles/${titleToPublicSlug(source.title)}`;
+      const destPath = `/articles/${titleToPublicSlug(dest.title)}`;
+      if (sourcePath === destPath || livePaths.has(sourcePath) || seenArabic.has(sourcePath)) return [];
+      seenArabic.add(sourcePath);
+      // Node matches redirects against the percent-encoded pathname.
+      const encodedSource = sourcePath
+        .split("/")
+        .map((part) => encodeURIComponent(part))
+        .join("/");
+      const paths = [encodedSource, `${encodedSource}/`];
+      return [
+        ...hosts.flatMap((host) =>
+          paths.map((path) => ({
+            source: path,
+            has: [{ type: "host" as const, value: host }],
+            destination: `https://unlockaccounts.com${destPath}`,
+            statusCode: 301 as const,
+          })),
+        ),
+        ...paths.map((path) => ({
+          source: path,
+          destination: destPath,
+          statusCode: 301 as const,
+        })),
+      ];
+    });
+
     const currentLatin = articles.flatMap((article) => {
       const source = `/articles/${article.slug}`;
       const blog = source.replace("/articles/", "/blog/");
@@ -137,6 +172,7 @@ const nextConfig: NextConfig = {
     return [
       ...legacy,
       ...direct,
+      ...arabicMerged,
       ...currentLatin,
       {
         source: "/:path*",
@@ -147,7 +183,6 @@ const nextConfig: NextConfig = {
       { source: "/blog", destination: "/articles", permanent: true },
       { source: "/blog/:slug", destination: "/articles/:slug", permanent: true },
       { source: "/privacy", destination: "/privacy-policy", permanent: true },
-      { source: "/how-it-works", destination: "/about", permanent: true },
       { source: "/:path+/", destination: "/:path+", statusCode: 301 },
     ];
   },

@@ -7,6 +7,7 @@ import { WhatsAppCta } from "@/components/Cta";
 import { clusterLinks } from "@/lib/article-clusters";
 import { articlePublicSlug, articles, getArticle, getArticleByPublicSlug } from "@/lib/articles";
 import { absoluteUrl } from "@/lib/seo";
+import { serviceForArticle } from "@/lib/service-pages";
 import { site } from "@/lib/site";
 
 type Props = { params: Promise<{ slug: string }> };
@@ -62,6 +63,7 @@ export default async function ArticlePage({ params }: Props) {
     .map((slug) => getArticle(slug))
     .filter((item): item is NonNullable<typeof item> => Boolean(item));
 
+  const service = serviceForArticle(article);
   const pageUrl = absoluteUrl(`/articles/${articlePublicSlug(article)}`);
   const jsonLd = {
     "@context": "https://schema.org",
@@ -163,7 +165,10 @@ export default async function ArticlePage({ params }: Props) {
       </section>
       <div className="mt-12 rounded-3xl bg-[#0b1220] p-6 text-white">
         <p className="text-lg font-bold">هل تواجه هذه الحالة الآن؟</p>
-        <p className="mt-2 text-sm leading-7 text-slate-300">أرسل لقطة الشاشة عبر واتساب. لا نطلب كلمة المرور.</p>
+        <p className="mt-2 text-sm leading-7 text-slate-300">
+          أرسل لقطة الشاشة عبر واتساب. لا نطلب كلمة المرور. أو اقرأ تفاصيل خدمة{" "}
+          <Link href={`/services/${service.slug}`} className="font-bold text-[#fdba74] underline underline-offset-4">{service.h1}</Link>.
+        </p>
         <WhatsAppCta className="mt-4">افحص حالة حسابك</WhatsAppCta>
       </div>
       {related.length ? (
