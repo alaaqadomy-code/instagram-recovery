@@ -300,6 +300,30 @@ export const articleRedirects = [
     "source": "/articles/istirja-instagram-2026",
     "destination": "/articles/istirja-hisab-instagram"
   }
+  ,{
+    "source": "/articles/adawat-hisab-almunshi",
+    "destination": "/articles/hisab-tijari-muattal"
+  }
+  ,{
+    "source": "/articles/arbaha-instagram-muallaqa",
+    "destination": "/articles/hisab-tijari-muattal"
+  }
+  ,{
+    "source": "/articles/tahawwul-ila-hisab-shakhsi",
+    "destination": "/articles/hisab-tijari-muattal"
+  }
+  ,{
+    "source": "/articles/kalimat-sirr-markaz-alhisabat",
+    "destination": "/articles/rabt-facebook-accounts-center"
+  }
+  ,{
+    "source": "/articles/balagh-alama-tijariya",
+    "destination": "/articles/taattil-huquq-nashr"
+  }
+  ,{
+    "source": "/articles/ishtirak-muwathaq-wal-hisab-muattal",
+    "destination": "/articles/istirja-hisab-muwathaq"
+  }
 ] as const;
 
 export const mergedSlugToFinal = new Map(

@@ -118,7 +118,7 @@
       "routeType": "page",
       "response": "complete",
       "compute": "static",
-      "htmlSize": 2913187,
+      "htmlSize": 2904078,
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -329,62 +329,6 @@
       "initialRevalidateSeconds": false,
       "srcRoute": "/articles/[slug]",
       "dataRoute": "/articles/اخفاء-حساب-انستقرام.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/articles/أدوات-حساب-المنشئ-في-إنستغرام-توقفت": {
-      "routeType": "page",
-      "response": "complete",
-      "compute": "static",
-      "htmlSize": 79467,
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "next-action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": false,
-      "srcRoute": "/articles/[slug]",
-      "dataRoute": "/articles/أدوات-حساب-المنشئ-في-إنستغرام-توقفت.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/articles/أرباح-أو-هدايا-إنستغرام-معلقة-والحساب-يعمل": {
-      "routeType": "page",
-      "response": "complete",
-      "compute": "static",
-      "htmlSize": 78532,
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "next-action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": false,
-      "srcRoute": "/articles/[slug]",
-      "dataRoute": "/articles/أرباح-أو-هدايا-إنستغرام-معلقة-والحساب-يعمل.rsc",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -650,7 +594,7 @@
       "routeType": "page",
       "response": "complete",
       "compute": "static",
-      "htmlSize": 113456,
+      "htmlSize": 112969,
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -958,7 +902,7 @@
       "routeType": "page",
       "response": "complete",
       "compute": "static",
-      "htmlSize": 89529,
+      "htmlSize": 108027,
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -1070,7 +1014,7 @@
       "routeType": "page",
       "response": "complete",
       "compute": "static",
-      "htmlSize": 80039,
+      "htmlSize": 79552,
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -1630,7 +1574,7 @@
       "routeType": "page",
       "response": "complete",
       "compute": "static",
-      "htmlSize": 66980,
+      "htmlSize": 78799,
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -2410,34 +2354,6 @@
         "x-next-revalidate-tag-token"
       ]
     },
-    "/articles/اشتراك-التوثيق-مستمر-والحساب-معطّل": {
-      "routeType": "page",
-      "response": "complete",
-      "compute": "static",
-      "htmlSize": 76342,
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "next-action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": false,
-      "srcRoute": "/articles/[slug]",
-      "dataRoute": "/articles/اشتراك-التوثيق-مستمر-والحساب-معطّل.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
     "/articles/اعادة-تنشيط-حساب-انستا": {
       "routeType": "page",
       "response": "complete",
@@ -2638,7 +2554,7 @@
       "routeType": "page",
       "response": "complete",
       "compute": "static",
-      "htmlSize": 80324,
+      "htmlSize": 79014,
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -3362,34 +3278,6 @@
         "x-next-revalidate-tag-token"
       ]
     },
-    "/articles/تعطيل-إنستغرام-بسبب-علامة-تجارية-لا-حقوق-نشر": {
-      "routeType": "page",
-      "response": "complete",
-      "compute": "static",
-      "htmlSize": 77516,
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "next-action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": false,
-      "srcRoute": "/articles/[slug]",
-      "dataRoute": "/articles/تعطيل-إنستغرام-بسبب-علامة-تجارية-لا-حقوق-نشر.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
     "/articles/تعطيل-انستقرام": {
       "routeType": "page",
       "response": "complete",
@@ -3590,7 +3478,7 @@
       "routeType": "page",
       "response": "complete",
       "compute": "static",
-      "htmlSize": 84029,
+      "htmlSize": 82719,
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -3646,7 +3534,7 @@
       "routeType": "page",
       "response": "complete",
       "compute": "static",
-      "htmlSize": 82596,
+      "htmlSize": 83622,
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -3926,7 +3814,7 @@
       "routeType": "page",
       "response": "complete",
       "compute": "static",
-      "htmlSize": 69814,
+      "htmlSize": 95675,
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -3982,7 +3870,7 @@
       "routeType": "page",
       "response": "complete",
       "compute": "static",
-      "htmlSize": 93827,
+      "htmlSize": 93414,
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -4178,7 +4066,7 @@
       "routeType": "page",
       "response": "complete",
       "compute": "static",
-      "htmlSize": 82571,
+      "htmlSize": 82092,
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -4249,34 +4137,6 @@
       "initialRevalidateSeconds": false,
       "srcRoute": "/articles/[slug]",
       "dataRoute": "/articles/حساب-إنستغرام-بإشراف-عائلي-أو-لمراهق.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/articles/حساب-إنستغرام-عاد-شخصياً-دون-أن-تطلب": {
-      "routeType": "page",
-      "response": "complete",
-      "compute": "static",
-      "htmlSize": 79420,
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "next-action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": false,
-      "srcRoute": "/articles/[slug]",
-      "dataRoute": "/articles/حساب-إنستغرام-عاد-شخصياً-دون-أن-تطلب.rsc",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -4570,7 +4430,7 @@
       "routeType": "page",
       "response": "complete",
       "compute": "static",
-      "htmlSize": 68823,
+      "htmlSize": 100106,
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -4990,7 +4850,7 @@
       "routeType": "page",
       "response": "complete",
       "compute": "static",
-      "htmlSize": 72965,
+      "htmlSize": 85744,
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -5018,7 +4878,7 @@
       "routeType": "page",
       "response": "complete",
       "compute": "static",
-      "htmlSize": 95489,
+      "htmlSize": 95002,
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -5214,7 +5074,7 @@
       "routeType": "page",
       "response": "complete",
       "compute": "static",
-      "htmlSize": 79029,
+      "htmlSize": 78542,
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -5649,34 +5509,6 @@
       "initialRevalidateSeconds": false,
       "srcRoute": "/articles/[slug]",
       "dataRoute": "/articles/كلمة-سر-إنستغرام-صحيحة-ويخرجك-التطبيق-فوراً.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/articles/كلمة-سر-مركز-الحسابات-تختلف-عن-دخول-إنستغرام": {
-      "routeType": "page",
-      "response": "complete",
-      "compute": "static",
-      "htmlSize": 79650,
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "next-action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": false,
-      "srcRoute": "/articles/[slug]",
-      "dataRoute": "/articles/كلمة-سر-مركز-الحسابات-تختلف-عن-دخول-إنستغرام.rsc",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -6138,7 +5970,7 @@
       "routeType": "page",
       "response": "complete",
       "compute": "static",
-      "htmlSize": 79225,
+      "htmlSize": 77915,
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -6750,7 +6582,7 @@
       "routeType": "page",
       "response": "complete",
       "compute": "static",
-      "htmlSize": 80602,
+      "htmlSize": 82862,
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -6774,11 +6606,39 @@
         "x-next-revalidate-tag-token"
       ]
     },
+    "/services/استرجاع-حساب-انستقرام-الاردن": {
+      "routeType": "page",
+      "response": "complete",
+      "compute": "static",
+      "htmlSize": 144732,
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "next-action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/services/[slug]",
+      "dataRoute": "/services/استرجاع-حساب-انستقرام-الاردن.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
     "/services/استرجاع-حساب-انستقرام-الامارات": {
       "routeType": "page",
       "response": "complete",
       "compute": "static",
-      "htmlSize": 140309,
+      "htmlSize": 142563,
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -6802,11 +6662,39 @@
         "x-next-revalidate-tag-token"
       ]
     },
+    "/services/استرجاع-حساب-انستقرام-البحرين": {
+      "routeType": "page",
+      "response": "complete",
+      "compute": "static",
+      "htmlSize": 146056,
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "next-action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/services/[slug]",
+      "dataRoute": "/services/استرجاع-حساب-انستقرام-البحرين.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
     "/services/استرجاع-حساب-انستقرام-السعودية": {
       "routeType": "page",
       "response": "complete",
       "compute": "static",
-      "htmlSize": 139561,
+      "htmlSize": 141815,
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -6830,11 +6718,39 @@
         "x-next-revalidate-tag-token"
       ]
     },
+    "/services/استرجاع-حساب-انستقرام-العراق": {
+      "routeType": "page",
+      "response": "complete",
+      "compute": "static",
+      "htmlSize": 146012,
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "next-action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/services/[slug]",
+      "dataRoute": "/services/استرجاع-حساب-انستقرام-العراق.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
     "/services/استرجاع-حساب-انستقرام-الكويت": {
       "routeType": "page",
       "response": "complete",
       "compute": "static",
-      "htmlSize": 140340,
+      "htmlSize": 142594,
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -6862,7 +6778,7 @@
       "routeType": "page",
       "response": "complete",
       "compute": "static",
-      "htmlSize": 146026,
+      "htmlSize": 148280,
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -6886,11 +6802,39 @@
         "x-next-revalidate-tag-token"
       ]
     },
+    "/services/استرجاع-حساب-انستقرام-عمان": {
+      "routeType": "page",
+      "response": "complete",
+      "compute": "static",
+      "htmlSize": 145469,
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "next-action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/services/[slug]",
+      "dataRoute": "/services/استرجاع-حساب-انستقرام-عمان.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
     "/services/استرجاع-حساب-انستقرام-قطر": {
       "routeType": "page",
       "response": "complete",
       "compute": "static",
-      "htmlSize": 140393,
+      "htmlSize": 142647,
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -6918,7 +6862,7 @@
       "routeType": "page",
       "response": "complete",
       "compute": "static",
-      "htmlSize": 141818,
+      "htmlSize": 144072,
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -6946,7 +6890,7 @@
       "routeType": "page",
       "response": "complete",
       "compute": "static",
-      "htmlSize": 140910,
+      "htmlSize": 143207,
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -6974,7 +6918,7 @@
       "routeType": "page",
       "response": "complete",
       "compute": "static",
-      "htmlSize": 143838,
+      "htmlSize": 146092,
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -7002,7 +6946,7 @@
       "routeType": "page",
       "response": "complete",
       "compute": "static",
-      "htmlSize": 144054,
+      "htmlSize": 146308,
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -7030,7 +6974,7 @@
       "routeType": "page",
       "response": "complete",
       "compute": "static",
-      "htmlSize": 144639,
+      "htmlSize": 146893,
       "experimentalBypassFor": [
         {
           "type": "header",

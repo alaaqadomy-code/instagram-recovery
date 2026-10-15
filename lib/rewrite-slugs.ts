@@ -1,6 +1,5 @@
 export const rewriteSlugs = new Set<string>([
   "istirja-via-facebook",
-  "challenge-required-instagram",
   "istirja-hisab-muwathaq",
   "kam-yastaghriq-istirja",
   "hisab-muqayyad",
@@ -21,7 +20,6 @@ export const rewriteSlugs = new Set<string>([
   "himayat-al-hisab-baad-alikhtiraq",
   "istirja-username-instagram",
   "bidun-email-w-raqm",
-  "download-instagram-data",
   "taghyir-email-instagram",
   "intihal-shakhsiya-instagram",
   "istirja-hisab-muallaq",
