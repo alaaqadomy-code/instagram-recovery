@@ -11,6 +11,8 @@ export type ArticleFaq = {
 export type Article = {
   slug: string;
   title: string;
+  /** عنوان نتائج البحث (<title>) إن اختلف عن title؛ لا يؤثر على الرابط */
+  seoTitle?: string;
   description: string;
   keywords: string[];
   date: string;

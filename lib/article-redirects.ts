@@ -293,6 +293,10 @@ export const articleRedirects = [
     "destination": "/articles/istirja-via-daam-fanni"
   },
   {
+    "source": "/articles/istirja-abr-google",
+    "destination": "/articles/rabit-istirja-hisab-instagram"
+  },
+  {
     "source": "/articles/istirja-instagram-2026",
     "destination": "/articles/istirja-hisab-instagram"
   }

@@ -31,14 +31,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     : undefined;
 
   return {
-    title: article.title,
+    title: article.seoTitle ?? article.title,
     description: article.description,
     keywords: article.keywords,
     alternates: { canonical: `/articles/${articlePublicSlug(article)}` },
     openGraph: {
       type: "article",
       locale: site.locale,
-      title: article.title,
+      title: article.seoTitle ?? article.title,
       description: article.description,
       publishedTime: article.date,
       modifiedTime: article.updated,
@@ -47,7 +47,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     },
     twitter: {
       card: "summary_large_image",
-      title: article.title,
+      title: article.seoTitle ?? article.title,
       description: article.description,
       ...(articleImages ? { images: [articleImages[0].url] } : {}),
     },
