@@ -3,8 +3,10 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArticleText } from "@/components/ArticleText";
+import { CrawlLinks } from "@/components/CrawlLinks";
 import { WhatsAppCta } from "@/components/Cta";
 import { clusterLinks } from "@/lib/article-clusters";
+import { crawlLinks } from "@/lib/crawl-links";
 import { articlePublicSlug, articles, getArticle, getArticleByPublicSlug } from "@/lib/articles";
 import { absoluteUrl } from "@/lib/seo";
 import { serviceForArticle } from "@/lib/service-pages";
@@ -171,6 +173,7 @@ export default async function ArticlePage({ params }: Props) {
         </p>
         <WhatsAppCta className="mt-4">افحص حالة حسابك</WhatsAppCta>
       </div>
+      {crawlLinks[article.slug] ? <CrawlLinks source={article.slug} exclude={article.slug} /> : null}
       {related.length ? (
         <div className="mt-12">
           <h2 className="text-xl font-extrabold">من المدونة</h2>

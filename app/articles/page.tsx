@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { ArticlesExplorer } from "@/components/ArticlesExplorer";
-import { articles } from "@/lib/articles";
+import { articleCategories, articles } from "@/lib/articles";
 
 export const dynamic = "force-static";
 
@@ -22,7 +22,10 @@ export default function ArticlesPage() {
       <p className="mt-4 max-w-3xl leading-8 text-slate-600">
         شروحات عملية من فريق Unlock Accounts لكل حالة على حدة، بلغة واضحة وخطوات يمكن تطبيقها من أندرويد أو آيفون.
       </p>
-      <ArticlesExplorer articles={articles} />
+      <ArticlesExplorer
+        articles={articles.map(({ slug, title, description, keywords, category, image }) => ({ slug, title, description, keywords, category, image }))}
+        categories={articleCategories}
+      />
     </div>
   );
 }

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import type { ReactNode } from "react";
+import { CrawlLinks } from "@/components/CrawlLinks";
 import { WhatsAppCta } from "@/components/Cta";
 import { CompletedClientsCounter } from "@/components/CompletedClientsCounter";
 import { LatestTicker } from "@/components/LatestTicker";
@@ -761,6 +762,7 @@ export default function HomePage() {
             كل الأدلة ({articles.length})
           </Link>
         </p>
+        <CrawlLinks source="__home__" />
       </section>
 
       {/* FAQ */}

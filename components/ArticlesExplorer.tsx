@@ -1,10 +1,9 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { ArticleCard } from "@/components/ArticleCard";
-import { articleCategories, type Article } from "@/lib/articles";
+import { ArticleCard, type ArticleSummary } from "@/components/ArticleCard";
 
-export function ArticlesExplorer({ articles }: { articles: Article[] }) {
+export function ArticlesExplorer({ articles, categories }: { articles: ArticleSummary[]; categories: string[] }) {
   const [query, setQuery] = useState("");
   const q = query.trim();
 
@@ -16,7 +15,7 @@ export function ArticlesExplorer({ articles }: { articles: Article[] }) {
     });
   }, [articles, q]);
 
-  const grouped = articleCategories
+  const grouped = categories
     .map((category) => ({
       category,
       items: filtered.filter((article) => article.category === category),
