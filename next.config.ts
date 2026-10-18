@@ -2,6 +2,7 @@ import type { NextConfig } from "next";
 import { titleToPublicSlug } from "./lib/arabic-slug";
 import { articleRedirects, mergedSlugToFinal } from "./lib/article-redirects";
 import { articles, rawArticles } from "./lib/articles";
+import { retiredDrafts20261010 } from "./lib/retired-drafts-2026-10-10";
 
 const securityHeaders = [
   { key: "X-Content-Type-Options", value: "nosniff" },
@@ -119,7 +120,39 @@ const nextConfig: NextConfig = {
 
     const bySlug = new Map(rawArticles.map((article) => [article.slug, article]));
     const livePaths = new Set(articles.map((article) => `/articles/${titleToPublicSlug(article.title)}`));
-    const seenArabic = new Set<string>();
+    const encodePath = (value: string) =>
+      value
+        .split("/")
+        .map((part) => encodeURIComponent(part))
+        .join("/");
+
+    // دفعة 10 أكتوبر 2026 المحذوفة: 123 رابطاً ← 16 مقالاً أماً، قفزة واحدة إلى صفحة حية.
+    const retiredSources = new Set<string>();
+    const retired = retiredDrafts20261010.flatMap((item) => {
+      const target = articles.find((article) => article.slug === item.target);
+      if (!target) throw new Error(`Retired draft target is not published: ${item.slug} -> ${item.target}`);
+      if (livePaths.has(item.source)) throw new Error(`Retired draft source is still live: ${item.source}`);
+      if (retiredSources.has(item.source)) throw new Error(`Duplicate retired draft source: ${item.source}`);
+      retiredSources.add(item.source);
+      const destination = `/articles/${titleToPublicSlug(target.title)}`;
+      const encoded = encodePath(item.source);
+      const latin = `/articles/${item.slug}`;
+      const sources = [encoded, encoded.replace("/articles/", "/blog/"), latin, latin.replace("/articles/", "/blog/")];
+      const paths = sources.flatMap((path) => [path, `${path}/`]);
+      return [
+        ...hosts.flatMap((host) =>
+          paths.map((path) => ({
+            source: path,
+            has: [{ type: "host" as const, value: host }],
+            destination: `https://unlockaccounts.com${destination}`,
+            statusCode: 301 as const,
+          })),
+        ),
+        ...paths.map((path) => ({ source: path, destination, statusCode: 301 as const })),
+      ];
+    });
+
+    const seenArabic = new Set<string>(retiredSources);
     const arabicMerged = [...mergedSlugToFinal].flatMap(([fromSlug, toSlug]) => {
       const source = bySlug.get(fromSlug);
       const dest = bySlug.get(toSlug);
@@ -172,6 +205,7 @@ const nextConfig: NextConfig = {
     return [
       ...legacy,
       ...direct,
+      ...retired,
       ...arabicMerged,
       ...currentLatin,
       {

@@ -14,15 +14,12 @@ import { plannerArticlesB } from "./articles/planner-b";
 import { plannerArticlesC } from "./articles/planner-c";
 import { plannerArticlesD } from "./articles/planner-d";
 import { securityArticles } from "./articles/security";
-import { draftArticles20261010 } from "./articles/drafts-2026-10-10";
 import { tawthiqGapArticles } from "./articles/tawthiq-gaps";
 import { titleToPublicSlug } from "./arabic-slug";
 import type { Article } from "./articles/types";
 import { publishArticles } from "./publish-articles";
 
 export type { Article, ArticleFaq, ArticleSection } from "./articles/types";
-
-export const batchArticles20261010 = draftArticles20261010;
 
 export const rawArticles: Article[] = [
   ...plannerArticlesA,
@@ -42,7 +39,6 @@ export const rawArticles: Article[] = [
   ...keywordGapArticles,
   ...disabledIntentArticles,
   ...gapArticles202610,
-  ...batchArticles20261010,
   ...tawthiqGapArticles,
 ];
 
