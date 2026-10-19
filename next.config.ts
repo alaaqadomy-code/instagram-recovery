@@ -1,6 +1,6 @@
 import type { NextConfig } from "next";
 
-// فرع pages-export-trial: تصدير ساكن لـCloudflare Pages.
+// فرع pages-export: تصدير ساكن لـCloudflare Pages.
 // redirects() وheaders() الأصلية محفوظة حرفياً في scripts/pages-export/next-config.cpanel.ts
 // ويولّد منها scripts/pages-export/build-redirects.mjs الملفين out/_redirects وout/_headers.
 const nextConfig: NextConfig = {

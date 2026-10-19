@@ -1,4 +1,4 @@
-// فرع pages-export-trial: يولّد out/_redirects وout/_headers من redirects()/headers() الأصلية
+// فرع pages-export: يولّد out/_redirects وout/_headers من redirects()/headers() الأصلية
 // (scripts/pages-export/next-config.cpanel.ts، نسخة حرفية من next.config.ts على main).
 // قواعد مضيف www (has: host) لا تُكتب: www يحوّله Cloudflare على الحافة قبل الأصل (مُقاس حياً 19 أكتوبر 2026).
 // مطابقة Pages: المصدر يُطبَّع بـnew URL().pathname (ترميز النسبة)، فالصيغة الخام مكررة لا تلزم.
@@ -61,6 +61,12 @@ const headers = `/*
 
 /opengraph-image
   Content-Type: image/png
+
+/sitemap.xml
+  Cache-Control: public, max-age=3600, s-maxage=3600
+
+/robots.txt
+  Cache-Control: public, max-age=3600, s-maxage=3600
 `;
 fs.writeFileSync(path.join(out, "_headers"), headers);
 console.log(JSON.stringify({ static: staticLines.length, dynamic: dynamicLines.length, skippedWwwHostRules: skippedHost, total: staticLines.length + dynamicLines.length }));
