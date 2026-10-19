@@ -1,4 +1,4 @@
-/** 74 direct article merges. Generated from the approved audit, with the reactivation correction. */
+/** Direct article merges (81 until 2026-10-18, +5 on 2026-10-19). Generated from the approved audit, with the reactivation correction. */
 export const articleRedirects = [
   {
     "source": "/articles/istirja-hisab-alinsta",
@@ -318,13 +318,46 @@ export const articleRedirects = [
   }
   ,{
     "source": "/articles/balagh-alama-tijariya",
-    "destination": "/articles/taattil-huquq-nashr"
+    "destination": "/articles/istirja-muattal-intihak"
   }
   ,{
     "source": "/articles/ishtirak-muwathaq-wal-hisab-muattal",
     "destination": "/articles/istirja-hisab-muwathaq"
   }
+  // 2026-10-19: دمج 5 مقالات «زُحفت ولم تُفهرس» بظهور أقل من 20 وبلا نقرة في 28 يوماً (21/9 إلى 18/10)، أُعيد فحصها حياً قبل الدمج.
+  // نصها المفيد نُقل يدوياً إلى الأم في lib/articles/merge-additions-2026-10-19.ts (لا امتصاص آلي: curatedMergeSources).
+  ,{
+    "source": "/articles/la-yazhar-zar-istinaf",
+    "destination": "/articles/istinaf-hisab-instagram"
+  }
+  ,{
+    "source": "/articles/rafd-istinaf-instagram",
+    "destination": "/articles/istinaf-hisab-instagram"
+  }
+  ,{
+    "source": "/articles/raqm-hatif-la-arafuhu",
+    "destination": "/articles/taghyir-raqam-jawwal"
+  }
+  ,{
+    "source": "/articles/takid-annaka-insan",
+    "destination": "/articles/mushkilat-tasjeel-dukhool"
+  }
+  ,{
+    "source": "/articles/taattil-huquq-nashr",
+    "destination": "/articles/istirja-muattal-intihak"
+  }
 ] as const;
+
+/** مصادر دمج نُقل نصها المفيد يدوياً إلى الأم؛ publishArticles لا يمتصها آلياً. */
+export const curatedMergeSources = new Set<string>([
+  "la-yazhar-zar-istinaf",
+  "rafd-istinaf-instagram",
+  "raqm-hatif-la-arafuhu",
+  "takid-annaka-insan",
+  "taattil-huquq-nashr",
+  // كان يُمتص في taattil-huquq-nashr؛ بعد دمجه صار يحوّل إلى istirja-muattal-intihak، وفقرة العلامة التجارية مكتوبة يدوياً هناك.
+  "balagh-alama-tijariya",
+]);
 
 export const mergedSlugToFinal = new Map(
   articleRedirects.map((item) => [item.source.slice("/articles/".length), item.destination.slice("/articles/".length)]),

@@ -95,8 +95,9 @@ const nextConfig: NextConfig = {
     const legacy = [
       ["/articles/istirja-instagram-android-iphone", "/articles/istirja-min-mutasaffih"],
       ["/blog/istirja-instagram-android-iphone", "/articles/istirja-min-mutasaffih"],
-      ["/articles/hisab-muattal-huquq-nashr", "/articles/taattil-huquq-nashr"],
-      ["/blog/hisab-muattal-huquq-nashr", "/articles/taattil-huquq-nashr"],
+      // 2026-10-19: taattil-huquq-nashr دُمج في istirja-muattal-intihak، فالوجهة مباشرة (قفزة واحدة).
+      ["/articles/hisab-muattal-huquq-nashr", "/articles/istirja-muattal-intihak"],
+      ["/blog/hisab-muattal-huquq-nashr", "/articles/istirja-muattal-intihak"],
       ["/articles/baad-al-hasr-madha-tafal", "/articles/istirja-hisab-instagram-muattal"],
       ["/blog/baad-al-hasr-madha-tafal", "/articles/istirja-hisab-instagram-muattal"],
     ].flatMap(([source, destination]) => {

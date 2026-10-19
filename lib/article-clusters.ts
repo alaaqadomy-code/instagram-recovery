@@ -5,7 +5,6 @@
  */
 export const clusterSupport = {
   "atal-alinstagram": [],
-  "taattil-huquq-nashr": ["balagh-alama-tijariya", "hadhf-manshurat-instagram"],
   "taghyir-email-instagram": [
     "taghyir-raqam-jawwal",
     "barid-altaakid-laysa-bariidi"
@@ -14,7 +13,6 @@ export const clusterSupport = {
     "qufl-baad-safar",
     "hadd-muhawalat-instagram",
     "challenge-required-instagram",
-    "takid-annaka-insan",
     "hisab-bi-ishraf-aili",
     "atal-alinstagram",
     "istirja-hisab-mughlaq"
@@ -92,10 +90,7 @@ export const clusterSupport = {
     "baramij-istirja-instagram",
     "ihtial-istirja-instagram"
   ],
-  "istinaf-hisab-instagram": [
-    "la-yazhar-zar-istinaf",
-    "rafd-istinaf-instagram"
-  ],
+  "istinaf-hisab-instagram": [],
   "ithbat-alhuiya-instagram": [
     "tarikh-almilad-instagram",
     "video-selfie-instagram",
@@ -120,7 +115,6 @@ export const clusterSupport = {
   "bidun-email-w-raqm": [],
   "mushkilat-al-mudaaqa-thunaiya": [],
   "kod-tahqeeq-la-yasil": [
-    "raqm-hatif-la-arafuhu",
     "bidun-email-w-raqm",
     "mushkilat-al-mudaaqa-thunaiya"
   ],

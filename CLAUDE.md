@@ -12,7 +12,7 @@
 | الاستضافة | **Cloudflare Pages**، مشروع `unlockaccounts` (https://unlockaccounts.pages.dev)، نطاق مخصص `unlockaccounts.com` منذ **19 أكتوبر 2026 17:59 بتوقيت عمّان**. تصدير ساكن (`output: "export"`)، لا خادم ولا Functions |
 | احتياط قديم | تطبيق cPanel (Passenger) `instagram-recovery` في `/home/instagra/public_html` باقٍ دون لمس حتى **2 نوفمبر 2026** للتراجع فقط، ثم يُنظَّف. **لا يُنشر إليه بعد اليوم** |
 | بيانات الدخول | `.env.hosting` (cPanel القديم) محلي فقط؛ لم يعد يلزم للنشر. لا يُرفع ولا يُلصق في المحادثة |
-| التقنية | Next.js 16 App Router، تصدير ساكن، 94 مقالاً منشوراً بروابط عربية، sitemap فيه 119 رابطاً |
+| التقنية | Next.js 16 App Router، تصدير ساكن، 89 مقالاً منشوراً بروابط عربية، sitemap فيه 114 رابطاً (منذ 19 أكتوبر 2026 بعد دمج 5) |
 | Search Console | خاصية النطاق `sc-domain:unlockaccounts.com`. مفتاح IndexNow: `public/99f68190df95fa472b6f695e9a025ca6.txt` |
 
 ## طريقة النشر الصحيحة (منذ 19 أكتوبر 2026: Cloudflare Pages)
@@ -22,7 +22,7 @@
    - `NEXT_PUBLIC_WHATSAPP=962795827790`
    - `NEXT_PUBLIC_EMAIL=hello@unlockaccounts.com`
    ثم يفحص ذاتياً أن GA ورابط `wa.me/962795827790` والجذر مخبوزة في `out/index.html` وأن `_redirects` و`_headers` و`robots.txt` و`sitemap.xml` و`llms.txt` و`404.html` موجودة، **ويفشل البناء** إن غاب شيء. `npm run build` المجرد بلا هذه المتغيرات يُسقط GA والواتساب: لا تستعمله للنشر.
-2. **`_redirects` يُولَّد وقت البناء** بـ`scripts/pages-export/build-redirects.mjs` من `redirects()` في `scripts/pages-export/next-config.cpanel.ts` (النسخة الأصلية من إعداد cPanel). لا تحرّر `out/_redirects` يدوياً. الحالي **1849 سطراً: 1846 ثابتاً أولاً ثم 3 ديناميكية** (`/blog/:slug` و`/blog/:slug/` و`/*/`). حد Pages 2000 قاعدة ثابتة و100 ديناميكية، والهامش **154** سطراً. كل دمج 301 جديد يكلّف عدة أسطر (صيغ الشرطة الأخيرة والترميز)، فراقب العدد الذي يطبعه السكربت. القواعد الثابتة يجب أن تسبق الديناميكية، ولا يجوز أن يكون مصدر تحويل صفحة مصدّرة (السكربت يرفض ذلك). قواعد www لا تُكتب: www يحوّله Cloudflare على الحافة (Redirect Rule «Redirect www to apex»).
+2. **`_redirects` يُولَّد وقت البناء** بـ`scripts/pages-export/build-redirects.mjs` من `redirects()` في `scripts/pages-export/next-config.cpanel.ts` (النسخة الأصلية من إعداد cPanel). لا تحرّر `out/_redirects` يدوياً. الحالي **1859 سطراً: 1856 ثابتاً أولاً ثم 3 ديناميكية** (19 أكتوبر 2026) (`/blog/:slug` و`/blog/:slug/` و`/*/`). حد Pages 2000 قاعدة ثابتة و100 ديناميكية، والهامش **144** سطراً. كل دمج 301 جديد لمقال منشور يكلّف سطرين صافيين (4 لاتينية تحل محل 4 ثم سطران للرابط العربي) (صيغ الشرطة الأخيرة والترميز)، فراقب العدد الذي يطبعه السكربت. القواعد الثابتة يجب أن تسبق الديناميكية، ولا يجوز أن يكون مصدر تحويل صفحة مصدّرة (السكربت يرفض ذلك). قواعد www لا تُكتب: www يحوّله Cloudflare على الحافة (Redirect Rule «Redirect www to apex»).
 3. النشر: `wrangler pages deploy out --project-name unlockaccounts --branch main` بعد تصفير التوكن التالف: في PowerShell `$env:CLOUDFLARE_API_TOKEN=$null`، وفي bash `env -u CLOUDFLARE_API_TOKEN npx wrangler ...`. **بلا `--force`** (المشروع موجود؛ `--force` يحوّل الأمر إلى Workers). أو مهارة `site-deploy` (`.claude/site.json` مضبوط على Pages).
 4. **الفحص إلزامي قبل إعلان النجاح**: الرئيسية و`/articles` و`/services` ومقالان بروابط مُرمَّزة 200 مع `server: cloudflare` وبلا `x-powered-by: Phusion`، وصفحة غير موجودة 404، وwww يحوّل 301 إلى الجذر، وعينة من `_redirects` (مثلاً مقال من دفعة 10 أكتوبر المحذوفة) ترد 301 إلى وجهتها.
 5. بعد النشر: sitemap يُعاد إرساله لـ`sc-domain:unlockaccounts.com` (Webmasters API، 204)، ثم IndexNow بالمفتاح أعلاه، ثم طلب الفهرسة بقدر الحصة.
@@ -57,6 +57,7 @@
 ## حالة المشروع
 - 2026-10-14: مهمة صور OG لكل مقال أُلغيت بطلب المستخدم؛ الملف محذوف من شجرة العمل. الموقع لايف على بناء متسق بدون OG. على السيرفر نسخة `.next.old` يمكن حذفها لاحقاً.
 - 2026-10-19: نُقل الموقع من cPanel إلى Cloudflare Pages (التحويل 17:59 عمّان، دُمج فرع `pages-export` في main عند c2a8c7b). مطابقة بعد التحويل 119/119 صفحة و1846/1846 تحويلاً بلا اضطراب. التقرير: `C:UsersJCCDesktopتحكم كلودتقرير-نقل-unlockaccounts-المرحلة-1-2026-10-19.md`.
+- 2026-10-19 (مساءً): دمج 5 مقالات «زُحفت ولم تُفهرس» بظهور <20 وبلا نقرة بـ301 (`lib/article-redirects.ts`، ونصها المفيد مكتوب يدوياً في `lib/articles/merge-additions-2026-10-19.ts`، و`curatedMergeSources` يمنع الامتصاص الآلي). إثراء `/services` و`/check` و`/glossary` وصفحات الإمارات والكويت وقطر (`lib/gulf-extras.ts`). المولّد `gen-crawl-links.mjs` صار بحد أدنى 3 روابط من صفحات مفهرسة (`CRAWL_MIN`) وسقف 19 للقائمة (`CRAWL_CAP`)، و`crawl-existing-links.mjs` يقرأ `out/` محلياً ويستثني `ul[data-crawl-list]`.
 - تعديلات محلية غير محفوظة في git (إزالة لوحة admin، تحويلات روابط، ga-tag). اسأل المستخدم قبل أي commit.
 
 ## المهارات (استخدمها بدل العمل اليدوي)

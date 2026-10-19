@@ -2,6 +2,7 @@
  * أقسام إضافية لصفحات الخدمة الست — تُعرض بعد الأقسام الأساسية في service-pages.ts.
  * لكل slug ثلاثة أقسام: ما تفعله بنفسك اليوم، مؤشرات القبول والرفض، وخط زمني نموذجي.
  */
+import { gulfExtras } from "./gulf-extras";
 import type { ServiceSection } from "./service-pages";
 
 export const serviceExtras: Record<string, ServiceSection[]> = {
@@ -223,5 +224,5 @@ export const serviceExtras: Record<string, ServiceSection[]> = {
 };
 
 export function getServiceExtras(slug: string): ServiceSection[] {
-  return serviceExtras[slug] ?? [];
+  return serviceExtras[slug] ?? gulfExtras[slug] ?? [];
 }

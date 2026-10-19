@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { CaseChecker } from "@/components/CaseChecker";
+import { absoluteUrl } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: { absolute: "افحص حالة حساب انستقرام مجاناً — أداة التشخيص | Unlock Accounts" },
@@ -15,9 +16,95 @@ export const metadata: Metadata = {
   },
 };
 
+const S = (slug: string) => `/services/${slug}`;
+
+/** ماذا تعني كل نتيجة تعرضها الأداة؟ (2026-10-19: محتوى خاص بصفحة الفحص) */
+const results: { title: string; meaning: string; urgent: string; clock: string; href: string }[] = [
+  {
+    title: "حساب معطّل أو معلّق",
+    meaning: "قرار من ميتا يمنع الدخول بسبب مخالفة أو بلاغ أو نشاط صُنّف غير طبيعي. الحساب موجود ويُراجع.",
+    urgent: "صوّر الرسالة كاملة، واعترض مرة واحدة إن ظهر الزر، ولا ترسل نموذج نسيان كلمة السر بدل المراجعة.",
+    clock: "مهلة الاعتراض المكتوبة على الشاشة، وتظهر عادة بعدد الأيام المتبقية.",
+    href: S("استرجاع-حساب-انستقرام-معطل"),
+  },
+  {
+    title: "حساب مبند أو مقيّد الميزات",
+    meaning: "الدخول متاح، لكن ميزة مثل النشر أو التعليق أو المتابعة موقوفة لمدة، أو الوصول انخفض.",
+    urgent: "أوقف النشاط الذي سبق الحظر، مثل أدوات النشر أو المتابعة الجماعية، وانتظر انتهاء المدة.",
+    clock: "مدة الحظر إن ذُكرت. التكرار أثناءها يطيلها.",
+    href: S("استرجاع-حساب-انستقرام-مبند"),
+  },
+  {
+    title: "حساب محذوف",
+    meaning: "إما حذف طلبته بنفسك وما زالت مهلته مفتوحة، وإما حساب يبدو محذوفاً للآخرين لأنه معطّل أو غيّر اسمه.",
+    urgent: "إن كان الحذف منك فسجّل الدخول بالبيانات نفسها قبل نهاية المهلة. وإن لم يكن منك فلا تنشئ حساباً بالاسم نفسه.",
+    clock: "مهلة الحذف من تاريخ الطلب، وبعدها لا يبقى ما يُستعاد.",
+    href: S("استرجاع-حساب-انستقرام-محذوف"),
+  },
+  {
+    title: "حساب مسروق أو مخترق",
+    meaning: "شخص غيرك غيّر البريد أو الرقم أو كلمة السر، أو يدخل الحساب معك.",
+    urgent: "افتح رسالة التغيير في بريدك واضغط رابط التراجع إن وُجد، ثم ابدأ مسار instagram.com/hacked. لا تفاوض المخترق.",
+    clock: "الساعات الأولى، لأن رابط التراجع يصل إلى البريد القديم ويفقد قيمته إن غيّر المخترق كل شيء.",
+    href: S("استرجاع-حساب-انستقرام-مسروق"),
+  },
+  {
+    title: "حساب مغلق مؤقتاً أو بانتظار تأكيد الهوية",
+    meaning: "قفل احترازي بعد سفر أو جهاز جديد أو محاولات كثيرة. ليس عقوبة، بل طلب تحقق.",
+    urgent: "أكمل التحقق من التطبيق الرسمي على جهازك وشبكتك المعتادين، مرة واحدة دون VPN.",
+    clock: "لا مهلة غالباً، لكن المحاولات المتتالية تفتح انتظاراً أطول.",
+    href: S("استرجاع-حساب-انستقرام-مغلق"),
+  },
+  {
+    title: "لا يصل كود التحقق",
+    meaning: "الرمز يذهب إلى وسيلة لم تعد تصلك، أو يتأخر لأن الطلبات تكررت.",
+    urgent: "اطلب الرمز مرة واحدة وانتظر، وافحص مجلد الرسائل غير المرغوبة، ثم اختر «جرّب طريقة أخرى».",
+    clock: "مهلة الانتظار بين طلب وآخر، وتطول مع كل تكرار.",
+    href: S("استرجاع-حساب-انستقرام-بدون-كود-التحقق"),
+  },
+];
+
+/** نصوص إنستغرام كما تظهر بالإنجليزية في التطبيق والمتصفح، وما تقابله. */
+const screenTexts: { en: string; ar: string; state: string }[] = [
+  { en: "We suspended your account", ar: "علّقنا حسابك، ومعها عدد الأيام المتبقية للاعتراض", state: "تعطيل أو تعليق" },
+  { en: "Your account has been disabled for violating our terms", ar: "تم تعطيل حسابك لمخالفة الشروط", state: "تعطيل" },
+  { en: "Action Blocked / Try Again Later", ar: "تم حظر الإجراء، حاول لاحقاً", state: "حظر نشاط" },
+  { en: "Confirm it's you", ar: "أكّد أنك صاحب الحساب", state: "قفل احترازي" },
+  { en: "Challenge required", ar: "مطلوب تحقق إضافي", state: "قفل احترازي" },
+  { en: "Please wait a few minutes before you try again", ar: "يُرجى الانتظار بضع دقائق قبل المحاولة مجدداً", state: "حد محاولات" },
+  { en: "The username you entered doesn't belong to an account", ar: "اسم المستخدم لا يطابق أي حساب", state: "حذف أو تغيير اسم أو تعطيل" },
+  { en: "Your email address was changed", ar: "تم تغيير بريدك الإلكتروني (رسالة تصل إلى البريد القديم)", state: "اختراق محتمل" },
+];
+
+const checkFaqs = [
+  {
+    q: "هل أداة فحص حالة حساب انستقرام تحتاج اسم المستخدم أو كلمة السر؟",
+    a: "لا. الأداة تطرح أربعة أسئلة باختيارات جاهزة فقط، ولا تطلب اسم المستخدم ولا كلمة السر، ولا تحفظ إجاباتك؛ النتيجة تُحسب داخل متصفحك.",
+  },
+  {
+    q: "هل نتيجة الفحص نهائية؟",
+    a: "لا. هي تشخيص مبدئي من إجاباتك. قراءة لقطة الشاشة نفسها أدق، لذلك تعرض الأداة في النهاية رسالة جاهزة ترسلها مع اللقطة عبر واتساب إن أردت فحصاً بشرياً مجانياً.",
+  },
+  {
+    q: "ظهرت لي رسالتان مختلفتان، أيهما أختار؟",
+    a: "اختر الأحدث. إن ظهر قفل احترازي ثم تعطيل، فالتعطيل هو الحالة الحالية، والقفل كان مرحلة قبله.",
+  },
+  {
+    q: "لماذا تسأل الأداة عن نوع الحساب؟",
+    a: "لأن الحساب التجاري أو الموثّق يرتبط غالباً بمدير الأعمال والإعلانات، وقد يحتاج أدلة ملكية مختلفة مثل فواتير إعلانات أو بريد نطاق الشركة.",
+  },
+];
+
 export default function CheckPage() {
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    url: absoluteUrl("/check"),
+    mainEntity: checkFaqs.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })),
+  };
   return (
     <div className="bg-[#f4efe6] text-[#1c1917]">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
       <div className="mx-auto max-w-[1180px] px-5 py-12 sm:px-8">
         <p className="text-xs font-bold tracking-widest text-[#9a3412]">أداة مجانية · أربع خطوات · بلا كلمة مرور</p>
         <h1 className="mt-3 text-3xl font-extrabold leading-[1.4] sm:text-4xl">افحص حالة حساب انستقرام مجاناً</h1>
@@ -31,6 +118,92 @@ export default function CheckPage() {
         <div className="mt-10">
           <CaseChecker />
         </div>
+
+        <section className="mt-16">
+          <h2 className="text-2xl font-extrabold">ماذا تعني نتيجة الفحص؟</h2>
+          <p className="mt-3 max-w-3xl leading-8 text-[#44403c]">
+            تعرض الأداة واحدة من ست نتائج. هذا الجدول يشرح كل نتيجة قبل أن تبدأ: ما الذي تعنيه فعلاً، والخطوة التي لا تؤجلها،
+            والوقت الذي يهم في حالتها.
+          </p>
+          <div className="mt-6 overflow-x-auto">
+            <table className="w-full min-w-[760px] border-collapse text-sm">
+              <thead>
+                <tr className="bg-[#142033] text-[#f6f1e8]">
+                  <th className="p-4 text-right font-bold">النتيجة</th>
+                  <th className="p-4 text-right font-bold">ماذا تعني</th>
+                  <th className="p-4 text-right font-bold">الخطوة العاجلة</th>
+                  <th className="p-4 text-right font-bold">الوقت الذي يهم</th>
+                </tr>
+              </thead>
+              <tbody>
+                {results.map((row, i) => (
+                  <tr key={row.title} className={i % 2 ? "bg-[#fbf7f0]" : "bg-white"}>
+                    <td className="border-t border-[#e6dcc8] p-4 font-bold">
+                      <Link href={row.href} className="text-[#9a3412] underline underline-offset-4">{row.title}</Link>
+                    </td>
+                    <td className="border-t border-[#e6dcc8] p-4 text-[#44403c]">{row.meaning}</td>
+                    <td className="border-t border-[#e6dcc8] p-4 text-[#44403c]">{row.urgent}</td>
+                    <td className="border-t border-[#e6dcc8] p-4 text-[#44403c]">{row.clock}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section className="mt-16">
+          <h2 className="text-2xl font-extrabold">نص الشاشة بالإنجليزية: ماذا يقابله؟</h2>
+          <p className="mt-3 max-w-3xl leading-8 text-[#44403c]">
+            كثير من الهواتف في الخليج تعرض إنستغرام بالإنجليزية، فتصل الرسالة بنص لا يطابق ما تقرؤه في الشروحات العربية.
+            قارن الجملة التي أمامك بهذه الصيغ الشائعة قبل أن تختار في السؤال الأول:
+          </p>
+          <div className="mt-6 overflow-x-auto">
+            <table className="w-full min-w-[620px] border-collapse text-sm">
+              <thead>
+                <tr className="bg-[#142033] text-[#f6f1e8]">
+                  <th className="p-4 text-left font-bold" dir="ltr">النص على الشاشة</th>
+                  <th className="p-4 text-right font-bold">معناه بالعربية</th>
+                  <th className="p-4 text-right font-bold">الحالة</th>
+                </tr>
+              </thead>
+              <tbody>
+                {screenTexts.map((row, i) => (
+                  <tr key={row.en} className={i % 2 ? "bg-[#fbf7f0]" : "bg-white"}>
+                    <td className="border-t border-[#e6dcc8] p-4 text-left font-bold" dir="ltr">{row.en}</td>
+                    <td className="border-t border-[#e6dcc8] p-4 text-[#44403c]">{row.ar}</td>
+                    <td className="border-t border-[#e6dcc8] p-4 text-[#44403c]">{row.state}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <p className="mt-4 max-w-3xl text-sm leading-7 text-[#57534e]">
+            رسائل إنستغرام الحقيقية عن تغيير البريد أو الرقم تصل من نطاق mail.instagram.com. أي رسالة تزعم أنها من «دعم
+            إنستغرام» وتطلب كلمة السر أو رمزاً في الرسائل الخاصة ليست من إنستغرام.
+          </p>
+        </section>
+
+        <section className="mt-16 max-w-3xl">
+          <h2 className="text-2xl font-extrabold">لماذا هذه الأسئلة الأربعة بالذات؟</h2>
+          <p className="mt-4 leading-8 text-[#44403c]">
+            <strong>ما تراه على الشاشة</strong> يحدد العائلة: قرار من ميتا، أم قفل تحقق، أم وسيلة دخول ضاعت، أم شخص آخر في
+            الحساب. هذا السؤال وحده يمنع أشهر خطأ، وهو إرسال طلب مراجعة لحساب لم يُعطّل أصلاً، أو نموذج نسيان كلمة السر لحساب
+            معطّل.
+          </p>
+          <p className="mt-4 leading-8 text-[#44403c]">
+            <strong>منذ متى</strong> يغيّر تقدير الفرص. يوم واحد بعد اختراق يعني أن رابط التراجع في البريد القديم قد يكون ما زال
+            صالحاً. وستة أشهر بعد تعطيل تعني أن مهلة الاعتراض قد انتهت أو أوشكت. لذلك تتراجع الدرجة كلما طالت المدة في
+            حالات التعطيل والحذف.
+          </p>
+          <p className="mt-4 leading-8 text-[#44403c]">
+            <strong>البريد أو الرقم المرتبط</strong> هو مفتاح أغلب الحلول. إن بقي بيدك فالمسار في الغالب مباشر من شاشة الدخول.
+            وإن فقدته أو تغيّر صار الطريق إثبات ملكية، وقد يُطلب فيديو سيلفي أو أدلة على أنك صاحب الحساب.
+          </p>
+          <p className="mt-4 leading-8 text-[#44403c]">
+            <strong>نوع الحساب</strong> لا يغيّر قرار ميتا، لكنه يغيّر ما تجمعه. الحساب الشخصي يُثبت بالصور والبريد القديم،
+            والمتجر بمدير الأعمال وفواتير الإعلانات، والحساب الموثّق باشتراك Meta Verified إن وُجد.
+          </p>
+        </section>
 
         <section className="mt-16 max-w-3xl">
           <h2 className="text-2xl font-extrabold">لماذا التشخيص قبل أي خطوة؟</h2>
@@ -63,6 +236,18 @@ export default function CheckPage() {
             </Link>
             ، أو ابدأ الفحص أعلاه وأرسل النتيجة عبر واتساب.
           </p>
+        </section>
+
+        <section className="mt-16 max-w-3xl">
+          <h2 className="text-2xl font-extrabold">أسئلة شائعة عن فحص حالة حساب انستقرام</h2>
+          <div className="mt-6 space-y-6">
+            {checkFaqs.map((f) => (
+              <article key={f.q}>
+                <h3 className="font-extrabold">{f.q}</h3>
+                <p className="mt-2 leading-8 text-[#57534e]">{f.a}</p>
+              </article>
+            ))}
+          </div>
         </section>
       </div>
     </div>

@@ -1,6 +1,7 @@
 import type { Article, ArticleSection } from "./articles/types";
 import { titleToPublicSlug } from "./arabic-slug";
-import { mergedSlugToFinal } from "./article-redirects";
+import { curatedMergeSources, mergedSlugToFinal } from "./article-redirects";
+import { mergeAdditions } from "./articles/merge-additions-2026-10-19";
 import { rewriteAdditions } from "./articles/rewrite-additions";
 import { rewriteSlugs } from "./rewrite-slugs";
 
@@ -75,6 +76,7 @@ function absorb(raw: Article[], boilerplate: Set<string>) {
   const extra = new Map<string, ArticleSection[]>();
 
   for (const [from, to] of mergedSlugToFinal) {
+    if (curatedMergeSources.has(from)) continue; // نُقل نصه المفيد يدوياً (merge-additions)
     const target = bySlug.get(to);
     const source = bySlug.get(from);
     if (!target || !source) throw new Error(`Missing merge body: ${from} -> ${to}`);
@@ -179,7 +181,8 @@ export function publishArticles(raw: Article[]): Article[] {
     const absorbedSections = absorbed.get(article.slug) ?? [];
     const addition = rewrite ? (rewriteAdditions[article.slug] ?? []) : [];
     const boundary = rewrite ? fence(article.slug) : null;
-    const nextSections = [...sections, ...absorbedSections, ...addition];
+    const merged = mergeAdditions[article.slug];
+    const nextSections = [...sections, ...absorbedSections, ...addition, ...(merged?.sections ?? [])];
     if (boundary) nextSections.push(boundary);
 
     const keywords =
@@ -187,16 +190,21 @@ export function publishArticles(raw: Article[]): Article[] {
         ? article.keywords.filter((keyword) => !/معطل|معطّل/.test(keyword))
         : article.keywords;
 
+    // رابط المقال إلى نفسه (يظهر بعد تحويل رابط مقال مدموج إلى الأم) يصير نصاً عادياً.
+    const ownPath = `/articles/${titleToPublicSlug(article.title)}`;
+    const unlinkSelf = (text: string) => text.split(`](${ownPath})`).map((part, i, all) => (i < all.length - 1 ? part.replace(/\[([^\[\]]*)$/, "$1") : part)).join("");
     const sectionsWithPublicLinks = nextSections.map((section) => ({
       ...section,
-      paragraphs: section.paragraphs.map((paragraph) => remapPublicLinks(paragraph, publicPairs)),
+      paragraphs: section.paragraphs.map((paragraph) => unlinkSelf(remapPublicLinks(paragraph, publicPairs))),
     }));
     const count = wordCount(sectionsWithPublicLinks);
+    const baseUpdated = rewrite ? (article.updated > "2026-09-27" ? article.updated : "2026-09-27") : article.updated;
     return {
       ...article,
       keywords,
       sections: sectionsWithPublicLinks,
-      updated: rewrite ? (article.updated > "2026-09-27" ? article.updated : "2026-09-27") : article.updated,
+      faqs: merged ? [...article.faqs, ...merged.faqs] : article.faqs,
+      updated: merged && merged.updated > baseUpdated ? merged.updated : baseUpdated,
       readMinutes: Math.max(1, Math.min(16, Math.round(count / 160) || 1)),
     };
   });

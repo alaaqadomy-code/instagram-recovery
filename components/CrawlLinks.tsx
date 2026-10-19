@@ -46,7 +46,7 @@ export function CrawlLinks({ source, exclude }: { source: string; exclude?: stri
         <Link href="/glossary" className={link}>قاموس مصطلحات انستقرام</Link>.
       </p>
       {items.length ? (
-        <ul className="mt-5 grid gap-x-6 gap-y-2 text-sm sm:grid-cols-2">
+        <ul data-crawl-list className="mt-5 grid gap-x-6 gap-y-2 text-sm sm:grid-cols-2">
           {items.map((a) => (
             <li key={a.slug}>
               <Link href={articlePath(a.slug)} className={link}>
