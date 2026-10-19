@@ -2,33 +2,49 @@
 
 # unlockaccounts.com — استرجاع حسابات انستقرام
 
-> اقرأ هذا الملف أولاً في أي جلسة. آخر تحديث: 2026-10-14. الردود بالعربية دائماً.
+> اقرأ هذا الملف أولاً في أي جلسة. آخر تحديث: 2026-10-19 (النقل إلى Cloudflare Pages). الردود بالعربية دائماً.
 
 ## الهوية
 | البند | القيمة |
 |---|---|
-| الدومين | https://unlockaccounts.com (الدومين القديم instagram-recover.com أُلغي) |
+| الدومين | https://unlockaccounts.com خلف Cloudflare proxy (الدومين القديم instagram-recover.com أُلغي) |
 | الريبو | https://github.com/alaaqadomy-code/instagram-recovery (فرع main) |
-| الاستضافة | cPanel مشترك (حساب `instagra`) خلف Cloudflare proxy، تطبيق Passenger باسم `instagram-recovery` في `/home/instagra/public_html` |
-| بيانات الدخول | `.env.hosting` محلي فقط؛ لا يُرفع ولا يُلصق في المحادثة |
-| التقنية | Next.js 16 App Router + Turbopack، 221 مقالاً بروابط عربية |
+| الاستضافة | **Cloudflare Pages**، مشروع `unlockaccounts` (https://unlockaccounts.pages.dev)، نطاق مخصص `unlockaccounts.com` منذ **19 أكتوبر 2026 17:59 بتوقيت عمّان**. تصدير ساكن (`output: "export"`)، لا خادم ولا Functions |
+| احتياط قديم | تطبيق cPanel (Passenger) `instagram-recovery` في `/home/instagra/public_html` باقٍ دون لمس حتى **2 نوفمبر 2026** للتراجع فقط، ثم يُنظَّف. **لا يُنشر إليه بعد اليوم** |
+| بيانات الدخول | `.env.hosting` (cPanel القديم) محلي فقط؛ لم يعد يلزم للنشر. لا يُرفع ولا يُلصق في المحادثة |
+| التقنية | Next.js 16 App Router، تصدير ساكن، 94 مقالاً منشوراً بروابط عربية، sitemap فيه 119 رابطاً |
+| Search Console | خاصية النطاق `sc-domain:unlockaccounts.com`. مفتاح IndexNow: `public/99f68190df95fa472b6f695e9a025ca6.txt` |
 
-## طريقة النشر الصحيحة (مُجرَّبة 2026-10-14)
-السيرفر **لا يبني بنفسه**؛ الكود المصدري عليه قديم. البناء محلياً ثم رفع المخرجات:
-1. `npm run build` محلياً (احذف `.next/server` و`.next/static` قبله لبناء نظيف).
-2. حزمة بـ Git Bash: `tar --force-local -czf <tgz> --exclude='*.map' --exclude='.next/cache' --exclude='.next/diagnostics' --exclude='.next/types' --exclude='.next/trace' --exclude='.next/trace-build' --exclude='.next/turbopack' .next public`
-3. رفع عبر cPanel `Fileman/upload_files`، ثم استبدال `server.js` مؤقتاً بنسخة تستخرج في الخلفية (`sh` detached) إلى مجلد مرحلي وتبدّل `.next` دفعة واحدة مع الاحتفاظ بـ `.next.old`، ثم إعادة `server.js` النظيف (3938 بايت) وإعادة تشغيل Passenger عبر `PassengerApps/disable_application` ثم `enable_application` باسم التطبيق فقط. (نموذج السكربتات: `scripts/cpanel-upload-next-tgz.ps1` و`scripts/server.extract-deploy.js`.)
-4. **الفحص إلزامي قبل إعلان النجاح**: الرئيسية، `/articles`، مقالان بروابط مُرمَّزة (percent-encoded)، ملف CSS من `_next/static`، وصفحة غير موجودة تعطي 404.
+## طريقة النشر الصحيحة (منذ 19 أكتوبر 2026: Cloudflare Pages)
+1. `git status` أولاً، وراجع ما ليس منك. ثم البناء: `node scripts/build-pages.mjs`. السكربت يحذف `out/` ويشغّل `next build` بالمتغيرات الأربعة الإلزامية:
+   - `NEXT_PUBLIC_SITE_URL=https://unlockaccounts.com`
+   - `NEXT_PUBLIC_GA_MEASUREMENT_ID=G-JMWMDN048D`
+   - `NEXT_PUBLIC_WHATSAPP=962795827790`
+   - `NEXT_PUBLIC_EMAIL=hello@unlockaccounts.com`
+   ثم يفحص ذاتياً أن GA ورابط `wa.me/962795827790` والجذر مخبوزة في `out/index.html` وأن `_redirects` و`_headers` و`robots.txt` و`sitemap.xml` و`llms.txt` و`404.html` موجودة، **ويفشل البناء** إن غاب شيء. `npm run build` المجرد بلا هذه المتغيرات يُسقط GA والواتساب: لا تستعمله للنشر.
+2. **`_redirects` يُولَّد وقت البناء** بـ`scripts/pages-export/build-redirects.mjs` من `redirects()` في `scripts/pages-export/next-config.cpanel.ts` (النسخة الأصلية من إعداد cPanel). لا تحرّر `out/_redirects` يدوياً. الحالي **1849 سطراً: 1846 ثابتاً أولاً ثم 3 ديناميكية** (`/blog/:slug` و`/blog/:slug/` و`/*/`). حد Pages 2000 قاعدة ثابتة و100 ديناميكية، والهامش **154** سطراً. كل دمج 301 جديد يكلّف عدة أسطر (صيغ الشرطة الأخيرة والترميز)، فراقب العدد الذي يطبعه السكربت. القواعد الثابتة يجب أن تسبق الديناميكية، ولا يجوز أن يكون مصدر تحويل صفحة مصدّرة (السكربت يرفض ذلك). قواعد www لا تُكتب: www يحوّله Cloudflare على الحافة (Redirect Rule «Redirect www to apex»).
+3. النشر: `wrangler pages deploy out --project-name unlockaccounts --branch main` بعد تصفير التوكن التالف: في PowerShell `$env:CLOUDFLARE_API_TOKEN=$null`، وفي bash `env -u CLOUDFLARE_API_TOKEN npx wrangler ...`. **بلا `--force`** (المشروع موجود؛ `--force` يحوّل الأمر إلى Workers). أو مهارة `site-deploy` (`.claude/site.json` مضبوط على Pages).
+4. **الفحص إلزامي قبل إعلان النجاح**: الرئيسية و`/articles` و`/services` ومقالان بروابط مُرمَّزة 200 مع `server: cloudflare` وبلا `x-powered-by: Phusion`، وصفحة غير موجودة 404، وwww يحوّل 301 إلى الجذر، وعينة من `_redirects` (مثلاً مقال من دفعة 10 أكتوبر المحذوفة) ترد 301 إلى وجهتها.
+5. بعد النشر: sitemap يُعاد إرساله لـ`sc-domain:unlockaccounts.com` (Webmasters API، 204)، ثم IndexNow بالمفتاح أعلاه، ثم طلب الفهرسة بقدر الحصة.
+
+### ملغى منذ 19 أكتوبر 2026 (لا تستعمله)
+طريقة cPanel القديمة كلها **ملغاة**: حزمة `tgz` لـ`.next` و`public`، والرفع عبر `Fileman/upload_files`، و`server.js` المؤقت الذي يستخرج في الخلفية (`scripts/server.extract-deploy.js`)، و`scripts/cpanel-upload-next-tgz.ps1` و`scripts/cpanel-extract-bg.ps1`، وإعادة تشغيل Passenger. بقيت في الريبو مرجعاً لخطة التراجع فقط. ومسار `app/api/request/route.ts` نُقل إلى `scripts/pages-export/api-request.route.reference.ts` (التصدير الساكن لا يقبل API).
+
+### النقل والتراجع
+- التحويل: 19 أكتوبر 2026، Activate domain 17:56:56، وكل الطلبات من Pages بحلول **17:59 عمّان**. اضطراب صفر (قياسات متتالية بلا خطأ)، والمطابقة 119/119 صفحة و1846/1846 تحويلاً.
+- النقل استثناء من بند التجميد (نقل الاستضافة) **بقرار المالك علاء الصريح**، بالروابط والمحتوى نفسيهما. لا يُعد سابقة لنقل مواقع أخرى.
+- DNS الجذر الآن: `CNAME @ → unlockaccounts.pages.dev` (Proxied) أنشأته Pages. **قيمة التراجع: `A @ 46.105.32.154 Proxied`** (TTL Auto)، مع حذف النطاق المخصص من Pages ثم Purge والتحقق من `x-powered-by: Phusion`. البريد مستقل عن الجذر (MX `mail.unlockaccounts.com`، و`mail` A 46.105.32.154 DNS only).
+- على المدير من لوحة Cloudflare: حذف مسار Worker `unlockaccounts.com/*` (`unlock-orig-path`، السكربت يبقى) وتعطيل قاعدة الكاش «Cache HTML 5min - exclude dynamic (2026-10-16)» ثم Purge.
 
 ## أخطاء لا تُكرَّر
-- **ممنوع** cPanel `fileop extract`: يتجاهل بصمت أي مسار فيه `[` أو `]` (مثل `[turbopack]_runtime.js` و`[slug]`) فيكسر الموقع بـ 500.
-- لا تنشر `.next` جزئياً أبداً؛ بناء كامل متسق أو لا شيء.
+- **لا `git add -A`، ولا تضف `.next/` إلى أي commit.** `.next` متتبّع في git بالخطأ وفيه تعديلات محلية دائماً؛ أضف ملفاتك بالاسم فقط.
+- لا تنشر إلى cPanel، ولا `fileop extract` (كان يتجاهل المسارات التي فيها `[` أو `]`).
+- لا تضف مسارات API ولا Server Actions ولا middleware: التصدير الساكن يرفضها، والتحويلات مكانها `next-config.cpanel.ts` ثم `_redirects`.
 - استخدم Bash لا PowerShell مع أسماء ملفات فيها `[`.
-- الروابط العربية بالبايتات الخام ترجع 500 من Next نفسه؛ المتصفحات ترمّزها فتعمل. ليس عطل نشر.
-- `.next` متتبّع في git بالخطأ، وBUILD_ID مثبّت في `next.config.ts`؛ لا تغيّر ذلك دون سبب.
+- افحص الروابط العربية مرمّزة (encodeURI)، لا بالبايتات الخام.
 
 ## حدود المشروع (لا تداخل)
-نفس حساب cPanel يستضيف tarjama-office.com وjordanairporttransfer.com وsites-dashboard. أي أمر Passenger أو حذف أو استخراج يُقيَّد بمسار `/home/instagra/public_html` واسم التطبيق `instagram-recovery` فقط. لا تلمس أي مشروع آخر ولا جلسة محادثة أخرى، ولا أوامر عامة على الجهاز.
+هذا المجلد وريبوه ومشروع Pages `unlockaccounts` فقط. حساب cPanel القديم يستضيف المطار (jordanairporttransfer.com) وsites-dashboard: لا تلمسه. لا تلمس أي مشروع آخر ولا جلسة محادثة أخرى، ولا أوامر عامة على الجهاز.
 
 ## قواعد المحتوى (لكل مقال)
 1. متوافق مع SEO + AEO + GEO: كلمة مفتاحية في العنوان وH1 والوصف، إجابة مباشرة في أول فقرة، أسئلة شائعة مع FAQPage، BreadcrumbList وArticle schema، روابط داخلية للعنقود، ذكر الجمهور المستهدف (الأردن والخليج) صراحةً.
@@ -40,6 +56,7 @@
 
 ## حالة المشروع
 - 2026-10-14: مهمة صور OG لكل مقال أُلغيت بطلب المستخدم؛ الملف محذوف من شجرة العمل. الموقع لايف على بناء متسق بدون OG. على السيرفر نسخة `.next.old` يمكن حذفها لاحقاً.
+- 2026-10-19: نُقل الموقع من cPanel إلى Cloudflare Pages (التحويل 17:59 عمّان، دُمج فرع `pages-export` في main عند c2a8c7b). مطابقة بعد التحويل 119/119 صفحة و1846/1846 تحويلاً بلا اضطراب. التقرير: `C:UsersJCCDesktopتحكم كلودتقرير-نقل-unlockaccounts-المرحلة-1-2026-10-19.md`.
 - تعديلات محلية غير محفوظة في git (إزالة لوحة admin، تحويلات روابط، ga-tag). اسأل المستخدم قبل أي commit.
 
 ## المهارات (استخدمها بدل العمل اليدوي)
@@ -69,6 +86,7 @@
 
 ### 2. تجميد 60 يوماً حتى 17 ديسمبر 2026 (شاملاً، لكل المواقع)
 - ممنوع: تغيير رابط حي، حذف صفحة مفهرسة، نقل الاستضافة (ومنه التصدير الساكن إلى Pages)، موجات مقالات بالعشرات.
+- **استثناء مُنفَّذ:** نقل unlockaccounts.com إلى Cloudflare Pages في 19 أكتوبر 2026 (17:59 عمّان) بقرار علاء الصريح، بالروابط والمحتوى نفسيهما (مطابقة 119/119 صفحة و1846/1846 تحويلاً). لا يُعد سابقة لنقل مواقع أخرى.
 - مسموح: التحسين بالرابط نفسه (النص والعنوان والوصف والسكيما والروابط)، تصحيح وجهة تحويل قائم، ودمج 301 لصفحة غير مفهرسة بلا ظهور يُذكر (أقل من 20 ظهوراً ولا نقرة في 28 يوماً) بعد إعادة فحصها حياً.
 - كل صفحة جديدة أو معدّلة تُربط من صفحتين مفهرستين على الأقل داخل المحتوى، في الـcommit نفسه (درس عزلة الزحف 16 و17 أكتوبر).
 
@@ -83,8 +101,8 @@
 
 ### 5. مشاكل مفتوحة وما يجب تجنّبه
 - الظهور انهار من 500 إلى 740 يومياً إلى صفر بين 15 و17 أكتوبر، وسببه لم يُحسم، ولا إجراء يدوي. 56 مقالاً من 94 أقل من 600 كلمة.
-- الخادم المشترك يسقط (508 و522، ونمط ليلي نحو 04:10 إلى 04:25)، والنشر يُسقط الجارين: لا نشر على موقعين من الخادم في يوم واحد.
-- `server.js` على الخادم 3938 بايت: لا تستبدله بنسخة أخرى. ممنوع `fileop extract`. إن أعطى النشر ready=False فافحص extract-log قبل إعادة المحاولة. Purge لم يُنفَّذ (لا توكن)، فانتظر 5 دقائق بعد النشر. الروابط العربية الخام ترد 500 بـcurl: افحص بـencodeURI.
+- (تاريخي، قبل 19 أكتوبر) الخادم المشترك كان يسقط (508 و522، ونمط ليلي نحو 04:10 إلى 04:25). منذ النقل إلى Pages لا يعتمد الموقع عليه، ونشره لا يُحتسب ضمن حد الخادم المشترك.
+- (ملغى منذ 19 أكتوبر) تعليمات `server.js` 3938 بايت وextract-log وready=False تخص نشر cPanel الملغى؛ لا تنشر إلى cPanel. إلى أن يعطّل المدير قاعدة الكاش قد يتأخر ظهور النشر حتى 5 دقائق. الروابط العربية: افحص بـencodeURI.
 - شجرة العمل فيها تعديلات غير محفوظة ليست من الطابور (`.next/*` و`scripts/cpanel-*.ps1` و`server.extract-deploy.js` و`.env.example` و`README.md`): لا تضمّنها في أي commit.
 - بنود الطابور: 01، 05، 09، 13، 17، 21، 25، 28، 31، 34.
 

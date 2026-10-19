@@ -2,16 +2,20 @@
   "cfAccount": "b951ecc9e456eca48c58d760c46a8659",
   "name": "unlockaccounts",
   "domain": "unlockaccounts.com",
-  "hosting": "cpanel-tgz",
-  "appName": "instagram-recovery",
-  "appPath": "/home/instagra/public_html",
-  "build": "npm run build",
+  "hosting": "cloudflare-pages-zip",
+  "cfProject": "unlockaccounts",
+  "wrangler": true,
+  "dist": "out",
+  "build": "node scripts/build-pages.mjs",
+  "deploy": "wrangler pages deploy out --project-name unlockaccounts --branch main (بعد تصفير CLOUDFLARE_API_TOKEN، بلا --force)",
   "repo": "alaaqadomy-code/instagram-recovery",
   "articles": {
     "format": "next-ts",
     "dir": "lib/articles",
     "note": "المقالات مصفوفات TS، الرابط العام يُشتق من العنوان بالعربية (lib/arabic-slug)؛ أضف المقال في مصفوفة articles"
   },
-  "gscProperty": "https://unlockaccounts.com/",
-  "expectFolder": "instagram-recovery"
+  "gscProperty": "sc-domain:unlockaccounts.com",
+  "indexNowKey": "public/99f68190df95fa472b6f695e9a025ca6.txt",
+  "expectFolder": "instagram-recovery",
+  "note": "منذ 19 أكتوبر 2026 17:59 عمّان على Cloudflare Pages (تصدير ساكن، out/_redirects يُولَّد وقت البناء)؛ cPanel (تطبيق instagram-recovery في public_html) احتياط حتى 2 نوفمبر 2026 فقط ولا يُنشر إليه؛ النشر القديم tgz/server.extract/Passenger ملغى"
 }
