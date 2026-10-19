@@ -128,6 +128,7 @@ export const crawlLinks: Record<string, readonly string[]> = {
   ],
   "istirja-muattal-intihak": [
     "taghyir-email-instagram",
+    "intihal-shakhsiya-instagram",
     "tatbiq-khariji-qabl-altaattil",
     "istirja-mahdhuf-nihai",
     "surat-hisab-maband",
