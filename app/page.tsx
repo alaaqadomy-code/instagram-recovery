@@ -107,7 +107,7 @@ export default function HomePage() {
         description: DESC,
         url: absoluteUrl("/"),
         provider: { "@id": `${absoluteUrl("/")}#organization` },
-        areaServed: ["SA", "AE", "KW", "QA", "BH", "OM", "JO", "EG", "IQ"],
+        areaServed: ["SA", "AE", "KW", "QA", "BH", "OM", "JO", "IQ"],
         availableChannel: { "@type": "ServiceChannel", serviceUrl: whatsappChatUrl, availableLanguage: ["ar"] },
         offers: { "@type": "Offer", priceCurrency: "USD", price: "0", description: "فحص مجاني ثم سعر حسب الحالة يُحدد قبل أي دفع" },
         hasOfferCatalog: {

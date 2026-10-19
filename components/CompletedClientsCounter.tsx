@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 
-const completedClients = 1480;
+const completedClients = 1400;
 
 export function CompletedClientsCounter() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -51,9 +51,10 @@ export function CompletedClientsCounter() {
       <div className="mx-auto flex max-w-[1180px] flex-col gap-3 px-5 py-12 sm:flex-row sm:items-end sm:justify-between sm:px-8">
         <div>
           <p className="text-sm font-bold text-[#fdba74]">سجل الملفات</p>
-          <p className="mt-2 text-2xl font-extrabold">عملاء أُنجز العمل لهم</p>
+          <p className="mt-2 text-2xl font-extrabold">عميل أُنجز العمل لهم</p>
         </div>
         <p className="text-5xl font-extrabold tabular-nums tracking-tight sm:text-6xl">
+          <span className="text-2xl sm:text-3xl">أكثر من </span>
           {value.toLocaleString("en-US")}
         </p>
       </div>

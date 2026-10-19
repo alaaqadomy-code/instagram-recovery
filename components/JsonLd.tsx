@@ -14,7 +14,7 @@ export function JsonLd() {
         description: site.description,
         ...(site.email ? { email: site.email } : {}),
         telephone: `+${site.whatsapp}`,
-        areaServed: ["SA", "AE", "JO", "EG", "KW", "QA", "BH", "OM", "IQ", "MA"],
+        areaServed: ["SA", "AE", "KW", "QA", "BH", "OM", "JO", "IQ"],
         inLanguage: "ar",
         sameAs: [whatsappUrl],
         contactPoint: {
@@ -38,7 +38,7 @@ export function JsonLd() {
         name: "خدمة مساعدة ملفات حسابات إنستغرام",
         url: absoluteUrl("/services"),
         provider: { "@id": `${absoluteUrl("/")}#organization` },
-        areaServed: "Worldwide",
+        areaServed: ["SA", "AE", "KW", "QA", "BH", "OM", "JO", "IQ"],
         serviceType: "مساعدة استرداد حساب إنستغرام عبر القنوات الرسمية",
       },
     ],

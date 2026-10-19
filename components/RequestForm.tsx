@@ -110,7 +110,7 @@ export function RequestForm() {
       </div>
       <label className="flex items-start gap-2 text-sm leading-6 text-zinc-700">
         <input type="checkbox" name="owner" value="yes" required className="mt-1 h-4 w-4" />
-        أؤكد أنني مالك هذا الحساب أو مفوّض قانونياً عنه، ولن أرسل كلمة المرور أو رمز التحقق.
+        أؤكد أنني مالك هذا الحساب، ولن أرسل كلمة المرور أو رمز التحقق.
       </label>
       <button
         type="submit"
