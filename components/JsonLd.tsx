@@ -32,15 +32,6 @@ export function JsonLd() {
         inLanguage: "ar",
         publisher: { "@id": `${absoluteUrl("/")}#organization` },
       },
-      {
-        "@type": "Service",
-        "@id": `${absoluteUrl("/services")}#service`,
-        name: "خدمة مساعدة ملفات حسابات إنستغرام",
-        url: absoluteUrl("/services"),
-        provider: { "@id": `${absoluteUrl("/")}#organization` },
-        areaServed: ["SA", "AE", "KW", "QA", "BH", "OM", "JO", "IQ"],
-        serviceType: "مساعدة استرداد حساب إنستغرام عبر القنوات الرسمية",
-      },
     ],
   };
 

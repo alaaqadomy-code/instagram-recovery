@@ -28,7 +28,7 @@ import { site, whatsappChatUrl } from "@/lib/site";
 
 const TITLE = "استرجاع حساب انستقرام — معطّل، مبند، محذوف، مسروق أو مغلق | Unlock Accounts";
 const DESC =
-  "خدمة استرجاع حساب انستقرام المعطل والمبند والمحذوف والمسروق والمغلق عبر المسارات الرسمية. فحص مجاني من لقطة الشاشة عبر واتساب، بلا كلمة مرور، والسعر حسب الحالة. نخدم السعودية والخليج وكل الناطقين بالعربية.";
+  "استرجاع حساب انستقرام معطل أو مبند أو محذوف أو مسروق أو مغلق عبر المسارات الرسمية. فحص مجاني من لقطة الشاشة عبر واتساب، بلا كلمة مرور، والسعر حسب الحالة.";
 
 export const metadata: Metadata = {
   title: { absolute: TITLE },
@@ -109,7 +109,8 @@ export default function HomePage() {
         provider: { "@id": `${absoluteUrl("/")}#organization` },
         areaServed: ["SA", "AE", "KW", "QA", "BH", "OM", "JO", "IQ"],
         availableChannel: { "@type": "ServiceChannel", serviceUrl: whatsappChatUrl, availableLanguage: ["ar"] },
-        offers: { "@type": "Offer", priceCurrency: "USD", price: "0", description: "فحص مجاني ثم سعر حسب الحالة يُحدد قبل أي دفع" },
+        // 2026-10-26: لا سعر رقمي في المخطط. «price: 0» كان يعلن الخدمة مجانية بينما السعر حسب الحالة.
+        offers: { "@type": "Offer", description: "الفحص الأول مجاني، ثم سعر حسب الحالة يُحدد بعد التشخيص وقبل أي دفع" },
         hasOfferCatalog: {
           "@type": "OfferCatalog",
           name: "خدمات استرجاع حسابات انستقرام",

@@ -202,7 +202,6 @@ export default function AboutPage() {
         "@id": organizationId,
         name: site.name,
         url: absoluteUrl("/"),
-        description: "شركة عربية متخصصة في استرجاع حسابات انستقرام وحمايتها عبر المسارات الرسمية لدى انستقرام وميتا، مستقلة وغير تابعة لميتا.",
         ...(site.email ? { email: site.email } : {}),
         areaServed: ["SA", "AE", "KW", "QA", "BH", "OM", "JO", "IQ"],
         availableLanguage: ["ar"],

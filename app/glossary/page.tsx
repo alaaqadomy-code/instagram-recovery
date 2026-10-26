@@ -3,27 +3,63 @@ import Link from "next/link";
 import { articlePath, getArticle } from "@/lib/articles";
 import { glossaryGroups, glossaryTerms } from "@/lib/glossary";
 import { absoluteUrl } from "@/lib/seo";
+import { site } from "@/lib/site";
+
+const pageTitle = "مصطلحات استرجاع حساب إنستغرام: ماذا تعني كل رسالة على الشاشة";
+const pageDescription =
+  "معنى التعطيل والتعليق والباند وحظر النشاط والحذف والاختراق والشادوبان ورموز الاسترداد، بنص الشاشة بالإنجليزية، وماذا تفعل في كل حالة.";
 
 export const metadata: Metadata = {
-  title: "مصطلحات استرجاع حساب إنستغرام",
-  description:
-    "معنى التعطيل والتعليق والباند وحظر النشاط والحذف والاختراق والشادوبان ورموز الاسترداد، بنص الشاشة بالإنجليزية، وماذا تفعل في كل حالة.",
+  title: pageTitle,
+  description: pageDescription,
   alternates: { canonical: "/glossary" },
+  openGraph: {
+    title: pageTitle,
+    description: pageDescription,
+    url: "/glossary",
+    type: "website",
+  },
 };
 
 export default function GlossaryPage() {
+  // 2026-10-26: صفحة تعريفية — DefinedTermSet داخل WebPage، بلا Service.
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "DefinedTermSet",
-    name: "مصطلحات استرجاع حساب إنستغرام",
-    url: absoluteUrl("/glossary"),
-    inLanguage: "ar",
-    hasDefinedTerm: glossaryTerms.map((item) => ({
-      "@type": "DefinedTerm",
-      name: item.term,
-      ...(item.en ? { alternateName: item.en } : {}),
-      description: item.definition,
-    })),
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": `${absoluteUrl("/glossary")}#webpage`,
+        url: absoluteUrl("/glossary"),
+        name: pageTitle,
+        description: pageDescription,
+        inLanguage: "ar",
+        isPartOf: { "@type": "WebSite", url: absoluteUrl("/"), name: site.name },
+        publisher: { "@id": `${absoluteUrl("/")}#organization` },
+        mainEntity: { "@id": `${absoluteUrl("/glossary")}#terms` },
+      },
+      {
+        "@type": "DefinedTermSet",
+        "@id": `${absoluteUrl("/glossary")}#terms`,
+        name: "مصطلحات استرجاع حساب إنستغرام",
+        url: absoluteUrl("/glossary"),
+        inLanguage: "ar",
+        hasDefinedTerm: glossaryTerms.map((item) => ({
+          "@type": "DefinedTerm",
+          name: item.term,
+          ...(item.en ? { alternateName: item.en } : {}),
+          description: item.definition,
+          inDefinedTermSet: `${absoluteUrl("/glossary")}#terms`,
+        })),
+      },
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "الرئيسية", item: absoluteUrl("/") },
+          { "@type": "ListItem", position: 2, name: "المدونة", item: absoluteUrl("/articles") },
+          { "@type": "ListItem", position: 3, name: "مصطلحات", item: absoluteUrl("/glossary") },
+        ],
+      },
+    ],
   };
 
   return (

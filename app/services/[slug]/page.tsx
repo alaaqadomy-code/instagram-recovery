@@ -60,7 +60,8 @@ export default async function ServiceDetailPage({ params }: Params) {
         provider: { "@id": `${absoluteUrl("/")}#organization` },
         areaServed: ["SA", "AE", "KW", "QA", "BH", "OM", "JO", "IQ"],
         availableChannel: { "@type": "ServiceChannel", serviceUrl: wa, availableLanguage: ["ar"] },
-        offers: { "@type": "Offer", priceCurrency: "USD", price: "0", description: "فحص مجاني ثم سعر حسب الحالة يُحدد قبل أي دفع" },
+        // 2026-10-26: لا سعر رقمي في المخطط. «price: 0» كان يعلن الخدمة مجانية بينما السعر حسب الحالة.
+        offers: { "@type": "Offer", description: "الفحص الأول مجاني، ثم سعر حسب الحالة يُحدد بعد التشخيص وقبل أي دفع" },
       },
       {
         "@type": "HowTo",
