@@ -9,6 +9,7 @@ import { clusterLinks } from "@/lib/article-clusters";
 import { crawlLinks } from "@/lib/crawl-links";
 import { articlePublicSlug, articles, getArticle, getArticleByPublicSlug } from "@/lib/articles";
 import { absoluteUrl } from "@/lib/seo";
+import { isNoindexArticle } from "@/lib/index-policy";
 import { serviceForArticle } from "@/lib/service-pages";
 import { site } from "@/lib/site";
 
@@ -36,6 +37,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: article.seoTitle ?? article.title,
     description: article.description,
     keywords: article.keywords,
+    ...(isNoindexArticle(articlePublicSlug(article)) ? { robots: { index: false, follow: true } } : {}),
     alternates: { canonical: `/articles/${articlePublicSlug(article)}` },
     openGraph: {
       type: "article",

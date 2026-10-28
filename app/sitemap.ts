@@ -2,6 +2,7 @@ import { articlePublicSlug, articles } from "@/lib/articles";
 import { absoluteUrl } from "@/lib/seo";
 import { gulfPages } from "@/lib/gulf-pages";
 import { servicePages } from "@/lib/service-pages";
+import { SITEMAP_GULF_SLUGS, isSitemapArticle } from "@/lib/index-policy";
 import type { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -15,10 +16,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       { path: "/how-it-works", changeFrequency: "monthly", priority: 0.85, lastModified: buildDate },
       { path: "/about", changeFrequency: "monthly", priority: 0.6, lastModified: buildDate },
       { path: "/faq", changeFrequency: "monthly", priority: 0.7, lastModified: buildDate },
-      { path: "/glossary", changeFrequency: "monthly", priority: 0.6, lastModified: buildDate },
       { path: "/contact", changeFrequency: "monthly", priority: 0.8, lastModified: buildDate },
-      { path: "/privacy-policy", changeFrequency: "yearly", priority: 0.3 },
-      { path: "/terms", changeFrequency: "yearly", priority: 0.3 },
     ];
 
   return [
@@ -28,13 +26,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: route.changeFrequency,
       priority: route.priority,
     })),
-    ...[...servicePages, ...gulfPages].map((page) => ({
+    ...[...servicePages, ...gulfPages.filter((page) => SITEMAP_GULF_SLUGS.has(page.slug))].map((page) => ({
       url: absoluteUrl(`/services/${page.slug}`),
       lastModified: buildDate,
       changeFrequency: "weekly" as const,
       priority: 0.95,
     })),
-    ...articles.map((article) => ({
+    ...articles.filter((article) => isSitemapArticle(articlePublicSlug(article))).map((article) => ({
       url: absoluteUrl(`/articles/${articlePublicSlug(article)}`),
       lastModified: new Date(article.updated),
       changeFrequency: "monthly" as const,
