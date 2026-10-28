@@ -70,6 +70,10 @@ function boilerplateSet(articles: Article[]) {
   return new Set([...freq.entries()].filter(([, count]) => count >= 3).map(([key]) => key));
 }
 
+/** أهداف دمج لا تُلحق بها أقسام المصادر آلياً: المقال الرئيسي زاويته خطة متابعة ذاتية (2026-10-28)،
+ *  وكانت absorb تلحق به نحو 22 قسماً من 16 مصدراً فتُضعف زاويته. التحويلات 301 إليه تبقى كما هي. */
+const absorbExcludedTargets = new Set<string>(["istirja-hisab-instagram"]);
+
 function absorb(raw: Article[], boilerplate: Set<string>) {
   const bySlug = new Map(raw.map((article) => [article.slug, article]));
   const pool = new Map<string, string>();
@@ -77,6 +81,7 @@ function absorb(raw: Article[], boilerplate: Set<string>) {
 
   for (const [from, to] of mergedSlugToFinal) {
     if (curatedMergeSources.has(from)) continue; // نُقل نصه المفيد يدوياً (merge-additions)
+    if (absorbExcludedTargets.has(to)) continue; // الأم تُنشر بنصها الخاص فقط
     const target = bySlug.get(to);
     const source = bySlug.get(from);
     if (!target || !source) throw new Error(`Missing merge body: ${from} -> ${to}`);
