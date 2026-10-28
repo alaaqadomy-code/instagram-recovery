@@ -115,7 +115,7 @@ function absorb(raw: Article[], boilerplate: Set<string>) {
 function fence(slug: string): ArticleSection | null {
   const lines: Record<string, string> = {
     "istirja-hisab-instagram":
-      "هذا الدليل للحالة التي لم تتضح بعد: الشاشة لا تقول تعطيلاً ولا حظراً ولا حذفاً. إن ظهر نص التعطيل فانتقل إلى [استرجاع الحساب المعطل](/articles/istirja-hisab-instagram-muattal). الصفحة الرئيسية لمكتب التشخيص، و[صفحة الخدمات](/services) لطلب المساعدة.",
+      "هذا الدليل لإدارة محاولة الاسترجاع بنفسك يوماً بيوم. تعريف الحالات الست ومساراتها في [الصفحة الرئيسية لاسترجاع حساب انستقرام](/)، وإن ظهر نص التعطيل فانتقل إلى [استرجاع الحساب المعطل](/articles/istirja-hisab-instagram-muattal)، ولطلب المساعدة [صفحة الخدمات](/services).",
     "istirja-majjanan":
       "هذه الصفحة تشرح ماذا يشمل الفحص المجاني قبل أي اتفاق. خطوات فتح الحساب نفسه في [استرجاع حساب انستقرام](/articles/istirja-hisab-instagram)، وطلب التنفيذ في [الخدمات](/services).",
     "khidma-mawthuqa":
