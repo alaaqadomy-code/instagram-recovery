@@ -2,14 +2,14 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { WhatsAppCta } from "@/components/Cta";
 import { absoluteUrl } from "@/lib/seo";
-import { site } from "@/lib/site";
+import { site, ogImage } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: { absolute: "من نحن | Unlock Accounts: شركة متخصصة في استرجاع حسابات انستقرام وحمايتها" },
+  title: { absolute: "من نحن: Unlock Accounts لاسترجاع حسابات انستقرام وحمايتها" },
   description:
     "Unlock Accounts شركة عربية متخصصة في استرجاع حسابات انستقرام وحمايتها عبر مسارات ميتا الرسمية، مستقلة وغير تابعة لميتا. فحص مجاني، بلا كلمة مرور، وبلا وعود بالنتيجة.",
   alternates: { canonical: "/about" },
-  openGraph: {
+  openGraph: { images: [ogImage],
     title: "من نحن | Unlock Accounts لاسترجاع حسابات انستقرام وحمايتها",
     description: "شركة عربية متخصصة ومستقلة تعمل عبر نماذج ميتا الرسمية فقط. فحص مجاني عبر واتساب، لا كلمة مرور، والسعر حسب الحالة.",
     url: "/about",

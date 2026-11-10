@@ -11,7 +11,7 @@ import { articlePublicSlug, articles, getArticle, getArticleByPublicSlug } from 
 import { absoluteUrl } from "@/lib/seo";
 import { isNoindexArticle } from "@/lib/index-policy";
 import { serviceForArticle } from "@/lib/service-pages";
-import { site } from "@/lib/site";
+import { site, brandTitle, ogImage } from "@/lib/site";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -31,10 +31,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   const articleImages = article.image
     ? [{ url: absoluteUrl(article.image), width: 1200, height: 675, alt: article.imageAlt ?? `${site.name} — ${article.title}` }]
-    : undefined;
+    : [ogImage];
 
   return {
-    title: article.seoTitle ?? article.title,
+    title: { absolute: brandTitle(article.seoTitle ?? article.title) },
     description: article.description,
     keywords: article.keywords,
     ...(isNoindexArticle(articlePublicSlug(article)) ? { robots: { index: false, follow: true } } : {}),

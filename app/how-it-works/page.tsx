@@ -3,15 +3,16 @@ import Link from "next/link";
 import { WhatsAppCta } from "@/components/Cta";
 import { steps } from "@/lib/content";
 import { absoluteUrl } from "@/lib/seo";
+import { ogImage, brandTitle } from "@/lib/site";
 
 const pageTitle = "كيف نعمل في استرجاع حساب انستقرام: من لقطة الشاشة حتى عودة الحساب";
 
 export const metadata: Metadata = {
-  title: { absolute: `${pageTitle} | Unlock Accounts` },
+  title: { absolute: brandTitle(pageTitle) },
   description:
     "طريقة عملنا في استرجاع حساب انستقرام خطوة بخطوة: فحص مجاني عبر واتساب، تشخيص من نص الرسالة، إثبات ملكية بلا كلمة مرور، صياغة الطلب الرسمي ومتابعته.",
   alternates: { canonical: "/how-it-works" },
-  openGraph: {
+  openGraph: { images: [ogImage],
     title: pageTitle,
     description: "من أول رسالة واتساب حتى تأمين الحساب بعد عودته: مراحل عملنا، ما نقبله وما نرفضه، ومتى لا نأخذ مالاً.",
     url: "/how-it-works",

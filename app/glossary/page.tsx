@@ -3,17 +3,17 @@ import Link from "next/link";
 import { articlePath, getArticle } from "@/lib/articles";
 import { glossaryGroups, glossaryTerms } from "@/lib/glossary";
 import { absoluteUrl } from "@/lib/seo";
-import { site } from "@/lib/site";
+import { site, ogImage, brandTitle } from "@/lib/site";
 
 const pageTitle = "مصطلحات استرجاع حساب إنستغرام: ماذا تعني كل رسالة على الشاشة";
 const pageDescription =
   "معنى التعطيل والتعليق والباند وحظر النشاط والحذف والاختراق والشادوبان ورموز الاسترداد، بنص الشاشة بالإنجليزية، وماذا تفعل في كل حالة.";
 
 export const metadata: Metadata = {
-  title: pageTitle,
+  title: { absolute: brandTitle(pageTitle) },
   description: pageDescription,
   alternates: { canonical: "/glossary" },
-  openGraph: {
+  openGraph: { images: [ogImage],
     title: pageTitle,
     description: pageDescription,
     url: "/glossary",

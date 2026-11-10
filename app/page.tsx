@@ -24,9 +24,9 @@ import { businessParas, comparisonRows, emotionalParas, extraFaqs, glossaryHome,
 import { evidenceRows, policy2026Paras, relapseMistakes, userTypes } from "@/lib/home-content-extra2";
 import { absoluteUrl } from "@/lib/seo";
 import { servicePages } from "@/lib/service-pages";
-import { site, whatsappChatUrl } from "@/lib/site";
+import { site, whatsappChatUrl, brandTitle } from "@/lib/site";
 
-const TITLE = "استرجاع حساب انستقرام — معطّل، مبند، محذوف، مسروق أو مغلق | Unlock Accounts";
+const TITLE = brandTitle("استرجاع حساب انستقرام — معطّل، مبند، محذوف، مسروق أو مغلق");
 const DESC =
   "استرجاع حساب انستقرام معطل أو مبند أو محذوف أو مسروق أو مغلق عبر المسارات الرسمية. فحص مجاني من لقطة الشاشة عبر واتساب، بلا كلمة مرور، والسعر حسب الحالة.";
 

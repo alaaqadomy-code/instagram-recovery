@@ -2,13 +2,14 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { CaseChecker } from "@/components/CaseChecker";
 import { absoluteUrl } from "@/lib/seo";
+import { ogImage, brandTitle } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: { absolute: "افحص حالة حساب انستقرام مجاناً — أداة التشخيص | Unlock Accounts" },
+  title: { absolute: brandTitle("افحص حالة حساب انستقرام مجاناً — أداة التشخيص") },
   description:
     "أداة مجانية تشخّص حالة حساب انستقرام في أربع خطوات: معطل، مبند، محذوف، مسروق، مغلق أو بدون كود. تعرض نوع الحالة وتقدير الفرص والخطوة العاجلة، بلا كلمة مرور.",
   alternates: { canonical: "/check" },
-  openGraph: {
+  openGraph: { images: [ogImage],
     title: "افحص حالة حساب انستقرام مجاناً — أداة التشخيص",
     description: "أربع خطوات بلا كلمة مرور: نوع الحالة، تقدير الفرص، والخطوة العاجلة الآن، ثم رابط الخدمة المناسبة.",
     url: "/check",

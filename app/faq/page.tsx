@@ -2,13 +2,14 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { WhatsAppCta } from "@/components/Cta";
 import { absoluteUrl } from "@/lib/seo";
+import { ogImage, brandTitle } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: { absolute: "أسئلة شائعة عن استرجاع حساب انستقرام — 41 سؤالاً وجواباً | Unlock Accounts" },
+  title: { absolute: brandTitle("أسئلة شائعة عن استرجاع حساب انستقرام — 41 سؤالاً وجواباً") },
   description:
     "41 سؤالاً شائعاً عن استرجاع حساب انستقرام: المعطل والمبند، المسروق والمخترق، المحذوف والمغلق، كود التحقق، السعر والأمان. إجابات صريحة بلا ضمان ولا مبالغة.",
   alternates: { canonical: "/faq" },
-  openGraph: {
+  openGraph: { images: [ogImage],
     title: "أسئلة شائعة عن استرجاع حساب انستقرام",
     description: "41 سؤالاً وجواباً عن المدة والسعر والمسارات الرسمية لكل حالة، بصياغة صريحة بلا ضمان.",
     url: "/faq",

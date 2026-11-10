@@ -377,7 +377,7 @@ export const loginArticles: Article[] = [
     slug: "challenge-required-instagram",
     updated: "2026-10-15",
     title: "حل مشكلة Challenge required انستقرام",
-    seoTitle: "Challenge required وFeedback required في انستقرام: المعنى والحل خطوة بخطوة",
+    seoTitle: "Challenge required وFeedback required في انستقرام: المعنى والحل",
     description:
       "معنى رسالة Challenge required وFeedback required في انستقرام، أسبابها من VPN والتطبيقات الخارجية والجهاز الجديد، والحل خطوة بخطوة، وما يطيل القفل، ومتى تصبح حالة حساب مقفل.",
     keywords: [

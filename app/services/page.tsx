@@ -6,14 +6,14 @@ import { steps } from "@/lib/content";
 import { absoluteUrl } from "@/lib/seo";
 import { gulfPages } from "@/lib/gulf-pages";
 import { servicePages } from "@/lib/service-pages";
-import { whatsappChatUrl } from "@/lib/site";
+import { whatsappChatUrl, ogImage, brandTitle } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: { absolute: "خدمات استرجاع حسابات انستقرام — معطل، مبند، محذوف، مسروق، مغلق | Unlock Accounts" },
+  title: { absolute: brandTitle("خدمات استرجاع حسابات انستقرام — معطل، مبند، محذوف، مسروق، مغلق") },
   description:
     "خدمات استرجاع حساب انستقرام لكل حالة: معطل، مبند أو محظور، محذوف، مسروق أو مخترق، مغلق، وبدون كود التحقق. فحص مجاني عبر واتساب، بلا كلمة مرور، والسعر حسب الحالة.",
   alternates: { canonical: "/services" },
-  openGraph: {
+  openGraph: { images: [ogImage],
     title: "خدمات استرجاع حسابات انستقرام",
     description: "خدمة متخصصة لكل حالة: معطل، مبند، محذوف، مسروق، مغلق، وبدون كود التحقق. فحص مجاني والسعر حسب الحالة.",
     url: "/services",

@@ -7,7 +7,7 @@ import { absoluteUrl } from "@/lib/seo";
 import { gulfPages } from "@/lib/gulf-pages";
 import { getServiceExtras } from "@/lib/service-extras";
 import { getServicePage, servicePages } from "@/lib/service-pages";
-import { site, whatsappUrl } from "@/lib/site";
+import { site, whatsappUrl, ogImage, brandTitle } from "@/lib/site";
 
 export const dynamicParams = false;
 
@@ -28,11 +28,11 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
   if (!page) return {};
   const url = `/services/${page.slug}`;
   return {
-    title: { absolute: `${page.title} | ${site.name}` },
+    title: { absolute: brandTitle(page.title) },
     description: page.description,
     keywords: [page.keyword, `${page.keyword} 2026`, `${page.keyword} السعودية`, "خدمة استرجاع حساب انستقرام"],
     alternates: { canonical: url },
-    openGraph: { title: page.title, description: page.description, url, type: "website", locale: "ar_SA" },
+    openGraph: { images: [ogImage], title: page.title, description: page.description, url, type: "website", locale: "ar_SA" },
   };
 }
 

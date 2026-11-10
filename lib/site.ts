@@ -40,3 +40,13 @@ export const whatsappMessage = `السلام عليكم،
 سأرسل لقطة شاشة عن التعطيل.`;
 
 export const whatsappChatUrl = `${whatsappUrl}?text=${encodeURIComponent(whatsappMessage)}`;
+
+// Share image for pages that define their own openGraph (a page-level openGraph replaces the inherited image).
+export const ogImage = { url: "/opengraph-image", width: 1200, height: 630, type: "image/png" };
+
+// Search results cut titles past ~60 characters. Keep the brand only when the whole title still fits,
+// so the page's own words (the keyword) are never the part that gets cut.
+export function brandTitle(title: string): string {
+  const full = `${title} | ${site.name}`;
+  return full.length > 62 ? title : full;
+}
