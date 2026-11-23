@@ -13,7 +13,7 @@
 | البند | القيمة |
 |-------|--------|
 | الدومين | https://unlockaccounts.com/ |
-| الريبو | (محلي في الوورك سبيس) |
+| الريبو | https://github.com/alaaqadomy-code/instagram-recovery |
 | السيرفر | sunyhost / OVH (Passenger) — مسار التطبيق على السيرفر: `/home/instagra/public_html` |
 
 دخول السيرفر واللوحة في `.env.hosting` داخل هذا المجلد.

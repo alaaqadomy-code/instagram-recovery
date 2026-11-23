@@ -19,24 +19,17 @@ function log(msg) {
 }
 
 if (fs.existsSync(tarball)) {
-  try {
-    log("extract start");
-    execSync("tar -xzf next-deploy.tgz", {
-      cwd: __dirname,
-      stdio: "pipe",
-      timeout: 300000,
-    });
-    fs.unlinkSync(tarball);
-    log("extract ok, tarball removed");
-  } catch (e) {
-    log("extract FAIL: " + (e && e.message ? e.message : String(e)));
-    try {
-      fs.writeFileSync(
-        path.join(__dirname, "tmp", "extract-error.txt"),
-        String(e && e.stderr ? e.stderr.toString() : e)
-      );
-    } catch (_) {}
-  }
+  log("extract start detached");
+  const { spawn } = require("child_process");
+  // Use a shell one-liner so the entire pipeline survives parent death
+  // Use semicolons after tar so cleanup runs even on tar exit code 1 (warnings)
+  const cmd = "tar -xzf next-deploy.tgz; RC=$?; [ $RC -le 1 ] && rm -f next-deploy.tgz && mkdir -p tmp && echo $(date +%s) > tmp/restart-needed.txt && echo \"extract ok rc=$RC\" >> tmp/extract-log.txt || echo \"extract FAIL rc=$RC\" >> tmp/extract-log.txt";
+  const child = spawn("sh", ["-c", cmd], {
+    cwd: __dirname,
+    detached: true,
+    stdio: "ignore",
+  });
+  child.unref();
 }
 
 const COOKIE = "ir_orig_path";

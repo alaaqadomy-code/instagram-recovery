@@ -20,6 +20,16 @@ $serverJs = Join-Path $root "scripts\server.extract-deploy.js"
 
 Write-Output ("tgz_bytes=" + (Get-Item $tgz).Length)
 
+# Remove old restart-needed.txt so we don't get false positive
+$trashRestart = curl.exe -k -s -c $cookieJar -b $cookieJar -X POST `
+  --data-urlencode "cpanel_jsonapi_user=$user" `
+  --data-urlencode "cpanel_jsonapi_apiversion=2" `
+  --data-urlencode "cpanel_jsonapi_module=Fileman" `
+  --data-urlencode "cpanel_jsonapi_func=fileop" `
+  --data-urlencode "op=trash" `
+  --data-urlencode "sourcefiles=$app/tmp/restart-needed.txt" `
+  "$base$tok/json-api/cpanel"
+
 $trash = curl.exe -k -s -c $cookieJar -b $cookieJar -X POST `
   --data-urlencode "cpanel_jsonapi_user=$user" `
   --data-urlencode "cpanel_jsonapi_apiversion=2" `
@@ -59,14 +69,13 @@ Write-Output ("has_tgz=" + ($chk -match 'next-deploy\.tgz'))
 curl.exe -k -s -c $cookieJar -b $cookieJar "$base$tok/execute/PassengerApps/disable_application?name=instagram-recovery" | Out-Null
 Start-Sleep 3
 curl.exe -k -s -c $cookieJar -b $cookieJar "$base$tok/execute/PassengerApps/enable_application?name=instagram-recovery" | Out-Null
-Write-Output "Passenger recycled; waiting for extract..."
-Start-Process -FilePath curl.exe -ArgumentList @("-s","-o",(Join-Path $env:TEMP "after-extract.html"),"-w","%{http_code}","--max-time","180","https://unlockaccounts.com/") -WindowStyle Hidden
+Write-Output "Passenger recycled; waiting for bg extract (restart-needed.txt)..."
 $gone = $false
-for ($i = 1; $i -le 18; $i++) {
+for ($i = 1; $i -le 36; $i++) {
   Start-Sleep 10
-  $chk2 = curl.exe -k -s -c $cookieJar -b $cookieJar "$base$tok/execute/Fileman/list_files?dir=$app&types=file&include_mime=0&include_hash=0"
-  $gone = -not ($chk2 -match 'next-deploy\.tgz')
-  Write-Output ("poll {0} has_tgz={1}" -f $i, (-not $gone))
+  $chkRestart = curl.exe -k -s -c $cookieJar -b $cookieJar "$base$tok/execute/Fileman/list_files?dir=$([uri]::EscapeDataString("$app/tmp"))&types=file&include_mime=0&include_hash=0"
+  $gone = $chkRestart -match 'restart-needed\.txt'
+  Write-Output ("poll {0} restart_ready={1}" -f $i, $gone)
   if ($gone) { break }
 }
 
