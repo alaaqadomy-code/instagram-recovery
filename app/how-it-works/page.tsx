@@ -5,9 +5,10 @@ import { steps } from "@/lib/content";
 import { absoluteUrl } from "@/lib/seo";
 import { ogImage, brandTitle } from "@/lib/site";
 
-const pageTitle = "كيف نعمل في استرجاع حساب انستقرام: من لقطة الشاشة حتى عودة الحساب";
+const pageTitle = "كيف نعمل في استرجاع حساب انستقرام: من لقطة الشاشة حتى الرد";
 
 export const metadata: Metadata = {
+  keywords: ["كيف نعمل في استرجاع حساب انستقرام","طريقة استرجاع حساب انستقرام"],
   title: { absolute: brandTitle(pageTitle) },
   description:
     "طريقة عملنا في استرجاع حساب انستقرام خطوة بخطوة: فحص مجاني عبر واتساب، تشخيص من نص الرسالة، إثبات ملكية بلا كلمة مرور، صياغة الطلب الرسمي ومتابعته.",
@@ -158,14 +159,16 @@ export default function HowItWorksPage() {
 
       <div className="mx-auto max-w-[1180px] px-5 py-12 sm:px-8">
         <nav aria-label="مسار التنقل" className="text-xs text-[#78716c]">
-          <Link href="/" className="hover:text-[#9a3412]">
+          <Link href="/" className="inline-flex min-h-10 min-w-10 items-center hover:text-[#9a3412]">
             الرئيسية
           </Link>{" "}
           · <span className="text-[#44403c]">كيف نعمل</span>
         </nav>
 
+        <header>
         <p className="mt-6 text-xs font-bold tracking-widest text-[#9a3412]">طريقة العمل · فحص مجاني · بلا كلمة مرور</p>
         <h1 className="mt-3 text-3xl font-extrabold leading-[1.4] sm:text-4xl">{pageTitle}</h1>
+        </header>
         <p className="mt-4 max-w-3xl leading-8 text-[#44403c]">
           نحن مكتب عربي مستقل غير تابع لميتا ولا لانستقرام. لا نملك زراً سرياً يعيد الحسابات، ولا واسطة داخل الشركة، ولا
           نضمن نتيجة. ما نملكه هو خبرة مرتبة في قراءة رسائل المنصة، واختيار البوابة الرسمية الصحيحة، وكتابة طلب يُقرأ

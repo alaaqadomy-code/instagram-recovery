@@ -5,6 +5,7 @@ import { absoluteUrl } from "@/lib/seo";
 import { ogImage, brandTitle } from "@/lib/site";
 
 export const metadata: Metadata = {
+  keywords: ["فحص حالة حساب انستقرام","فحص حساب انستقرام مجاني"],
   title: { absolute: brandTitle("افحص حالة حساب انستقرام مجاناً — أداة التشخيص") },
   description:
     "أداة مجانية تشخّص حالة حساب انستقرام في أربع خطوات: معطل، مبند، محذوف، مسروق، مغلق أو بدون كود. تعرض نوع الحالة وتقدير الفرص والخطوة العاجلة، بلا كلمة مرور.",
@@ -129,8 +130,10 @@ export default function CheckPage() {
     <div className="bg-[#f4efe6] text-[#1c1917]">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
       <div className="mx-auto max-w-[1180px] px-5 py-12 sm:px-8">
+        <header>
         <p className="text-xs font-bold tracking-widest text-[#9a3412]">أداة مجانية · أربع خطوات · بلا كلمة مرور</p>
-        <h1 className="mt-3 text-3xl font-extrabold leading-[1.4] sm:text-4xl">افحص حالة حساب انستقرام مجاناً</h1>
+        <h1 className="mt-3 text-3xl font-extrabold leading-[1.4] sm:text-4xl">فحص حالة حساب انستقرام مجاناً</h1>
+        </header>
         <p className="mt-4 max-w-3xl leading-8 text-[#44403c]">
           قبل أن تملأ أي نموذج أو تدفع لأي أحد، حدد ما الذي حدث لحسابك فعلاً. هذه الأداة تطرح أربعة أسئلة قصيرة بأزرار اختيار
           فقط: ما تراه على الشاشة، منذ متى، هل البريد أو الرقم ما زال بيدك، ونوع الحساب. ثم تعرض لك نوع الحالة، وتقديراً
@@ -149,7 +152,7 @@ export default function CheckPage() {
             والوقت الذي يهم في حالتها.
           </p>
           <div className="mt-6 overflow-x-auto">
-            <table className="w-full min-w-[760px] border-collapse text-sm">
+            <table className="w-full border-collapse text-sm" style={{ minWidth: 760 }}>
               <thead>
                 <tr className="bg-[#142033] text-[#f6f1e8]">
                   <th className="p-4 text-right font-bold">النتيجة</th>
@@ -181,7 +184,7 @@ export default function CheckPage() {
             قارن الجملة التي أمامك بهذه الصيغ الشائعة قبل أن تختار في السؤال الأول:
           </p>
           <div className="mt-6 overflow-x-auto">
-            <table className="w-full min-w-[620px] border-collapse text-sm">
+            <table className="w-full border-collapse text-sm" style={{ minWidth: 620 }}>
               <thead>
                 <tr className="bg-[#142033] text-[#f6f1e8]">
                   <th className="p-4 text-left font-bold" dir="ltr">النص على الشاشة</th>

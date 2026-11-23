@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { ArticleText } from "@/components/ArticleText";
+import { officialSource } from "@/lib/official-sources";
+import { cardImages } from "@/lib/card-images";
 import { WhatsAppIcon } from "@/components/WhatsAppIcon";
 import { articlePath, getArticle } from "@/lib/articles";
 import { absoluteUrl } from "@/lib/seo";
@@ -46,6 +49,7 @@ export default async function ServiceDetailPage({ params }: Params) {
   const others = [...servicePages, ...gulfPages].filter((p) => p.slug !== page.slug);
   const steps = page.sections.find((s) => s.steps)?.steps ?? [];
   const allSections = [...page.sections, ...getServiceExtras(page.slug)];
+  const source = officialSource(`${page.h1} ${page.keyword}`);
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -108,7 +112,7 @@ export default async function ServiceDetailPage({ params }: Params) {
               <WhatsAppIcon className="h-5 w-5" />
               افحص حالة حسابك مجاناً
             </a>
-            <Link href="/services" className="text-sm font-bold underline decoration-[#c4b49a] underline-offset-4">كل الخدمات</Link>
+            <Link href="/services" className="inline-flex min-h-10 items-center text-sm font-bold underline decoration-[#c4b49a] underline-offset-4">كل الخدمات</Link>
           </div>
           <p className="mt-5 text-sm text-[#78716c]">السعر حسب الحالة ويُحدد بعد الفحص وقبل أي دفع. لا نضمن قرار ميتا، ونرفض أي طلب يخص حساب غيرك.</p>
         </div>
@@ -134,11 +138,25 @@ export default async function ServiceDetailPage({ params }: Params) {
       </section>
 
       <div className="mx-auto max-w-[1180px] px-5 sm:px-8">
+        {cardImages[page.slug] ? (
+          <picture>
+            <source srcSet={`/images/cards/${cardImages[page.slug]}.webp`} type="image/webp" />
+            <img
+              src={`/images/cards/${cardImages[page.slug]}.jpg`}
+              alt={`${page.h1}: خدمة من Unlock Accounts`}
+              width={1200}
+              height={675}
+              loading="lazy"
+              decoding="async"
+              className="mt-12 h-auto w-full max-w-3xl rounded-sm"
+            />
+          </picture>
+        ) : null}
         {allSections.map((section) => (
           <section key={section.heading} className="border-b border-[#e6dcc8] py-12">
             <h2 className="text-2xl font-extrabold sm:text-3xl">{section.heading}</h2>
             {section.paragraphs.map((p) => (
-              <p key={p.slice(0, 40)} className="mt-4 max-w-3xl leading-8 text-[#44403c]">{p}</p>
+              <p key={p.slice(0, 40)} className="mt-4 max-w-3xl leading-8 text-[#44403c]"><ArticleText text={p} /></p>
             ))}
             {section.bullets ? (
               <ul className="mt-6 grid max-w-3xl gap-3">
@@ -160,10 +178,15 @@ export default async function ServiceDetailPage({ params }: Params) {
           </section>
         ))}
 
+        <p className="mt-8 max-w-3xl text-sm leading-7 text-[#57534e]">
+          المرجع الرسمي:{" "}
+          <a href={source.url} target="_blank" rel="noopener" className="font-bold text-[#9a3412] underline underline-offset-4">{source.label}</a>
+        </p>
+
         <section className="border-b border-[#e6dcc8] py-12">
           <h2 className="text-2xl font-extrabold sm:text-3xl">{page.table.caption}</h2>
           <div className="mt-6 overflow-x-auto">
-            <table className="w-full min-w-[520px] border-collapse text-sm">
+            <table className="w-full border-collapse text-sm" style={{ minWidth: 520 }}>
               <thead>
                 <tr className="bg-[#142033] text-[#f6f1e8]">
                   {page.table.head.map((h) => <th key={h} className="p-4 text-right font-bold">{h}</th>)}

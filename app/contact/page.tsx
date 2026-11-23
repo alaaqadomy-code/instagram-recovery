@@ -4,16 +4,19 @@ import { needItems } from "@/lib/content";
 import { site, whatsappChatUrl } from "@/lib/site";
 
 export const metadata: Metadata = {
+  keywords: ["تواصل معنا","تواصل مع Unlock Accounts"],
   title: "تواصل معنا",
-  description: "تواصل مع Unlock Accounts عبر واتساب لفحص حالة حساب إنستغرام مجانًا. لا نطلب كلمة المرور.",
+  description: "تواصل مع Unlock Accounts عبر واتساب لفحص حالة حساب انستقرام مجاناً من لقطة الشاشة. لا نطلب كلمة المرور، ونرد بتشخيص الحالة والخطوة التالية.",
   alternates: { canonical: "/contact" },
 };
 
 export default function ContactPage() {
   return (
     <div className="mx-auto max-w-3xl px-4 py-12 sm:px-6">
+      <header>
       <p className="text-sm font-bold text-[#1d4ed8]">تواصل معنا</p>
-      <h1 className="mt-2 text-3xl font-extrabold leading-[1.4] sm:text-4xl">احكِ لنا ما حدث لحسابك</h1>
+      <h1 className="mt-2 text-3xl font-extrabold leading-[1.4] sm:text-4xl">تواصل معنا: احكِ لنا ما حدث لحسابك</h1>
+      </header>
       <p className="mt-4 leading-8 text-slate-600">
         الفحص الأولي مجاني ولا يلزمك بشيء. نرد بتشخيص واضح وتقدير صريح للفرص. الخدمة عن بُعد من أندرويد أو آيفون.
       </p>

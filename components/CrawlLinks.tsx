@@ -3,6 +3,10 @@ import { crawlLinks } from "@/lib/crawl-links";
 import { articlePath, getArticle } from "@/lib/articles";
 import { gulfPages } from "@/lib/gulf-pages";
 import { servicePages } from "@/lib/service-pages";
+import { articleAnchors, rotateAnchor, serviceAnchors } from "@/lib/anchor-variant";
+
+const SOURCES = Object.keys(crawlLinks).sort();
+const sourcesOf = (slug: string) => SOURCES.filter((k) => crawlLinks[k].includes(slug));
 
 /**
  * كتلة روابط تحريرية داخل المحتوى للصفحات المفهرسة (درس 17 أكتوبر 2026: عزلة الزحف).
@@ -27,14 +31,14 @@ export function CrawlLinks({ source, exclude }: { source: string; exclude?: stri
         <Link href="/services" className={link}>خدمات استرجاع حساب انستقرام</Link> حسب نوع المشكلة:{" "}
         {servicePages.map((page, i) => (
           <span key={page.slug}>
-            <Link href={`/services/${page.slug}`} className={link}>{page.h1}</Link>
+            <Link href={`/services/${page.slug}`} className={link}>{rotateAnchor(page.slug, source, SOURCES, serviceAnchors(page))}</Link>
             {i < servicePages.length - 1 ? "، " : ". "}
           </span>
         ))}
         ونخدم أصحاب الحسابات في كل بلد عربي:{" "}
         {gulfPages.map((page, i) => (
           <span key={page.slug}>
-            <Link href={`/services/${page.slug}`} className={link}>{page.h1}</Link>
+            <Link href={`/services/${page.slug}`} className={link}>{rotateAnchor(page.slug, source, SOURCES, serviceAnchors(page, true))}</Link>
             {i < gulfPages.length - 1 ? "، " : ". "}
           </span>
         ))}
@@ -50,7 +54,7 @@ export function CrawlLinks({ source, exclude }: { source: string; exclude?: stri
           {items.map((a) => (
             <li key={a.slug}>
               <Link href={articlePath(a.slug)} className={link}>
-                {a.title}
+                {rotateAnchor(a.slug, source, sourcesOf(a.slug), articleAnchors(a))}
               </Link>
             </li>
           ))}

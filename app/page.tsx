@@ -152,7 +152,7 @@ export default function HomePage() {
             </p>
             <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-3">
               <WhatsAppCta icon>افحص حالة حسابك مجاناً</WhatsAppCta>
-              <Link href="/services" className="text-sm font-bold underline decoration-[#c4b49a] underline-offset-4">
+              <Link href="/services" className="inline-flex min-h-10 items-center text-sm font-bold underline decoration-[#c4b49a] underline-offset-4">
                 خدماتنا الست
               </Link>
             </div>
@@ -223,12 +223,12 @@ export default function HomePage() {
               <article key={p.slug} className="flex flex-col rounded-sm border border-[#e6dcc8] bg-white p-6">
                 <p className="text-xs font-bold text-[#9a3412]">{p.label}</p>
                 <h3 className="mt-2 text-lg font-extrabold leading-8">
-                  <Link href={`/services/${p.slug}`} className="hover:text-[#9a3412]">
+                  <Link href={`/services/${p.slug}`} className="block py-1 hover:text-[#9a3412]">
                     {p.h1}
                   </Link>
                 </h3>
                 <p className="mt-3 flex-1 text-sm leading-7 text-[#57534e]">{p.intro.slice(0, 220)}…</p>
-                <Link href={`/services/${p.slug}`} className="mt-4 text-sm font-bold text-[#9a3412] underline underline-offset-4">
+                <Link href={`/services/${p.slug}`} className="inline-flex min-h-10 items-center mt-4 text-sm font-bold text-[#9a3412] underline underline-offset-4">
                   تفاصيل الخدمة ←
                 </Link>
               </article>
@@ -301,7 +301,7 @@ export default function HomePage() {
           <H2>المدة والفرص المتوقعة لكل حالة</H2>
           <P>أرقام من واقع الحالات، لا وعود. المدة تعتمد على دورة مراجعة ميتا وعلى سرعة تحركك بعد المشكلة.</P>
           <div className="mt-6 overflow-x-auto">
-            <table className="w-full min-w-[480px] border-collapse text-sm">
+            <table className="w-full border-collapse text-sm" style={{ minWidth: 480 }}>
               <thead>
                 <tr className="bg-[#142033] text-[#f6f1e8]">
                   <th className="p-3 text-right">الحالة</th>
@@ -352,7 +352,7 @@ export default function HomePage() {
           لها، والخدمة التي تتولاها. إن لم تجد رسالتك فأرسلها لنا وسنحددها مجاناً.
         </P>
         <div className="mt-8 overflow-x-auto">
-          <table className="w-full min-w-[720px] border-collapse text-sm">
+          <table className="w-full border-collapse text-sm" style={{ minWidth: 720 }}>
             <thead>
               <tr className="bg-[#142033] text-[#f6f1e8]">
                 <th className="p-3 text-right">الرسالة</th>
@@ -410,7 +410,7 @@ export default function HomePage() {
             <H2>المحاولة الذاتية مقابل الخدمة: مقارنة صريحة</H2>
             <P>لسنا ضد المحاولة بنفسك؛ أدلتنا المجانية كُتبت لذلك. لكن هذا ما يحدث عادة في الطريقين:</P>
             <div className="mt-6 overflow-x-auto">
-              <table className="w-full min-w-[480px] border-collapse text-sm">
+              <table className="w-full border-collapse text-sm" style={{ minWidth: 480 }}>
                 <thead>
                   <tr className="bg-[#142033] text-[#f6f1e8]">
                     <th className="p-3 text-right">الجانب</th>
@@ -592,7 +592,7 @@ export default function HomePage() {
           على ما تبقى من حسابك. هذا ما يميز الخدمة الحقيقية عن الاحتيال:
         </P>
         <div className="mt-8 overflow-x-auto">
-          <table className="w-full min-w-[520px] border-collapse text-sm">
+          <table className="w-full border-collapse text-sm" style={{ minWidth: 520 }}>
             <thead>
               <tr className="bg-[#142033] text-[#f6f1e8]">
                 <th className="p-3 text-right">ما يقولونه</th>
@@ -643,7 +643,7 @@ export default function HomePage() {
           يكون طلبه علامة احتيال.
         </P>
         <div className="mt-8 overflow-x-auto">
-          <table className="w-full min-w-[620px] border-collapse text-sm">
+          <table className="w-full border-collapse text-sm" style={{ minWidth: 620 }}>
             <thead>
               <tr className="bg-[#142033] text-[#f6f1e8]">
                 <th className="p-3 text-right">الدليل</th>

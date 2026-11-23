@@ -5,6 +5,7 @@ import { absoluteUrl } from "@/lib/seo";
 import { ogImage, brandTitle } from "@/lib/site";
 
 export const metadata: Metadata = {
+  keywords: ["أسئلة شائعة عن استرجاع حساب انستقرام","أسئلة استرجاع انستقرام"],
   title: { absolute: brandTitle("أسئلة شائعة عن استرجاع حساب انستقرام — 41 سؤالاً وجواباً") },
   description:
     "41 سؤالاً شائعاً عن استرجاع حساب انستقرام: المعطل والمبند، المسروق والمخترق، المحذوف والمغلق، كود التحقق، السعر والأمان. إجابات صريحة بلا ضمان ولا مبالغة.",
@@ -273,8 +274,10 @@ export default function FaqPage() {
     <div className="bg-[#f4efe6] text-[#1c1917]">
       <FaqPageJsonLd />
       <div className="mx-auto max-w-[1180px] px-5 py-12 sm:px-8">
+        <header>
         <p className="text-xs font-bold tracking-widest text-[#9a3412]">الأسئلة الشائعة · {allItems.length} سؤالاً · إجابات بلا ضمان</p>
         <h1 className="mt-3 text-3xl font-extrabold leading-[1.4] sm:text-4xl">أسئلة شائعة عن استرجاع حساب انستقرام</h1>
+        </header>
         <p className="mt-4 max-w-3xl leading-8 text-[#44403c]">
           جمعنا هنا ما يبحث عنه أصحاب الحسابات المعطلة والمبندة والمسروقة والمحذوفة فعلاً، وأجبنا بصراحة: ما الممكن وما
           غير الممكن، وكم يستغرق، ولماذا لا يضمن أحد قرار المنصة. نحن مكتب عربي مستقل غير تابع لميتا، ولا نطلب كلمة
@@ -286,7 +289,7 @@ export default function FaqPage() {
             <a
               key={group.id}
               href={`#${group.id}`}
-              className="rounded-sm border border-[#e6dcc8] bg-[#fbf7f0] px-4 py-2 text-sm font-bold text-[#142033] hover:border-[#9a3412] hover:text-[#9a3412]"
+              className="inline-flex min-h-10 items-center rounded-sm border border-[#e6dcc8] bg-[#fbf7f0] px-4 py-2 text-sm font-bold text-[#142033] hover:border-[#9a3412] hover:text-[#9a3412]"
             >
               {group.title}
             </a>
@@ -311,7 +314,7 @@ export default function FaqPage() {
                   {item.link ? (
                     <Link
                       href={item.link.href}
-                      className="mt-3 inline-block text-sm font-bold text-[#9a3412] underline underline-offset-4"
+                      className="mt-3 inline-flex min-h-10 items-center text-sm font-bold text-[#9a3412] underline underline-offset-4"
                     >
                       {item.link.label} ←
                     </Link>

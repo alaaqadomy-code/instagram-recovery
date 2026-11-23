@@ -4,6 +4,7 @@ import { curatedMergeSources, mergedSlugToFinal } from "./article-redirects";
 import { mergeAdditions } from "./articles/merge-additions-2026-10-19";
 import { rewriteAdditions } from "./articles/rewrite-additions";
 import { rewriteSlugs } from "./rewrite-slugs";
+import { improvements } from "./articles/improve-2026-11-23";
 
 const pairs = [...mergedSlugToFinal.entries()].sort((a, b) => b[0].length - a[0].length);
 
@@ -187,7 +188,8 @@ export function publishArticles(raw: Article[]): Article[] {
     const addition = rewrite ? (rewriteAdditions[article.slug] ?? []) : [];
     const boundary = rewrite ? fence(article.slug) : null;
     const merged = mergeAdditions[article.slug];
-    const nextSections = [...sections, ...absorbedSections, ...addition, ...(merged?.sections ?? [])];
+    const improved = improvements[article.slug];
+    const nextSections = [...sections, ...absorbedSections, ...addition, ...(merged?.sections ?? []), ...(improved?.sections ?? [])];
     if (boundary) nextSections.push(boundary);
 
     const keywords =
@@ -208,8 +210,8 @@ export function publishArticles(raw: Article[]): Article[] {
       ...article,
       keywords,
       sections: sectionsWithPublicLinks,
-      faqs: merged ? [...article.faqs, ...merged.faqs] : article.faqs,
-      updated: merged && merged.updated > baseUpdated ? merged.updated : baseUpdated,
+      faqs: [...article.faqs, ...(merged?.faqs ?? []), ...(improved?.faqs ?? [])],
+      updated: [baseUpdated, merged?.updated, improved?.updated].filter((d): d is string => Boolean(d)).sort().at(-1)!,
       readMinutes: Math.max(1, Math.min(16, Math.round(count / 160) || 1)),
     };
   });

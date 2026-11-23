@@ -10,6 +10,7 @@ const pageDescription =
   "معنى التعطيل والتعليق والباند وحظر النشاط والحذف والاختراق والشادوبان ورموز الاسترداد، بنص الشاشة بالإنجليزية، وماذا تفعل في كل حالة.";
 
 export const metadata: Metadata = {
+  keywords: ["رسائل إنستغرام","معنى رسائل انستقرام"],
   title: { absolute: brandTitle(pageTitle) },
   description: pageDescription,
   alternates: { canonical: "/glossary" },

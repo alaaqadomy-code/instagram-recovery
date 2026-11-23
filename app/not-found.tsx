@@ -13,10 +13,10 @@ export default function NotFound() {
       <h1 className="text-3xl font-extrabold">الصفحة غير موجودة</h1>
       <p className="mt-4 text-slate-600">تحقق من الرابط أو عد إلى المدونة.</p>
       <div className="mt-6 flex flex-col items-center gap-3">
-        <Link href="/" className="font-bold text-[#1d4ed8]">
+        <Link href="/" className="inline-flex min-h-10 items-center font-bold text-[#1d4ed8]">
           الرئيسية
         </Link>
-        <Link href="/articles" className="text-sm font-semibold text-slate-600">
+        <Link href="/articles" className="inline-flex min-h-10 items-center text-sm font-semibold text-slate-600">
           المدونة
         </Link>
         <WhatsAppCta>تواصل عبر واتساب</WhatsAppCta>

@@ -158,16 +158,22 @@ const nextConfig: NextConfig = {
       const source = bySlug.get(fromSlug);
       const dest = bySlug.get(toSlug);
       if (!source || !dest) return [];
-      const sourcePath = `/articles/${titleToPublicSlug(source.title)}`;
       const destPath = `/articles/${titleToPublicSlug(dest.title)}`;
-      if (sourcePath === destPath || livePaths.has(sourcePath) || seenArabic.has(sourcePath)) return [];
-      seenArabic.add(sourcePath);
+      // تصحيح «الى» إلى «إلى» في عنوان مدموج لا يُسقط رابطه القديم: التهجئتان تحوّلان معاً.
+      const current = `/articles/${titleToPublicSlug(source.title)}`;
+      const sourcePaths = [...new Set([current, current.replace(/إلى/g, "الى")])].filter(
+        (p) => p !== destPath && !livePaths.has(p) && !seenArabic.has(p),
+      );
+      if (!sourcePaths.length) return [];
+      sourcePaths.forEach((p) => seenArabic.add(p));
       // Node matches redirects against the percent-encoded pathname.
-      const encodedSource = sourcePath
-        .split("/")
-        .map((part) => encodeURIComponent(part))
-        .join("/");
-      const paths = [encodedSource, `${encodedSource}/`];
+      const paths = sourcePaths.flatMap((sourcePath) => {
+        const encodedSource = sourcePath
+          .split("/")
+          .map((part) => encodeURIComponent(part))
+          .join("/");
+        return [encodedSource, `${encodedSource}/`];
+      });
       return [
         ...hosts.flatMap((host) =>
           paths.map((path) => ({

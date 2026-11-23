@@ -2,12 +2,13 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { WhatsAppCta } from "@/components/Cta";
 import { absoluteUrl } from "@/lib/seo";
-import { site, ogImage } from "@/lib/site";
+import { site, ogImage, whatsappChatUrl } from "@/lib/site";
 
 export const metadata: Metadata = {
+  keywords: ["استرجاع حسابات انستقرام","من نحن Unlock Accounts"],
   title: { absolute: "من نحن: Unlock Accounts لاسترجاع حسابات انستقرام وحمايتها" },
   description:
-    "Unlock Accounts شركة عربية متخصصة في استرجاع حسابات انستقرام وحمايتها عبر مسارات ميتا الرسمية، مستقلة وغير تابعة لميتا. فحص مجاني، بلا كلمة مرور، وبلا وعود بالنتيجة.",
+    "Unlock Accounts مكتب عربي مستقل عن ميتا، يساعد في استرجاع حسابات انستقرام وحمايتها عبر المسارات الرسمية. الفحص مجاني، ولا نطلب كلمة المرور.",
   alternates: { canonical: "/about" },
   openGraph: { images: [ogImage],
     title: "من نحن | Unlock Accounts لاسترجاع حسابات انستقرام وحمايتها",
@@ -229,10 +230,12 @@ export default function AboutPage() {
     <div className="bg-[#f4efe6] text-[#1c1917]">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <div className="mx-auto max-w-[1180px] px-5 py-12 sm:px-8">
+        <header>
         <p className="text-xs font-bold tracking-widest text-[#9a3412]">من نحن · شركة مستقلة غير تابعة لميتا</p>
         <h1 className="mt-3 text-3xl font-extrabold leading-[1.4] sm:text-4xl">
           من نحن: Unlock Accounts، شركة متخصصة في استرجاع حسابات انستقرام وحمايتها
         </h1>
+        </header>
         <p className="mt-4 max-w-3xl leading-8 text-[#44403c]">
           Unlock Accounts شركة عربية متخصصة في استرجاع حسابات انستقرام وحمايتها. نساعد مالك الحساب المعطل أو المبند أو
           المحذوف أو المسروق أو المغلق على استعادته عبر المسارات الرسمية لدى انستقرام وميتا فقط، ثم على تأمينه حتى لا
@@ -427,7 +430,7 @@ export default function AboutPage() {
             <ul className="mt-4 space-y-2 leading-8 text-[#44403c]">
               <li>
                 ▸ واتساب:{" "}
-                <a href={`https://wa.me/${site.whatsapp}`} className={linkCls} dir="ltr">
+                <a href={whatsappChatUrl} className={linkCls} dir="ltr">
                   {site.whatsappDisplay}
                 </a>{" "}
                 (الطريقة الأسرع للفحص المجاني)

@@ -1,0 +1,51 @@
+{
+  "_note": "أنشأه install.mjs من حزمة علاء. عدّل القيم لموقعك. لا أسرار هنا.",
+  "mode": "dist",
+  "domain": "https://unlockaccounts.com",
+  "dist": "out",
+  "trailingSlash": false,
+  "contentPattern": "^/(articles|services)/[^/]+$",
+  "contentExclude": null,
+  "locales": null,
+  "sitemapLive": "/sitemap.xml",
+  "sitemapLocal": "out/sitemap.xml",
+  "titleMax": 62,
+  "descMin": 120,
+  "descMax": 160,
+  "moneyPages": [
+    "/services/استرجاع-حساب-انستقرام-معطل",
+    "/services/استرجاع-حساب-انستقرام-مبند",
+    "/services/استرجاع-حساب-انستقرام-محذوف",
+    "/services/استرجاع-حساب-انستقرام-مسروق",
+    "/services/استرجاع-حساب-انستقرام-مغلق",
+    "/services/استرجاع-حساب-انستقرام-بدون-كود-التحقق"
+  ],
+  "minMoney": 12,
+  "h1Exempt": "^/(404|404/)$",
+  "claimsProfile": "generic",
+  "selftestPage": "articles/رابط-استرجاع-حساب-انستقرام.html",
+  "touchGroups": [],
+  "typosPaths": [
+    "app",
+    "lib"
+  ],
+  "liveAssets": [
+    "/favicon.ico",
+    "/icon.svg",
+    "/llms.txt"
+  ],
+  "bannedLive": [],
+  "anchorBoxes": null,
+  "componentDirs": [
+    "components",
+    "app"
+  ],
+  "content": {
+    "articles": null,
+    "services": null,
+    "noindex": null,
+    "layers": [],
+    "articlePrefix": "/articles/",
+    "servicePrefix": "/services/"
+  }
+}

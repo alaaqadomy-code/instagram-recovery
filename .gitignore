@@ -61,3 +61,9 @@ next-deploy.tgz
 # site-deploy artifacts (keep .claude/site.json tracked)
 .claude/deploy/
 .claude/last-deploy.json
+# حزمة علاء
+content-plan/gsc-raw.json
+content-plan/gsc-snapshots/
+content-plan/verify-live.json
+content-plan/index-request.json
+content-plan/index-coverage.json

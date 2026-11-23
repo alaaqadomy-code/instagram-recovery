@@ -38,7 +38,7 @@ export function ArticlesExplorer({ articles, categories }: { articles: ArticleSu
           value={query}
           onChange={(event) => setQuery(event.target.value)}
           placeholder="مثال: استرجاع حساب انستقرام معطل"
-          className="h-12 flex-1 rounded-full border border-slate-200 bg-white px-5 text-base"
+          className="h-12 w-full rounded-full sm:flex-1 border border-slate-200 bg-white px-5 text-base"
         />
       </form>
       {grouped.map((group) => (

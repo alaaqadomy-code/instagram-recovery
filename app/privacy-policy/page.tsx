@@ -6,6 +6,7 @@ import { site } from "@/lib/site";
 const updated = "19 أكتوبر 2026";
 
 export const metadata: Metadata = {
+  keywords: ["سياسة الخصوصية","خصوصية بيانات Unlock Accounts"],
   title: "سياسة الخصوصية",
   description: `سياسة خصوصية ${site.name}: ما البيانات التي نجمعها عند فحص حالة حساب انستقرام، وكم نحتفظ بها، وحقوقك في الاطلاع والتصحيح والحذف، وما لا نطلبه أبداً.`,
   alternates: { canonical: "/privacy-policy" },
@@ -148,7 +149,9 @@ export default function PrivacyPolicyPage() {
   return (
     <div className="mx-auto max-w-3xl px-4 py-12 leading-8 sm:px-6">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <header>
       <h1 className="text-3xl font-extrabold">سياسة الخصوصية</h1>
+      </header>
       <p className="mt-2 text-sm text-slate-500">آخر تحديث: {updated}</p>
       <p className="mt-6 text-slate-700">
         طبيعة عملنا في {site.name} تمس بيانات حساسة عن حسابات الناس، ولذلك نتعامل مع الخصوصية بوصفها جزءاً من الخدمة لا

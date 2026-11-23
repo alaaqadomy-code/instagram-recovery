@@ -9,12 +9,15 @@ export function ArticleCard({ article }: { article: ArticleSummary }) {
   return (
     <article className="flex h-full flex-col overflow-hidden rounded-2xl border border-slate-200/80 bg-white shadow-sm transition hover:border-blue-200 hover:shadow-md">
       {article.image ? (
-        <img src={article.image} alt="" width={1200} height={675} className="h-36 w-full object-cover" />
+        <picture>
+          <source srcSet={article.image.replace(/\.png$/, ".webp")} type="image/webp" />
+          <img src={article.image.replace(/\.png$/, ".jpg")} alt="" width={1200} height={675} loading="lazy" decoding="async" className="h-36 w-full object-cover" />
+        </picture>
       ) : null}
       <div className="flex flex-1 flex-col p-5">
         <p className="text-xs font-bold text-[#1d4ed8]">{article.category}</p>
         <h2 className="mt-2 text-lg font-bold leading-8 text-slate-900">
-          <Link href={`/articles/${titleToPublicSlug(article.title)}`} className="hover:text-[#1d4ed8]">
+          <Link href={`/articles/${titleToPublicSlug(article.title)}`} className="block py-1 hover:text-[#1d4ed8]">
             {article.title}
           </Link>
         </h2>

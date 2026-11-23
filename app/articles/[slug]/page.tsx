@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArticleText } from "@/components/ArticleText";
@@ -12,6 +11,9 @@ import { absoluteUrl } from "@/lib/seo";
 import { isNoindexArticle } from "@/lib/index-policy";
 import { serviceForArticle } from "@/lib/service-pages";
 import { site, brandTitle, ogImage } from "@/lib/site";
+import { articleAnchors, rotateAnchor, serviceAnchors } from "@/lib/anchor-variant";
+import { officialSource } from "@/lib/official-sources";
+import { cardImages } from "@/lib/card-images";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -68,6 +70,15 @@ export default async function ArticlePage({ params }: Props) {
     .filter((item): item is NonNullable<typeof item> => Boolean(item));
 
   const service = serviceForArticle(article);
+  const serviceSources = articles.filter((a) => serviceForArticle(a).slug === service.slug).map((a) => a.slug).sort();
+  const relatedSources = (target: string) => articles.filter((a) => clusterLinks(a.slug).includes(target)).map((a) => a.slug).sort();
+  const card = cardImages[article.slug];
+  const hero = article.image
+    ? { webp: article.image.replace(/\.png$/, ".webp"), jpg: article.image.replace(/\.png$/, ".jpg"), alt: article.imageAlt ?? article.title }
+    : card
+      ? { webp: `/images/cards/${card}.webp`, jpg: `/images/cards/${card}.jpg`, alt: `${article.title}: دليل من Unlock Accounts` }
+      : null;
+  const source = officialSource(`${article.title} ${article.keywords.join(" ")}`);
   const pageUrl = absoluteUrl(`/articles/${articlePublicSlug(article)}`);
   const jsonLd = {
     "@context": "https://schema.org",
@@ -126,16 +137,18 @@ export default async function ArticlePage({ params }: Props) {
       <p className="mt-4 text-sm text-slate-500">
         نُشر {article.date} · تحديث {article.updated} · {article.readMinutes} دقائق
       </p>
-      {article.image ? (
-        <Image
-          src={article.image}
-          alt={article.imageAlt ?? article.title}
-          width={1200}
-          height={675}
-          className="mt-6 h-auto w-full rounded-2xl"
-          sizes="(max-width: 768px) 100vw, 48rem"
-          priority
-        />
+      {hero ? (
+        <picture>
+          <source srcSet={hero.webp} type="image/webp" />
+          <img
+            src={hero.jpg}
+            alt={hero.alt}
+            width={1200}
+            height={675}
+            className="mt-6 h-auto w-full rounded-2xl"
+            fetchPriority="high"
+          />
+        </picture>
       ) : null}
       <div className="mt-8 space-y-8">
         {article.sections.map((section, sectionIndex) => (
@@ -156,6 +169,10 @@ export default async function ArticlePage({ params }: Props) {
           </section>
         ))}
       </div>
+      <p className="mt-8 text-sm leading-7 text-slate-600">
+        المرجع الرسمي:{" "}
+        <a href={source.url} target="_blank" rel="noopener" className="font-semibold text-[#1d4ed8] underline underline-offset-4">{source.label}</a>
+      </p>
       <section className="mt-12">
         <h2 className="text-2xl font-extrabold">أسئلة شائعة حول هذا الدليل</h2>
         <div className="mt-4 space-y-3">
@@ -171,7 +188,7 @@ export default async function ArticlePage({ params }: Props) {
         <p className="text-lg font-bold">هل تواجه هذه الحالة الآن؟</p>
         <p className="mt-2 text-sm leading-7 text-slate-300">
           أرسل لقطة الشاشة عبر واتساب. لا نطلب كلمة المرور. أو اقرأ تفاصيل خدمة{" "}
-          <Link href={`/services/${service.slug}`} className="font-bold text-[#fdba74] underline underline-offset-4">{service.h1}</Link>.
+          <Link href={`/services/${service.slug}`} className="font-bold text-[#fdba74] underline underline-offset-4">{rotateAnchor(service.slug, article.slug, serviceSources, serviceAnchors(service))}</Link>.
         </p>
         <WhatsAppCta className="mt-4">افحص حالة حسابك</WhatsAppCta>
       </div>
@@ -182,7 +199,7 @@ export default async function ArticlePage({ params }: Props) {
           <ul className="mt-4 space-y-2 text-sm font-semibold text-[#1d4ed8]">
             {related.map((item) => (
               <li key={item.slug}>
-                <Link href={`/articles/${articlePublicSlug(item)}`}>{item.title}</Link>
+                <Link href={`/articles/${articlePublicSlug(item)}`}>{rotateAnchor(item.slug, article.slug, relatedSources(item.slug), articleAnchors(item))}</Link>
               </li>
             ))}
           </ul>

@@ -9,9 +9,10 @@ import { servicePages } from "@/lib/service-pages";
 import { whatsappChatUrl, ogImage, brandTitle } from "@/lib/site";
 
 export const metadata: Metadata = {
+  keywords: ["خدمات استرجاع حسابات انستقرام","خدمة استرجاع حساب انستقرام"],
   title: { absolute: brandTitle("خدمات استرجاع حسابات انستقرام — معطل، مبند، محذوف، مسروق، مغلق") },
   description:
-    "خدمات استرجاع حساب انستقرام لكل حالة: معطل، مبند أو محظور، محذوف، مسروق أو مخترق، مغلق، وبدون كود التحقق. فحص مجاني عبر واتساب، بلا كلمة مرور، والسعر حسب الحالة.",
+    "خدمات استرجاع حساب انستقرام لكل حالة: معطل، ومبند، ومحذوف، ومسروق، ومغلق، وبدون كود التحقق. فحص مجاني عبر واتساب، بلا كلمة مرور، والسعر حسب الحالة.",
   alternates: { canonical: "/services" },
   openGraph: { images: [ogImage],
     title: "خدمات استرجاع حسابات انستقرام",
@@ -247,8 +248,10 @@ export default function ServicesPage() {
     <div className="bg-[#f4efe6] text-[#1c1917]">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <div className="mx-auto max-w-[1180px] px-5 py-12 sm:px-8">
+        <header>
         <p className="text-xs font-bold tracking-widest text-[#9a3412]">خدمات الاسترجاع · فحص مجاني · السعر حسب الحالة</p>
         <h1 className="mt-3 text-3xl font-extrabold leading-[1.4] sm:text-4xl">خدمات استرجاع حسابات انستقرام لكل حالة</h1>
+        </header>
         <p className="mt-4 max-w-3xl leading-8 text-[#44403c]">
           لكل مشكلة مسار رسمي مختلف لدى ميتا، ولهذا قسمنا الخدمة إلى ست حالات. اختر الأقرب لما تراه على شاشتك، أو أرسل
           لقطة الشاشة عبر واتساب ونحدد الحالة لك مجاناً. لا نطلب كلمة المرور، ولا نضمن قرار المنصة، ونقول صراحة إن كانت
@@ -273,7 +276,7 @@ export default function ServicesPage() {
             تدل عليها، والمسار الرسمي الأقرب إليها، وما تجهزه قبل أن تراسلنا أو تراسل ميتا.
           </p>
           <div className="mt-6 overflow-x-auto">
-            <table className="w-full min-w-[760px] border-collapse text-sm">
+            <table className="w-full border-collapse text-sm" style={{ minWidth: 760 }}>
               <thead>
                 <tr className="bg-[#142033] text-[#f6f1e8]">
                   <th className="p-4 text-right font-bold">ما تراه على الشاشة</th>
@@ -310,7 +313,7 @@ export default function ServicesPage() {
             <article key={page.slug} className="flex flex-col rounded-sm border border-[#e6dcc8] bg-[#fbf7f0] p-6">
               <p className="text-xs font-bold text-[#9a3412]">{page.label}</p>
               <h2 className="mt-2 text-xl font-extrabold leading-8">
-                <Link href={`/services/${page.slug}`} className="hover:text-[#9a3412]">
+                <Link href={`/services/${page.slug}`} className="block py-1 hover:text-[#9a3412]">
                   {page.h1}
                 </Link>
               </h2>
@@ -320,7 +323,7 @@ export default function ServicesPage() {
                   <li key={s}>▸ {s}</li>
                 ))}
               </ul>
-              <Link href={`/services/${page.slug}`} className="mt-5 text-sm font-bold text-[#9a3412] underline underline-offset-4">
+              <Link href={`/services/${page.slug}`} className="inline-flex min-h-10 items-center mt-5 text-sm font-bold text-[#9a3412] underline underline-offset-4">
                 تفاصيل الخدمة والخطوات ←
               </Link>
             </article>
@@ -374,7 +377,7 @@ export default function ServicesPage() {
             الوصول إليه، وهذه قائمة ما نطلبه ولماذا. لا يلزم أن تملكها كلها؛ كل بند موجود يرفع فرصك، وغيابه نعوّضه بغيره.
           </p>
           <div className="mt-6 overflow-x-auto">
-            <table className="w-full min-w-[640px] border-collapse text-sm">
+            <table className="w-full border-collapse text-sm" style={{ minWidth: 640 }}>
               <thead>
                 <tr className="bg-[#142033] text-[#f6f1e8]">
                   <th className="p-4 text-right font-bold">ما نطلبه</th>
@@ -404,7 +407,7 @@ export default function ServicesPage() {
             عليه هذا التقدير، حتى تقرأ حالتك بنفسك قبل أن تراسل أي أحد.
           </p>
           <div className="mt-6 overflow-x-auto">
-            <table className="w-full min-w-[640px] border-collapse text-sm">
+            <table className="w-full border-collapse text-sm" style={{ minWidth: 640 }}>
               <thead>
                 <tr className="bg-[#142033] text-[#f6f1e8]">
                   <th className="p-4 text-right font-bold">يرفع الفرص</th>
