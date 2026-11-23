@@ -67,3 +67,10 @@ content-plan/gsc-snapshots/
 content-plan/verify-live.json
 content-plan/index-request.json
 content-plan/index-coverage.json
+
+# مخرجات البناء والمولَّدات (قرار 2026-11-24)
+.next/
+graphify-out/
+.aeo-*
+*.tgz
+reports/
