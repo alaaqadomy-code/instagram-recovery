@@ -20,7 +20,8 @@ const ORG = /^(Organization|Corporation|LocalBusiness|NGO|OnlineBusiness|OnlineS
 for (const { url, html } of all) {
   const add = (m) => issues.push(`${url} :: ${m}`);
   const graph = [];
-  for (const b of html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)) { try { const j = JSON.parse(b[1]); graph.push(...(j['@graph'] ?? [j])); } catch { add('JSON-LD غير صالح'); } }
+  // كل كتلة: كائن، أو @graph، أو مصفوفة عليا [{...},{...}] (wfixerx، 23 نوفمبر 2026)
+  for (const b of html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)) { try { const j = JSON.parse(b[1]); graph.push(...[].concat(j).flatMap((x) => x?.['@graph'] ?? [x])); } catch { add('JSON-LD غير صالح'); } }
   nodes += graph.length;
   const types = (n) => [].concat(n?.['@type'] ?? []);
   const has = (t) => graph.some((n) => types(n).includes(t));
