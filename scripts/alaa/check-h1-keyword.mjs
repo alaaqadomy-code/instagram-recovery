@@ -32,7 +32,8 @@ for (const { url, html, noindex } of pages()) {
   if (!kw || !h1) { fails.push({ url, h1, kw: kw ?? '(بلا كلمة)', r: 0 }); continue; }
   checked++; const r = cover(h1, kw); if (r >= 1) ok++; else fails.push({ url, h1, kw, r });
 }
-console.log(`صفحات مفحوصة: ${checked} (مقالات ${ARTICLES.length}، أدلة ${SERVICES.length}) · H1 يحمل الكلمة: ${ok}`); requireChecked(checked);
+// في وضع dist لا ARTICLES/SERVICES (المصدر keywordSources أو meta)، فيُطبع عدد الكلمات المعروفة بدل «مقالات 0، أدلة 0» (tafseeljo، 24 نوفمبر 2026)
+console.log(`صفحات مفحوصة: ${checked} (${ARTICLES.length || SERVICES.length ? `مقالات ${ARTICLES.length}، أدلة ${SERVICES.length}` : `كلمات من keywordSources: ${KW.size}`}) · H1 يحمل الكلمة: ${ok}`); requireChecked(checked);
 for (const f of fails.sort((a, b) => a.r - b.r)) console.log(`  ✗ ${f.r.toFixed(2)} ${f.url}\n      H1: ${f.h1}\n      الكلمة: ${f.kw}`);
 console.log(fails.length ? `✗ ${fails.length} صفحة بفجوة بين H1 والكلمة` : '✓ كل H1 يحمل كلمته الأساسية');
 process.exit(fails.length ? 1 : 0);

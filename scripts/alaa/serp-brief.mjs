@@ -64,7 +64,13 @@ if (opt.page) {
   const ours = mainOf(pg.html); const body = new Set(cw(text(ours))); const ourWords = text(ours).split(/\s+/).filter((w) => /[\p{L}\p{N}]/u.test(w)).length;
   // موضوع منافس مغطّى إن وردت 70% من كلماته الجوهرية في نص صفحتنا
   const topics = new Map(); for (const r of ok) for (const x of r.heads.filter((h) => h.lvl === 2)) { const k = cw(x.text).sort().join(' '); if (k) topics.set(k, { text: x.text, n: (topics.get(k)?.n ?? 0) + 1 }); }
-  const missing = [...topics.entries()].filter(([k]) => { const w = k.split(' '); return w.filter((x) => body.has(x)).length / w.length < 0.7; }).map(([, v]) => v).sort((a, b) => b.n - a.n);
+  // موضوع عند منافس واحد بلا أي كلمة من الكلمة المستهدفة = ضجيج من موقعه (روابط داخل <main> بعناوين: «آيتونز» في موجز
+  // «حساب انستقرام محذوف»، unlockaccounts 24 نوفمبر 2026). يبقى ما يذكره منافسان فأكثر، أو ما يحمل كلمة من الكلمة المستهدفة.
+  // المقارنة بجذر تقريبي: بلا «ال/وال/بال/لل» وأول 4 أحرف، فتتطابق «المورفيوس» و«مورفيس» و«المحذوف» و«محذوف»
+  const root = (w) => w.replace(/^(وال|بال|كال|فال|ال|لل)/, '').slice(0, 4);
+  const kwWords = new Set(cw(opt.kw || '').map(root));
+  const relevant = ([k, v]) => v.n >= 2 || !kwWords.size || k.split(' ').some((x) => kwWords.has(root(x)));
+  const missing = [...topics.entries()].filter(([k]) => { const w = k.split(' '); return w.filter((x) => body.has(x)).length / w.length < 0.7; }).filter(relevant).map(([, v]) => v).sort((a, b) => b.n - a.n);
   md += `## الناقص في صفحتنا ${opt.page}\n\n- طول صفحتنا: ${ourWords} كلمة · وسيط المنافسين: ${median} كلمة (للمعلومة فقط، لا هدف).\n- ${missing.length} موضوعاً عند المنافسين لا تغطيه صفحتنا${missing.length ? ' (الأكثر تكراراً أولاً):' : '.'}\n${missing.map((m) => `  - ${m.text}${m.n > 1 ? ` (عند ${m.n} منافسين)` : ''}`).join('\n')}\n\n**أضف الناقص فقط**، وفقط ما يخدم نية «${opt.kw || ''}» ولا تملكه صفحة أخرى في الموقع (\`check-similarity\` و\`check-cannibalization\` بعد البناء). لا توسيع لبلوغ رقم.\n\n`;
   console.log(`صفحتنا ${ourWords} كلمة · وسيط المنافسين ${median} · ناقص: ${missing.length} موضوعاً`);
 }

@@ -67,7 +67,10 @@ if (process.argv.includes('--selftest')) {
 if (import.meta.url === pathToFileURL(process.argv[1]).href) {
   const file = process.argv[2]; const dry = process.argv.includes('--dry');
   if (!file) { console.error('الاستخدام: node scripts/apply-patch.mjs <patch.json> [--dry|--check] | --selftest'); process.exit(1); }
-  const { _review, ...patches } = JSON.parse(readFileSync(file, 'utf8')); const today = localDay();
+  // --check على دفعة طُبّقت سابقاً يفحصها كما كانت يوم تطبيقها (اليوم = تاريخ اسمها): شرط «تاريخ الدفعة = اليوم» يمنع تقديم التاريخ
+  // عند الكتابة، و--check لا يكتب شيئاً (tafseeljo، 24 نوفمبر 2026). بلا --check يبقى اليوم المحلي الحقيقي.
+  const { _review, ...patches } = JSON.parse(readFileSync(file, 'utf8')); const check = process.argv.includes('--check');
+  const today = check && /^\d{4}-\d{2}-\d{2}/.test(basename(file)) && basename(file).slice(0, 10) <= localDay() ? basename(file).slice(0, 10) : localDay();
   const dir = dirname(file); const files = existsSync(dir) ? readdirSync(dir).filter((f) => f.endsWith('.json')).map((f) => ({ name: f, slugs: (() => { const j = JSON.parse(readFileSync(`${dir}/${f}`, 'utf8')); return [...Object.keys(j).filter((k) => !k.startsWith('_')), ...(j._pages ?? []).map((u) => String(u).split('/').pop())]; })() })) : [];
   if (!files.some((f) => f.name === basename(file))) files.push({ name: basename(file), slugs: Object.keys(patches) });
   const inPatches = resolve(dir).toLowerCase() === resolve('content-plan/patches').toLowerCase();
