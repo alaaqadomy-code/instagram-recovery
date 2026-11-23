@@ -70,6 +70,9 @@ if (import.meta.url === pathToFileURL(process.argv[1]).href) {
   // --check على دفعة طُبّقت سابقاً يفحصها كما كانت يوم تطبيقها (اليوم = تاريخ اسمها): شرط «تاريخ الدفعة = اليوم» يمنع تقديم التاريخ
   // عند الكتابة، و--check لا يكتب شيئاً (tafseeljo، 24 نوفمبر 2026). بلا --check يبقى اليوم المحلي الحقيقي.
   const { _review, ...patches } = JSON.parse(readFileSync(file, 'utf8')); const check = process.argv.includes('--check');
+  // مفاتيح التوثيق (_mode، _28days، _source، _violation…) ليست صفحات: كانت تُعدّ في الرسالة («6 صفحة» لدفعة من 4 أو 5) وفي حد الخمس
+  // حين يكون الملف خارج مجلد الدفعات (tafseeljo وunlockaccounts، 24 نوفمبر 2026)
+  for (const k of Object.keys(patches)) if (k.startsWith('_')) delete patches[k];
   const today = check && /^\d{4}-\d{2}-\d{2}/.test(basename(file)) && basename(file).slice(0, 10) <= localDay() ? basename(file).slice(0, 10) : localDay();
   const dir = dirname(file); const files = existsSync(dir) ? readdirSync(dir).filter((f) => f.endsWith('.json')).map((f) => ({ name: f, slugs: (() => { const j = JSON.parse(readFileSync(`${dir}/${f}`, 'utf8')); return [...Object.keys(j).filter((k) => !k.startsWith('_')), ...(j._pages ?? []).map((u) => String(u).split('/').pop())]; })() })) : [];
   if (!files.some((f) => f.name === basename(file))) files.push({ name: basename(file), slugs: Object.keys(patches) });
